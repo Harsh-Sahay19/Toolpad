@@ -1,0 +1,22 @@
+{
+  "name": "toolpad",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Open-source developer utility tools suite — generators, formatters, converters",
+  "scripts": {
+    "start":   "node apps/api/src/server.js",
+    "dev":     "nodemon apps/api/src/server.js",
+    "test":    "node scripts/test.js",
+    "install:api": "cd apps/api && npm install",
+    "serve:web": "npx serve apps/web/src -p 3000"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/toolpad"
+  },
+  "keywords": [
+    "developer-tools", "fake-data", "test-data", "imei-generator",
+    "uuid-generator", "json-formatter", "base64", "open-source"
+  ]
+}
