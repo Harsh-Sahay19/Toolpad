@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formatters — JSON & XML Formatter, Prettifier & Validator | Toolpad</title>
+<meta name="description" content="Free online formatters for developers. Prettify, minify and validate JSON and XML instantly in your browser. No data stored, no signup required.">
+<link rel="canonical" href="https://toolpad.in/formatters">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+<header class="navbar"><div class="nav-inner">
+  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Tool<span>pad</span></span></a>
+  <nav class="nav-links">
+    <a href="/generators" class="nav-link">Generators</a>
+    <a href="/formatters" class="nav-link active">Formatters</a>
+    <a href="/converters" class="nav-link">Converters</a>
+    <a href="/api-docs" class="nav-link">API</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle">☀</button>
+</div></header>
+
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Formatters</div>
+    <h1 class="hero-title">Format &amp; validate your data</h1>
+    <p class="hero-sub">Prettify, minify and validate JSON and XML instantly in your browser. Runs client-side — your data never leaves the page.</p>
+    <div class="hero-stats"><span>2 formatters</span><span class="sep">·</span><span>Runs in browser</span><span class="sep">·</span><span>No data stored</span></div>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="tool-section">
+    <div class="section-header">
+      <div class="section-tag">Formatters</div>
+      <h2>Code formatters</h2>
+      <p>Paste messy or minified code and get back clean, indented, readable output instantly.</p>
+    </div>
+    <div class="tool-grid">
+      <a href="/formatters/json" class="tool-card tool-card--featured" style="text-decoration:none">
+        <div class="tool-icon">{ }</div>
+        <div class="tool-info"><h4>JSON formatter</h4><p>Prettify, minify and validate JSON. Clear error messages with line numbers.</p></div>
+        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span></div>
+      </a>
+      <a href="/formatters/xml" class="tool-card tool-card--featured" style="text-decoration:none">
+        <div class="tool-icon">&lt;/&gt;</div>
+        <div class="tool-info"><h4>XML formatter</h4><p>Prettify and minify XML with proper indentation. Preserves attributes and namespaces.</p></div>
+        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="tool-section">
+    <div class="section-header">
+      <div class="section-tag">Also useful</div>
+      <h2>Related converters</h2>
+    </div>
+    <div class="tool-grid">
+      <a href="/converters/json-to-xml" class="tool-card" style="text-decoration:none">
+        <div class="tool-icon">⇄</div>
+        <div class="tool-info"><h4>JSON to XML</h4><p>Convert JSON objects to well-formed XML.</p></div>
+        <div class="tool-badges"><span class="badge badge-free">Free</span></div>
+      </a>
+      <a href="/converters/xml-to-json" class="tool-card" style="text-decoration:none">
+        <div class="tool-icon">⇄</div>
+        <div class="tool-info"><h4>XML to JSON</h4><p>Parse XML into clean JSON format.</p></div>
+        <div class="tool-badges"><span class="badge badge-free">Free</span></div>
+      </a>
+      <a href="/converters/json-to-csv" class="tool-card" style="text-decoration:none">
+        <div class="tool-icon">📊</div>
+        <div class="tool-info"><h4>JSON to CSV</h4><p>Export JSON arrays as spreadsheet-ready CSV.</p></div>
+        <div class="tool-badges"><span class="badge badge-free">Free</span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer"><div class="footer-inner">
+  <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools.</p></div>
+  <div class="footer-links"><h5>Formatters</h5><a href="/formatters/json">JSON formatter</a><a href="/formatters/xml">XML formatter</a></div>
+  <div class="footer-links"><h5>Converters</h5><a href="/converters/json-to-xml">JSON to XML</a><a href="/converters/base64">Base64</a></div>
+  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/about">About</a><a href="/privacy">Privacy</a></div>
+</div><div class="footer-bottom"><p>© 2026 Toolpad. All processing happens in your browser.</p></div></footer>
+
+<script>
+document.getElementById('themeToggle').addEventListener('click',()=>{
+  const d=document.documentElement,dk=d.getAttribute('data-theme')==='dark';
+  d.setAttribute('data-theme',dk?'':'dark');
+  document.getElementById('themeToggle').textContent=dk?'☀':'🌙';
+  localStorage.setItem('toolpad-theme',dk?'':'dark');
+});
+(function(){const t=localStorage.getItem('toolpad-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+</script>
+</body>
+</html>
