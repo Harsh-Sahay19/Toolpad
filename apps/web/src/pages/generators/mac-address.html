@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAC Address Generator — Free Online Tool with Real OUI Prefixes | Toolpad</title>
+<meta name="description" content="Generate random MAC addresses online with real OUI prefixes from Apple, Intel, Cisco, Raspberry Pi. Choose separator format. Bulk generation. Free, no signup.">
+<meta name="keywords" content="MAC address generator, random MAC address, fake MAC address, OUI prefix, network testing, hardware address generator">
+<link rel="canonical" href="https://toolpad.in/generators/mac-address">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"MAC Address Generator","url":"https://toolpad.in/generators/mac-address","description":"Generate random MAC addresses with real OUI prefixes for network testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+    <nav class="nav-links">
+      <a href="/generators" class="nav-link active">Generators</a>
+      <a href="/formatters" class="nav-link">Formatters</a>
+      <a href="/converters" class="nav-link">Converters</a>
+      <a href="/api-docs" class="nav-link">API</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle">☀</button>
+  </div>
+</header>
+
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+
+<div class="tool-page">
+  <div class="tool-page-header">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › MAC address generator</div>
+    <h1>MAC address generator</h1>
+    <p class="tool-desc">Generate random MAC (Media Access Control) addresses with real OUI prefixes from major manufacturers. Choose your preferred separator format and generate in bulk.</p>
+  </div>
+
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center">
+    <select id="ouiSelect" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="">Random manufacturer</option>
+      <option value="F4:5C:89">Apple</option>
+      <option value="00:1B:21">Intel</option>
+      <option value="00:23:AE">Cisco</option>
+      <option value="B8:27:EB">Raspberry Pi Foundation</option>
+      <option value="DC:A6:32">Raspberry Pi Ltd</option>
+      <option value="E4:5F:01">Samsung</option>
+      <option value="00:50:56">VMware</option>
+      <option value="00:1A:2B">Generic</option>
+    </select>
+    <select id="sepSelect" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value=":">Colon (AA:BB:CC:DD:EE:FF)</option>
+      <option value="-">Hyphen (AA-BB-CC-DD-EE-FF)</option>
+      <option value="">No separator (AABBCCDDEEFF)</option>
+    </select>
+    <select id="caseSelect" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="lower">Lowercase</option>
+      <option value="upper">Uppercase</option>
+    </select>
+    <select id="countSelect" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="1">1</option>
+      <option value="5">5</option>
+      <option value="10" selected>10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+    </select>
+    <button class="btn btn-primary" id="generateBtn">Generate</button>
+    <button class="btn" id="copyBtn">Copy all</button>
+  </div>
+
+  <div class="workspace-panel" style="margin-bottom:24px">
+    <div class="panel-header">
+      <h3>Generated MAC addresses</h3>
+      <span id="metaText" style="font-size:12px;color:var(--slate-l)"></span>
+    </div>
+    <div style="overflow:hidden">
+      <table style="width:100%;border-collapse:collapse;font-size:13px" id="macTable">
+        <thead>
+          <tr style="background:var(--bg);border-bottom:1px solid var(--border)">
+            <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:40%">MAC address</th>
+            <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:30%">OUI prefix</th>
+            <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:30%">Manufacturer</th>
+          </tr>
+        </thead>
+        <tbody id="macBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+
+  <div class="seo-content">
+    <h2>What is a MAC address?</h2>
+    <p>A MAC (Media Access Control) address is a unique hardware identifier assigned to every network interface controller (NIC). It is a 48-bit (6-byte) address typically written as six groups of two hexadecimal digits separated by colons or hyphens — for example <code>00:1A:2B:3C:4D:5E</code>.</p>
+
+    <h3>What is an OUI prefix?</h3>
+    <p>The first three bytes (24 bits) of a MAC address are the OUI — Organizationally Unique Identifier. This prefix identifies the manufacturer of the network interface. The IEEE assigns OUI prefixes to manufacturers. This generator uses real OUI prefixes from Apple, Intel, Cisco, Raspberry Pi, Samsung, and VMware to create realistic addresses.</p>
+
+    <h3>Common uses for generated MAC addresses</h3>
+    <ul>
+      <li>Network simulation and topology testing in virtual environments</li>
+      <li>Testing network device management software (MDM, NAC systems)</li>
+      <li>Populating test databases for network inventory applications</li>
+      <li>Testing MAC-based authentication and filtering logic</li>
+      <li>Generating test data for network monitoring dashboards</li>
+    </ul>
+
+    <h3>API access</h3>
+    <p>Use <code>GET /api/v1/network/mac?separator=-&count=20</code> to generate MAC addresses via the REST API.</p>
+
+    <div class="faq-item"><div class="faq-q">Are these real MAC addresses? <span>+</span></div><div class="faq-a">No. While the OUI prefixes are real (assigned to actual manufacturers), the NIC-specific portion is randomly generated. These addresses will not match any real physical device.</div></div>
+    <div class="faq-item"><div class="faq-q">What is the difference between unicast and multicast MAC addresses? <span>+</span></div><div class="faq-a">In a MAC address, the least significant bit of the first byte indicates whether the address is unicast (0) or multicast (1). All addresses generated here are unicast (the first byte's LSB is 0), matching real device addresses.</div></div>
+  </div>
+
+  <div class="related-tools">
+    <h3>Related tools</h3>
+    <div class="related-grid">
+      <a href="/generators/ip-address" class="related-card"><h4>IP address generator</h4><p>IPv4 and IPv6</p></a>
+      <a href="/generators/imei" class="related-card"><h4>IMEI generator</h4><p>Mobile device IDs</p></a>
+      <a href="/generators/imsi" class="related-card"><h4>IMSI generator</h4><p>SIM subscriber IDs</p></a>
+      <a href="/generators/uuid" class="related-card"><h4>UUID generator</h4><p>RFC 4122 UUIDs</p></a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span>🔧</span> <strong>Toolpad</strong><p>Free developer utility tools.</p></div>
+    <div class="footer-links"><h5>Generators</h5><a href="/generators/mac-address">MAC address</a><a href="/generators/uuid">UUID</a><a href="/generators/imei">IMEI</a></div>
+    <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
+    <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Toolpad. Generated data is fictional and for testing purposes only.</p></div>
+</footer>
+
+<script>
+const OUI_NAMES = {'F4:5C:89':'Apple','00:1B:21':'Intel','00:23:AE':'Cisco','B8:27:EB':'Raspberry Pi Foundation','DC:A6:32':'Raspberry Pi Ltd','E4:5F:01':'Samsung','00:50:56':'VMware','00:1A:2B':'Generic'};
+const ALL_OUI = Object.keys(OUI_NAMES);
+
+function genMac(oui, sep, cas) {
+  const o = oui || ALL_OUI[Math.floor(Math.random()*ALL_OUI.length)];
+  const ouiParts = o.replace(/[:\-]/g,'').match(/.{2}/g);
+  const nic = Array.from({length:3},()=>Math.floor(Math.random()*256).toString(16).padStart(2,'0'));
+  const parts = [...ouiParts,...nic];
+  const addr = parts.join(sep);
+  return { address: cas==='upper'?addr.toUpperCase():addr, oui: o, ouiFormatted: ouiParts.join(':'), manufacturer: OUI_NAMES[o]||'Unknown' };
+}
+
+function generate() {
+  const oui = document.getElementById('ouiSelect').value;
+  const sep = document.getElementById('sepSelect').value;
+  const cas = document.getElementById('caseSelect').value;
+  const cnt = parseInt(document.getElementById('countSelect').value);
+  const results = Array.from({length:cnt},()=>genMac(oui||null,sep,cas));
+  const tbody = document.getElementById('macBody');
+  tbody.innerHTML = results.map((r,i)=>`
+    <tr style="border-bottom:1px solid var(--border);${i%2===0?'':'background:var(--bg)'}">
+      <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.address}</td>
+      <td style="padding:10px 16px;font-size:12px;color:var(--slate-m)">${r.ouiFormatted}</td>
+      <td style="padding:10px 16px;font-size:12px;color:var(--slate-m)">${r.manufacturer}</td>
+    </tr>`).join('');
+  document.getElementById('metaText').textContent = `${cnt} addresses generated`;
+  window._macs = results;
+}
+
+document.getElementById('generateBtn').addEventListener('click',generate);
+document.getElementById('copyBtn').addEventListener('click',()=>{
+  if(!window._macs) return;
+  navigator.clipboard?.writeText(window._macs.map(r=>r.address).join('\n'));
+  document.getElementById('copyBtn').textContent='Copied!';
+  setTimeout(()=>document.getElementById('copyBtn').textContent='Copy all',2000);
+});
+document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
+  const a=q.nextElementSibling,open=a.style.display==='block';
+  a.style.display=open?'none':'block'; q.querySelector('span').textContent=open?'+':'−';
+}));
+document.getElementById('themeToggle').addEventListener('click',()=>{
+  const d=document.documentElement,dark=d.getAttribute('data-theme')==='dark';
+  d.setAttribute('data-theme',dark?'':'dark');
+  document.getElementById('themeToggle').textContent=dark?'☀':'🌙';
+});
+generate();
+</script>
+</body>
+</html>

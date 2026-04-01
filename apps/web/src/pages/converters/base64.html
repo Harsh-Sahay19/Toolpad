@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base64 Encoder & Decoder — Free Online Tool | Toolpad</title>
+<meta name="description" content="Encode and decode Base64 strings online for free. Supports text, URLs, and file encoding. Instant results, no data stored, no signup required.">
+<meta name="keywords" content="Base64 encoder, Base64 decoder, encode Base64, decode Base64, Base64 online, Base64 converter">
+<link rel="canonical" href="https://toolpad.in/converters/base64">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Base64 Encoder Decoder","url":"https://toolpad.in/converters/base64","description":"Free online Base64 encoder and decoder","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+    <nav class="nav-links">
+      <a href="/generators" class="nav-link">Generators</a>
+      <a href="/formatters" class="nav-link">Formatters</a>
+      <a href="/converters" class="nav-link active">Converters</a>
+      <a href="/api-docs" class="nav-link">API</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle">☀</button>
+  </div>
+</header>
+
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+
+<div class="tool-page">
+  <div class="tool-page-header">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › Base64 encoder/decoder</div>
+    <h1>Base64 encoder &amp; decoder</h1>
+    <p class="tool-desc">Encode text to Base64 or decode Base64 back to plain text. All processing happens in your browser — no data is sent to any server.</p>
+  </div>
+
+  <div style="display:flex;gap:8px;margin-bottom:16px">
+    <button class="btn btn-primary" id="btnEncode">Encode to Base64</button>
+    <button class="btn" id="btnDecode">Decode from Base64</button>
+    <button class="btn" id="btnSwap">Swap ⇄</button>
+    <button class="btn" id="btnClear">Clear</button>
+  </div>
+
+  <div class="tool-workspace">
+    <div class="workspace-panel">
+      <div class="panel-header">
+        <h3>Input</h3>
+        <button class="btn btn-sm" id="btnPaste">Paste</button>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <textarea class="output-area large" id="inputArea" placeholder="Enter text to encode, or Base64 to decode..."></textarea>
+      </div>
+    </div>
+    <div class="workspace-panel">
+      <div class="panel-header">
+        <h3>Output</h3>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-sm" id="btnCopy">Copy</button>
+          <span id="charCount" style="font-size:12px;color:var(--slate-l);align-self:center"></span>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <textarea class="output-area large" id="outputArea" readonly placeholder="Result will appear here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div id="statusBar" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
+
+  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+
+  <div class="seo-content">
+    <h2>What is Base64 encoding?</h2>
+    <p>Base64 is a binary-to-text encoding scheme that represents binary data using 64 printable ASCII characters (A–Z, a–z, 0–9, +, /). It is widely used to encode binary data for transmission over systems that only handle text — such as embedding images in HTML, encoding attachments in emails, or passing binary data in JSON APIs.</p>
+
+    <h3>When to use Base64</h3>
+    <ul>
+      <li>Embedding images directly in HTML or CSS as data URIs</li>
+      <li>Encoding binary file attachments in email (MIME)</li>
+      <li>Passing binary data in JSON or XML APIs</li>
+      <li>Storing binary data in text-only systems like environment variables</li>
+      <li>Basic HTTP authentication headers (<code>Authorization: Basic base64(user:pass)</code>)</li>
+    </ul>
+
+    <h3>Base64 vs Base64 URL</h3>
+    <p>Standard Base64 uses <code>+</code> and <code>/</code> characters, which have special meaning in URLs. Base64 URL encoding replaces these with <code>-</code> and <code>_</code> respectively, making it safe to use in query parameters and JWT tokens without URL encoding.</p>
+
+    <h3>API access</h3>
+    <p>Encode: <code>POST /api/v1/datatools/encode/base64</code> with body <code>{"input": "your text"}</code></p>
+    <p>Decode: <code>POST /api/v1/datatools/decode/base64</code> with body <code>{"input": "dG9vbHBhZA=="}</code></p>
+
+    <div class="faq-item"><div class="faq-q">Is Base64 a form of encryption? <span>+</span></div><div class="faq-a">No. Base64 is an encoding scheme, not encryption. It can be decoded by anyone with the encoded string and provides no security. Never use Base64 to protect sensitive data — use proper encryption instead.</div></div>
+    <div class="faq-item"><div class="faq-q">Why does Base64 output end with = or ==? <span>+</span></div><div class="faq-a">Base64 encodes 3 bytes into 4 characters. If the input is not a multiple of 3 bytes, padding characters (=) are added to make the output length a multiple of 4. One = means 1 byte of padding was needed, == means 2 bytes.</div></div>
+    <div class="faq-item"><div class="faq-q">How much larger is Base64 output vs the original? <span>+</span></div><div class="faq-a">Base64 output is approximately 33% larger than the original input. Every 3 bytes of input becomes 4 Base64 characters.</div></div>
+  </div>
+
+  <div class="related-tools">
+    <h3>Related tools</h3>
+    <div class="related-grid">
+      <a href="/converters/hex" class="related-card"><h4>Hex encoder/decoder</h4><p>Text to hexadecimal</p></a>
+      <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Format converter</p></a>
+      <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify and validate</p></a>
+      <a href="/converters/text-to-json" class="related-card"><h4>Text to JSON</h4><p>Create JSON from text</p></a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span>🔧</span> <strong>Toolpad</strong><p>Free developer utility tools.</p></div>
+    <div class="footer-links"><h5>Converters</h5><a href="/converters/base64">Base64</a><a href="/converters/hex">Hex</a><a href="/converters/json-to-xml">JSON to XML</a></div>
+    <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/formatters/xml">XML formatter</a></div>
+    <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Toolpad. All processing is done in your browser.</p></div>
+</footer>
+
+<script>
+function setStatus(msg, type) {
+  const sb = document.getElementById('statusBar');
+  sb.style.display = 'block';
+  sb.style.background = type==='success'?'#D1FAE5':type==='error'?'#FEE2E2':'#DBEAFE';
+  sb.style.color = type==='success'?'#065F46':type==='error'?'#991B1B':'#1D4ED8';
+  sb.textContent = msg;
+}
+function updateCount() {
+  const out = document.getElementById('outputArea').value;
+  document.getElementById('charCount').textContent = out ? `${out.length} chars` : '';
+}
+
+document.getElementById('btnEncode').addEventListener('click', () => {
+  const input = document.getElementById('inputArea').value;
+  if (!input) return;
+  try {
+    const encoded = btoa(unescape(encodeURIComponent(input)));
+    document.getElementById('outputArea').value = encoded;
+    setStatus('Encoded successfully', 'success');
+    updateCount();
+  } catch(e) { setStatus('Encoding error: ' + e.message, 'error'); }
+});
+
+document.getElementById('btnDecode').addEventListener('click', () => {
+  const input = document.getElementById('inputArea').value.trim();
+  if (!input) return;
+  try {
+    const decoded = decodeURIComponent(escape(atob(input)));
+    document.getElementById('outputArea').value = decoded;
+    setStatus('Decoded successfully', 'success');
+    updateCount();
+  } catch(e) { setStatus('Invalid Base64: ' + e.message, 'error'); }
+});
+
+document.getElementById('btnSwap').addEventListener('click', () => {
+  const i = document.getElementById('inputArea'), o = document.getElementById('outputArea');
+  const tmp = i.value; i.value = o.value; o.value = tmp;
+  updateCount();
+});
+document.getElementById('btnClear').addEventListener('click', () => {
+  document.getElementById('inputArea').value = '';
+  document.getElementById('outputArea').value = '';
+  document.getElementById('statusBar').style.display = 'none';
+  updateCount();
+});
+document.getElementById('btnPaste').addEventListener('click', () => navigator.clipboard?.readText().then(t=>document.getElementById('inputArea').value=t));
+document.getElementById('btnCopy').addEventListener('click', () => {
+  navigator.clipboard?.writeText(document.getElementById('outputArea').value);
+  document.getElementById('btnCopy').textContent = 'Copied!';
+  setTimeout(()=>document.getElementById('btnCopy').textContent='Copy',2000);
+});
+
+document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
+  const a=q.nextElementSibling,open=a.style.display==='block';
+  a.style.display=open?'none':'block'; q.querySelector('span').textContent=open?'+':'−';
+}));
+document.getElementById('themeToggle').addEventListener('click',()=>{
+  const d=document.documentElement,dark=d.getAttribute('data-theme')==='dark';
+  d.setAttribute('data-theme',dark?'':'dark');
+  document.getElementById('themeToggle').textContent=dark?'☀':'🌙';
+});
+</script>
+</body>
+</html>

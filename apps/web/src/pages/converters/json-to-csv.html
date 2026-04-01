@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON to CSV Converter — Export JSON Array as Spreadsheet | Toolpad</title>
+<meta name="description" content="Convert JSON arrays to CSV format online for free. Auto-generates headers from keys. Download as .csv file. Runs in browser, no data sent to server.">
+<meta name="keywords" content="JSON to CSV converter, convert JSON to CSV, JSON CSV export, JSON array to CSV, JSON to spreadsheet">
+<link rel="canonical" href="https://toolpad.in/converters/json-to-csv">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"JSON to CSV Converter","url":"https://toolpad.in/converters/json-to-csv","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+<header class="navbar"><div class="nav-inner"><a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a><nav class="nav-links"><a href="/generators" class="nav-link">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link active">Converters</a><a href="/api-docs" class="nav-link">API</a></nav><button class="theme-toggle" id="themeToggle">☀</button></div></header>
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+<div class="tool-page">
+  <div class="tool-page-header">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › JSON to CSV</div>
+    <h1>JSON to CSV converter</h1>
+    <p class="tool-desc">Convert a JSON array to CSV format with auto-generated headers from object keys. Values with commas or quotes are properly escaped. Download as a .csv file ready for Excel, Google Sheets, or any spreadsheet app.</p>
+  </div>
+  <div style="display:flex;gap:8px;margin-bottom:16px">
+    <button class="btn btn-primary" id="btnConvert">Convert to CSV</button>
+    <button class="btn btn-sm" id="btnSample">Sample</button>
+    <button class="btn btn-sm" id="btnClear">Clear</button>
+  </div>
+  <div class="tool-workspace">
+    <div class="workspace-panel"><div class="panel-header"><h3>JSON array input</h3></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="input" placeholder='[{"name":"John","age":30},{"name":"Jane","age":25}]'></textarea></div></div>
+    <div class="workspace-panel"><div class="panel-header"><h3>CSV output</h3><div style="display:flex;gap:6px"><button class="btn btn-sm" id="btnCopy">Copy</button><button class="btn btn-sm" id="btnDl">Download .csv</button></div></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="output" readonly></textarea></div></div>
+  </div>
+  <div id="st" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
+  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+  <div class="seo-content">
+    <h2>About JSON to CSV conversion</h2>
+    <p>This converter takes a JSON array of objects and produces a CSV file where the first row contains headers (the object keys) and subsequent rows contain the values. It handles proper CSV escaping — values containing commas, quotes, or newlines are wrapped in double quotes with any internal quotes doubled.</p>
+    <h3>Requirements</h3>
+    <ul>
+      <li>Input must be a JSON array (starts with <code>[</code>)</li>
+      <li>All objects in the array should have the same keys for consistent columns</li>
+      <li>Nested objects are not flattened — they will appear as <code>[object Object]</code> in CSV</li>
+    </ul>
+    <h3>API access</h3>
+    <p><code>POST /api/v1/datatools/convert/json-to-csv</code> — body: <code>{"input": "[{...}]"}</code></p>
+    <div class="faq-item"><div class="faq-q">What about CSV to JSON? <span class="faq-toggle">+</span></div><div class="faq-a">Use the <a href="/converters/csv-to-json" style="color:var(--orange-d)">CSV to JSON converter</a> — it parses CSV with headers and produces a JSON array with typed values (numbers are automatically converted).</div></div>
+  </div>
+  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <a href="/converters/csv-to-json" class="related-card"><h4>CSV to JSON</h4><p>Reverse conversion</p></a>
+    <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert JSON to XML</p></a>
+    <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON first</p></a>
+    <a href="/converters/text-to-json" class="related-card"><h4>Text to JSON</h4><p>Create JSON from text</p></a>
+  </div></div>
+</div>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><span>🔧</span><strong>Toolpad</strong></div><div class="footer-links"><h5>Converters</h5><a href="/converters/json-to-csv">JSON to CSV</a><a href="/converters/csv-to-json">CSV to JSON</a><a href="/converters/json-to-xml">JSON to XML</a></div><div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON</a><a href="/formatters/xml">XML</a></div><div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div></div><div class="footer-bottom"><p>© 2026 Toolpad.</p></div></footer>
+<script>
+const SAMPLE='[\n  {"name":"John Doe","age":30,"city":"New York","email":"john@example.com"},\n  {"name":"Jane Smith","age":25,"city":"London","email":"jane@example.com"},\n  {"name":"Raj Kumar","age":28,"city":"Bengaluru","email":"raj@example.com"}\n]';
+function ss(m,t){const s=document.getElementById('st');s.style.display='block';s.style.background=t==='ok'?'#D1FAE5':'#FEE2E2';s.style.color=t==='ok'?'#065F46':'#991B1B';s.textContent=m;}
+document.getElementById('btnConvert').addEventListener('click',()=>{
+  const inp=document.getElementById('input').value.trim();if(!inp)return;
+  try{
+    const arr=JSON.parse(inp);
+    if(!Array.isArray(arr))throw new Error('Input must be a JSON array');
+    const headers=Object.keys(arr[0]);
+    const rows=arr.map(r=>headers.map(h=>{const v=r[h]??'';const s=String(v);return s.includes(',')||s.includes('"')||s.includes('\n')?`"${s.replace(/"/g,'""')}"`:s;}).join(','));
+    document.getElementById('output').value=[headers.join(','),...rows].join('\n');
+    ss(`Converted ${arr.length} rows, ${headers.length} columns`,'ok');
+  }catch(e){ss('Error: '+e.message,'err');}
+});
+document.getElementById('btnSample').addEventListener('click',()=>document.getElementById('input').value=SAMPLE);
+document.getElementById('btnClear').addEventListener('click',()=>{document.getElementById('input').value='';document.getElementById('output').value='';document.getElementById('st').style.display='none';});
+document.getElementById('btnCopy').addEventListener('click',()=>{navigator.clipboard?.writeText(document.getElementById('output').value);document.getElementById('btnCopy').textContent='Copied!';setTimeout(()=>document.getElementById('btnCopy').textContent='Copy',2000);});
+document.getElementById('btnDl').addEventListener('click',()=>{const c=document.getElementById('output').value;if(!c)return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'text/csv'}));a.download='data.csv';a.click();});
+document.getElementById('themeToggle').addEventListener('click',()=>{const d=document.documentElement,dk=d.getAttribute('data-theme')==='dark';d.setAttribute('data-theme',dk?'':'dark');document.getElementById('themeToggle').textContent=dk?'☀':'🌙';localStorage.setItem('toolpad-theme',dk?'':'dark');});
+</script>
+</body></html>
