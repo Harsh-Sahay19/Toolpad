@@ -100,7 +100,7 @@
 
 <!-- ── Ad slot: leaderboard ── -->
 <div class="ad-slot ad-leaderboard" aria-label="Advertisement">
-  <!-- Google AdSense: ca-pub-XXXXXXXXXXXXXXXX / ad-slot-leaderboard -->
+  <!-- Google AdSense -->
 </div>
 
 <!-- ── Category: Generators ── -->
@@ -190,7 +190,7 @@
           <div class="tool-icon">📶</div>
           <div class="tool-info">
             <h4>IMSI generator</h4>
-            <p>15-digit IMSI with real MCC-MNC pairs for AT&T, Jio, EE, Telstra.</p>
+            <p>15-digit IMSI with real MCC-MNC pairs for AT&amp;T, Jio, EE, Telstra.</p>
           </div>
           <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span></div>
         </a>
@@ -362,35 +362,54 @@
   </div>
 </footer>
 
-<style>
-.nav-dropdown { position: relative; display: flex; align-items: center; }
-.nav-dropdown-menu { display: none; position: absolute; top: 48px; left: 0; min-width: 220px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 8px 24px rgba(0,0,0,.13); z-index: 9999; padding: 8px 0; }
-.nav-dropdown-menu a { display: block; padding: 8px 18px; font-size: 13px; color: var(--slate-m); white-space: nowrap; font-family: var(--font-body); transition: background .1s, color .1s; }
-.nav-dropdown-menu a:hover { background: var(--bg); color: var(--orange-d); }
-.nav-dropdown-group { padding: 10px 18px 3px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--slate-l); }
-.hero-title { white-space: nowrap; font-size: clamp(22px, 5vw, 48px) !important; }
-.footer-bottom { text-align: center; padding: 24px 0 32px !important; }
-</style>
 <script src="/scripts/main.js"></script>
 <script>
-(function(){
-  var KEY='toolpad-theme';
-  var saved=localStorage.getItem(KEY);
-  var hour=new Date().getHours();
-  var autoDark=(hour>=20||hour<6);
-  var theme=saved!==null?saved:(autoDark?'dark':'');
-  if(theme)document.documentElement.setAttribute('data-theme',theme);
-  var tog=document.getElementById('themeToggle');
-  if(tog){
-    tog.textContent=theme==='dark'?'🌙':'☀';
-    tog.addEventListener('click',function(){
-      var dark=document.documentElement.getAttribute('data-theme')==='dark';
-      var next=dark?'':'dark';
-      document.documentElement.setAttribute('data-theme',next);
-      tog.textContent=next==='dark'?'🌙':'☀';
-      localStorage.setItem(KEY,next);
+(function() {
+
+  // Smart theme: auto dark 8pm-6am
+  var KEY = 'toolpad-theme';
+  var saved = localStorage.getItem(KEY);
+  var hour = new Date().getHours();
+  var autoDark = (hour >= 20 || hour < 6);
+  var theme = saved !== null ? saved : (autoDark ? 'dark' : '');
+  if (theme) document.documentElement.setAttribute('data-theme', theme);
+  var tog = document.getElementById('themeToggle');
+  if (tog) {
+    tog.textContent = theme === 'dark' ? '🌙' : '☀';
+    tog.addEventListener('click', function() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var next = dark ? '' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      tog.textContent = next === 'dark' ? '🌙' : '☀';
+      localStorage.setItem(KEY, next);
     });
   }
+
+  // Nav dropdowns
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+    var menu = dd.querySelector('.nav-dropdown-menu');
+    if (!menu) return;
+    var t;
+    dd.addEventListener('mouseenter', function() {
+      clearTimeout(t);
+      document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) { m.style.display = 'none'; });
+      menu.style.display = 'block';
+    });
+    dd.addEventListener('mouseleave', function() {
+      t = setTimeout(function() { menu.style.display = 'none'; }, 200);
+    });
+    menu.addEventListener('mouseenter', function() { clearTimeout(t); });
+    menu.addEventListener('mouseleave', function() {
+      t = setTimeout(function() { menu.style.display = 'none'; }, 200);
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) { m.style.display = 'none'; });
+    }
+  });
+
 })();
 </script>
 </body>
