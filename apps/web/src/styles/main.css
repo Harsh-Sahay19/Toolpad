@@ -171,7 +171,7 @@ h1,h2,h3,h4,h5 { font-family: var(--font-display); line-height: 1.2; }
   .ad-leaderboard, .ad-infeed { display: none; }
 }
 
-/* ── Nav dropdowns (JS controlled) ── */
+/* ── Nav dropdowns ── */
 .nav-dropdown { position: relative; display: flex; align-items: center; }
 .nav-dropdown-menu {
   display: none;
@@ -182,7 +182,7 @@ h1,h2,h3,h4,h5 { font-family: var(--font-display); line-height: 1.2; }
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: 0 8px 24px rgba(0,0,0,.13);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
   z-index: 9999;
   padding: 8px 0;
 }
