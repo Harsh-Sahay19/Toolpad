@@ -1,113 +1,179 @@
-'use strict';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fake Name Generator — Random Names from US, India, UK & More | Toolpad</title>
+<meta name="description" content="Generate random fake names for any gender and country. Includes first name, last name, full name. Free, bulk generation, no signup. Used by developers for testing.">
+<meta name="keywords" content="fake name generator, random name generator, fake name, random person name, test name generator, dummy name">
+<link rel="canonical" href="https://toolpad.in/generators/fake-name">
+<meta property="og:title" content="Fake Name Generator — Free Random Names | Toolpad">
+<meta property="og:description" content="Generate realistic random names for testing. Male, female, any gender. US, India, UK names. Free, no signup.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fake Name Generator","url":"https://toolpad.in/generators/fake-name","description":"Generate random fake names for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+<header class="navbar"><div class="nav-inner">
+  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+  <nav class="nav-links"><a href="/generators" class="nav-link active">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link">Converters</a><a href="/api-docs" class="nav-link">API</a></nav>
+  <button class="theme-toggle" id="themeToggle">☀</button>
+</div></header>
 
-// ── Tool index for search ──────────────────────────────────────────────────
-const TOOLS = [
-  { name: 'IMEI generator',           url: '/generators/imei',          icon: '📡', cat: 'Device & Network' },
-  { name: 'UUID generator',           url: '/generators/uuid',          icon: '🔑', cat: 'Device & Network' },
-  { name: 'MAC address generator',    url: '/generators/mac-address',   icon: '🖧',  cat: 'Device & Network' },
-  { name: 'IP address generator',     url: '/generators/ip-address',    icon: '🌐', cat: 'Device & Network' },
-  { name: 'IMSI generator',          url: '/generators/imsi',           icon: '📶', cat: 'Device & Network' },
-  { name: 'Fake name generator',      url: '/generators/fake-name',     icon: '👤', cat: 'Personal' },
-  { name: 'Fake email generator',     url: '/generators/fake-email',    icon: '✉',  cat: 'Personal' },
-  { name: 'Phone number generator',   url: '/generators/fake-phone',    icon: '📱', cat: 'Personal' },
-  { name: 'Full profile generator',   url: '/generators/fake-profile',  icon: '🪪', cat: 'Personal' },
-  { name: 'Credit card generator',    url: '/generators/credit-card',   icon: '💳', cat: 'Financial' },
-  { name: 'IBAN generator',           url: '/generators/iban',          icon: '🏦', cat: 'Financial' },
-  { name: 'Fake address generator',   url: '/generators/fake-address',  icon: '📍', cat: 'Financial' },
-  { name: 'JSON formatter',           url: '/formatters/json',          icon: '{ }', cat: 'Formatter' },
-  { name: 'XML formatter',            url: '/formatters/xml',           icon: '</>', cat: 'Formatter' },
-  { name: 'JSON to XML converter',    url: '/converters/json-to-xml',   icon: '⇄',  cat: 'Converter' },
-  { name: 'XML to JSON converter',    url: '/converters/xml-to-json',   icon: '⇄',  cat: 'Converter' },
-  { name: 'JSON to CSV',             url: '/converters/json-to-csv',    icon: '📊', cat: 'Converter' },
-  { name: 'CSV to JSON',             url: '/converters/csv-to-json',    icon: '📊', cat: 'Converter' },
-  { name: 'Text to JSON',            url: '/converters/text-to-json',   icon: '📝', cat: 'Converter' },
-  { name: 'Text to XML',             url: '/converters/text-to-xml',    icon: '📝', cat: 'Converter' },
-  { name: 'Base64 encoder/decoder',  url: '/converters/base64',         icon: '🔐', cat: 'Converter' },
-  { name: 'Hex encoder/decoder',     url: '/converters/hex',            icon: '🔢', cat: 'Converter' },
-  { name: 'DOCX to PDF converter',   url: '/converters/docx-to-pdf',    icon: '📄', cat: 'Converter' },
-];
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 
-// ── Search ────────────────────────────────────────────────────────────────
-const searchInput    = document.getElementById('toolSearch');
-const searchDropdown = document.getElementById('searchDropdown');
+<div class="tool-page">
+  <div class="tool-page-header">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Fake name generator</div>
+    <h1>Fake name generator</h1>
+    <p class="tool-desc">Generate realistic random names for software testing, database seeding, and UI mockups. Choose gender and cultural origin. Bulk generate and export as CSV or JSON.</p>
+  </div>
 
-if (searchInput && searchDropdown) {
-  searchInput.addEventListener('input', () => {
-    const q = searchInput.value.trim().toLowerCase();
-    if (!q) { searchDropdown.classList.remove('open'); return; }
-    const hits = TOOLS.filter(t => t.name.toLowerCase().includes(q) || t.cat.toLowerCase().includes(q)).slice(0, 8);
-    if (!hits.length) { searchDropdown.classList.remove('open'); return; }
-    searchDropdown.innerHTML = hits.map(t =>
-      `<a class="search-result" href="${t.url}">
-         <span class="search-result-icon">${t.icon}</span>
-         <span>
-           <strong style="font-size:13px">${t.name}</strong>
-           <span style="color:var(--slate-l);font-size:11px;margin-left:6px">${t.cat}</span>
-         </span>
-       </a>`
-    ).join('');
-    searchDropdown.classList.add('open');
-  });
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center">
+    <select id="genderSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="any">Any gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <select id="regionSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="all">All regions</option>
+      <option value="western">Western (US/UK)</option>
+      <option value="indian">Indian</option>
+      <option value="eastasian">East Asian</option>
+      <option value="latin">Latin American</option>
+    </select>
+    <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="5">5 names</option>
+      <option value="10" selected>10 names</option>
+      <option value="25">25 names</option>
+      <option value="50">50 names</option>
+      <option value="100">100 names</option>
+    </select>
+    <button class="btn btn-primary" id="genBtn">Generate</button>
+    <button class="btn" id="copyBtn">Copy</button>
+    <button class="btn" id="csvBtn">Download CSV</button>
+  </div>
 
-  document.addEventListener('click', e => {
-    if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
-      searchDropdown.classList.remove('open');
-    }
-  });
+  <div class="workspace-panel" style="margin-bottom:24px">
+    <div class="panel-header"><h3>Generated names</h3><span id="meta" style="font-size:12px;color:var(--slate-l)"></span></div>
+    <div style="overflow:hidden">
+      <table style="width:100%;border-collapse:collapse;font-size:13px" id="nameTable">
+        <thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)">
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:30%">First name</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:30%">Last name</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:25%">Full name</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:15%">Gender</th>
+        </tr></thead>
+        <tbody id="nameBody"></tbody>
+      </table>
+    </div>
+  </div>
 
-  searchInput.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { searchDropdown.classList.remove('open'); searchInput.blur(); }
-  });
+  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+
+  <div class="seo-content">
+    <h2>What is a fake name generator?</h2>
+    <p>A fake name generator creates realistic but entirely fictional names for use in software development, testing, and prototyping. Unlike random strings, generated names follow real-world naming patterns — so UI mockups look believable and test databases feel natural.</p>
+
+    <h3>Why developers use fake names</h3>
+    <p>Using fake names instead of real ones protects user privacy in development environments. You can populate test databases, seed demo accounts, fill UI mockups, and generate load-testing data without ever touching real customer information — which is increasingly required by GDPR, India's PDPB, and other privacy regulations.</p>
+
+    <h3>Name pools used</h3>
+    <ul>
+      <li>Western names from US and UK origin — James, Emma, Smith, Williams</li>
+      <li>Indian names — Aarav, Priya, Sharma, Patel, Kumar, Singh</li>
+      <li>East Asian names — Wei, Mei, Wang, Tanaka, Yamamoto</li>
+      <li>Latin American names — Carlos, Sofia, Rodriguez, Lopez, Garcia</li>
+    </ul>
+
+    <h3>API access</h3>
+    <p>Generate names programmatically: <code>GET /api/v1/personal/name?gender=female&count=50</code></p>
+    <p>Full profiles including email, phone and DOB: <code>GET /api/v1/personal/profile?country=IN&count=10</code></p>
+
+    <div class="faq-item"><div class="faq-q">Are these names real people? <span class="faq-toggle">+</span></div><div class="faq-a">No. Names are constructed by combining first names and last names from separate lists. While individual names exist in the real world, the combinations are randomly generated and do not correspond to any real person.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I generate names for a specific nationality? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — use the region selector above or the <code>country</code> query parameter in the API. Supported: US, IN, UK. More regions are being added based on user requests.</div></div>
+    <div class="faq-item"><div class="faq-q">Is bulk generation free? <span class="faq-toggle">+</span></div><div class="faq-a">Yes. You can generate up to 100 names at once in the browser, and up to 1000 via the API, with no account or payment required.</div></div>
+  </div>
+
+  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <a href="/generators/fake-email" class="related-card"><h4>Fake email generator</h4><p>Realistic email addresses</p></a>
+    <a href="/generators/fake-phone" class="related-card"><h4>Phone number generator</h4><p>US, India, UK formats</p></a>
+    <a href="/generators/fake-profile" class="related-card"><h4>Full profile generator</h4><p>Complete fake person</p></a>
+    <a href="/generators/fake-address" class="related-card"><h4>Fake address generator</h4><p>Street addresses worldwide</p></a>
+  </div></div>
+</div>
+
+<footer class="site-footer"><div class="footer-inner">
+  <div class="footer-brand"><span>🔧</span> <strong>Toolpad</strong><p>Free developer utility tools.</p></div>
+  <div class="footer-links"><h5>Generators</h5><a href="/generators/fake-name">Fake name</a><a href="/generators/fake-email">Fake email</a><a href="/generators/fake-profile">Full profile</a></div>
+  <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
+  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
+</div><div class="footer-bottom"><p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p></div></footer>
+
+<script>
+const FM=['James','John','Robert','Michael','David','Liam','Noah','Oliver','Lucas','Ethan','Carlos','Wei'];
+const FF=['Mary','Patricia','Jennifer','Emma','Olivia','Sophia','Mia','Charlotte','Amelia','Isabella','Sofia','Mei'];
+const FI=['Aarav','Arjun','Rohan','Vikram','Rahul','Priya','Ananya','Divya','Shreya','Pooja'];
+const FE=['Carlos','Miguel','Diego','Luis','Ana','Sofia','Valentina','Camila'];
+const FW=[...FM,...FF];
+const LA=['Smith','Johnson','Williams','Brown','Garcia','Miller','Davis','Wilson','Taylor','Anderson'];
+const LI=['Sharma','Patel','Kumar','Singh','Gupta','Mehta','Joshi','Nair','Iyer','Reddy'];
+const LE=['Wang','Li','Zhang','Tanaka','Yamamoto','Suzuki','Kim','Park'];
+const LL=['Rodriguez','Martinez','Lopez','Gonzalez','Perez','Torres','Ramirez'];
+
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+
+function genName(gender,region){
+  let fn,ln;
+  if(region==='indian'){fn=pick([...FI]);ln=pick(LI);}
+  else if(region==='eastasian'){fn=pick([...LE]);ln=pick(LE);}
+  else if(region==='latin'){fn=pick([...FE]);ln=pick(LL);}
+  else{
+    const pool = gender==='male'?FM:gender==='female'?FF:FW;
+    fn=pick(pool);ln=pick(LA);
+  }
+  const g = FM.includes(fn)||FI.slice(0,5).includes(fn)||FE.slice(0,4).includes(fn)?'male':'female';
+  return {firstName:fn,lastName:ln,fullName:`${fn} ${ln}`,gender:g};
 }
 
-// ── Dark mode ─────────────────────────────────────────────────────────────
-const themeToggle = document.getElementById('themeToggle');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const savedTheme  = localStorage.getItem('toolpad-theme') || (prefersDark ? 'dark' : '');
-
-if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
-if (themeToggle) themeToggle.textContent = savedTheme === 'dark' ? '🌙' : '☀';
-
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    const d    = document.documentElement;
-    const dark = d.getAttribute('data-theme') === 'dark';
-    const next = dark ? '' : 'dark';
-    d.setAttribute('data-theme', next);
-    themeToggle.textContent = next === 'dark' ? '🌙' : '☀';
-    localStorage.setItem('toolpad-theme', next);
-  });
+function generate(){
+  const gender=document.getElementById('genderSel').value;
+  const region=document.getElementById('regionSel').value;
+  const count=parseInt(document.getElementById('countSel').value);
+  const results=Array.from({length:count},()=>genName(gender,region));
+  document.getElementById('nameBody').innerHTML=results.map((r,i)=>`
+    <tr style="border-bottom:1px solid var(--border);${i%2?'background:var(--bg)':''}">
+      <td style="padding:10px 16px">${r.firstName}</td>
+      <td style="padding:10px 16px">${r.lastName}</td>
+      <td style="padding:10px 16px;font-weight:500">${r.fullName}</td>
+      <td style="padding:10px 16px;font-size:12px;color:var(--slate-m)">${r.gender}</td>
+    </tr>`).join('');
+  document.getElementById('meta').textContent=`${count} names generated`;
+  window._names=results;
 }
-
-// ── Recently used tools ───────────────────────────────────────────────────
-function trackToolVisit(url) {
-  try {
-    const recent = JSON.parse(localStorage.getItem('toolpad-recent') || '[]');
-    const updated = [url, ...recent.filter(u => u !== url)].slice(0, 3);
-    localStorage.setItem('toolpad-recent', JSON.stringify(updated));
-  } catch (_) {}
-}
-
-function renderRecentTools() {
-  try {
-    const recent = JSON.parse(localStorage.getItem('toolpad-recent') || '[]');
-    if (!recent.length) return;
-    const container = document.getElementById('recentTools');
-    if (!container) return;
-    const tools = recent.map(url => TOOLS.find(t => t.url === url)).filter(Boolean);
-    if (!tools.length) return;
-    container.innerHTML = `
-      <div class="subsection">
-        <h3 class="subsection-title">Recently used</h3>
-        <div class="tool-grid">
-          ${tools.map(t => `<a href="${t.url}" class="tool-card"><div class="tool-icon">${t.icon}</div><div class="tool-info"><h4>${t.name}</h4><p>${t.cat}</p></div></a>`).join('')}
-        </div>
-      </div>`;
-    container.style.display = 'block';
-  } catch (_) {}
-}
-
-if (window.location.pathname !== '/') {
-  trackToolVisit(window.location.pathname);
-}
-renderRecentTools();
+document.getElementById('genBtn').addEventListener('click',generate);
+document.getElementById('copyBtn').addEventListener('click',()=>{
+  if(!window._names)return;
+  navigator.clipboard?.writeText(window._names.map(r=>r.fullName).join('\n'));
+  document.getElementById('copyBtn').textContent='Copied!';
+  setTimeout(()=>document.getElementById('copyBtn').textContent='Copy',2000);
+});
+document.getElementById('csvBtn').addEventListener('click',()=>{
+  if(!window._names)return;
+  const csv='firstName,lastName,fullName,gender\n'+window._names.map(r=>`${r.firstName},${r.lastName},${r.fullName},${r.gender}`).join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='fake_names.csv';a.click();
+});
+document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
+  const a=q.nextElementSibling,open=a.style.display==='block';
+  a.style.display=open?'none':'block';q.querySelector('.faq-toggle').textContent=open?'+':'−';
+}));
+document.getElementById('themeToggle').addEventListener('click',()=>{
+  const d=document.documentElement,dark=d.getAttribute('data-theme')==='dark';
+  d.setAttribute('data-theme',dark?'':'dark');document.getElementById('themeToggle').textContent=dark?'☀':'🌙';
+  localStorage.setItem('toolpad-theme',dark?'':'dark');
+});
+generate();
+</script>
+</body>
+</html>

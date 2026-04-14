@@ -4,40 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JSON Formatter & Validator — Free Online Tool | Toolpad</title>
-<meta name="description" content="Prettify, minify and validate JSON online for free. Instant syntax error detection with clear messages. No signup, no data stored.">
-<meta name="keywords" content="JSON formatter, JSON prettifier, JSON validator, JSON minifier, format JSON online, beautify JSON, JSON lint">
+<meta name="description" content="Prettify, minify and validate JSON online for free. Instant syntax error detection. No signup, no data stored.">
 <link rel="canonical" href="https://toolpad.in/formatters/json">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"JSON Formatter","url":"https://toolpad.in/formatters/json","description":"Free online JSON formatter, validator and minifier","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles/main.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 </head>
-<body>
-<header class="navbar">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
-    <nav class="nav-links">
-      <a href="/generators" class="nav-link">Generators</a>
-      <a href="/formatters" class="nav-link active">Formatters</a>
-      <a href="/converters" class="nav-link">Converters</a>
-      <a href="/api-docs" class="nav-link">API</a>
-    </nav>
-    <button class="theme-toggle" id="themeToggle">☀</button>
-  </div>
-</header>
-
-<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
-
+<body><header class="navbar"><div class="nav-inner">
+  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+  <nav class="nav-links">
+    <a href="/generators" class="nav-link">Generators</a>
+    <a href="/formatters" class="nav-link active">Formatters</a>
+    <a href="/converters" class="nav-link">Converters</a>
+    <a href="/api-docs" class="nav-link">API</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle">☀</button>
+</div></header><div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 <div class="tool-page">
   <div class="tool-page-header">
     <div class="breadcrumb"><a href="/">Home</a> › <a href="/formatters">Formatters</a> › JSON formatter</div>
     <h1>JSON formatter &amp; validator</h1>
     <p class="tool-desc">Prettify, minify and validate JSON instantly in the browser. Syntax errors are highlighted with exact positions. No data is sent to any server.</p>
   </div>
-
-  <!-- Action bar -->
   <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
     <button class="btn btn-primary" id="btnFormat">Prettify JSON</button>
     <button class="btn" id="btnMinify">Minify</button>
@@ -49,167 +36,84 @@
       <option value="1">1 space</option>
     </select>
   </div>
-
-  <!-- Workspace -->
   <div class="tool-workspace">
     <div class="workspace-panel">
-      <div class="panel-header">
-        <h3>Input JSON</h3>
-        <div style="display:flex;gap:6px">
-          <button class="btn btn-sm" id="btnPaste">Paste</button>
-          <button class="btn btn-sm" id="btnSample">Sample</button>
-        </div>
-      </div>
-      <div class="panel-body" style="padding:0">
-        <textarea class="output-area large" id="jsonInput" placeholder='Paste your JSON here...&#10;&#10;{"name":"John","age":30}'></textarea>
-      </div>
+      <div class="panel-header"><h3>Input JSON</h3><div style="display:flex;gap:6px"><button class="btn btn-sm" id="btnPaste">Paste</button><button class="btn btn-sm" id="btnSample">Sample</button></div></div>
+      <div class="panel-body" style="padding:0"><textarea class="output-area large" id="jsonInput" placeholder="Paste your JSON here..."></textarea></div>
     </div>
     <div class="workspace-panel">
-      <div class="panel-header">
-        <h3>Output</h3>
-        <div style="display:flex;gap:6px">
-          <button class="btn btn-sm" id="btnCopy">Copy</button>
-          <button class="btn btn-sm" id="btnDownload">Download</button>
-        </div>
-      </div>
-      <div class="panel-body" style="padding:0">
-        <textarea class="output-area large" id="jsonOutput" readonly placeholder="Formatted JSON will appear here..."></textarea>
-      </div>
+      <div class="panel-header"><h3>Output</h3><div style="display:flex;gap:6px"><button class="btn btn-sm" id="btnCopy">Copy</button><button class="btn btn-sm" id="btnDownload">Download</button></div></div>
+      <div class="panel-body" style="padding:0"><textarea class="output-area large" id="jsonOutput" readonly placeholder="Formatted JSON will appear here..."></textarea></div>
     </div>
   </div>
-
-  <!-- Status bar -->
   <div id="statusBar" style="padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px;display:none"></div>
-
-  <!-- Ad after output -->
   <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
-
-  <!-- SEO content -->
   <div class="seo-content">
     <h2>About this JSON formatter</h2>
-    <p>This tool formats JSON with configurable indentation (2 spaces, 4 spaces, or compact). It validates the JSON structure and highlights any syntax errors with clear messages showing exactly where the problem is. All processing happens in your browser — no data is ever sent to a server.</p>
-
-    <h3>Features</h3>
-    <ul>
-      <li>Prettify with 2-space, 4-space, or 1-space indentation</li>
-      <li>Minify to remove all whitespace for production use</li>
-      <li>Validate and report the exact line and character of any syntax error</li>
-      <li>Download the formatted output as a <code>.json</code> file</li>
-      <li>100% client-side — your data never leaves the browser</li>
-    </ul>
-
+    <p>This tool formats JSON with configurable indentation. It validates the JSON structure and highlights syntax errors with exact positions. All processing happens in your browser — no data is ever sent to a server.</p>
     <h3>API access</h3>
-    <p>Need to format JSON programmatically? Use <code>POST /api/v1/datatools/format/json</code> with body <code>{"input": "your json string"}</code>.</p>
-
-    <h3>Frequently asked questions</h3>
-    <div class="faq-item"><div class="faq-q">Is my JSON data private? <span>+</span></div><div class="faq-a">Yes. This tool processes everything in your browser using JavaScript. Nothing is sent to any server. You can verify this by checking the browser network tab.</div></div>
-    <div class="faq-item"><div class="faq-q">What's the maximum file size? <span>+</span></div><div class="faq-a">Browser-based processing works well up to around 5MB. For larger files, use the API endpoint which supports up to 2MB per request, or process server-side.</div></div>
+    <p><code>POST /api/v1/datatools/format/json</code> — body: <code>{"input":"your json"}</code></p>
+    <div class="faq-item"><div class="faq-q">Is my JSON data private? <span>+</span></div><div class="faq-a">Yes. Everything is processed in your browser. Nothing is sent to any server.</div></div>
   </div>
-
-  <div class="related-tools">
-    <h3>Related tools</h3>
-    <div class="related-grid">
-      <a href="/formatters/xml" class="related-card"><h4>XML formatter</h4><p>Prettify and minify XML</p></a>
-      <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert JSON to XML format</p></a>
-      <a href="/converters/json-to-csv" class="related-card"><h4>JSON to CSV</h4><p>Export JSON as spreadsheet</p></a>
-      <a href="/converters/text-to-json" class="related-card"><h4>Text to JSON</h4><p>Create JSON from plain text</p></a>
-    </div>
-  </div>
+  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <a href="/formatters/xml" class="related-card"><h4>XML formatter</h4><p>Prettify XML</p></a>
+    <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert JSON to XML</p></a>
+    <a href="/converters/json-to-csv" class="related-card"><h4>JSON to CSV</h4><p>Export as spreadsheet</p></a>
+  </div></div>
 </div>
-
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand"><span>🔧</span> <strong>Toolpad</strong><p>Free developer utility tools.</p></div>
+    <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools. No signup. No tracking.</p></div>
     <div class="footer-links"><h5>Formatters</h5><a href="/formatters/json">JSON formatter</a><a href="/formatters/xml">XML formatter</a></div>
-    <div class="footer-links"><h5>Converters</h5><a href="/converters/json-to-xml">JSON to XML</a><a href="/converters/json-to-csv">JSON to CSV</a></div>
+    <div class="footer-links"><h5>Converters</h5><a href="/converters/json-to-xml">JSON to XML</a><a href="/converters/base64">Base64</a></div>
     <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
   </div>
-  <div class="footer-bottom"><p>© 2026 Toolpad. All processing is done in your browser.</p></div>
-</footer>
+  <div class="footer-bottom">
+  <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+  <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+     target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+    <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+         src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+         style="display:block">
+  </a>
+  <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+</div>
+</footer><script>
 
+var SAMPLE='{"user":{"id":1,"name":"Harsh Developer","email":"harsh@example.com","roles":["admin","developer"],"active":true},"meta":{"version":"2.0","timestamp":"2026-03-31T06:00:00Z"}}';
+function setStatus(msg,type){var sb=document.getElementById('statusBar');sb.style.display='block';sb.style.background=type==='success'?'#D1FAE5':type==='error'?'#FEE2E2':'#DBEAFE';sb.style.color=type==='success'?'#065F46':type==='error'?'#991B1B':'#1D4ED8';sb.textContent=msg;}
+document.getElementById('btnFormat').addEventListener('click',function(){var inp=document.getElementById('jsonInput').value.trim();if(!inp)return;try{var indent=parseInt(document.getElementById('indentSelect').value);document.getElementById('jsonOutput').value=JSON.stringify(JSON.parse(inp),null,indent);setStatus('JSON formatted successfully','success');}catch(e){setStatus('Syntax error: '+e.message,'error');}});
+document.getElementById('btnMinify').addEventListener('click',function(){var inp=document.getElementById('jsonInput').value.trim();if(!inp)return;try{document.getElementById('jsonOutput').value=JSON.stringify(JSON.parse(inp));setStatus('JSON minified','success');}catch(e){setStatus('Syntax error: '+e.message,'error');}});
+document.getElementById('btnValidate').addEventListener('click',function(){var inp=document.getElementById('jsonInput').value.trim();if(!inp)return;try{var p=JSON.parse(inp);setStatus('Valid JSON · Type: '+(Array.isArray(p)?'array':typeof p),'success');}catch(e){setStatus('Invalid JSON: '+e.message,'error');}});
+document.getElementById('btnClear').addEventListener('click',function(){document.getElementById('jsonInput').value='';document.getElementById('jsonOutput').value='';document.getElementById('statusBar').style.display='none';});
+document.getElementById('btnSample').addEventListener('click',function(){document.getElementById('jsonInput').value=SAMPLE;});
+document.getElementById('btnPaste').addEventListener('click',function(){navigator.clipboard&&navigator.clipboard.readText().then(function(t){document.getElementById('jsonInput').value=t;});});
+document.getElementById('btnCopy').addEventListener('click',function(){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('jsonOutput').value);document.getElementById('btnCopy').textContent='Copied!';setTimeout(function(){document.getElementById('btnCopy').textContent='Copy';},2000);});
+document.getElementById('btnDownload').addEventListener('click',function(){var c=document.getElementById('jsonOutput').value;if(!c)return;var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'application/json'}));a.download='formatted.json';a.click();});
+document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
+document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var a=q.nextElementSibling,open=a.style.display==='block';a.style.display=open?'none':'block';q.querySelector('span').textContent=open?'+':'−';});});
+
+</script>
 <script>
-const SAMPLE = `{
-  "user": {
-    "id": 1,
-    "name": "Harsh Developer",
-    "email": "harsh@example.com",
-    "roles": ["admin", "developer"],
-    "active": true
-  },
-  "meta": {
-    "version": "2.0",
-    "timestamp": "2026-03-31T06:00:00Z"
+(function(){
+  var KEY='toolpad-theme';
+  var saved=localStorage.getItem(KEY);
+  var hour=new Date().getHours();
+  var autoDark=(hour>=20||hour<6);
+  var theme=saved!==null?saved:(autoDark?'dark':'');
+  if(theme)document.documentElement.setAttribute('data-theme',theme);
+  var tog=document.getElementById('themeToggle');
+  if(tog){
+    tog.textContent=theme==='dark'?'🌙':'☀';
+    tog.addEventListener('click',function(){
+      var dark=document.documentElement.getAttribute('data-theme')==='dark';
+      var next=dark?'':'dark';
+      document.documentElement.setAttribute('data-theme',next);
+      tog.textContent=next==='dark'?'🌙':'☀';
+      localStorage.setItem(KEY,next);
+    });
   }
-}`;
-
-function setStatus(msg, type) {
-  const sb = document.getElementById('statusBar');
-  sb.style.display = 'block';
-  sb.style.background = type === 'success' ? '#D1FAE5' : type === 'error' ? '#FEE2E2' : '#DBEAFE';
-  sb.style.color = type === 'success' ? '#065F46' : type === 'error' ? '#991B1B' : '#1D4ED8';
-  sb.textContent = msg;
-}
-
-document.getElementById('btnFormat').addEventListener('click', () => {
-  const input = document.getElementById('jsonInput').value.trim();
-  if (!input) return;
-  try {
-    const indent = parseInt(document.getElementById('indentSelect').value);
-    const parsed = JSON.parse(input);
-    document.getElementById('jsonOutput').value = JSON.stringify(parsed, null, indent);
-    setStatus('JSON formatted successfully', 'success');
-  } catch (e) { setStatus('Syntax error: ' + e.message, 'error'); }
-});
-
-document.getElementById('btnMinify').addEventListener('click', () => {
-  const input = document.getElementById('jsonInput').value.trim();
-  if (!input) return;
-  try {
-    document.getElementById('jsonOutput').value = JSON.stringify(JSON.parse(input));
-    setStatus('JSON minified', 'success');
-  } catch (e) { setStatus('Syntax error: ' + e.message, 'error'); }
-});
-
-document.getElementById('btnValidate').addEventListener('click', () => {
-  const input = document.getElementById('jsonInput').value.trim();
-  if (!input) return;
-  try {
-    const parsed = JSON.parse(input);
-    const type = Array.isArray(parsed) ? 'array' : typeof parsed;
-    setStatus(`Valid JSON · Type: ${type} · Keys: ${typeof parsed === 'object' && parsed ? Object.keys(parsed).length : 'N/A'}`, 'success');
-  } catch (e) { setStatus('Invalid JSON: ' + e.message, 'error'); }
-});
-
-document.getElementById('btnClear').addEventListener('click', () => {
-  document.getElementById('jsonInput').value = '';
-  document.getElementById('jsonOutput').value = '';
-  document.getElementById('statusBar').style.display = 'none';
-});
-
-document.getElementById('btnSample').addEventListener('click', () => { document.getElementById('jsonInput').value = SAMPLE; });
-document.getElementById('btnPaste').addEventListener('click', () => { navigator.clipboard?.readText().then(t => document.getElementById('jsonInput').value = t); });
-document.getElementById('btnCopy').addEventListener('click', () => {
-  navigator.clipboard?.writeText(document.getElementById('jsonOutput').value);
-  document.getElementById('btnCopy').textContent = 'Copied!';
-  setTimeout(() => document.getElementById('btnCopy').textContent = 'Copy', 2000);
-});
-document.getElementById('btnDownload').addEventListener('click', () => {
-  const content = document.getElementById('jsonOutput').value; if (!content) return;
-  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([content],{type:'application/json'}));
-  a.download = 'formatted.json'; a.click();
-});
-
-document.querySelectorAll('.faq-a').forEach(a => a.style.display = 'none');
-document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => {
-  const a = q.nextElementSibling, open = a.style.display === 'block';
-  a.style.display = open ? 'none' : 'block'; q.querySelector('span').textContent = open ? '+' : '−';
-}));
-
-document.getElementById('themeToggle').addEventListener('click', () => {
-  const d = document.documentElement, dark = d.getAttribute('data-theme') === 'dark';
-  d.setAttribute('data-theme', dark ? '' : 'dark');
-  document.getElementById('themeToggle').textContent = dark ? '☀' : '🌙';
-});
+})();
 </script>
 </body>
 </html>

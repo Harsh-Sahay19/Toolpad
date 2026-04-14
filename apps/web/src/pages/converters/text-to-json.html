@@ -3,210 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Text to JSON Converter — Convert Plain Text to JSON Online | Toolpad</title>
-<meta name="description" content="Convert plain key:value text into structured JSON instantly. Also convert text to XML. Free, browser-based, no data stored. Perfect for quick data structuring.">
-<meta name="keywords" content="text to JSON, convert text to JSON, plain text to JSON, key value to JSON, text to XML, data converter">
+<title>Text to JSON Converter — Convert Plain Text to JSON | Toolpad</title>
+<meta name="description" content="Convert plain key:value text to structured JSON instantly. Free, browser-based, no data stored.">
 <link rel="canonical" href="https://toolpad.in/converters/text-to-json">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Text to JSON Converter","url":"https://toolpad.in/converters/text-to-json","description":"Convert plain key:value text to JSON or XML instantly","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles/main.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 </head>
-<body>
-<header class="navbar">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
-    <nav class="nav-links">
-      <a href="/generators" class="nav-link">Generators</a>
-      <a href="/formatters" class="nav-link">Formatters</a>
-      <a href="/converters" class="nav-link active">Converters</a>
-      <a href="/api-docs" class="nav-link">API</a>
-    </nav>
-    <button class="theme-toggle" id="themeToggle">☀</button>
-  </div>
-</header>
-
-<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
-
+<body><header class="navbar"><div class="nav-inner">
+  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+  <nav class="nav-links">
+    <a href="/generators" class="nav-link">Generators</a>
+    <a href="/formatters" class="nav-link">Formatters</a>
+    <a href="/converters" class="nav-link active">Converters</a>
+    <a href="/api-docs" class="nav-link">API</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle">☀</button>
+</div></header><div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 <div class="tool-page">
   <div class="tool-page-header">
     <div class="breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › Text to JSON</div>
     <h1>Text to JSON converter</h1>
-    <p class="tool-desc">Convert plain key:value text into structured JSON or XML. Paste config files, form data, or notes in <code>key: value</code> format and get clean JSON or XML output instantly.</p>
+    <p class="tool-desc">Convert plain key:value text into structured JSON objects. Each line should be in <code>key: value</code> or <code>key = value</code> format. Runs entirely in your browser.</p>
   </div>
-
   <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
-    <button class="btn btn-primary" id="btnToJSON">Convert to JSON</button>
-    <button class="btn" id="btnToXML">Convert to XML</button>
-    <button class="btn btn-sm" id="btnSample">Load sample</button>
+    <button class="btn btn-primary" id="btnConvert">Convert to JSON</button>
+    <button class="btn btn-sm" id="btnSample">Sample</button>
     <button class="btn btn-sm" id="btnClear">Clear</button>
-    <input type="text" id="rootTagInput" placeholder="XML root tag (default: record)" style="padding:7px 12px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:13px;width:220px">
   </div>
-
   <div class="tool-workspace">
-    <div class="workspace-panel">
-      <div class="panel-header"><h3>Plain text input</h3></div>
-      <div class="panel-body" style="padding:0">
-        <textarea class="output-area large" id="textInput" placeholder="Enter key: value pairs, one per line:
-
-name: John Doe
-age: 30
-city: Bengaluru
-email: john@example.com
-active: true"></textarea>
-      </div>
-    </div>
-    <div class="workspace-panel">
-      <div class="panel-header">
-        <h3 id="outputLabel">JSON output</h3>
-        <div style="display:flex;gap:6px">
-          <button class="btn btn-sm" id="btnCopy">Copy</button>
-          <button class="btn btn-sm" id="btnDownload">Download</button>
-        </div>
-      </div>
-      <div class="panel-body" style="padding:0">
-        <textarea class="output-area large" id="outputArea" readonly placeholder="Converted output will appear here..."></textarea>
-      </div>
-    </div>
+    <div class="workspace-panel"><div class="panel-header"><h3>Text input</h3></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="input" placeholder="name: John Doe&#10;age: 30&#10;city: New York&#10;active: true"></textarea></div></div>
+    <div class="workspace-panel"><div class="panel-header"><h3>JSON output</h3><div style="display:flex;gap:6px"><button class="btn btn-sm" id="btnCopy">Copy</button><button class="btn btn-sm" id="btnDl">Download</button></div></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="output" readonly></textarea></div></div>
   </div>
-
-  <div id="statusBar" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
-
+  <div id="st" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
   <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
-
   <div class="seo-content">
-    <h2>How the text to JSON converter works</h2>
-    <p>This tool parses plain text in <code>key: value</code> format — one pair per line — and converts it into a structured JSON object. Spaces around the colon are ignored. Numbers are automatically converted to numeric types; everything else becomes a string.</p>
-
-    <h3>Input format</h3>
-    <p>Each line should be a <code>key: value</code> pair. Keys with spaces are converted to underscores. Examples:</p>
-    <ul>
-      <li><code>name: John Doe</code> → <code>"name": "John Doe"</code></li>
-      <li><code>age: 30</code> → <code>"age": 30</code> (numeric)</li>
-      <li><code>first name: Alice</code> → <code>"first_name": "Alice"</code></li>
-    </ul>
-
-    <h3>Use cases</h3>
-    <ul>
-      <li>Quickly turning copied config data or environment variables into JSON</li>
-      <li>Converting form submissions written in plain text to structured data</li>
-      <li>Creating XML or JSON from notes or ticket descriptions for API testing</li>
-      <li>Generating seed data for databases from plain text documents</li>
-    </ul>
-
-    <h3>API access</h3>
-    <p>Convert programmatically: <code>POST /api/v1/datatools/convert/text-to-json</code> with body <code>{"input": "name: John\nage: 30"}</code></p>
-    <p>For XML: <code>POST /api/v1/datatools/convert/text-to-xml</code> with optional <code>"rootTag": "record"</code></p>
-
-    <div class="faq-item"><div class="faq-q">What if a value contains a colon? <span>+</span></div><div class="faq-a">The parser splits on the first colon only. So <code>url: https://example.com</code> correctly produces <code>"url": "https://example.com"</code>.</div></div>
-    <div class="faq-item"><div class="faq-q">Can I convert multi-level / nested data? <span>+</span></div><div class="faq-a">This tool handles flat key:value structures. For nested JSON, use the JSON formatter directly or structure your data as JSON first. Nested conversion from plain text is not supported in this version.</div></div>
+    <h2>How text to JSON works</h2>
+    <p>Each line is parsed as a key-value pair split by <code>:</code> or <code>=</code>. Numbers and booleans are automatically typed. Use this to quickly convert config files, notes, or clipboard data into structured JSON.</p>
   </div>
-
-  <div class="related-tools">
-    <h3>Related tools</h3>
-    <div class="related-grid">
-      <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert JSON to XML</p></a>
-      <a href="/converters/json-to-csv" class="related-card"><h4>JSON to CSV</h4><p>Export as spreadsheet</p></a>
-      <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON</p></a>
-      <a href="/converters/xml-to-json" class="related-card"><h4>XML to JSON</h4><p>Convert XML to JSON</p></a>
-    </div>
-  </div>
+  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <a href="/converters/text-to-xml" class="related-card"><h4>Text to XML</h4><p>Convert to XML instead</p></a>
+    <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON</p></a>
+    <a href="/converters/csv-to-json" class="related-card"><h4>CSV to JSON</h4><p>Convert CSV</p></a>
+  </div></div>
 </div>
-
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand"><span>🔧</span> <strong>Toolpad</strong><p>Free developer utility tools.</p></div>
-    <div class="footer-links"><h5>Converters</h5><a href="/converters/text-to-json">Text to JSON</a><a href="/converters/json-to-xml">JSON to XML</a><a href="/converters/base64">Base64</a></div>
-    <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/formatters/xml">XML formatter</a></div>
+    <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools. No signup. No tracking.</p></div>
+    <div class="footer-links"><h5>Converters</h5><a href="/converters/text-to-json">Text to JSON</a><a href="/converters/text-to-xml">Text to XML</a><a href="/converters/base64">Base64</a></div>
+    <div class="footer-links"><h5>Formatters</h5><a href="/formatters/json">JSON formatter</a><a href="/formatters/xml">XML formatter</a></div>
     <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
   </div>
-  <div class="footer-bottom"><p>© 2026 Toolpad. All processing is done in your browser.</p></div>
-</footer>
+  <div class="footer-bottom">
+  <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+  <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+     target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+    <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+         src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+         style="display:block">
+  </a>
+  <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+</div>
+</footer><script>
 
+var SAMPLE='name: John Doe\nage: 30\ncity: New York\nactive: true\nemail: john@example.com';
+function textToObj(text){var obj={};text.split('\n').forEach(function(line){var sep=line.includes(':')?':':'=';var idx=line.indexOf(sep);if(idx<0)return;var k=line.slice(0,idx).trim();var v=line.slice(idx+1).trim();obj[k]=v==='true'?true:v==='false'?false:isNaN(v)||v===''?v:Number(v);});return obj;}
+function ss(m,t){var s=document.getElementById('st');s.style.display='block';s.style.background=t==='ok'?'#D1FAE5':'#FEE2E2';s.style.color=t==='ok'?'#065F46':'#991B1B';s.textContent=m;}
+document.getElementById('btnConvert').addEventListener('click',function(){var inp=document.getElementById('input').value.trim();if(!inp)return;try{var obj=textToObj(inp);document.getElementById('output').value=JSON.stringify(obj,null,2);ss('Converted '+Object.keys(obj).length+' fields','ok');}catch(e){ss('Error: '+e.message,'err');}});
+document.getElementById('btnSample').addEventListener('click',function(){document.getElementById('input').value=SAMPLE;});
+document.getElementById('btnClear').addEventListener('click',function(){document.getElementById('input').value='';document.getElementById('output').value='';document.getElementById('st').style.display='none';});
+document.getElementById('btnCopy').addEventListener('click',function(){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('output').value);document.getElementById('btnCopy').textContent='Copied!';setTimeout(function(){document.getElementById('btnCopy').textContent='Copy';},2000);});
+document.getElementById('btnDl').addEventListener('click',function(){var c=document.getElementById('output').value;if(!c)return;var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'application/json'}));a.download='output.json';a.click();});
+
+</script>
 <script>
-const SAMPLE = `name: John Doe\nage: 30\ncity: Bengaluru\nemail: john@example.com\ncompany: Toolpad Inc\nactive: true\nwebsite: https://toolpad.in`;
-
-function textToObj(text) {
-  const lines = text.split('\n').filter(l => l.includes(':'));
-  const obj = {};
-  for (const line of lines) {
-    const idx = line.indexOf(':');
-    const key = line.slice(0, idx).trim().replace(/\s+/g,'_');
-    const val = line.slice(idx+1).trim();
-    const num = Number(val);
-    obj[key] = (!isNaN(num) && val !== '') ? num : val;
+(function(){
+  var KEY='toolpad-theme';
+  var saved=localStorage.getItem(KEY);
+  var hour=new Date().getHours();
+  var autoDark=(hour>=20||hour<6);
+  var theme=saved!==null?saved:(autoDark?'dark':'');
+  if(theme)document.documentElement.setAttribute('data-theme',theme);
+  var tog=document.getElementById('themeToggle');
+  if(tog){
+    tog.textContent=theme==='dark'?'🌙':'☀';
+    tog.addEventListener('click',function(){
+      var dark=document.documentElement.getAttribute('data-theme')==='dark';
+      var next=dark?'':'dark';
+      document.documentElement.setAttribute('data-theme',next);
+      tog.textContent=next==='dark'?'🌙':'☀';
+      localStorage.setItem(KEY,next);
+    });
   }
-  return obj;
-}
-
-function objToXML(obj, root) {
-  const inner = Object.entries(obj).map(([k,v])=>`  <${k}>${v}</${k}>`).join('\n');
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<${root}>\n${inner}\n</${root}>`;
-}
-
-function setStatus(msg, type) {
-  const sb = document.getElementById('statusBar');
-  sb.style.display = 'block';
-  sb.style.background = type==='success'?'#D1FAE5':'#FEE2E2';
-  sb.style.color = type==='success'?'#065F46':'#991B1B';
-  sb.textContent = msg;
-}
-
-let lastExt = 'json';
-
-document.getElementById('btnToJSON').addEventListener('click', () => {
-  const input = document.getElementById('textInput').value.trim();
-  if (!input) return;
-  try {
-    const obj = textToObj(input);
-    document.getElementById('outputArea').value = JSON.stringify(obj, null, 2);
-    document.getElementById('outputLabel').textContent = 'JSON output';
-    setStatus(`Converted ${Object.keys(obj).length} fields to JSON`, 'success');
-    lastExt = 'json';
-  } catch(e) { setStatus('Error: ' + e.message, 'error'); }
-});
-
-document.getElementById('btnToXML').addEventListener('click', () => {
-  const input = document.getElementById('textInput').value.trim();
-  const root  = document.getElementById('rootTagInput').value.trim() || 'record';
-  if (!input) return;
-  try {
-    const obj = textToObj(input);
-    document.getElementById('outputArea').value = objToXML(obj, root);
-    document.getElementById('outputLabel').textContent = 'XML output';
-    setStatus(`Converted ${Object.keys(obj).length} fields to XML`, 'success');
-    lastExt = 'xml';
-  } catch(e) { setStatus('Error: ' + e.message, 'error'); }
-});
-
-document.getElementById('btnSample').addEventListener('click', () => document.getElementById('textInput').value = SAMPLE);
-document.getElementById('btnClear').addEventListener('click', () => {
-  document.getElementById('textInput').value = '';
-  document.getElementById('outputArea').value = '';
-  document.getElementById('statusBar').style.display = 'none';
-});
-document.getElementById('btnCopy').addEventListener('click', () => {
-  navigator.clipboard?.writeText(document.getElementById('outputArea').value);
-  document.getElementById('btnCopy').textContent = 'Copied!';
-  setTimeout(()=>document.getElementById('btnCopy').textContent='Copy',2000);
-});
-document.getElementById('btnDownload').addEventListener('click', () => {
-  const content = document.getElementById('outputArea').value; if (!content) return;
-  const mime = lastExt === 'xml' ? 'application/xml' : 'application/json';
-  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([content],{type:mime}));
-  a.download = `converted.${lastExt}`; a.click();
-});
-
-document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
-document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
-  const a=q.nextElementSibling,open=a.style.display==='block';
-  a.style.display=open?'none':'block'; q.querySelector('span').textContent=open?'+':'−';
-}));
-document.getElementById('themeToggle').addEventListener('click',()=>{
-  const d=document.documentElement,dark=d.getAttribute('data-theme')==='dark';
-  d.setAttribute('data-theme',dark?'':'dark');
-  document.getElementById('themeToggle').textContent=dark?'☀':'🌙';
-});
+})();
 </script>
 </body>
 </html>

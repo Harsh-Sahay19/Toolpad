@@ -3,187 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fake Person Generator — Complete Random Profile with Name, Email, Address | Toolpad</title>
-<meta name="description" content="Generate complete fake person profiles: name, email, phone, address, username and date of birth in one click. US, India and UK. Free, bulk export, no signup.">
-<meta name="keywords" content="fake person generator, random person generator, fake profile generator, dummy user generator, test user data, fake identity generator">
-<link rel="canonical" href="https://toolpad.in/generators/fake-profile">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fake Person Generator","url":"https://toolpad.in/generators/fake-profile","description":"Generate complete fake person profiles for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Text to JSON Converter — Convert Plain Text to JSON Online | Toolpad</title>
+<meta name="description" content="Convert plain key:value text into structured JSON instantly. Also convert text to XML. Free, browser-based, no data stored. Perfect for quick data structuring.">
+<meta name="keywords" content="text to JSON, convert text to JSON, plain text to JSON, key value to JSON, text to XML, data converter">
+<link rel="canonical" href="https://toolpad.in/converters/text-to-json">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Text to JSON Converter","url":"https://toolpad.in/converters/text-to-json","description":"Convert plain key:value text to JSON or XML instantly","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles/main.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="navbar"><div class="nav-inner">
-  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
-  <nav class="nav-links"><a href="/generators" class="nav-link active">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link">Converters</a><a href="/api-docs" class="nav-link">API</a></nav>
-  <button class="theme-toggle" id="themeToggle">☀</button>
-</div></header>
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+    <nav class="nav-links">
+      <a href="/generators" class="nav-link">Generators</a>
+      <a href="/formatters" class="nav-link">Formatters</a>
+      <a href="/converters" class="nav-link active">Converters</a>
+      <a href="/api-docs" class="nav-link">API</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle">☀</button>
+  </div>
+</header>
 
 <div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 
 <div class="tool-page">
   <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Fake profile generator</div>
-    <h1>Fake person generator</h1>
-    <p class="tool-desc">Generate complete fake person profiles — full name, email, phone, address, username, and date of birth — all consistent and realistic in one click. Bulk generate for US, India, or UK. For software testing only.</p>
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › Text to JSON</div>
+    <h1>Text to JSON converter</h1>
+    <p class="tool-desc">Convert plain key:value text into structured JSON or XML. Paste config files, form data, or notes in <code>key: value</code> format and get clean JSON or XML output instantly.</p>
   </div>
 
   <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
-    <select id="genderSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="any">Any gender</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-    </select>
-    <select id="countrySel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="US">United States</option>
-      <option value="IN">India</option>
-      <option value="UK">United Kingdom</option>
-    </select>
-    <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="1">1 profile</option>
-      <option value="3" selected>3 profiles</option>
-      <option value="5">5 profiles</option>
-      <option value="10">10 profiles</option>
-      <option value="25">25 profiles</option>
-    </select>
-    <button class="btn btn-primary" id="genBtn">Generate</button>
-    <button class="btn" id="jsonBtn">Download JSON</button>
-    <button class="btn" id="csvBtn">Download CSV</button>
+    <button class="btn btn-primary" id="btnToJSON">Convert to JSON</button>
+    <button class="btn" id="btnToXML">Convert to XML</button>
+    <button class="btn btn-sm" id="btnSample">Load sample</button>
+    <button class="btn btn-sm" id="btnClear">Clear</button>
+    <input type="text" id="rootTagInput" placeholder="XML root tag (default: record)" style="padding:7px 12px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:13px;width:220px">
   </div>
 
-  <div id="profileGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:24px"></div>
+  <div class="tool-workspace">
+    <div class="workspace-panel">
+      <div class="panel-header"><h3>Plain text input</h3></div>
+      <div class="panel-body" style="padding:0">
+        <textarea class="output-area large" id="textInput" placeholder="Enter key: value pairs, one per line:
+
+name: John Doe
+age: 30
+city: Bengaluru
+email: john@example.com
+active: true"></textarea>
+      </div>
+    </div>
+    <div class="workspace-panel">
+      <div class="panel-header">
+        <h3 id="outputLabel">JSON output</h3>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-sm" id="btnCopy">Copy</button>
+          <button class="btn btn-sm" id="btnDownload">Download</button>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <textarea class="output-area large" id="outputArea" readonly placeholder="Converted output will appear here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div id="statusBar" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
 
   <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
   <div class="seo-content">
-    <h2>What does a fake person profile include?</h2>
-    <p>Each generated profile contains a consistent set of personal data fields generated together — so the name, email, and username are all derived from the same person, making the data feel cohesive rather than random.</p>
+    <h2>How the text to JSON converter works</h2>
+    <p>This tool parses plain text in <code>key: value</code> format — one pair per line — and converts it into a structured JSON object. Spaces around the colon are ignored. Numbers are automatically converted to numeric types; everything else becomes a string.</p>
+
+    <h3>Input format</h3>
+    <p>Each line should be a <code>key: value</code> pair. Keys with spaces are converted to underscores. Examples:</p>
     <ul>
-      <li><strong>Full name</strong> — First name, last name, full name (culturally appropriate for the selected country)</li>
-      <li><strong>Email address</strong> — Derived from the name with a realistic domain</li>
-      <li><strong>Phone number</strong> — Correct format for the selected country (US: +1 (XXX) XXX-XXXX, India: +91 9XXXXXXXXX, UK: +44 7XXX XXX XXX)</li>
-      <li><strong>Username</strong> — Lowercase variation of the name with numeric suffix</li>
-      <li><strong>Date of birth</strong> — Random adult age (18–70)</li>
-      <li><strong>Gender</strong> — Male or female as selected</li>
+      <li><code>name: John Doe</code> → <code>"name": "John Doe"</code></li>
+      <li><code>age: 30</code> → <code>"age": 30</code> (numeric)</li>
+      <li><code>first name: Alice</code> → <code>"first_name": "Alice"</code></li>
     </ul>
 
-    <h3>API access — full combined record</h3>
-    <p>The most complete API endpoint returns personal data, address, financial, and device identifiers together: <code>GET /api/v1/record?country=IN&gender=female&count=5</code></p>
-    <p>Just personal data: <code>GET /api/v1/personal/profile?country=US&gender=male&count=10</code></p>
+    <h3>Use cases</h3>
+    <ul>
+      <li>Quickly turning copied config data or environment variables into JSON</li>
+      <li>Converting form submissions written in plain text to structured data</li>
+      <li>Creating XML or JSON from notes or ticket descriptions for API testing</li>
+      <li>Generating seed data for databases from plain text documents</li>
+    </ul>
 
-    <div class="faq-item"><div class="faq-q">Are these real people's data? <span class="faq-toggle">+</span></div><div class="faq-a">No. All profiles are entirely fictitious. Names are drawn from curated lists, emails are generated using those names, and addresses are randomly constructed. No real person's data is used or exposed.</div></div>
-    <div class="faq-item"><div class="faq-q">Can I include addresses and financial data? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — use the <code>/api/v1/record</code> endpoint which returns a complete combined record including address, GPS coordinates, a fake credit card, bank account, IMEI, IMSI, MAC address, and IP. Use individual endpoints like <code>/generators/fake-address</code> for just addresses.</div></div>
+    <h3>API access</h3>
+    <p>Convert programmatically: <code>POST /api/v1/datatools/convert/text-to-json</code> with body <code>{"input": "name: John\nage: 30"}</code></p>
+    <p>For XML: <code>POST /api/v1/datatools/convert/text-to-xml</code> with optional <code>"rootTag": "record"</code></p>
+
+    <div class="faq-item"><div class="faq-q">What if a value contains a colon? <span>+</span></div><div class="faq-a">The parser splits on the first colon only. So <code>url: https://example.com</code> correctly produces <code>"url": "https://example.com"</code>.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I convert multi-level / nested data? <span>+</span></div><div class="faq-a">This tool handles flat key:value structures. For nested JSON, use the JSON formatter directly or structure your data as JSON first. Nested conversion from plain text is not supported in this version.</div></div>
   </div>
 
-  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
-    <a href="/generators/fake-name" class="related-card"><h4>Fake name generator</h4><p>Names only</p></a>
-    <a href="/generators/fake-address" class="related-card"><h4>Fake address generator</h4><p>Postal addresses</p></a>
-    <a href="/generators/credit-card" class="related-card"><h4>Credit card generator</h4><p>Test card numbers</p></a>
-    <a href="/generators/imei" class="related-card"><h4>IMEI generator</h4><p>Device identifiers</p></a>
-  </div></div>
+  <div class="related-tools">
+    <h3>Related tools</h3>
+    <div class="related-grid">
+      <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert JSON to XML</p></a>
+      <a href="/converters/json-to-csv" class="related-card"><h4>JSON to CSV</h4><p>Export as spreadsheet</p></a>
+      <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON</p></a>
+      <a href="/converters/xml-to-json" class="related-card"><h4>XML to JSON</h4><p>Convert XML to JSON</p></a>
+    </div>
+  </div>
 </div>
 
-<footer class="site-footer"><div class="footer-inner">
-  <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools.</p></div>
-  <div class="footer-links"><h5>Personal</h5><a href="/generators/fake-profile">Full profile</a><a href="/generators/fake-name">Fake name</a><a href="/generators/fake-address">Fake address</a></div>
-  <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
-  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
-</div><div class="footer-bottom"><p>© 2026 Toolpad. All profiles are fictional and for software testing only.</p></div></footer>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span>🔧</span> <strong>Toolpad</strong><p>Free developer utility tools.</p></div>
+    <div class="footer-links"><h5>Converters</h5><a href="/converters/text-to-json">Text to JSON</a><a href="/converters/json-to-xml">JSON to XML</a><a href="/converters/base64">Base64</a></div>
+    <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/formatters/xml">XML formatter</a></div>
+    <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
+  </div>
+  <div class="footer-bottom">
+  <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+  <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+     target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+    <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+         src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+         style="display:block">
+  </a>
+  <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+</div>
+</footer>
 
 <script>
-const FM=['James','John','Robert','Michael','David','Liam','Noah','Aarav','Arjun','Rohan','Carlos','Wei'];
-const FF=['Mary','Jennifer','Emma','Olivia','Priya','Ananya','Divya','Sophia','Mia','Ana','Sofia','Mei'];
-const FL=['Smith','Johnson','Williams','Brown','Garcia','Sharma','Patel','Kumar','Singh','Wang','Rodriguez'];
-const DOMAINS=['gmail.com','yahoo.com','outlook.com','hotmail.com','protonmail.com','icloud.com'];
-const STREETS=['Main','Oak','Maple','Cedar','Elm','Washington','Park','Sunset','Willow'];
-const STYPES=['Street','Avenue','Boulevard','Drive','Lane','Road'];
-const US=[{s:'CA',c:'Los Angeles'},{s:'NY',c:'New York'},{s:'TX',c:'Houston'},{s:'FL',c:'Miami'},{s:'IL',c:'Chicago'}];
-const IN=[{s:'Karnataka',c:'Bengaluru',p:[560001,560100]},{s:'Maharashtra',c:'Mumbai',p:[400001,400100]},{s:'Delhi',c:'New Delhi',p:[110001,110100]}];
+const SAMPLE = `name: John Doe\nage: 30\ncity: Bengaluru\nemail: john@example.com\ncompany: Toolpad Inc\nactive: true\nwebsite: https://toolpad.in`;
 
-function rp(a){return a[Math.floor(Math.random()*a.length)];}
-function ri(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
-function rd(n){return Array.from({length:n},()=>ri(0,9)).join('');}
-
-function genProfile(gender,country){
-  const g = gender==='any'?rp(['male','female']):gender;
-  const fn = rp(g==='male'?FM:FF);
-  const ln = rp(FL);
-  const name = `${fn} ${ln}`;
-  const slug = `${fn.toLowerCase()}.${ln.toLowerCase()}`;
-  const email = `${slug}${ri(1,99)}@${rp(DOMAINS)}`;
-  const user  = `${fn.toLowerCase()}_${ln.toLowerCase()}${ri(1,999)}`;
-  const y = new Date().getFullYear() - ri(18,65);
-  const dob = `${y}-${String(ri(1,12)).padStart(2,'0')}-${String(ri(1,28)).padStart(2,'0')}`;
-
-  let phone, addr;
-  if(country==='IN'){
-    phone=`+91 ${rp(['7','8','9'])}${rd(9)}`;
-    const st=rp(IN);const pin=ri(st.p[0],st.p[1]);
-    addr=`${ri(1,999)}, ${rp(['Sector','Block','Colony'])} ${ri(1,40)}, ${st.c}, ${st.s} - ${pin}`;
-  } else if(country==='UK'){
-    phone=`+44 7${ri(100,999)} ${ri(100,999)} ${ri(1000,9999)}`;
-    addr=`${ri(1,9999)} ${rp(STREETS)} ${rp(STYPES)}, London, EC${ri(1,4)} ${ri(1,9)}AB`;
-  } else {
-    phone=`+1 (${ri(200,999)}) ${ri(200,999)}-${String(ri(0,9999)).padStart(4,'0')}`;
-    const st=rp(US);const zip=String(ri(10000,99999)).padStart(5,'0');
-    addr=`${ri(1,9999)} ${rp(STREETS)} ${rp(STYPES)}, ${st.c}, ${st.s} ${zip}`;
+function textToObj(text) {
+  const lines = text.split('\n').filter(l => l.includes(':'));
+  const obj = {};
+  for (const line of lines) {
+    const idx = line.indexOf(':');
+    const key = line.slice(0, idx).trim().replace(/\s+/g,'_');
+    const val = line.slice(idx+1).trim();
+    const num = Number(val);
+    obj[key] = (!isNaN(num) && val !== '') ? num : val;
   }
-  return {fullName:name,firstName:fn,lastName:ln,gender:g,email,username:user,phone,dateOfBirth:dob,address:addr,country};
+  return obj;
 }
 
-const AVATAR_COLORS=['#F97316','#7C3AED','#10B981','#3B82F6','#EF4444','#F59E0B'];
-
-function profileCard(p){
-  const initials = p.firstName[0]+p.lastName[0];
-  const color = AVATAR_COLORS[Math.floor(Math.random()*AVATAR_COLORS.length)];
-  return `<div style="background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden">
-    <div style="background:${color}18;padding:20px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--border)">
-      <div style="width:44px;height:44px;border-radius:50%;background:${color};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0">${initials}</div>
-      <div>
-        <div style="font-weight:700;font-size:15px;font-family:'Inter',sans-serif">${p.fullName}</div>
-        <div style="font-size:12px;color:var(--slate-m)">@${p.username} · ${p.gender}</div>
-      </div>
-    </div>
-    <div style="padding:16px">
-      <table style="width:100%;font-size:12px;border-collapse:collapse">
-        ${[['Email',p.email],['Phone',p.phone],['DOB',p.dateOfBirth],['Address',p.address]].map(([k,v])=>`
-        <tr style="border-bottom:0.5px solid var(--border)">
-          <td style="padding:6px 0;color:var(--slate-l);width:60px">${k}</td>
-          <td style="padding:6px 0;color:var(--slate);word-break:break-all">${v}</td>
-        </tr>`).join('')}
-      </table>
-      <button onclick="copyJSON(${JSON.stringify(JSON.stringify(p))})" style="margin-top:12px;width:100%;padding:6px;border-radius:8px;border:0.5px solid var(--border-2);background:transparent;cursor:pointer;font-size:12px;color:var(--slate-m);font-family:var(--font-body)">Copy as JSON</button>
-    </div>
-  </div>`;
+function objToXML(obj, root) {
+  const inner = Object.entries(obj).map(([k,v])=>`  <${k}>${v}</${k}>`).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<${root}>\n${inner}\n</${root}>`;
 }
 
-function copyJSON(jsonStr){
-  navigator.clipboard?.writeText(jsonStr);
+function setStatus(msg, type) {
+  const sb = document.getElementById('statusBar');
+  sb.style.display = 'block';
+  sb.style.background = type==='success'?'#D1FAE5':'#FEE2E2';
+  sb.style.color = type==='success'?'#065F46':'#991B1B';
+  sb.textContent = msg;
 }
 
-function generate(){
-  const gender=document.getElementById('genderSel').value;
-  const country=document.getElementById('countrySel').value;
-  const count=parseInt(document.getElementById('countSel').value);
-  window._profiles=Array.from({length:count},()=>genProfile(gender,country));
-  document.getElementById('profileGrid').innerHTML=window._profiles.map(profileCard).join('');
-}
+let lastExt = 'json';
 
-document.getElementById('genBtn').addEventListener('click',generate);
-document.getElementById('jsonBtn').addEventListener('click',()=>{
-  if(!window._profiles)return;
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(window._profiles,null,2)],{type:'application/json'}));a.download='fake_profiles.json';a.click();
+document.getElementById('btnToJSON').addEventListener('click', () => {
+  const input = document.getElementById('textInput').value.trim();
+  if (!input) return;
+  try {
+    const obj = textToObj(input);
+    document.getElementById('outputArea').value = JSON.stringify(obj, null, 2);
+    document.getElementById('outputLabel').textContent = 'JSON output';
+    setStatus(`Converted ${Object.keys(obj).length} fields to JSON`, 'success');
+    lastExt = 'json';
+  } catch(e) { setStatus('Error: ' + e.message, 'error'); }
 });
-document.getElementById('csvBtn').addEventListener('click',()=>{
-  if(!window._profiles)return;
-  const headers='fullName,firstName,lastName,gender,email,username,phone,dateOfBirth,address,country';
-  const rows=window._profiles.map(p=>`"${p.fullName}","${p.firstName}","${p.lastName}","${p.gender}","${p.email}","${p.username}","${p.phone}","${p.dateOfBirth}","${p.address}","${p.country}"`);
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([[headers,...rows].join('\n')],{type:'text/csv'}));a.download='fake_profiles.csv';a.click();
+
+document.getElementById('btnToXML').addEventListener('click', () => {
+  const input = document.getElementById('textInput').value.trim();
+  const root  = document.getElementById('rootTagInput').value.trim() || 'record';
+  if (!input) return;
+  try {
+    const obj = textToObj(input);
+    document.getElementById('outputArea').value = objToXML(obj, root);
+    document.getElementById('outputLabel').textContent = 'XML output';
+    setStatus(`Converted ${Object.keys(obj).length} fields to XML`, 'success');
+    lastExt = 'xml';
+  } catch(e) { setStatus('Error: ' + e.message, 'error'); }
 });
+
+document.getElementById('btnSample').addEventListener('click', () => document.getElementById('textInput').value = SAMPLE);
+document.getElementById('btnClear').addEventListener('click', () => {
+  document.getElementById('textInput').value = '';
+  document.getElementById('outputArea').value = '';
+  document.getElementById('statusBar').style.display = 'none';
+});
+document.getElementById('btnCopy').addEventListener('click', () => {
+  navigator.clipboard?.writeText(document.getElementById('outputArea').value);
+  document.getElementById('btnCopy').textContent = 'Copied!';
+  setTimeout(()=>document.getElementById('btnCopy').textContent='Copy',2000);
+});
+document.getElementById('btnDownload').addEventListener('click', () => {
+  const content = document.getElementById('outputArea').value; if (!content) return;
+  const mime = lastExt === 'xml' ? 'application/xml' : 'application/json';
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([content],{type:mime}));
+  a.download = `converted.${lastExt}`; a.click();
+});
+
 document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
-document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{const a=q.nextElementSibling,open=a.style.display==='block';a.style.display=open?'none':'block';q.querySelector('.faq-toggle').textContent=open?'+':'−';}));
-document.getElementById('themeToggle').addEventListener('click',()=>{const d=document.documentElement,dark=d.getAttribute('data-theme')==='dark';d.setAttribute('data-theme',dark?'':'dark');document.getElementById('themeToggle').textContent=dark?'☀':'🌙';localStorage.setItem('toolpad-theme',dark?'':'dark');});
-generate();
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
+  const a=q.nextElementSibling,open=a.style.display==='block';
+  a.style.display=open?'none':'block'; q.querySelector('span').textContent=open?'+':'−';
+}));
+
+</script>
+<script>
+(function(){
+  var KEY='toolpad-theme';
+  var saved=localStorage.getItem(KEY);
+  var hour=new Date().getHours();
+  var autoDark=(hour>=20||hour<6);
+  var theme=saved!==null?saved:(autoDark?'dark':'');
+  if(theme)document.documentElement.setAttribute('data-theme',theme);
+  var tog=document.getElementById('themeToggle');
+  if(tog){
+    tog.textContent=theme==='dark'?'🌙':'☀';
+    tog.addEventListener('click',function(){
+      var dark=document.documentElement.getAttribute('data-theme')==='dark';
+      var next=dark?'':'dark';
+      document.documentElement.setAttribute('data-theme',next);
+      tog.textContent=next==='dark'?'🌙':'☀';
+      localStorage.setItem(KEY,next);
+    });
+  }
+})();
 </script>
 </body>
 </html>

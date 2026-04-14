@@ -17,8 +17,8 @@
   --radius-sm: 8px;
   --shadow: 0 1px 4px rgba(0,0,0,.06);
   --shadow-md: 0 4px 20px rgba(0,0,0,.09);
-  --font-display: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
 }
 
 [data-theme="dark"] {
@@ -127,7 +127,7 @@ h1,h2,h3,h4,h5 { font-family: var(--font-display); line-height: 1.2; }
 .ctrl-group { margin-bottom: 14px; }
 .ctrl-group label { display: block; font-size: 12px; font-weight: 600; color: var(--slate-m); margin-bottom: 5px; text-transform: uppercase; letter-spacing: .4px; }
 .ctrl-group select, .ctrl-group input[type="number"] { width: 100%; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-2); background: var(--white); color: var(--slate); font-family: var(--font-body); font-size: 14px; }
-.output-area { width: 100%; min-height: 280px; font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 12px; line-height: 1.6; padding: 14px; border: none; background: transparent; color: var(--slate); resize: vertical; outline: none; }
+.output-area { width: 100%; min-height: 280px; font-family: 'DM Mono', 'Fira Code', monospace; font-size: 12px; line-height: 1.6; padding: 14px; border: none; background: transparent; color: var(--slate); resize: vertical; outline: none; }
 .output-area.large { min-height: 360px; }
 .generate-bar { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; }
 .generate-bar .count-label { font-size: 13px; color: var(--slate-m); }

@@ -1,161 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IBAN Generator — Free MOD-97 Valid IBANs for GB, DE, FR | Toolpad</title>
-<meta name="description" content="Generate MOD-97 valid IBAN numbers for UK, Germany and France. Real bank codes included. For software testing only. Free, bulk generation, no signup.">
-<meta name="keywords" content="IBAN generator, fake IBAN, random IBAN, IBAN number generator, test IBAN, GB IBAN, DE IBAN, bank account testing">
-<link rel="canonical" href="https://toolpad.in/generators/iban">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"IBAN Generator","url":"https://toolpad.in/generators/iban","description":"Generate MOD-97 valid IBAN numbers for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text to XML Converter — Plain Text to XML Online | Toolpad</title>
+<meta name="description" content="Convert plain key:value text to well-formed XML instantly online. Free, runs in browser, no signup. Also supports text to JSON conversion.">
+<meta name="keywords" content="text to XML, convert text to XML, plain text XML, key value to XML, text XML generator">
+<link rel="canonical" href="https://toolpad.in/converters/text-to-xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Text to XML Converter","url":"https://toolpad.in/converters/text-to-xml","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles/main.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="navbar"><div class="nav-inner">
-  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
-  <nav class="nav-links"><a href="/generators" class="nav-link active">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link">Converters</a><a href="/api-docs" class="nav-link">API</a></nav>
-  <button class="theme-toggle" id="themeToggle">☀</button>
-</div></header>
-
+<header class="navbar"><div class="nav-inner"><a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a><nav class="nav-links"><a href="/generators" class="nav-link">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link active">Converters</a><a href="/api-docs" class="nav-link">API</a></nav><button class="theme-toggle" id="themeToggle">☀</button></div></header>
 <div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
-
 <div class="tool-page">
   <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › IBAN generator</div>
-    <h1>IBAN generator</h1>
-    <p class="tool-desc">Generate International Bank Account Numbers (IBANs) that pass ISO 7064 MOD-97-10 checksum validation. Supports UK, Germany and France with real bank codes. For testing only — these are not real bank accounts.</p>
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › Text to XML</div>
+    <h1>Text to XML converter</h1>
+    <p class="tool-desc">Convert plain <code>key: value</code> text to well-formed XML documents. Specify a custom root element tag. Runs entirely in your browser — your data never leaves the page.</p>
   </div>
-
-  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
-    <select id="countrySel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="GB">United Kingdom (GB)</option>
-      <option value="DE">Germany (DE)</option>
-      <option value="FR">France (FR)</option>
-    </select>
-    <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="1">1 IBAN</option>
-      <option value="5">5 IBANs</option>
-      <option value="10" selected>10 IBANs</option>
-      <option value="25">25 IBANs</option>
-      <option value="50">50 IBANs</option>
-    </select>
-    <select id="fmtSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="formatted">Formatted (groups of 4)</option>
-      <option value="plain">Plain (no spaces)</option>
-    </select>
-    <button class="btn btn-primary" id="genBtn">Generate</button>
-    <button class="btn" id="copyBtn">Copy all</button>
-    <button class="btn" id="csvBtn">Download CSV</button>
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center">
+    <input type="text" id="rootTag" value="record" placeholder="Root tag name" style="padding:7px 12px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:13px;width:160px">
+    <button class="btn btn-primary" id="btnConvert">Convert to XML</button>
+    <button class="btn btn-sm" id="btnSample">Sample</button>
+    <button class="btn btn-sm" id="btnClear">Clear</button>
   </div>
-
-  <div class="workspace-panel" style="margin-bottom:24px">
-    <div class="panel-header"><h3>Generated IBANs</h3><span id="meta" style="font-size:12px;color:var(--slate-l)"></span></div>
-    <div style="overflow:hidden">
-      <table style="width:100%;border-collapse:collapse;font-size:13px" id="ibanTable">
-        <thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)">
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:45%">IBAN</th>
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:15%">Country</th>
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:20%">Check digits</th>
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:20%">Valid</th>
-        </tr></thead>
-        <tbody id="ibanBody"></tbody>
-      </table>
-    </div>
+  <div class="tool-workspace">
+    <div class="workspace-panel"><div class="panel-header"><h3>Plain text input</h3></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="input" placeholder="name: John Doe&#10;age: 30&#10;city: Bengaluru&#10;email: john@example.com"></textarea></div></div>
+    <div class="workspace-panel"><div class="panel-header"><h3>XML output</h3><div style="display:flex;gap:6px"><button class="btn btn-sm" id="btnCopy">Copy</button><button class="btn btn-sm" id="btnDl">Download</button></div></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="output" readonly></textarea></div></div>
   </div>
-
+  <div id="st" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
   <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
-
   <div class="seo-content">
-    <h2>What is an IBAN?</h2>
-    <p>An IBAN (International Bank Account Number) is a standardised international numbering system for bank accounts. It consists of a two-letter country code, two check digits, and a country-specific BBAN (Basic Bank Account Number). IBANs are used across Europe, the Middle East, and parts of Africa and Asia for international bank transfers.</p>
-
-    <h3>How IBAN validation works (MOD-97)</h3>
-    <p>Every IBAN contains two check digits computed using the ISO 7064 MOD-97-10 algorithm. The algorithm rearranges the IBAN, converts letters to numbers (A=10, B=11...), and verifies the result modulo 97 equals 1. This generator computes the correct check digits for every generated IBAN, ensuring they pass any standard IBAN validator.</p>
-
-    <h3>Supported country formats</h3>
-    <ul>
-      <li><strong>United Kingdom (GB)</strong> — 22 characters: GB + 2 check digits + 4-letter bank code (NWBK, BARC, HSBC, LOYD) + 6-digit sort code + 8-digit account number</li>
-      <li><strong>Germany (DE)</strong> — 22 characters: DE + 2 check digits + 8-digit bank code (Bankleitzahl) + 10-digit account number</li>
-      <li><strong>France (FR)</strong> — 27 characters: FR + 2 check digits + 5-digit bank code + 5-digit branch code + 11-digit account + 2 RIB key</li>
-    </ul>
-
+    <h2>How text to XML conversion works</h2>
+    <p>Each line in <code>key: value</code> format becomes an XML element. The key becomes the element tag name (spaces converted to underscores) and the value becomes the element's text content. The whole output is wrapped in a configurable root element.</p>
     <h3>API access</h3>
-    <p>Generate IBANs via API: <code>GET /api/v1/financial/iban?country=GB&count=20</code></p>
-
-    <div class="faq-item"><div class="faq-q">Are these real IBANs? <span class="faq-toggle">+</span></div><div class="faq-a">No. Generated IBANs are structurally valid — they use real country formats and pass MOD-97 checksum verification — but are not registered to any real bank account. Any bank transfer attempted with these IBANs would fail at the bank's own validation step.</div></div>
-    <div class="faq-item"><div class="faq-q">Which countries support IBAN? <span class="faq-toggle">+</span></div><div class="faq-a">Over 80 countries use IBANs, including all EU/EEA countries, the UK, and several Middle Eastern and Caribbean nations. Notably, the US and Canada do not use IBAN — they use routing numbers and account numbers instead. This generator currently supports GB, DE, and FR, with more countries coming soon.</div></div>
-    <div class="faq-item"><div class="faq-q">What is a BBAN? <span class="faq-toggle">+</span></div><div class="faq-a">BBAN stands for Basic Bank Account Number — the country-specific portion of the IBAN that comes after the country code and check digits. Its format varies by country: the UK BBAN includes a sort code and account number, while the German BBAN is a bank code (Bankleitzahl) and account number.</div></div>
+    <p><code>POST /api/v1/datatools/convert/text-to-xml</code> — body: <code>{"input": "name: John\nage: 30", "rootTag": "person"}</code></p>
   </div>
-
   <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
-    <a href="/generators/credit-card" class="related-card"><h4>Credit card generator</h4><p>Luhn-valid card numbers</p></a>
-    <a href="/generators/fake-profile" class="related-card"><h4>Full profile generator</h4><p>Complete test person</p></a>
-    <a href="/generators/fake-address" class="related-card"><h4>Fake address generator</h4><p>Postal addresses</p></a>
-    <a href="/generators/imei" class="related-card"><h4>IMEI generator</h4><p>Device identifiers</p></a>
+    <a href="/converters/text-to-json" class="related-card"><h4>Text to JSON</h4><p>Same input, JSON output</p></a>
+    <a href="/formatters/xml" class="related-card"><h4>XML formatter</h4><p>Prettify XML</p></a>
+    <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert JSON to XML</p></a>
+    <a href="/converters/xml-to-json" class="related-card"><h4>XML to JSON</h4><p>Convert XML to JSON</p></a>
   </div></div>
 </div>
-
-<footer class="site-footer"><div class="footer-inner">
-  <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools.</p></div>
-  <div class="footer-links"><h5>Financial</h5><a href="/generators/iban">IBAN generator</a><a href="/generators/credit-card">Credit card</a></div>
-  <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
-  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
-</div><div class="footer-bottom"><p>© 2026 Toolpad. All IBANs are fictional and for software testing only.</p></div></footer>
-
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><span>🔧</span><strong>Toolpad</strong></div><div class="footer-links"><h5>Converters</h5><a href="/converters/text-to-xml">Text to XML</a><a href="/converters/text-to-json">Text to JSON</a></div><div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON</a><a href="/formatters/xml">XML</a></div><div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div></div><div class="footer-bottom">
+  <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+  <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+     target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+    <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+         src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+         style="display:block">
+  </a>
+  <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+</div></footer>
 <script>
-const BANKS_GB=['NWBK','BARC','HSBC','LOYD','MIDL'];
-function rp(a){return a[Math.floor(Math.random()*a.length)];}
-function rd(n){return Array.from({length:n},()=>Math.floor(Math.random()*10)).join('');}
-
-function computeCheck(cc,bban){
-  const raw=(bban+cc+'00').toUpperCase().split('').map(c=>c>='A'&&c<='Z'?(c.charCodeAt(0)-55).toString():c).join('');
-  return String(98n-BigInt(raw)%97n).padStart(2,'0');
-}
-
-function genIBAN(cc){
-  let bban;
-  if(cc==='GB') bban=rp(BANKS_GB)+rd(14);
-  else if(cc==='DE') bban=rd(18);
-  else bban=rd(23);
-  const chk=computeCheck(cc,bban);
-  const iban=`${cc}${chk}${bban}`;
-  return {iban,formatted:iban.match(/.{1,4}/g).join(' '),country:cc,checkDigits:chk,bban};
-}
-
-function generate(){
-  const cc=document.getElementById('countrySel').value;
-  const count=parseInt(document.getElementById('countSel').value);
-  const fmt=document.getElementById('fmtSel').value;
-  const results=Array.from({length:count},()=>genIBAN(cc));
-  document.getElementById('ibanBody').innerHTML=results.map((r,i)=>`
-    <tr style="border-bottom:1px solid var(--border);${i%2?'background:var(--bg)':''}">
-      <td style="padding:10px 16px;font-family:monospace;font-size:13px;letter-spacing:.3px">${fmt==='plain'?r.iban:r.formatted}</td>
-      <td style="padding:10px 16px;font-size:13px">${r.country}</td>
-      <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.checkDigits}</td>
-      <td style="padding:10px 16px"><span style="background:#D1FAE5;color:#065F46;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600">✓ MOD-97</span></td>
-    </tr>`).join('');
-  document.getElementById('meta').textContent=`${count} IBANs generated`;
-  window._ibans=results;
-}
-document.getElementById('genBtn').addEventListener('click',generate);
-document.getElementById('copyBtn').addEventListener('click',()=>{
-  if(!window._ibans)return;
-  const fmt=document.getElementById('fmtSel').value;
-  navigator.clipboard?.writeText(window._ibans.map(r=>fmt==='plain'?r.iban:r.formatted).join('\n'));
-  document.getElementById('copyBtn').textContent='Copied!';
-  setTimeout(()=>document.getElementById('copyBtn').textContent='Copy all',2000);
+const SAMPLE='name: John Doe\nage: 30\ncity: Bengaluru\nemail: john@example.com\nwebsite: https://toolpad.in';
+function ss(m,t){const s=document.getElementById('st');s.style.display='block';s.style.background=t==='ok'?'#D1FAE5':'#FEE2E2';s.style.color=t==='ok'?'#065F46':'#991B1B';s.textContent=m;}
+document.getElementById('btnConvert').addEventListener('click',()=>{
+  const inp=document.getElementById('input').value.trim();if(!inp)return;
+  const root=document.getElementById('rootTag').value.trim()||'record';
+  const lines=inp.split('\n').filter(l=>l.includes(':'));
+  const inner=lines.map(l=>{const i=l.indexOf(':');const k=l.slice(0,i).trim().replace(/\s+/g,'_');const v=l.slice(i+1).trim();return `  <${k}>${v}</${k}>`;}).join('\n');
+  const xml=`<?xml version="1.0" encoding="UTF-8"?>\n<${root}>\n${inner}\n</${root}>`;
+  document.getElementById('output').value=xml;ss(`Converted ${lines.length} fields to XML`,'ok');
 });
-document.getElementById('csvBtn').addEventListener('click',()=>{
-  if(!window._ibans)return;
-  const csv='iban,formatted,country,checkDigits,bban\n'+window._ibans.map(r=>`${r.iban},"${r.formatted}",${r.country},${r.checkDigits},${r.bban}`).join('\n');
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='ibans.csv';a.click();
-});
-document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
-document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{const a=q.nextElementSibling,open=a.style.display==='block';a.style.display=open?'none':'block';q.querySelector('.faq-toggle').textContent=open?'+':'−';}));
-document.getElementById('themeToggle').addEventListener('click',()=>{const d=document.documentElement,dark=d.getAttribute('data-theme')==='dark';d.setAttribute('data-theme',dark?'':'dark');document.getElementById('themeToggle').textContent=dark?'☀':'🌙';localStorage.setItem('toolpad-theme',dark?'':'dark');});
-generate();
+document.getElementById('btnSample').addEventListener('click',()=>document.getElementById('input').value=SAMPLE);
+document.getElementById('btnClear').addEventListener('click',()=>{document.getElementById('input').value='';document.getElementById('output').value='';document.getElementById('st').style.display='none';});
+document.getElementById('btnCopy').addEventListener('click',()=>{navigator.clipboard?.writeText(document.getElementById('output').value);document.getElementById('btnCopy').textContent='Copied!';setTimeout(()=>document.getElementById('btnCopy').textContent='Copy',2000);});
+document.getElementById('btnDl').addEventListener('click',()=>{const c=document.getElementById('output').value;if(!c)return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'application/xml'}));a.download='output.xml';a.click();});
+
 </script>
-</body>
-</html>
+<script>
+(function(){
+  var KEY='toolpad-theme';
+  var saved=localStorage.getItem(KEY);
+  var hour=new Date().getHours();
+  var autoDark=(hour>=20||hour<6);
+  var theme=saved!==null?saved:(autoDark?'dark':'');
+  if(theme)document.documentElement.setAttribute('data-theme',theme);
+  var tog=document.getElementById('themeToggle');
+  if(tog){
+    tog.textContent=theme==='dark'?'🌙':'☀';
+    tog.addEventListener('click',function(){
+      var dark=document.documentElement.getAttribute('data-theme')==='dark';
+      var next=dark?'':'dark';
+      document.documentElement.setAttribute('data-theme',next);
+      tog.textContent=next==='dark'?'🌙':'☀';
+      localStorage.setItem(KEY,next);
+    });
+  }
+})();
+</script>
+</body></html>

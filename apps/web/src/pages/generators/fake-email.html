@@ -1,173 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fake Email Generator — Random Email Addresses for Testing | Toolpad</title>
-<meta name="description" content="Generate realistic fake email addresses for software testing. Multiple domains, name-based patterns. Bulk generation, CSV export. Free, no signup required.">
-<meta name="keywords" content="fake email generator, random email address, dummy email, test email generator, fake email address, random email">
-<link rel="canonical" href="https://toolpad.in/generators/fake-email">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fake Email Generator","url":"https://toolpad.in/generators/fake-email","description":"Generate realistic fake email addresses for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hex Encoder & Decoder — Convert Text to Hexadecimal Online | Toolpad</title>
+<meta name="description" content="Encode text to hexadecimal and decode hex back to text online. Free, runs in browser, no data stored. Used by developers for debugging and encoding tasks.">
+<meta name="keywords" content="hex encoder, hex decoder, text to hex, hex to text, hexadecimal encoder, string to hex online">
+<link rel="canonical" href="https://toolpad.in/converters/hex">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Hex Encoder Decoder","url":"https://toolpad.in/converters/hex","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles/main.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="navbar"><div class="nav-inner">
-  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
-  <nav class="nav-links"><a href="/generators" class="nav-link active">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link">Converters</a><a href="/api-docs" class="nav-link">API</a></nav>
-  <button class="theme-toggle" id="themeToggle">☀</button>
-</div></header>
-
+<header class="navbar"><div class="nav-inner"><a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a><nav class="nav-links"><a href="/generators" class="nav-link">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link active">Converters</a><a href="/api-docs" class="nav-link">API</a></nav><button class="theme-toggle" id="themeToggle">☀</button></div></header>
 <div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
-
 <div class="tool-page">
   <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Fake email generator</div>
-    <h1>Fake email generator</h1>
-    <p class="tool-desc">Generate realistic fake email addresses for testing forms, APIs, and databases. Choose from multiple styles and domains. Addresses look natural — derived from name patterns, not random strings.</p>
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › Hex encoder/decoder</div>
+    <h1>Hex encoder &amp; decoder</h1>
+    <p class="tool-desc">Convert text to hexadecimal representation and decode hexadecimal strings back to readable text. Useful for debugging, encoding, and understanding binary data. Runs entirely in your browser.</p>
   </div>
-
-  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
-    <select id="styleSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="mixed">Mixed styles</option>
-      <option value="dotname">firstname.lastname@</option>
-      <option value="underscore">firstname_lastname@</option>
-      <option value="initials">firstinitial+lastname@</option>
-      <option value="numbered">firstname+number@</option>
-    </select>
-    <select id="domainSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="mixed">Mix of domains</option>
-      <option value="gmail">gmail.com only</option>
-      <option value="common">Common (gmail, yahoo, outlook)</option>
-      <option value="example">example.com (safe)</option>
-      <option value="test">testmail.com</option>
-    </select>
-    <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="10" selected>10 emails</option>
-      <option value="25">25 emails</option>
-      <option value="50">50 emails</option>
-      <option value="100">100 emails</option>
-    </select>
-    <button class="btn btn-primary" id="genBtn">Generate</button>
-    <button class="btn" id="copyBtn">Copy all</button>
-    <button class="btn" id="csvBtn">Download CSV</button>
+  <div style="display:flex;gap:8px;margin-bottom:16px">
+    <button class="btn btn-primary" id="btnEncode">Encode to Hex</button>
+    <button class="btn" id="btnDecode">Decode from Hex</button>
+    <button class="btn" id="btnSwap">Swap ⇄</button>
+    <button class="btn btn-sm" id="btnClear">Clear</button>
   </div>
-
-  <div class="workspace-panel" style="margin-bottom:24px">
-    <div class="panel-header"><h3>Generated email addresses</h3><span id="meta" style="font-size:12px;color:var(--slate-l)"></span></div>
-    <div style="overflow:hidden">
-      <table style="width:100%;border-collapse:collapse;font-size:13px">
-        <thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)">
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:55%">Email address</th>
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:25%">Domain</th>
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:20%">Style</th>
-        </tr></thead>
-        <tbody id="emailBody"></tbody>
-      </table>
-    </div>
+  <div class="tool-workspace">
+    <div class="workspace-panel"><div class="panel-header"><h3>Input</h3><button class="btn btn-sm" id="btnPaste">Paste</button></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="inputArea" placeholder="Enter text to encode, or hex to decode..."></textarea></div></div>
+    <div class="workspace-panel"><div class="panel-header"><h3>Output</h3><div style="display:flex;gap:6px"><button class="btn btn-sm" id="btnCopy">Copy</button></div></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="outputArea" readonly></textarea></div></div>
   </div>
-
+  <div id="st" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
   <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
-
   <div class="seo-content">
-    <h2>Why use a fake email generator?</h2>
-    <p>Using real email addresses in test databases creates privacy risks and potentially triggers real email sends. Fake email addresses that follow realistic patterns let you test email validation logic, form submissions, and user registration flows without using real contact information.</p>
-
-    <h3>Email generation styles</h3>
+    <h2>About hexadecimal encoding</h2>
+    <p>Hexadecimal (base-16) represents each byte as two hex digits (0–9 and A–F). Each character in a UTF-8 string maps to one or more bytes, and each byte becomes two hex characters. For example, the letter 'A' is ASCII 65, which is <code>41</code> in hex.</p>
+    <h3>Use cases</h3>
     <ul>
-      <li><strong>firstname.lastname@</strong> — the most common real-world pattern (e.g. <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="91fbfef9ffbfe2fcf8e5f9d1f6fcf0f8fdbff2fefc">[email&#160;protected]</a>)</li>
-      <li><strong>firstname_lastname@</strong> — underscore separator (e.g. <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="43292c2b2d1c302e2a372b033a222b2c2c6d202c2e">[email&#160;protected]</a>)</li>
-      <li><strong>initials+lastname@</strong> — first initial + last name (e.g. <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="610b120c081509210e14150d0e0e0a4f020e0c">[email&#160;protected]</a>)</li>
-      <li><strong>firstname+number@</strong> — name with numeric suffix (e.g. <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9cf6f3f4f2a8aedcfbf1fdf5f0b2fff3f1">[email&#160;protected]</a>)</li>
+      <li>Debugging binary data and inspecting byte values</li>
+      <li>Encoding binary data for display in logs or error messages</li>
+      <li>Working with colour values (CSS hex colours like <code>#FF6600</code>)</li>
+      <li>Encoding data for protocols that require hex representation</li>
     </ul>
-
-    <h3>Safe domains for testing</h3>
-    <p>If you want to avoid any chance of real email delivery, use <code>example.com</code> — it is an IANA-reserved domain specifically for documentation and testing purposes. No email sent to @example.com will ever be delivered.</p>
-
     <h3>API access</h3>
-    <p>Generate via API: <code>GET /api/v1/personal/email?count=50</code></p>
-    <p>Full profiles including email: <code>GET /api/v1/personal/profile?country=IN&count=10</code></p>
-
-    <div class="faq-item"><div class="faq-q">Will emails to these addresses bounce? <span class="faq-toggle">+</span></div><div class="faq-a">Emails to generated addresses at domains like gmail.com, yahoo.com etc. will likely bounce since the mailboxes don't exist. To guarantee no delivery, use @example.com or @testmail.com addresses — these domains are specifically designated for testing.</div></div>
-    <div class="faq-item"><div class="faq-q">Do generated emails pass email validation? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — all generated addresses are syntactically valid RFC 5322 email addresses. They will pass format validation checks (regex patterns, HTML5 email input validation). They will not pass deliverability checks (MX record verification or mailbox existence checks).</div></div>
+    <p>Encode: <code>POST /api/v1/datatools/encode/hex</code> — body: <code>{"input": "text"}</code></p>
+    <p>Decode: <code>POST /api/v1/datatools/decode/hex</code> — body: <code>{"input": "74657874"}</code></p>
   </div>
-
   <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
-    <a href="/generators/fake-name" class="related-card"><h4>Fake name generator</h4><p>Names to go with emails</p></a>
-    <a href="/generators/fake-phone" class="related-card"><h4>Phone number generator</h4><p>Contact details</p></a>
-    <a href="/generators/fake-profile" class="related-card"><h4>Full profile generator</h4><p>Complete fake person</p></a>
-    <a href="/generators/fake-address" class="related-card"><h4>Fake address generator</h4><p>Postal addresses</p></a>
+    <a href="/converters/base64" class="related-card"><h4>Base64 encoder</h4><p>Alternative encoding</p></a>
+    <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON</p></a>
+    <a href="/converters/text-to-json" class="related-card"><h4>Text to JSON</h4><p>Structured data</p></a>
+    <a href="/generators/uuid" class="related-card"><h4>UUID generator</h4><p>Unique identifiers</p></a>
   </div></div>
 </div>
-
-<footer class="site-footer"><div class="footer-inner">
-  <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools.</p></div>
-  <div class="footer-links"><h5>Personal</h5><a href="/generators/fake-email">Fake email</a><a href="/generators/fake-name">Fake name</a><a href="/generators/fake-profile">Full profile</a></div>
-  <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
-  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
-</div><div class="footer-bottom"><p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p></div></footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-const FM=['james','john','robert','michael','david','liam','noah','aarav','arjun','carlos','wei','lucas'];
-const FF=['mary','jennifer','emma','olivia','priya','ananya','sophia','mia','ana','sofia','mei','laura'];
-const FL=['smith','johnson','williams','brown','garcia','sharma','patel','kumar','singh','wang','rodriguez'];
-const DOMAINS_ALL=['gmail.com','yahoo.com','outlook.com','hotmail.com','protonmail.com','icloud.com','example.com','testmail.com'];
-const DOMAINS_COMMON=['gmail.com','yahoo.com','outlook.com'];
-
-function rp(a){return a[Math.floor(Math.random()*a.length)];}
-function ri(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
-
-function getDomains(sel){
-  switch(sel){
-    case 'gmail':   return ['gmail.com'];
-    case 'common':  return DOMAINS_COMMON;
-    case 'example': return ['example.com'];
-    case 'test':    return ['testmail.com'];
-    default:        return DOMAINS_ALL;
-  }
-}
-
-function genEmail(styleSel, domainSel){
-  const names=[...FM,...FF];
-  const fn=rp(names); const ln=rp(FL);
-  const domain=rp(getDomains(domainSel));
-  let local, style;
-  const s=styleSel==='mixed'?rp(['dotname','underscore','initials','numbered']):styleSel;
-  switch(s){
-    case 'underscore': local=`${fn}_${ln}`;          style='underscore'; break;
-    case 'initials':   local=`${fn[0]}${ln}`;        style='initials';   break;
-    case 'numbered':   local=`${fn}${ri(1,999)}`;    style='numbered';   break;
-    default:           local=`${fn}.${ln}`;           style='dot';        break;
-  }
-  return {email:`${local}@${domain}`,domain,style};
-}
-
-function generate(){
-  const style=document.getElementById('styleSel').value;
-  const domain=document.getElementById('domainSel').value;
-  const count=parseInt(document.getElementById('countSel').value);
-  const results=Array.from({length:count},()=>genEmail(style,domain));
-  document.getElementById('emailBody').innerHTML=results.map((r,i)=>`
-    <tr style="border-bottom:1px solid var(--border);${i%2?'background:var(--bg)':''}">
-      <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.email}</td>
-      <td style="padding:10px 16px;font-size:12px;color:var(--slate-m)">${r.domain}</td>
-      <td style="padding:10px 16px;font-size:11px;color:var(--slate-l)">${r.style}</td>
-    </tr>`).join('');
-  document.getElementById('meta').textContent=`${count} addresses generated`;
-  window._emails=results;
-}
-
-document.getElementById('genBtn').addEventListener('click',generate);
-document.getElementById('copyBtn').addEventListener('click',()=>{
-  if(!window._emails)return;
-  navigator.clipboard?.writeText(window._emails.map(r=>r.email).join('\n'));
-  document.getElementById('copyBtn').textContent='Copied!';
-  setTimeout(()=>document.getElementById('copyBtn').textContent='Copy all',2000);
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><span>🔧</span><strong>Toolpad</strong></div><div class="footer-links"><h5>Converters</h5><a href="/converters/hex">Hex encoder</a><a href="/converters/base64">Base64</a></div><div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON</a><a href="/formatters/xml">XML</a></div><div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div></div><div class="footer-bottom">
+  <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+  <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+     target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+    <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+         src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+         style="display:block">
+  </a>
+  <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+</div></footer>
+<script>
+function ss(m,t){const s=document.getElementById('st');s.style.display='block';s.style.background=t==='ok'?'#D1FAE5':'#FEE2E2';s.style.color=t==='ok'?'#065F46':'#991B1B';s.textContent=m;}
+document.getElementById('btnEncode').addEventListener('click',()=>{
+  const inp=document.getElementById('inputArea').value;if(!inp)return;
+  const hex=Array.from(new TextEncoder().encode(inp)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  document.getElementById('outputArea').value=hex;ss('Encoded to hex','ok');
 });
-document.getElementById('csvBtn').addEventListener('click',()=>{
-  if(!window._emails)return;
-  const csv='email,domain,style\n'+window._emails.map(r=>`${r.email},${r.domain},${r.style}`).join('\n');
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='fake_emails.csv';a.click();
+document.getElementById('btnDecode').addEventListener('click',()=>{
+  const inp=document.getElementById('inputArea').value.replace(/\s/g,'');if(!inp)return;
+  try{
+    const bytes=inp.match(/.{1,2}/g).map(b=>parseInt(b,16));
+    document.getElementById('outputArea').value=new TextDecoder().decode(new Uint8Array(bytes));ss('Decoded from hex','ok');
+  }catch(e){ss('Invalid hex: '+e.message,'err');}
 });
-document.querySelectorAll('.faq-a').forEach(a=>a.sty
+document.getElementById('btnSwap').addEventListener('click',()=>{const i=document.getElementById('inputArea'),o=document.getElementById('outputArea');const t=i.value;i.value=o.value;o.value=t;});
+document.getElementById('btnClear').addEventListener('click',()=>{document.getElementById('inputArea').value='';document.getElementById('outputArea').value='';document.getElementById('st').style.display='none';});
+document.getElementById('btnPaste').addEventListener('click',()=>navigator.clipboard?.readText().then(t=>document.getElementById('inputArea').value=t));
+document.getElementById('btnCopy').addEventListener('click',()=>{navigator.clipboard?.writeText(document.getElementById('outputArea').value);document.getElementById('btnCopy').textContent='Copied!';setTimeout(()=>document.getElementById('btnCopy').textContent='Copy',2000);});
+
+</script>
+<script>
+(function(){
+  var KEY='toolpad-theme';
+  var saved=localStorage.getItem(KEY);
+  var hour=new Date().getHours();
+  var autoDark=(hour>=20||hour<6);
+  var theme=saved!==null?saved:(autoDark?'dark':'');
+  if(theme)document.documentElement.setAttribute('data-theme',theme);
+  var tog=document.getElementById('themeToggle');
+  if(tog){
+    tog.textContent=theme==='dark'?'🌙':'☀';
+    tog.addEventListener('click',function(){
+      var dark=document.documentElement.getAttribute('data-theme')==='dark';
+      var next=dark?'':'dark';
+      document.documentElement.setAttribute('data-theme',next);
+      tog.textContent=next==='dark'?'🌙':'☀';
+      localStorage.setItem(KEY,next);
+    });
+  }
+})();
+</script>
+</body></html>

@@ -3,69 +3,193 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — Toolpad</title>
-<meta name="description" content="Toolpad privacy policy. How we collect, use, and protect your data. Google Analytics, AdSense, and cookie usage explained.">
-<link rel="canonical" href="https://toolpad.in/privacy">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Fake Address Generator — Random US, India & UK Addresses | Toolpad</title>
+<meta name="description" content="Generate realistic fake postal addresses for US, India and UK. Valid ZIP codes, PIN codes, postcodes. Free, bulk generation, no signup. Perfect for testing forms and APIs.">
+<meta name="keywords" content="fake address generator, random address generator, fake address, dummy address, test address, random postal address, fake US address, fake Indian address">
+<link rel="canonical" href="https://toolpad.in/generators/fake-address">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fake Address Generator","url":"https://toolpad.in/generators/fake-address","description":"Generate realistic fake addresses for US, India and UK for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles/main.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="navbar"><div class="nav-inner">
   <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
-  <nav class="nav-links"><a href="/generators" class="nav-link">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link">Converters</a><a href="/api-docs" class="nav-link">API</a></nav>
+  <nav class="nav-links"><a href="/generators" class="nav-link active">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link">Converters</a><a href="/api-docs" class="nav-link">API</a></nav>
   <button class="theme-toggle" id="themeToggle">☀</button>
 </div></header>
 
-<div class="tool-page" style="max-width:780px">
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+
+<div class="tool-page">
   <div class="tool-page-header">
-    <h1>Privacy policy</h1>
-    <p class="tool-desc">Last updated: March 2026</p>
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Fake address generator</div>
+    <h1>Fake address generator</h1>
+    <p class="tool-desc">Generate realistic postal addresses for the United States, India, and United Kingdom. Includes street, city, state/region, and valid postal codes. For testing forms, APIs, and databases only.</p>
   </div>
+
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+    <select id="countrySel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="US">United States</option>
+      <option value="IN">India</option>
+      <option value="UK">United Kingdom</option>
+    </select>
+    <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="1">1 address</option>
+      <option value="5">5 addresses</option>
+      <option value="10" selected>10 addresses</option>
+      <option value="25">25 addresses</option>
+      <option value="50">50 addresses</option>
+    </select>
+    <select id="fmtSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="cards">Cards</option>
+      <option value="csv">CSV table</option>
+    </select>
+    <button class="btn btn-primary" id="genBtn">Generate</button>
+    <button class="btn" id="copyBtn">Copy all</button>
+    <button class="btn" id="csvBtn">Download CSV</button>
+  </div>
+
+  <div id="outputArea" style="margin-bottom:24px"></div>
+
+  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
   <div class="seo-content">
-    <h2>Overview</h2>
-    <p>Toolpad ("we", "us", "our") operates toolpad.in. This Privacy Policy explains how we collect, use, and protect information when you use our website and tools. We are committed to handling your data responsibly.</p>
+    <h2>About this fake address generator</h2>
+    <p>This tool creates structurally realistic postal addresses — with valid-format street names, real city names, correct state/region codes, and valid-range postal codes for each supported country. Addresses are randomly constructed and do not correspond to real properties.</p>
 
-    <h3>Information we collect</h3>
-    <p><strong>Usage data.</strong> We use Google Analytics to collect anonymised information about how visitors use the site — which pages are visited, how long sessions last, and which tools are used. This data contains no personally identifiable information and is aggregated for analysis only.</p>
-    <p><strong>Input data.</strong> When you use formatting or conversion tools (JSON formatter, Base64, etc.), the data you paste into the tool is processed entirely in your browser using JavaScript. This data is never transmitted to our servers. Document conversion tools (DOCX to PDF) send your file to our server for processing and delete it immediately after conversion.</p>
-    <p><strong>Generated data.</strong> All data generated by our tools (fake names, addresses, IMEI numbers, etc.) is fictitious and not derived from any real person's information. We do not store generated outputs.</p>
-
-    <h3>Cookies</h3>
-    <p>We use the following cookies:</p>
+    <h3>Country-specific formats</h3>
     <ul>
-      <li><strong>Google Analytics</strong> (_ga, _gid) — anonymised usage analytics. You can opt out using the Google Analytics Opt-out browser add-on.</li>
-      <li><strong>Google AdSense</strong> — we use Google AdSense to display advertisements. Google may use cookies to show personalised ads based on your browsing history. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--orange-d)">Google's privacy policy</a> for details.</li>
-      <li><strong>Toolpad preferences</strong> (toolpad-theme, toolpad-recent) — stored locally in your browser to remember your dark mode preference and recently used tools. These never leave your device.</li>
+      <li><strong>United States</strong> — Street number + street name + type, city, state abbreviation (CA, NY, TX...), 5-digit ZIP code. Optional apartment numbers.</li>
+      <li><strong>India</strong> — Block/Sector/Colony number, city, state name, 6-digit PIN code from the correct range for each state.</li>
+      <li><strong>United Kingdom</strong> — Street address, city (London, Manchester, Birmingham...), UK-format postcode (e.g. EC1 4AB).</li>
     </ul>
 
-    <h3>Advertising</h3>
-    <p>We use Google AdSense to display advertisements on the site. AdSense may use cookies and web beacons to serve ads based on your prior visits to this website or other websites. You can opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color:var(--orange-d)">Google's ad settings</a>.</p>
+    <h3>Use cases</h3>
+    <ul>
+      <li>Testing address input forms and validation logic in web and mobile apps</li>
+      <li>Seeding e-commerce databases with fake customer shipping addresses</li>
+      <li>Generating demo data for logistics, delivery, or mapping applications</li>
+      <li>Creating realistic UI mockups for address-heavy interfaces</li>
+      <li>Testing geolocation and mapping API integrations</li>
+    </ul>
 
-    <h3>Third party links</h3>
-    <p>Our site may contain links to third-party websites (GitHub, npm, documentation sites). We are not responsible for the privacy practices of those sites and encourage you to review their policies.</p>
+    <h3>API access</h3>
+    <p>Generate addresses programmatically: <code>GET /api/v1/location/address?country=IN&count=20</code></p>
+    <p>GPS coordinates for a country: <code>GET /api/v1/location/coordinates?country=US&count=10</code></p>
 
-    <h3>Data retention</h3>
-    <p>We do not retain any user-submitted input data. Google Analytics data is retained for 26 months per Google's standard retention policy. Files submitted for document conversion are deleted from our servers immediately after processing.</p>
-
-    <h3>Your rights</h3>
-    <p>Depending on your location, you may have rights under GDPR (EU), India's PDPB, or similar laws to access, correct, or delete information we hold about you. Since we do not collect personally identifiable information directly, most requests can be fulfilled by clearing your browser cookies and local storage. For any privacy concerns, contact us at the address below.</p>
-
-    <h3>Changes to this policy</h3>
-    <p>We may update this Privacy Policy from time to time. The date at the top of this page indicates when it was last revised. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
-
-    <h3>Contact</h3>
-    <p>For privacy-related questions, contact us at: <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="90e0e2f9e6f1f3e9d0e4fffffce0f1f4bef9fe">[email&#160;protected]</a></strong></p>
+    <div class="faq-item"><div class="faq-q">Are these real addresses? <span class="faq-toggle">+</span></div><div class="faq-a">No. Addresses are randomly generated from pools of real street name patterns, genuine city names, and valid postal code ranges. They will not resolve to a real property on Google Maps or any mapping service.</div></div>
+    <div class="faq-item"><div class="faq-q">Why are ZIP/PIN codes in the right range? <span class="faq-toggle">+</span></div><div class="faq-a">The generator uses actual postal code ranges per state/region. For example, Delhi PIN codes start with 110, Bengaluru with 560, California ZIP codes fall in the 90000–96699 range. This makes the addresses pass basic format validation without being real.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I get GPS coordinates with addresses? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — use the API endpoint <code>/api/v1/location/coordinates?country=IN</code> to get random GPS coordinates within a country's bounding box. The combined <code>/api/v1/record</code> endpoint returns both address and coordinates together.</div></div>
   </div>
+
+  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <a href="/generators/fake-name" class="related-card"><h4>Fake name generator</h4><p>Random person names</p></a>
+    <a href="/generators/fake-profile" class="related-card"><h4>Full profile generator</h4><p>Name + address + contacts</p></a>
+    <a href="/generators/fake-phone" class="related-card"><h4>Phone number generator</h4><p>US, India, UK formats</p></a>
+    <a href="/generators/iban" class="related-card"><h4>IBAN generator</h4><p>Bank account numbers</p></a>
+  </div></div>
 </div>
 
 <footer class="site-footer"><div class="footer-inner">
   <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools.</p></div>
-  <div class="footer-links"><h5>Tools</h5><a href="/generators/imei">IMEI generator</a><a href="/generators/uuid">UUID generator</a><a href="/formatters/json">JSON formatter</a></div>
-  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/about">About</a><a href="/privacy">Privacy policy</a></div>
-  <div class="footer-links"><h5>Links</h5><a href="https://github.com/toolpad-in" target="_blank" rel="noopener">GitHub</a></div>
-</div><div class="footer-bottom"><p>© 2026 Toolpad.</p></div></footer>
+  <div class="footer-links"><h5>Generators</h5><a href="/generators/fake-address">Fake address</a><a href="/generators/fake-name">Fake name</a><a href="/generators/fake-profile">Full profile</a></div>
+  <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
+  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
+</div><div class="footer-bottom">
+  <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+  <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+     target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+    <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+         src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+         style="display:block">
+  </a>
+  <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+</div></footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-document.getElementById('themeToggle').addEventListener('click',()=>{const d=document.documentElement,dk
+<script>
+const STREETS=['Main','Oak','Maple','Cedar','Elm','Washington','Park','Sunset','Willow','Broadway','Forest','River','Highland','Valley'];
+const STYPES=['Street','Avenue','Boulevard','Drive','Lane','Road','Court','Way','Terrace'];
+const US=[{s:'California',a:'CA',c:['Los Angeles','San Francisco','San Diego'],z:[90001,96699]},{s:'New York',a:'NY',c:['New York City','Buffalo','Albany'],z:[10001,14975]},{s:'Texas',a:'TX',c:['Houston','Dallas','Austin'],z:[73301,79999]},{s:'Florida',a:'FL',c:['Miami','Orlando','Tampa'],z:[32004,34997]},{s:'Illinois',a:'IL',c:['Chicago','Springfield','Naperville'],z:[60001,62999]}];
+const IN=[{s:'Karnataka',c:['Bengaluru','Mysuru','Hubli'],p:[560001,560100]},{s:'Maharashtra',c:['Mumbai','Pune','Nagpur'],p:[400001,400100]},{s:'Tamil Nadu',c:['Chennai','Coimbatore','Madurai'],p:[600001,600100]},{s:'Delhi',c:['New Delhi','Dwarka','Rohini'],p:[110001,110100]},{s:'Telangana',c:['Hyderabad','Warangal','Karimnagar'],p:[500001,500100]}];
+const UK=[{city:'London',pfx:'EC'},{city:'Manchester',pfx:'M'},{city:'Birmingham',pfx:'B'},{city:'Edinburgh',pfx:'EH'},{city:'Bristol',pfx:'BS'},{city:'Leeds',pfx:'LS'}];
+const SECTORS=['Sector','Block','Layout','Colony','Phase','Nagar'];
+
+function ri(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+function rp(a){return a[Math.floor(Math.random()*a.length)];}
+function street(){return `${ri(1,9999)} ${rp(STREETS)} ${rp(STYPES)}`;}
+
+function genAddr(country){
+  if(country==='IN'){
+    const st=rp(IN);const city=rp(st.c);const pin=ri(st.p[0],st.p[1]);
+    const sec=`${rp(SECTORS)} ${ri(1,50)}`;
+    return {line1:`${ri(1,999)}, ${sec}`,city,region:st.s,postal:String(pin),country:'India',formatted:`${ri(1,999)}, ${sec}, ${city}, ${st.s} - ${pin}`};
+  }
+  if(country==='UK'){
+    const a=rp(UK);
+    const pc=`${a.pfx}${ri(1,9)} ${ri(1,9)}${String.fromCharCode(65+ri(0,25))}${String.fromCharCode(65+ri(0,25))}`;
+    return {line1:street(),city:a.city,region:'',postal:pc,country:'United Kingdom',formatted:`${street()}, ${a.city}, ${pc}`};
+  }
+  const st=rp(US);const city=rp(st.c);const zip=String(ri(st.z[0],st.z[1])).padStart(5,'0');
+  const apt=Math.random()>0.7?`, Apt ${ri(1,999)}`:'';
+  return {line1:street()+apt,city,region:`${st.s} (${st.a})`,postal:zip,country:'United States',formatted:`${street()}, ${city}, ${st.a} ${zip}`};
+}
+
+function generate(){
+  const country=document.getElementById('countrySel').value;
+  const count=parseInt(document.getElementById('countSel').value);
+  const fmt=document.getElementById('fmtSel').value;
+  const results=Array.from({length:count},()=>genAddr(country));
+  window._addrs=results;
+  const out=document.getElementById('outputArea');
+  if(fmt==='cards'){
+    out.innerHTML=`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px">${results.map(r=>`
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px">${r.line1}</div>
+        <div style="font-size:13px;color:var(--slate-m)">${r.city}${r.region?', '+r.region:''}</div>
+        <div style="font-size:13px;color:var(--slate-m)">${r.postal}</div>
+        <div style="font-size:12px;color:var(--slate-l);margin-top:4px">${r.country}</div>
+      </div>`).join('')}</div>`;
+  } else {
+    out.innerHTML=`<div class="workspace-panel"><table style="width:100%;border-collapse:collapse;font-size:12px"><thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)"><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">Street</th><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">City</th><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">Region</th><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">Postal</th></tr></thead><tbody>${results.map((r,i)=>`<tr style="border-bottom:1px solid var(--border);${i%2?'background:var(--bg)':''}"><td style="padding:8px 12px">${r.line1}</td><td style="padding:8px 12px">${r.city}</td><td style="padding:8px 12px">${r.region}</td><td style="padding:8px 12px;font-family:monospace">${r.postal}</td></tr>`).join('')}</tbody></table></div>`;
+  }
+}
+document.getElementById('genBtn').addEventListener('click',generate);
+document.getElementById('copyBtn').addEventListener('click',()=>{
+  if(!window._addrs)return;
+  navigator.clipboard?.writeText(window._addrs.map(r=>r.formatted).join('\n'));
+  document.getElementById('copyBtn').textContent='Copied!';
+  setTimeout(()=>document.getElementById('copyBtn').textContent='Copy all',2000);
+});
+document.getElementById('csvBtn').addEventListener('click',()=>{
+  if(!window._addrs)return;
+  const csv='line1,city,region,postal,country\n'+window._addrs.map(r=>`"${r.line1}","${r.city}","${r.region}","${r.postal}","${r.country}"`).join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='fake_addresses.csv';a.click();
+});
+document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{const a=q.nextElementSibling,open=a.style.display==='block';a.style.display=open?'none':'block';q.querySelector('.faq-toggle').textContent=open?'+':'−';}));
+
+generate();
+</script>
+<script>
+(function(){
+  var KEY='toolpad-theme';
+  var saved=localStorage.getItem(KEY);
+  var hour=new Date().getHours();
+  var autoDark=(hour>=20||hour<6);
+  var theme=saved!==null?saved:(autoDark?'dark':'');
+  if(theme)document.documentElement.setAttribute('data-theme',theme);
+  var tog=document.getElementById('themeToggle');
+  if(tog){
+    tog.textContent=theme==='dark'?'🌙':'☀';
+    tog.addEventListener('click',function(){
+      var dark=document.documentElement.getAttribute('data-theme')==='dark';
+      var next=dark?'':'dark';
+      document.documentElement.setAttribute('data-theme',next);
+      tog.textContent=next==='dark'?'🌙':'☀';
+      localStorage.setItem(KEY,next);
+    });
+  }
+})();
+</script>
+</body>
+</html>
