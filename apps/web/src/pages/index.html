@@ -362,6 +362,15 @@
   </div>
 </footer>
 
+<style>
+.nav-dropdown { position: relative; display: flex; align-items: center; }
+.nav-dropdown-menu { display: none; position: absolute; top: 48px; left: 0; min-width: 220px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 8px 24px rgba(0,0,0,.13); z-index: 9999; padding: 8px 0; }
+.nav-dropdown-menu a { display: block; padding: 8px 18px; font-size: 13px; color: var(--slate-m); white-space: nowrap; font-family: var(--font-body); transition: background .1s, color .1s; }
+.nav-dropdown-menu a:hover { background: var(--bg); color: var(--orange-d); }
+.nav-dropdown-group { padding: 10px 18px 3px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--slate-l); }
+.hero-title { white-space: nowrap; font-size: clamp(22px, 5vw, 48px) !important; }
+.footer-bottom { text-align: center; padding: 24px 0 32px !important; }
+</style>
 <script src="/scripts/main.js"></script>
 <script>
 (function(){
