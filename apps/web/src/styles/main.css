@@ -64,7 +64,7 @@ h1,h2,h3,h4,h5 { font-family: var(--font-display); line-height: 1.2; }
 .hero { background: var(--white); border-bottom: 2px solid var(--orange); padding: 56px 24px 48px; text-align: center; }
 .hero-inner { max-width: 680px; margin: 0 auto; }
 .hero-badge { display: inline-block; background: var(--orange-l); color: var(--orange-d); padding: 4px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .4px; margin-bottom: 16px; }
-.hero-title { font-size: clamp(28px, 5vw, 48px); font-weight: 800; color: var(--slate); margin-bottom: 14px; }
+.hero-title { font-size: clamp(28px, 5vw, 48px); font-weight: 800; color: var(--slate); margin-bottom: 14px; white-space: nowrap; }
 .hero-sub { font-size: 17px; color: var(--slate-m); max-width: 520px; margin: 0 auto 20px; line-height: 1.7; }
 .hero-stats { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--slate-l); flex-wrap: wrap; }
 .hero-stats .sep { color: var(--border-2); }
