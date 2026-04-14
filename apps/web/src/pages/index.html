@@ -28,7 +28,7 @@
     <nav class="nav-links">
       <div class="nav-dropdown">
         <a href="/generators" class="nav-link active">Generators ▾</a>
-        <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-menu" id="dd-gen">
           <div class="nav-dropdown-group">Personal</div>
           <a href="/generators/fake-name">👤 Fake name</a>
           <a href="/generators/fake-email">✉ Fake email</a>
@@ -48,14 +48,14 @@
       </div>
       <div class="nav-dropdown">
         <a href="/formatters" class="nav-link">Formatters ▾</a>
-        <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-menu" id="dd-fmt">
           <a href="/formatters/json">{ } JSON formatter</a>
           <a href="/formatters/xml">&lt;/&gt; XML formatter</a>
         </div>
       </div>
       <div class="nav-dropdown">
         <a href="/converters" class="nav-link">Converters ▾</a>
-        <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-menu" id="dd-cvt">
           <div class="nav-dropdown-group">Data formats</div>
           <a href="/converters/json-to-xml">⇄ JSON to XML</a>
           <a href="/converters/xml-to-json">⇄ XML to JSON</a>
@@ -364,24 +364,62 @@
 
 <script src="/scripts/main.js"></script>
 <script>
-(function(){
-  var KEY='toolpad-theme';
-  var saved=localStorage.getItem(KEY);
-  var hour=new Date().getHours();
-  var autoDark=(hour>=20||hour<6);
-  var theme=saved!==null?saved:(autoDark?'dark':'');
-  if(theme)document.documentElement.setAttribute('data-theme',theme);
-  var tog=document.getElementById('themeToggle');
-  if(tog){
-    tog.textContent=theme==='dark'?'🌙':'☀';
-    tog.addEventListener('click',function(){
-      var dark=document.documentElement.getAttribute('data-theme')==='dark';
-      var next=dark?'':'dark';
-      document.documentElement.setAttribute('data-theme',next);
-      tog.textContent=next==='dark'?'🌙':'☀';
-      localStorage.setItem(KEY,next);
+(function() {
+
+  // ── Smart theme: auto dark 8pm–6am ──
+  var KEY = 'toolpad-theme';
+  var saved = localStorage.getItem(KEY);
+  var hour = new Date().getHours();
+  var autoDark = (hour >= 20 || hour < 6);
+  var theme = saved !== null ? saved : (autoDark ? 'dark' : '');
+  if (theme) document.documentElement.setAttribute('data-theme', theme);
+  var tog = document.getElementById('themeToggle');
+  if (tog) {
+    tog.textContent = theme === 'dark' ? '🌙' : '☀';
+    tog.addEventListener('click', function() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var next = dark ? '' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      tog.textContent = next === 'dark' ? '🌙' : '☀';
+      localStorage.setItem(KEY, next);
     });
   }
+
+  // ── Nav dropdowns: hover open/close ──
+  var dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function(dd) {
+    var menu = dd.querySelector('.nav-dropdown-menu');
+    var timer;
+
+    dd.addEventListener('mouseenter', function() {
+      clearTimeout(timer);
+      // Close all others first
+      dropdowns.forEach(function(other) {
+        if (other !== dd) {
+          var otherMenu = other.querySelector('.nav-dropdown-menu');
+          if (otherMenu) otherMenu.style.display = 'none';
+        }
+      });
+      if (menu) menu.style.display = 'block';
+    });
+
+    dd.addEventListener('mouseleave', function() {
+      timer = setTimeout(function() {
+        if (menu) menu.style.display = 'none';
+      }, 120);
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      dropdowns.forEach(function(dd) {
+        var menu = dd.querySelector('.nav-dropdown-menu');
+        if (menu) menu.style.display = 'none';
+      });
+    }
+  });
+
 })();
 </script>
 </body>
