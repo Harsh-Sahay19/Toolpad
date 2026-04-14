@@ -26,10 +26,51 @@
       <span class="logo-text">Toolpad</span>
     </a>
     <nav class="nav-links">
-      <a href="/generators" class="nav-link active">Generators</a>
-      <a href="/formatters" class="nav-link">Formatters</a>
-      <a href="/converters" class="nav-link">Converters</a>
-      <a href="/api-docs"   class="nav-link">API</a>
+      <div class="nav-dropdown">
+        <a href="/generators" class="nav-link active">Generators ▾</a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-group">Personal</div>
+          <a href="/generators/fake-name">👤 Fake name</a>
+          <a href="/generators/fake-email">✉ Fake email</a>
+          <a href="/generators/fake-phone">📱 Phone number</a>
+          <a href="/generators/fake-profile">🪪 Full profile</a>
+          <a href="/generators/fake-address">📍 Fake address</a>
+          <div class="nav-dropdown-group">Financial</div>
+          <a href="/generators/credit-card">💳 Credit card</a>
+          <a href="/generators/iban">🏦 IBAN</a>
+          <div class="nav-dropdown-group">Device &amp; Network</div>
+          <a href="/generators/imei">📡 IMEI</a>
+          <a href="/generators/uuid">🔑 UUID</a>
+          <a href="/generators/mac-address">🖧 MAC address</a>
+          <a href="/generators/ip-address">🌐 IP address</a>
+          <a href="/generators/imsi">📶 IMSI</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="/formatters" class="nav-link">Formatters ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="/formatters/json">{ } JSON formatter</a>
+          <a href="/formatters/xml">&lt;/&gt; XML formatter</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="/converters" class="nav-link">Converters ▾</a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-group">Data formats</div>
+          <a href="/converters/json-to-xml">⇄ JSON to XML</a>
+          <a href="/converters/xml-to-json">⇄ XML to JSON</a>
+          <a href="/converters/json-to-csv">📊 JSON to CSV</a>
+          <a href="/converters/csv-to-json">📋 CSV to JSON</a>
+          <a href="/converters/text-to-json">📝 Text to JSON</a>
+          <a href="/converters/text-to-xml">📝 Text to XML</a>
+          <div class="nav-dropdown-group">Encoding</div>
+          <a href="/converters/base64">🔐 Base64</a>
+          <a href="/converters/hex">🔢 Hex</a>
+          <div class="nav-dropdown-group">Documents</div>
+          <a href="/converters/docx-to-pdf">📄 DOCX to PDF</a>
+        </div>
+      </div>
+      <a href="/api-docs" class="nav-link">API</a>
     </nav>
     <div class="nav-search">
       <input type="search" id="toolSearch" placeholder="Search tools..." autocomplete="off">
@@ -44,7 +85,7 @@
   <div class="hero-inner">
     <div class="hero-badge">Free · No signup · API available</div>
     <h1 class="hero-title">Tools Suite for Developers</h1>
-    <p class="hero-sub">Generate realistic test data, format and convert documents, encode strings. 25+ free tools with a REST API.</p>
+    <p class="hero-sub">Generate realistic test data, format and convert documents, encode strings. 15+ free tools with a REST API.</p>
     <div class="hero-stats">
       <span>15 free tools</span>
       <span class="sep">·</span>
