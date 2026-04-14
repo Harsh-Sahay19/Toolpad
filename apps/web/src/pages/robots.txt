@@ -1,7 +1,16 @@
 User-agent: *
 Allow: /
 
-# Allow AdSense crawler
-Allow: /ads.txt
-
+# Point crawlers to the sitemap
 Sitemap: https://toolpad.in/sitemap.xml
+
+# Disallow API routes from being indexed
+Disallow: /api/
+
+# Allow all tool pages
+Allow: /generators/
+Allow: /formatters/
+Allow: /converters/
+Allow: /api-docs
+Allow: /about
+Allow: /privacy
