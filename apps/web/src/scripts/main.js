@@ -111,3 +111,20 @@ if (window.location.pathname !== '/') {
   trackToolVisit(window.location.pathname);
 }
 renderRecentTools();
+
+// FORCE REDIRECT FIX
+document.addEventListener('click', function(e) {
+    // 1. Find the closest anchor tag (the link)
+    const link = e.target.closest('a');
+    
+    // 2. If it's a tool card link, force the navigation
+    if (link && link.classList.contains('tool-card')) {
+        const url = link.getAttribute('href');
+        if (url && url !== '#' && !url.startsWith('#')) {
+            // Stop any other script from messing with this click
+            e.stopPropagation(); 
+            // Manually change the location
+            window.location.href = url;
+        }
+    }
+}, true); // The "true" here makes this run BEFORE any other script can break it.
