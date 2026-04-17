@@ -10,6 +10,12 @@
 <meta property="og:title" content="Toolpad — Free Developer Tools Suite">
 <meta property="og:description" content="15+ free tools for developers. Generate test data, format JSON/XML, convert documents. No signup required.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://toolpad.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://toolpad.in/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Toolpad","url":"https://toolpad.in","description":"Free online developer utility tools","potentialAction":{"@type":"SearchAction","target":"https://toolpad.in/?q={search_term_string}","query-input":"required name=search_term_string"}}
 </script>
@@ -363,54 +369,5 @@
 </footer>
 
 <script src="/scripts/main.js"></script>
-<script>
-(function() {
-
-  // Smart theme: auto dark 8pm-6am
-  var KEY = 'toolpad-theme';
-  var saved = localStorage.getItem(KEY);
-  var hour = new Date().getHours();
-  var autoDark = (hour >= 20 || hour < 6);
-  var theme = saved !== null ? saved : (autoDark ? 'dark' : '');
-  if (theme) document.documentElement.setAttribute('data-theme', theme);
-  var tog = document.getElementById('themeToggle');
-  if (tog) {
-    tog.textContent = theme === 'dark' ? '🌙' : '☀';
-    tog.addEventListener('click', function() {
-      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-      var next = dark ? '' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      tog.textContent = next === 'dark' ? '🌙' : '☀';
-      localStorage.setItem(KEY, next);
-    });
-  }
-
-  // Nav dropdowns
-  document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
-    var menu = dd.querySelector('.nav-dropdown-menu');
-    if (!menu) return;
-    var t;
-    dd.addEventListener('mouseenter', function() {
-      clearTimeout(t);
-      document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) { m.style.display = 'none'; });
-      menu.style.display = 'block';
-    });
-    dd.addEventListener('mouseleave', function() {
-      t = setTimeout(function() { menu.style.display = 'none'; }, 200);
-    });
-    menu.addEventListener('mouseenter', function() { clearTimeout(t); });
-    menu.addEventListener('mouseleave', function() {
-      t = setTimeout(function() { menu.style.display = 'none'; }, 200);
-    });
-  });
-
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.nav-dropdown')) {
-      document.querySelectorAll('.nav-dropdown-menu').forEach(function(m) { m.style.display = 'none'; });
-    }
-  });
-
-})();
-</script>
 </body>
 </html>
