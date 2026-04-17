@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credit Card Generator — Luhn-Valid Test Card Numbers | Toolpad</title>
+<meta name="description" content="Generate Luhn-valid fake credit card numbers for Visa, Mastercard, Amex, Discover. Includes CVV and expiry. For software testing only. Free, no signup required.">
+<meta name="keywords" content="credit card generator, fake credit card, test credit card number, Luhn valid card, Visa generator, Mastercard generator, dummy credit card">
+<link rel="canonical" href="https://toolpad.in/generators/credit-card">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Credit Card Number Generator","url":"https://toolpad.in/generators/credit-card","description":"Generate Luhn-valid fake credit card numbers for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="navbar"><div class="nav-inner">
+  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+  <nav class="nav-links"><a href="/generators" class="nav-link active">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link">Converters</a><a href="/api-docs" class="nav-link">API</a></nav>
+  <button class="theme-toggle" id="themeToggle">☀</button>
+</div></header>
+
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+
+<div class="tool-page">
+  <div class="tool-page-header">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Credit card generator</div>
+    <h1>Credit card number generator</h1>
+    <p class="tool-desc">Generate structurally valid credit card numbers that pass Luhn checksum validation. Includes correct network prefixes, CVV, and expiry date. For software testing and development only — these numbers will be declined by any real payment processor.</p>
+  </div>
+
+  <div class="note note-warn" style="margin-bottom:20px;display:flex;gap:10px;padding:12px 16px;border-radius:10px;background:#FEF3C7;color:#92400E;border:1px solid #FDE68A;font-size:13px">
+    <span style="font-size:16px;flex-shrink:0">⚠</span>
+    <span><strong>For testing only.</strong> Generated card numbers are mathematically valid but fictitious. They will be rejected by all real payment processors. Using fake card numbers for fraudulent transactions is illegal.</span>
+  </div>
+
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+    <select id="networkSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="">All networks (random)</option>
+      <option value="visa">Visa</option>
+      <option value="mastercard">Mastercard</option>
+      <option value="amex">American Express</option>
+      <option value="discover">Discover</option>
+      <option value="jcb">JCB</option>
+    </select>
+    <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="1">1 card</option>
+      <option value="5">5 cards</option>
+      <option value="10" selected>10 cards</option>
+      <option value="25">25 cards</option>
+    </select>
+    <button class="btn btn-primary" id="genBtn">Generate</button>
+    <button class="btn" id="copyBtn">Copy numbers</button>
+    <button class="btn" id="csvBtn">Download CSV</button>
+  </div>
+
+  <div class="workspace-panel" style="margin-bottom:24px">
+    <div class="panel-header"><h3>Generated card numbers</h3><span id="meta" style="font-size:12px;color:var(--slate-l)"></span></div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;min-width:600px">
+        <thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)">
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:20%">Network</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:35%">Card number</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:15%">Expiry</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:15%">CVV</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:15%">Valid</th>
+        </tr></thead>
+        <tbody id="cardBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+
+  <div class="seo-content">
+    <h2>What makes a generated card number valid?</h2>
+    <p>A credit card number is structurally valid if it passes two checks: the correct network prefix, and the Luhn algorithm checksum. This generator satisfies both — it uses real IIN/BIN prefixes for each network, and computes the correct check digit using the Luhn algorithm, making the numbers pass any standard card number validator.</p>
+
+    <h3>Network prefixes used</h3>
+    <ul>
+      <li><strong>Visa</strong> — starts with 4, 16 digits total</li>
+      <li><strong>Mastercard</strong> — starts with 51–55, 16 digits total</li>
+      <li><strong>American Express</strong> — starts with 34 or 37, 15 digits total</li>
+      <li><strong>Discover</strong> — starts with 6011 or 65, 16 digits total</li>
+      <li><strong>JCB</strong> — starts with 3528–3589, 16 digits total</li>
+    </ul>
+
+    <h3>Common developer use cases</h3>
+    <ul>
+      <li>Testing payment form validation and UI flows without real cards</li>
+      <li>Seeding test databases with card-like data for financial applications</li>
+      <li>Testing Luhn algorithm implementations</li>
+      <li>Building card-payment demo environments and mockups</li>
+      <li>QA testing of card-number masking and formatting logic</li>
+    </ul>
+
+    <h3>API access</h3>
+    <p>Generate cards via API: <code>GET /api/v1/financial/credit-card?network=visa&count=10</code></p>
+
+    <div class="faq-item"><div class="faq-q">Will these numbers work for real purchases? <span class="faq-toggle">+</span></div><div class="faq-a">No. Generated numbers pass Luhn checksum validation, but will be declined at any real payment gateway because they are not associated with a real bank account, cardholder, or billing address. Payment networks maintain their own databases of valid card ranges.</div></div>
+    <div class="faq-item"><div class="faq-q">What is the Luhn algorithm? <span class="faq-toggle">+</span></div><div class="faq-a">The Luhn algorithm (mod-10) is a simple checksum formula used to validate credit card numbers, IMEI codes, and other identification numbers. It works by doubling alternate digits from the right, summing all digits, and checking that the total is divisible by 10.</div></div>
+    <div class="faq-item"><div class="faq-q">What is an IIN / BIN? <span class="faq-toggle">+</span></div><div class="faq-a">The IIN (Issuer Identification Number), also called BIN (Bank Identification Number), is the first 6 digits of a credit card number. It identifies the card network and the issuing bank. This generator uses real IIN prefixes from actual card networks, not random numbers.</div></div>
+  </div>
+
+  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <a href="/generators/iban" class="related-card"><h4>IBAN generator</h4><p>Bank account numbers</p></a>
+    <a href="/generators/imei" class="related-card"><h4>IMEI generator</h4><p>Also uses Luhn algorithm</p></a>
+    <a href="/generators/fake-profile" class="related-card"><h4>Full profile generator</h4><p>Name + card + address</p></a>
+    <a href="/generators/fake-name" class="related-card"><h4>Fake name generator</h4><p>Cardholder names</p></a>
+  </div></div>
+</div>
+
+<footer class="site-footer"><div class="footer-inner">
+  <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools.</p></div>
+  <div class="footer-links"><h5>Financial</h5><a href="/generators/credit-card">Credit card</a><a href="/generators/iban">IBAN</a></div>
+  <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
+  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
+</div><div class="footer-bottom"><p>© 2026 Toolpad. Generated card numbers are fictional and for software testing only. Never use for fraud or real transactions.</p></div></footer>
+
+<script>
+const NETS={visa:{p:['4'],l:16},mastercard:{p:['51','52','53','54','55'],l:16},amex:{p:['34','37'],l:15},discover:{p:['6011','65'],l:16},jcb:{p:['3528','3589'],l:16}};
+const NET_LABELS={visa:'Visa',mastercard:'Mastercard',amex:'Amex',discover:'Discover',jcb:'JCB'};
+const NET_COLORS={visa:'#1A1F71',mastercard:'#EB001B',amex:'#2E77BC',discover:'#FF6600',jcb:'#003087'};
+
+function luhn(partial){
+  const d=partial.split('').map(Number).reverse();let s=0;
+  for(let i=0;i<d.length;i++){let x=d[i];if(i%2===0){x*=2;if(x>9)x-=9;}s+=x;}return (10-(s%10))%10;
+}
+function rp(a){return a[Math.floor(Math.random()*a.length)];}
+function ri(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+function rd(n){return Array.from({length:n},()=>ri(0,9)).join('');}
+
+function genCard(netKey){
+  const k=netKey||rp(Object.keys(NETS));
+  const net=NETS[k];const prefix=rp(net.p);
+  const partial=prefix+rd(net.l-prefix.length-1);
+  const num=partial+luhn(partial);
+  const fmt=k==='amex'?`${num.slice(0,4)} ${num.slice(4,10)} ${num.slice(10)}`:num.match(/.{1,4}/g).join(' ');
+  const exp=`${String(ri(1,12)).padStart(2,'0')}/${String(ri(2026,2030)).slice(-2)}`;
+  const cvv=k==='amex'?rd(4):rd(3);
+  return {network:k,number:num,formatted:fmt,expiry:exp,cvv};
+}
+
+function generate(){
+  const net=document.getElementById('networkSel').value;
+  const count=parseInt(document.getElementById('countSel').value);
+  const results=Array.from({length:count},()=>genCard(net||null));
+  document.getElementById('cardBody').innerHTML=results.map((r,i)=>`
+    <tr style="border-bottom:1px solid var(--border);${i%2?'background:var(--bg)':''}">
+      <td style="padding:10px 16px"><span style="background:${NET_COLORS[r.network]}15;color:${NET_COLORS[r.network]};padding:2px 10px;border-radius:999px;font-size:11px;font-weight:600">${NET_LABELS[r.network]}</span></td>
+      <td style="padding:10px 16px;font-family:monospace;font-size:13px;letter-spacing:.5px">${r.formatted}</td>
+      <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.expiry}</td>
+      <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.cvv}</td>
+      <td style="padding:10px 16px"><span style="background:#D1FAE5;color:#065F46;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600">✓ Luhn</span></td>
+    </tr>`).join('');
+  document.getElementById('meta').textContent=`${count} cards generated`;
+  window._cards=results;
+}
+document.getElementById('genBtn').addEventListener('click',generate);
+document.getElementById('copyBtn').addEventListener('click',()=>{
+  if(!window._cards)return;
+  navigator.clipboard?.writeText(window._cards.map(r=>r.number).join('\n'));
+  document.getElementById('copyBtn').textContent='Copied!';
+  setTimeout(()=>document.getElementById('copyBtn').textContent='Copy numbers',2000);
+});
+document.getElementById('csvBtn').addEventListener('click',()=>{
+  if(!window._cards)return;
+  const csv='network,number,formatted,expiry,cvv\n'+window._cards.map(r=>`${r.network},${r.number},"${r.formatted}",${r.expiry},${r.cvv}`).join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='test_cards.csv';a.click();
+});
+document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{const a=q.nextElementSibling,open=a.style.display==='block';a.style.display=open?'none':'block';q.querySelector('.faq-toggle').textContent=open?'+':'−';}));
+document.getElementById('themeToggle').addEventListener('click',()=>{const d=document.documentElement,dark=d.getAttribute('data-theme')==='dark';d.setAttribute('data-theme',dark?'':'dark');document.getElementById('themeToggle').textContent=dark?'☀':'🌙';localStorage.setItem('toolpad-theme',dark?'':'dark');});
+generate();
+</script>
+</body>
+</html>

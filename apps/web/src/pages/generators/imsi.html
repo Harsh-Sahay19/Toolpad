@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMSI Generator — Free Random IMSI Numbers with Real MCC-MNC | Toolpad</title>
+<meta name="description" content="Generate random 15-digit IMSI numbers with real MCC-MNC operator codes for AT&T, Verizon, Airtel, Jio, EE and more. Free, bulk export, no signup.">
+<meta name="keywords" content="IMSI generator, random IMSI, fake IMSI, IMSI number generator, MCC MNC, mobile subscriber identity, telecom testing">
+<link rel="canonical" href="https://toolpad.in/generators/imsi">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"IMSI Generator","url":"https://toolpad.in/generators/imsi","description":"Generate random IMSI numbers with real MCC-MNC codes for telecom testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="navbar"><div class="nav-inner">
+  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+  <nav class="nav-links"><a href="/generators" class="nav-link active">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link">Converters</a><a href="/api-docs" class="nav-link">API</a></nav>
+  <button class="theme-toggle" id="themeToggle">☀</button>
+</div></header>
+
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+
+<div class="tool-page">
+  <div class="tool-page-header">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › IMSI generator</div>
+    <h1>IMSI generator</h1>
+    <p class="tool-desc">Generate 15-digit IMSI (International Mobile Subscriber Identity) numbers using real MCC-MNC operator codes. Supports major carriers across the US, India, UK, and Australia. For telecom software testing only.</p>
+  </div>
+
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+    <select id="countrySel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="">All countries</option>
+      <option value="US">United States</option>
+      <option value="IN">India</option>
+      <option value="UK">United Kingdom</option>
+      <option value="AU">Australia</option>
+    </select>
+    <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="5">5 IMSIs</option>
+      <option value="10" selected>10 IMSIs</option>
+      <option value="25">25 IMSIs</option>
+      <option value="50">50 IMSIs</option>
+      <option value="100">100 IMSIs</option>
+    </select>
+    <button class="btn btn-primary" id="genBtn">Generate</button>
+    <button class="btn" id="copyBtn">Copy IMSIs</button>
+    <button class="btn" id="csvBtn">Download CSV</button>
+  </div>
+
+  <div class="workspace-panel" style="margin-bottom:24px">
+    <div class="panel-header"><h3>Generated IMSIs</h3><span id="meta" style="font-size:12px;color:var(--slate-l)"></span></div>
+    <div style="overflow:hidden">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)">
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:30%">IMSI</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:10%">MCC</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:10%">MNC</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:25%">MSIN</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:15%">Operator</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:10%">Country</th>
+        </tr></thead>
+        <tbody id="imsiBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+
+  <div class="seo-content">
+    <h2>What is an IMSI number?</h2>
+    <p>An IMSI (International Mobile Subscriber Identity) is a unique 15-digit number that identifies a mobile subscriber within a cellular network. It is stored on the SIM card and is distinct from the phone number — the IMSI identifies the subscriber to the network, while the phone number (MSISDN) is what others dial.</p>
+
+    <h3>IMSI structure</h3>
+    <ul>
+      <li><strong>MCC (Mobile Country Code)</strong> — 3 digits identifying the country. For example: 310 for the US, 404/405 for India, 234 for the UK, 505 for Australia.</li>
+      <li><strong>MNC (Mobile Network Code)</strong> — 2–3 digits identifying the specific network operator. For example: 260 for T-Mobile US, 840 for Reliance Jio India, 30 for EE UK.</li>
+      <li><strong>MSIN (Mobile Subscription Identification Number)</strong> — The remaining digits (up to 10) uniquely identifying the subscriber within that operator's network.</li>
+    </ul>
+
+    <h3>MCC-MNC pairs used</h3>
+    <ul>
+      <li>AT&T US: 310-410 · T-Mobile US: 310-260 · Verizon US: 311-480</li>
+      <li>Airtel India: 404-20 / 404-45 · Reliance Jio India: 405-840</li>
+      <li>EE UK: 234-30 · Three UK: 234-20</li>
+      <li>Telstra Australia: 505-01</li>
+    </ul>
+
+    <h3>API access</h3>
+    <p>Generate IMSIs via API: <code>GET /api/v1/network/imsi?country=IN&count=20</code></p>
+
+    <div class="faq-item"><div class="faq-q">What is the difference between IMSI and IMEI? <span class="faq-toggle">+</span></div><div class="faq-a">An IMEI identifies the physical handset (the device), while an IMSI identifies the subscriber (the SIM card / user account). If you put a different SIM in the same phone, the IMEI stays the same but the IMSI changes. Both are 15 digits, but only IMEI uses the Luhn checksum.</div></div>
+    <div class="faq-item"><div class="faq-q">What is the difference between IMSI and MSISDN? <span class="faq-toggle">+</span></div><div class="faq-a">The MSISDN is the phone number people dial (e.g. +91 9876543210). The IMSI is an internal network identifier stored on the SIM that is never shared publicly. The two are linked in the operator's Home Location Register (HLR) / Home Subscriber Server (HSS).</div></div>
+    <div class="faq-item"><div class="faq-q">What is ICCID and how does it differ from IMSI? <span class="faq-toggle">+</span></div><div class="faq-a">The ICCID (Integrated Circuit Card Identifier) is a 19–20 digit number that identifies the SIM card itself (the physical chip). The IMSI identifies the subscription profile stored on that SIM. A SIM card can theoretically store multiple IMSI profiles (e.g. dual-SIM-on-one-chip solutions), though this is rarely used in practice.</div></div>
+  </div>
+
+  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <a href="/generators/imei" class="related-card"><h4>IMEI generator</h4><p>Device identifiers</p></a>
+    <a href="/generators/mac-address" class="related-card"><h4>MAC address generator</h4><p>Network hardware IDs</p></a>
+    <a href="/generators/ip-address" class="related-card"><h4>IP address generator</h4><p>IPv4 and IPv6</p></a>
+    <a href="/generators/uuid" class="related-card"><h4>UUID generator</h4><p>RFC 4122 UUIDs</p></a>
+  </div></div>
+</div>
+
+<footer class="site-footer"><div class="footer-inner">
+  <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools.</p></div>
+  <div class="footer-links"><h5>Network</h5><a href="/generators/imsi">IMSI</a><a href="/generators/imei">IMEI</a><a href="/generators/mac-address">MAC address</a></div>
+  <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
+  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
+</div><div class="footer-bottom"><p>© 2026 Toolpad. Generated IMSIs are fictional and for testing only.</p></div></footer>
+
+<script>
+const MCC_MNC=[
+  {mcc:'310',mnc:'410',op:'AT&T',co:'US'},{mcc:'310',mnc:'260',op:'T-Mobile',co:'US'},{mcc:'311',mnc:'480',op:'Verizon',co:'US'},
+  {mcc:'404',mnc:'20',op:'Airtel',co:'IN'},{mcc:'404',mnc:'45',op:'Airtel',co:'IN'},{mcc:'405',mnc:'840',op:'Reliance Jio',co:'IN'},
+  {mcc:'234',mnc:'30',op:'EE',co:'UK'},{mcc:'234',mnc:'20',op:'Three',co:'UK'},
+  {mcc:'505',mnc:'01',op:'Telstra',co:'AU'}
+];
+const CO_COLORS={US:'#1D4ED8',IN:'#065F46',UK:'#7C3AED',AU:'#92400E'};
+const CO_BG={US:'#DBEAFE',IN:'#D1FAE5',UK:'#EDE9FE',AU:'#FEF3C7'};
+function rp(a){return a[Math.floor(Math.random()*a.length)];}
+function rd(n){return Array.from({length:n},()=>Math.floor(Math.random()*10)).join('');}
+
+function genIMSI(country){
+  const pool=country?MCC_MNC.filter(m=>m.co===country):MCC_MNC;
+  const net=rp(pool.length?pool:MCC_MNC);
+  const msin=rd(15-net.mcc.length-net.mnc.length);
+  return {imsi:`${net.mcc}${net.mnc}${msin}`,mcc:net.mcc,mnc:net.mnc,msin,operator:net.op,country:net.co};
+}
+
+function generate(){
+  const country=document.getElementById('countrySel').value;
+  const count=parseInt(document.getElementById('countSel').value);
+  const results=Array.from({length:count},()=>genIMSI(country));
+  document.getElementById('imsiBody').innerHTML=results.map((r,i)=>`
+    <tr style="border-bottom:1px solid var(--border);${i%2?'background:var(--bg)':''}">
+      <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.imsi}</td>
+      <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.mcc}</td>
+      <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.mnc}</td>
+      <td style="padding:10px 16px;font-family:monospace;font-size:12px;color:var(--slate-m)">${r.msin}</td>
+      <td style="padding:10px 16px;font-size:12px">${r.operator}</td>
+      <td style="padding:10px 16px"><span style="background:${CO_BG[r.country]};color:${CO_COLORS[r.country]};padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600">${r.country}</span></td>
+    </tr>`).join('');
+  document.getElementById('meta').textContent=`${count} IMSIs generated`;
+  window._imsis=results;
+}
+document.getElementById('genBtn').addEventListener('click',generate);
+document.getElementById('copyBtn').addEventListener('click',()=>{
+  if(!window._imsis)return;
+  navigator.clipboard?.writeText(window._imsis.map(r=>r.imsi).join('\n'));
+  document.getElementById('copyBtn').textContent='Copied!';
+  setTimeout(()=>document.getElementById('copyBtn').textContent='Copy IMSIs',2000);
+});
+document.getElementById('csvBtn').addEventListener('click',()=>{
+  if(!window._imsis)return;
+  const csv='imsi,mcc,mnc,msin,operator,country\n'+window._imsis.map(r=>`${r.imsi},${r.mcc},${r.mnc},${r.msin},${r.operator},${r.country}`).join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='imsi_numbers.csv';a.click();
+});
+document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{const a=q.nextElementSibling,open=a.style.display==='block';a.style.display=open?'none':'block';q.querySelector('.faq-toggle').textContent=open?'+':'−';}));
+document.getElementById('themeToggle').addEventListener('click',()=>{const d=document.documentElement,dark=d.getAttribute('data-theme')==='dark';d.setAttribute('data-theme',dark?'':'dark');document.getElementById('themeToggle').textContent=dark?'☀':'🌙';localStorage.setItem('toolpad-theme',dark?'':'dark');});
+generate();
+</script>
+</body>
+</html>
