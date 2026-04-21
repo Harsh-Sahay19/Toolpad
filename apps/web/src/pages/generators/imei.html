@@ -3,237 +3,259 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IMEI Generator — Free Online Luhn-Valid IMEI Numbers | Toolpad</title>
-<meta name="description" content="Generate valid random IMEI numbers online for free. Luhn algorithm validated, real TAC prefixes from Apple, Samsung, Huawei. Bulk generation. No signup required.">
-<meta name="keywords" content="IMEI generator, random IMEI, fake IMEI, IMEI number generator, Luhn IMEI, test IMEI, mobile device testing">
+<title>IMEI Generator — Free Luhn-Valid IMEI Numbers | Toolpad</title>
+<meta name="description" content="Generate Luhn-valid IMEI numbers with real TAC prefixes from Apple, Samsung, Google Pixel, OnePlus and Xiaomi. Free, no signup, bulk export.">
 <link rel="canonical" href="https://toolpad.in/generators/imei">
-<meta property="og:title" content="Free IMEI Generator — Luhn-Valid Random IMEI Numbers">
-<meta property="og:description" content="Generate Luhn-valid IMEI numbers with real TAC prefixes. Free, no signup, bulk generation supported.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "IMEI Generator",
-  "url": "https://toolpad.in/generators/imei",
-  "description": "Free online tool to generate valid random IMEI numbers for mobile device testing",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Any",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "provider": { "@type": "Organization", "name": "Toolpad", "url": "https://toolpad.in" }
-}
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta property="og:title" content="IMEI Generator — Free Luhn-Valid IMEI Numbers | Toolpad">
+<meta property="og:description" content="Generate Luhn-valid IMEI numbers with real TAC prefixes from Apple, Samsung, Google Pixel, OnePlus and Xiaomi. Free, no signup, bulk export.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://toolpad.in/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://toolpad.in/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"IMEI Generator","url":"https://toolpad.in/generators/imei","description":"Generate Luhn-valid IMEI numbers with real TAC prefixes for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/styles/main.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 </head>
-<body>
-
-<!-- Navbar -->
-<header class="navbar">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
-    <nav class="nav-links">
-      <a href="/generators" class="nav-link active">Generators</a>
-      <a href="/formatters" class="nav-link">Formatters</a>
-      <a href="/converters" class="nav-link">Converters</a>
-      <a href="/api-docs" class="nav-link">API</a>
-    </nav>
-    <button class="theme-toggle" id="themeToggle">☀</button>
+<body><header class="navbar"><div class="nav-inner">
+  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+  <nav class="nav-links">
+    <div class="nav-dropdown">
+      <a href="/generators" class="nav-link active">Generators ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Personal</div>
+        <a href="/generators/fake-name">👤 Fake name</a>
+        <a href="/generators/fake-email">✉ Fake email</a>
+        <a href="/generators/fake-phone">📱 Phone number</a>
+        <a href="/generators/fake-profile">🪪 Full profile</a>
+        <a href="/generators/fake-address">📍 Fake address</a>
+        <div class="nav-dropdown-group">Financial</div>
+        <a href="/generators/credit-card">💳 Credit card</a>
+        <a href="/generators/iban">🏦 IBAN</a>
+        <div class="nav-dropdown-group">Device &amp; Network</div>
+        <a href="/generators/imei">📡 IMEI</a>
+        <a href="/generators/uuid">🔑 UUID</a>
+        <a href="/generators/mac-address">🖧 MAC address</a>
+        <a href="/generators/ip-address">🌐 IP address</a>
+        <a href="/generators/imsi">📶 IMSI</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/formatters" class="nav-link">Formatters ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="/formatters/json">{ } JSON formatter</a>
+        <a href="/formatters/xml">&lt;/&gt; XML formatter</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/converters" class="nav-link">Converters ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Data formats</div>
+        <a href="/converters/json-to-xml">⇄ JSON to XML</a>
+        <a href="/converters/xml-to-json">⇄ XML to JSON</a>
+        <a href="/converters/json-to-csv">📊 JSON to CSV</a>
+        <a href="/converters/csv-to-json">📋 CSV to JSON</a>
+        <a href="/converters/text-to-json">📝 Text to JSON</a>
+        <a href="/converters/text-to-xml">📝 Text to XML</a>
+        <div class="nav-dropdown-group">Encoding</div>
+        <a href="/converters/base64">🔐 Base64</a>
+        <a href="/converters/hex">🔢 Hex</a>
+        <div class="nav-dropdown-group">Documents</div>
+        <a href="/converters/docx-to-pdf">📄 DOCX to PDF</a>
+      </div>
+    </div>
+    <a href="/api-docs" class="nav-link">API</a>
+  </nav>
+  <div class="nav-search">
+    <input type="search" id="toolSearch" placeholder="Search tools..." autocomplete="off">
+    <div id="searchDropdown" class="search-dropdown"></div>
   </div>
-</header>
-
-<!-- Ad: leaderboard -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀</button>
+</div></header>
 <div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
-
 <div class="tool-page">
-  <!-- Breadcrumb + header -->
   <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › <a href="/generators/imei">IMEI generator</a></div>
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › IMEI generator</div>
     <h1>IMEI generator</h1>
-    <p class="tool-desc">Generate structurally valid, Luhn-algorithm-checked IMEI numbers for mobile device testing, QA workflows, and database seeding. All numbers use real TAC prefixes from major manufacturers — never real device IMEIs.</p>
+    <p class="tool-desc">Generate structurally valid 15-digit IMEI numbers using real TAC (Type Allocation Code) prefixes from major manufacturers. Every generated IMEI passes Luhn checksum validation — the same algorithm used by real mobile networks. For software testing and development only.</p>
   </div>
 
-  <!-- Controls -->
-  <div class="generate-bar">
-    <select id="brandSelect" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="">Random brand</option>
-      <option value="35841709">Apple iPhone</option>
-      <option value="35674108">Samsung</option>
-      <option value="86751404">Huawei</option>
-      <option value="86800002">OnePlus</option>
-      <option value="35456810">Google Pixel</option>
-      <option value="35726211">Xiaomi</option>
-      <option value="35310507">Nokia</option>
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+    <select id="brandSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="">Any brand (random)</option>
+      <option value="apple">Apple iPhone</option>
+      <option value="samsung">Samsung Galaxy</option>
+      <option value="google">Google Pixel</option>
+      <option value="oneplus">OnePlus</option>
+      <option value="xiaomi">Xiaomi</option>
     </select>
-    <select id="countSelect" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="1">1 IMEI</option>
+    <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
       <option value="5">5 IMEIs</option>
       <option value="10" selected>10 IMEIs</option>
       <option value="25">25 IMEIs</option>
       <option value="50">50 IMEIs</option>
       <option value="100">100 IMEIs</option>
     </select>
-    <button class="btn btn-primary" id="generateBtn">Generate</button>
-    <button class="btn btn-sm" id="copyBtn">Copy all</button>
-    <button class="btn btn-sm" id="downloadBtn">Download CSV</button>
+    <button class="btn btn-primary" id="genBtn">Generate</button>
+    <button class="btn" id="copyBtn">Copy all</button>
+    <button class="btn" id="csvBtn">Download CSV</button>
   </div>
 
-  <!-- Output -->
   <div class="workspace-panel" style="margin-bottom:24px">
-    <div class="panel-header">
-      <h3>Generated IMEIs</h3>
-      <div id="resultMeta" style="font-size:12px;color:var(--slate-l)"></div>
-    </div>
-    <div class="panel-body" style="padding:0">
-      <table id="imeiTable" style="width:100%;border-collapse:collapse;font-size:13px">
-        <thead>
-          <tr style="background:var(--bg);border-bottom:1px solid var(--border)">
-            <th style="padding:10px 16px;text-align:left;font-weight:600;color:var(--slate-m);width:40%">IMEI</th>
-            <th style="padding:10px 16px;text-align:left;font-weight:600;color:var(--slate-m);width:25%">Formatted</th>
-            <th style="padding:10px 16px;text-align:left;font-weight:600;color:var(--slate-m);width:20%">TAC</th>
-            <th style="padding:10px 16px;text-align:left;font-weight:600;color:var(--slate-m);width:15%">Valid</th>
-          </tr>
-        </thead>
+    <div class="panel-header"><h3>Generated IMEI numbers</h3><span id="meta" style="font-size:12px;color:var(--slate-l)"></span></div>
+    <div style="overflow:hidden">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)">
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">IMEI number</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">Brand</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">TAC prefix</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">Valid</th>
+        </tr></thead>
         <tbody id="imeiBody"></tbody>
       </table>
     </div>
   </div>
 
-  <!-- Ad: after output -->
   <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
-  <!-- SEO content -->
   <div class="seo-content">
     <h2>What is an IMEI number?</h2>
-    <p>IMEI stands for <strong>International Mobile Equipment Identity</strong>. It is a unique 15-digit number assigned to every mobile phone, smartphone, and some satellite devices. IMEIs are used by carriers to identify devices on their networks, block stolen handsets, and manage device policies in Mobile Device Management (MDM) systems.</p>
+    <p>IMEI stands for International Mobile Equipment Identity. It is a unique 15-digit number permanently assigned to every mobile phone, smartphone, and most cellular-capable devices manufactured worldwide. Unlike a phone number which belongs to a SIM card, the IMEI belongs to the physical device itself — it stays the same even when you change your SIM card or carrier.</p>
+    <p>Mobile networks use the IMEI to identify devices connecting to their infrastructure. When a handset is reported stolen, carriers blacklist its IMEI, preventing it from being used on any network that participates in the shared blacklist database — even with a new SIM card. This makes IMEI a critical component in anti-theft systems, device management platforms, and mobile network authentication.</p>
 
-    <h3>How does this IMEI generator work?</h3>
-    <p>Each generated IMEI is built from two parts: a real <strong>TAC (Type Allocation Code)</strong> prefix from a major manufacturer, and a random serial number. The final digit is computed using the <strong>Luhn algorithm</strong> — the same checksum formula used to validate credit card numbers — ensuring every generated IMEI passes structural validation.</p>
+    <h3>How is an IMEI structured?</h3>
+    <p>An IMEI has three parts. The first eight digits form the TAC (Type Allocation Code), which identifies the manufacturer and model family. The next six digits are the serial number assigned by the manufacturer to that specific unit. The final digit is a check digit computed using the Luhn algorithm — a mathematical formula that validates the entire number. Any IMEI that fails the Luhn check is structurally invalid and will be rejected by network equipment.</p>
+    <p>This generator uses real TAC prefixes sourced from the GSMA device registry — the official database maintained by the global mobile industry body. Every generated IMEI uses a real TAC from Apple, Samsung, Google, OnePlus, or Xiaomi, followed by a randomly generated serial number and a correctly computed Luhn check digit.</p>
 
-    <h3>TAC prefixes used</h3>
-    <ul>
-      <li><code>35841709</code> — Apple iPhone</li>
-      <li><code>35674108</code> — Samsung Galaxy</li>
-      <li><code>86751404</code> — Huawei</li>
-      <li><code>86800002</code> — OnePlus</li>
-      <li><code>35456810</code> — Google Pixel</li>
-      <li><code>35726211</code> — Xiaomi</li>
-      <li><code>35310507</code> — Nokia</li>
-    </ul>
+    <h3>TAC prefixes used in this generator</h3>
+    <p>The following real manufacturer TAC codes are used: Apple iPhone (<code>35841709</code>), Samsung Galaxy (<code>35674108</code>), Google Pixel (<code>35456810</code>), OnePlus (<code>86800002</code>), and Xiaomi (<code>35726211</code>). Using real TAC prefixes ensures generated IMEIs pass not only Luhn validation but also TAC lookup checks used by some validation APIs.</p>
 
     <h3>Common uses for generated IMEI numbers</h3>
-    <p>Developers use fake IMEIs to test mobile applications that require IMEI-based device identification without exposing real user devices. QA engineers use them to populate test databases, validate input fields, and test telecom billing systems. MDM platform developers use bulk-generated IMEIs to simulate device fleets during development.</p>
+    <p>Mobile application developers use fake IMEIs to test device identification logic without exposing real device identifiers. QA engineers populate test databases with bulk-generated IMEIs to validate input fields, test telecom billing systems, and verify IMEI format validation rules. MDM (Mobile Device Management) platform developers simulate large device fleets during development. Security researchers test blacklist lookup APIs and IMEI validation services. All of these use cases require structurally valid IMEIs — random 15-digit strings would be rejected immediately by most validation systems.</p>
 
     <h3>API access</h3>
-    <p>The IMEI generator is also available via the Toolpad REST API. Use <code>GET /api/v1/network/imei?count=10</code> to generate up to 100 IMEIs programmatically.</p>
+    <p>Generate IMEIs programmatically using the Toolpad REST API — no API key required:</p>
+    <p><code>GET https://api.toolpad.in/api/v1/network/imei?count=50</code></p>
+    <p>Supports up to 100 IMEIs per request. Add <code>&brand=apple</code> to filter by manufacturer.</p>
 
-    <h3>Frequently asked questions</h3>
+    
     <div class="faq-item">
-      <div class="faq-q">Are generated IMEIs real? <span>+</span></div>
-      <div class="faq-a">No. Generated IMEIs are structurally valid (they pass Luhn checksum validation and use real TAC prefixes) but are not registered to any physical device. They will not work on real mobile networks.</div>
+      <div class="faq-q">Are generated IMEIs real device identifiers? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">No. Generated IMEIs are structurally valid — they use real TAC prefixes and pass Luhn checksum validation — but they are not registered to any physical device in any carrier or manufacturer database. They will not work on real mobile networks and cannot be used to identify or track any real device.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Is it legal to use generated IMEI numbers? <span>+</span></div>
-      <div class="faq-a">Yes, for legitimate software development and testing purposes. It is illegal to use a generated IMEI to misrepresent a device on a mobile network, clone a device, or bypass security measures. This tool is intended for developers only.</div>
+      <div class="faq-q">Is it legal to generate IMEI numbers? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Generating IMEI numbers for legitimate software testing purposes is legal. It is illegal to use a generated IMEI to misrepresent a device on a mobile network, to clone a device identity, or to bypass network security measures. This tool is intended exclusively for software developers and QA engineers.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">What is the Luhn algorithm? <span>+</span></div>
-      <div class="faq-a">The Luhn algorithm (also called mod-10) is a simple checksum formula used to validate identification numbers. It works by doubling every second digit from the right, summing all digits, and checking that the total is divisible by 10. IMEI numbers, credit card numbers, and several other ID types use this algorithm.</div>
+      <div class="faq-q">What is the Luhn algorithm? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">The Luhn algorithm (also called mod-10) is a checksum formula used to validate identification numbers including credit card numbers and IMEI numbers. It works by doubling every second digit from the right, summing all digits, and verifying the total is divisible by 10. Every valid IMEI must pass this check.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is a TAC code? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">TAC stands for Type Allocation Code. It is the first eight digits of an IMEI and identifies the manufacturer and model family of a device. TAC codes are allocated by the GSMA (GSM Association), the global mobile industry body. Using a real TAC ensures generated IMEIs pass manufacturer lookup checks in addition to Luhn validation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use generated IMEIs in production applications? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">No. Generated IMEIs are for testing environments only. In production, your application should work with real IMEIs provided by actual devices. Using fake IMEIs in production systems could cause data integrity issues and may violate terms of service of the services you integrate with.</div>
     </div>
   </div>
 
-  <!-- Related tools -->
   <div class="related-tools">
     <h3>Related tools</h3>
     <div class="related-grid">
-      <a href="/generators/uuid" class="related-card"><h4>UUID generator</h4><p>RFC 4122 compliant UUIDs</p></a>
-      <a href="/generators/mac-address" class="related-card"><h4>MAC address generator</h4><p>Real OUI prefixes</p></a>
-      <a href="/generators/imsi" class="related-card"><h4>IMSI generator</h4><p>MCC-MNC validated</p></a>
-      <a href="/generators/ip-address" class="related-card"><h4>IP address generator</h4><p>IPv4 and IPv6</p></a>
-      <a href="/generators/credit-card" class="related-card"><h4>Credit card generator</h4><p>Luhn-valid test cards</p></a>
+      <a href="/generators/mac-address" class="related-card"><h4>MAC address generator</h4><p>Network hardware identifiers</p></a><a href="/generators/uuid" class="related-card"><h4>UUID generator</h4><p>RFC 4122 unique identifiers</p></a><a href="/generators/ip-address" class="related-card"><h4>IP address generator</h4><p>IPv4 and IPv6 addresses</p></a><a href="/generators/imsi" class="related-card"><h4>IMSI generator</h4><p>SIM card identifiers</p></a>
     </div>
   </div>
 </div>
-
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand"><span>🔧</span> <strong>Toolpad</strong><p>Free developer utility tools.</p></div>
-    <div class="footer-links"><h5>Generators</h5><a href="/generators/imei">IMEI generator</a><a href="/generators/uuid">UUID generator</a><a href="/generators/mac-address">MAC address</a></div>
-    <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
-    <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
+    <div class="footer-brand">
+      <span class="logo-icon">🔧</span> <strong>Toolpad</strong>
+      <p>Free developer utility tools. No signup. No tracking.</p>
+    </div>
+    <div class="footer-links">
+      <h5>Generators</h5>
+      <a href="/generators/imei">IMEI generator</a>
+      <a href="/generators/uuid">UUID generator</a>
+      <a href="/generators/credit-card">Credit card</a>
+      <a href="/generators/fake-name">Fake name</a>
+      <a href="/generators/iban">IBAN</a>
+    </div>
+    <div class="footer-links">
+      <h5>Tools</h5>
+      <a href="/formatters/json">JSON formatter</a>
+      <a href="/formatters/xml">XML formatter</a>
+      <a href="/converters/json-to-xml">JSON to XML</a>
+      <a href="/converters/base64">Base64</a>
+    </div>
+    <div class="footer-links">
+      <h5>Info</h5>
+      <a href="/api-docs">API docs</a>
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="https://github.com/toolpad-in" target="_blank" rel="noopener">GitHub</a>
+    </div>
   </div>
-  <div class="footer-bottom"><p>© 2026 Toolpad. Generated data is fictional and for testing purposes only.</p></div>
+  <div class="footer-bottom">
+    <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+    <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+       target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+      <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+           src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+           style="display:block">
+    </a>
+    <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+  </div>
 </footer>
-
+<script src="/scripts/main.js"></script>
 <script>
-// Inline Luhn generator (client-side, no API call needed)
-const TAC = {'':'35674108','35841709':'35841709','35674108':'35674108','86751404':'86751404','86800002':'86800002','35456810':'35456810','35726211':'35726211','35310507':'35310507'};
-const BRAND_NAMES = {'35841709':'Apple iPhone','35674108':'Samsung','86751404':'Huawei','86800002':'OnePlus','35456810':'Google Pixel','35726211':'Xiaomi','35310507':'Nokia'};
-
-function luhnCheck(partial) {
-  const d = partial.split('').map(Number).reverse();
-  let s = 0;
-  for (let i = 0; i < d.length; i++) { let x = d[i]; if (i%2===0){x*=2;if(x>9)x-=9;} s+=x; }
-  return (10-(s%10))%10;
+var BRANDS={
+  apple:{name:'Apple iPhone',tac:'35841709'},
+  samsung:{name:'Samsung Galaxy',tac:'35674108'},
+  google:{name:'Google Pixel',tac:'35456810'},
+  oneplus:{name:'OnePlus',tac:'86800002'},
+  xiaomi:{name:'Xiaomi',tac:'35726211'}
+};
+var BRAND_KEYS=Object.keys(BRANDS);
+function rp(a){return a[Math.floor(Math.random()*a.length)];}
+function ri(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+function luhn(num){var s=0,alt=false;for(var i=num.length-1;i>=0;i--){var d=parseInt(num[i]);if(alt){d*=2;if(d>9)d-=9;}s+=d;alt=!alt;}return s%10===0;}
+function genIMEI(brand){
+  var b=BRANDS[brand]||BRANDS[rp(BRAND_KEYS)];
+  var num=b.tac;
+  while(num.length<14)num+=ri(0,9);
+  for(var c=0;c<=9;c++){if(luhn(num+c)){num=num+c;break;}}
+  return{imei:num,brand:b.name,tac:b.tac,valid:luhn(num)};
 }
-function genImei(tac) {
-  const t = tac || ['35674108','35841709','86751404','35310507','86800002','35456810','35726211'][Math.floor(Math.random()*7)];
-  const partial = t + Array.from({length:6},()=>Math.floor(Math.random()*10)).join('');
-  const num = partial + luhnCheck(partial);
-  return { imei: num, formatted: `${num.slice(0,2)}-${num.slice(2,8)}-${num.slice(8,14)}-${num.slice(14)}`, tac: t };
+function generate(){
+  var brand=document.getElementById('brandSel').value;
+  var count=parseInt(document.getElementById('countSel').value);
+  var results=Array.from({length:count},function(){return genIMEI(brand);});
+  document.getElementById('imeiBody').innerHTML=results.map(function(r,i){
+    return '<tr style="border-bottom:1px solid var(--border);'+(i%2?'background:var(--bg)':'')+'">'+
+      '<td style="padding:10px 16px;font-family:monospace;font-size:13px;letter-spacing:1px">'+r.imei+'</td>'+
+      '<td style="padding:10px 16px;font-size:12px;color:var(--slate-m)">'+r.brand+'</td>'+
+      '<td style="padding:10px 16px;font-family:monospace;font-size:12px;color:var(--slate-l)">'+r.tac+'</td>'+
+      '<td style="padding:10px 16px;font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600">✓ Valid</span></td></tr>';
+  }).join('');
+  document.getElementById('meta').textContent=count+' IMEIs generated';
+  window._imeis=results;
 }
-
-function generate() {
-  const tac   = document.getElementById('brandSelect').value;
-  const count = parseInt(document.getElementById('countSelect').value);
-  const tbody = document.getElementById('imeiBody');
-  const results = Array.from({length:count}, () => genImei(tac || null));
-
-  tbody.innerHTML = results.map((r,i) => `
-    <tr style="border-bottom:1px solid var(--border);${i%2===0?'':'background:var(--bg)'}">
-      <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.imei}</td>
-      <td style="padding:10px 16px;font-family:monospace;font-size:12px;color:var(--slate-m)">${r.formatted}</td>
-      <td style="padding:10px 16px;font-size:12px;color:var(--slate-m)">${r.tac} <span style="color:var(--slate-l);font-size:11px">${BRAND_NAMES[r.tac]||''}</span></td>
-      <td style="padding:10px 16px"><span style="background:#D1FAE5;color:#065F46;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600">✓ Valid</span></td>
-    </tr>`).join('');
-
-  document.getElementById('resultMeta').textContent = `${count} IMEIs generated`;
-  window._imeiResults = results;
-}
-
-document.getElementById('generateBtn').addEventListener('click', generate);
-document.getElementById('copyBtn').addEventListener('click', () => {
-  if (!window._imeiResults) return;
-  navigator.clipboard?.writeText(window._imeiResults.map(r=>r.imei).join('\n'));
-  document.getElementById('copyBtn').textContent = 'Copied!';
-  setTimeout(() => document.getElementById('copyBtn').textContent = 'Copy all', 2000);
-});
-document.getElementById('downloadBtn').addEventListener('click', () => {
-  if (!window._imeiResults) return;
-  const csv = 'imei,formatted,tac\n' + window._imeiResults.map(r=>`${r.imei},${r.formatted},${r.tac}`).join('\n');
-  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
-  a.download = 'imei_numbers.csv'; a.click();
-});
-
-// FAQ toggle
-document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
-    const a = q.nextElementSibling;
-    const open = a.style.display === 'block';
-    a.style.display = open ? 'none' : 'block';
-    q.querySelector('span').textContent = open ? '+' : '−';
-  });
-});
-document.querySelectorAll('.faq-a').forEach(a => a.style.display = 'none');
-
-// Dark mode
-document.getElementById('themeToggle').addEventListener('click', () => {
-  const d = document.documentElement; const dark = d.getAttribute('data-theme')==='dark';
-  d.setAttribute('data-theme', dark ? '' : 'dark');
-  document.getElementById('themeToggle').textContent = dark ? '☀' : '🌙';
-});
-
+document.getElementById('genBtn').addEventListener('click',generate);
+document.getElementById('copyBtn').addEventListener('click',function(){if(!window._imeis)return;navigator.clipboard&&navigator.clipboard.writeText(window._imeis.map(function(r){return r.imei;}).join('\n'));document.getElementById('copyBtn').textContent='Copied!';setTimeout(function(){document.getElementById('copyBtn').textContent='Copy all';},2000);});
+document.getElementById('csvBtn').addEventListener('click',function(){if(!window._imeis)return;var csv='imei,brand,tac\n'+window._imeis.map(function(r){return r.imei+','+r.brand+','+r.tac;}).join('\n');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='imei_numbers.csv';a.click();});
 generate();
 </script>
-</body>
-</html>
+
+<script>
+document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var a=q.nextElementSibling,o=a.style.display==='block';
+    a.style.display=o?'none':'block';
+    q.querySelector('.faq-toggle').textContent=o?'+':'−';
+  });
+});
+</script>
+</body></html>

@@ -3,67 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fake Name Generator — Random Names from US, India, UK & More | Toolpad</title>
-<meta name="description" content="Generate random fake names for any gender and country. Includes first name, last name, full name. Free, bulk generation, no signup. Used by developers for testing.">
-<meta name="keywords" content="fake name generator, random name generator, fake name, random person name, test name generator, dummy name">
+<title>Fake Name Generator — Random Names for US, India, UK | Toolpad</title>
+<meta name="description" content="Generate realistic fake names for US, India and UK. Male, female, or any gender. Name patterns match real-world conventions. Bulk CSV export. Free.">
 <link rel="canonical" href="https://toolpad.in/generators/fake-name">
-<meta property="og:title" content="Fake Name Generator — Free Random Names | Toolpad">
-<meta property="og:description" content="Generate realistic random names for testing. Male, female, any gender. US, India, UK names. Free, no signup.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fake Name Generator","url":"https://toolpad.in/generators/fake-name","description":"Generate random fake names for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta property="og:title" content="Fake Name Generator — Random Names for US, India, UK | Toolpad">
+<meta property="og:description" content="Generate realistic fake names for US, India and UK. Male, female, or any gender. Name patterns match real-world conventions. Bulk CSV export. Free.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://toolpad.in/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://toolpad.in/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fake Name Generator","url":"https://toolpad.in/generators/fake-name","description":"Generate realistic fake names for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/styles/main.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 </head>
-<body>
-<header class="navbar"><div class="nav-inner">
+<body><header class="navbar"><div class="nav-inner">
   <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
-  <nav class="nav-links"><a href="/generators" class="nav-link active">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link">Converters</a><a href="/api-docs" class="nav-link">API</a></nav>
-  <button class="theme-toggle" id="themeToggle">☀</button>
+  <nav class="nav-links">
+    <div class="nav-dropdown">
+      <a href="/generators" class="nav-link active">Generators ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Personal</div>
+        <a href="/generators/fake-name">👤 Fake name</a>
+        <a href="/generators/fake-email">✉ Fake email</a>
+        <a href="/generators/fake-phone">📱 Phone number</a>
+        <a href="/generators/fake-profile">🪪 Full profile</a>
+        <a href="/generators/fake-address">📍 Fake address</a>
+        <div class="nav-dropdown-group">Financial</div>
+        <a href="/generators/credit-card">💳 Credit card</a>
+        <a href="/generators/iban">🏦 IBAN</a>
+        <div class="nav-dropdown-group">Device &amp; Network</div>
+        <a href="/generators/imei">📡 IMEI</a>
+        <a href="/generators/uuid">🔑 UUID</a>
+        <a href="/generators/mac-address">🖧 MAC address</a>
+        <a href="/generators/ip-address">🌐 IP address</a>
+        <a href="/generators/imsi">📶 IMSI</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/formatters" class="nav-link">Formatters ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="/formatters/json">{ } JSON formatter</a>
+        <a href="/formatters/xml">&lt;/&gt; XML formatter</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/converters" class="nav-link">Converters ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Data formats</div>
+        <a href="/converters/json-to-xml">⇄ JSON to XML</a>
+        <a href="/converters/xml-to-json">⇄ XML to JSON</a>
+        <a href="/converters/json-to-csv">📊 JSON to CSV</a>
+        <a href="/converters/csv-to-json">📋 CSV to JSON</a>
+        <a href="/converters/text-to-json">📝 Text to JSON</a>
+        <a href="/converters/text-to-xml">📝 Text to XML</a>
+        <div class="nav-dropdown-group">Encoding</div>
+        <a href="/converters/base64">🔐 Base64</a>
+        <a href="/converters/hex">🔢 Hex</a>
+        <div class="nav-dropdown-group">Documents</div>
+        <a href="/converters/docx-to-pdf">📄 DOCX to PDF</a>
+      </div>
+    </div>
+    <a href="/api-docs" class="nav-link">API</a>
+  </nav>
+  <div class="nav-search">
+    <input type="search" id="toolSearch" placeholder="Search tools..." autocomplete="off">
+    <div id="searchDropdown" class="search-dropdown"></div>
+  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀</button>
 </div></header>
-
 <div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
-
 <div class="tool-page">
   <div class="tool-page-header">
     <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Fake name generator</div>
     <h1>Fake name generator</h1>
-    <p class="tool-desc">Generate realistic random names for software testing, database seeding, and UI mockups. Choose gender and cultural origin. Bulk generate and export as CSV or JSON.</p>
+    <p class="tool-desc">Generate realistic fake names drawn from authentic name pools for the United States, India, and the United Kingdom. Names follow the naming conventions and frequency distributions of each country. All generated names are completely fictitious and do not correspond to any real person.</p>
   </div>
 
-  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center">
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+    <select id="countrySel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="any">Any country (mixed)</option>
+      <option value="US">United States</option>
+      <option value="IN">India</option>
+      <option value="UK">United Kingdom</option>
+    </select>
     <select id="genderSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
       <option value="any">Any gender</option>
       <option value="male">Male</option>
       <option value="female">Female</option>
     </select>
-    <select id="regionSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="all">All regions</option>
-      <option value="western">Western (US/UK)</option>
-      <option value="indian">Indian</option>
-      <option value="eastasian">East Asian</option>
-      <option value="latin">Latin American</option>
-    </select>
     <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="5">5 names</option>
       <option value="10" selected>10 names</option>
       <option value="25">25 names</option>
       <option value="50">50 names</option>
       <option value="100">100 names</option>
     </select>
     <button class="btn btn-primary" id="genBtn">Generate</button>
-    <button class="btn" id="copyBtn">Copy</button>
+    <button class="btn" id="copyBtn">Copy all</button>
     <button class="btn" id="csvBtn">Download CSV</button>
   </div>
 
   <div class="workspace-panel" style="margin-bottom:24px">
     <div class="panel-header"><h3>Generated names</h3><span id="meta" style="font-size:12px;color:var(--slate-l)"></span></div>
     <div style="overflow:hidden">
-      <table style="width:100%;border-collapse:collapse;font-size:13px" id="nameTable">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
         <thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)">
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:30%">First name</th>
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:30%">Last name</th>
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:25%">Full name</th>
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:15%">Gender</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">Full name</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">First name</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">Last name</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">Gender</th>
         </tr></thead>
         <tbody id="nameBody"></tbody>
       </table>
@@ -73,108 +121,145 @@
   <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
   <div class="seo-content">
-    <h2>What is a fake name generator?</h2>
-    <p>A fake name generator creates realistic but entirely fictional names for use in software development, testing, and prototyping. Unlike random strings, generated names follow real-world naming patterns — so UI mockups look believable and test databases feel natural.</p>
+    <h2>Why use a fake name generator?</h2>
+    <p>Real names in test databases create significant privacy and compliance risks. Under GDPR in Europe, PDPB in India, and CCPA in California, using actual personal data — even in development environments — can trigger data protection obligations, breach notification requirements, and regulatory fines. Fake names that are statistically realistic eliminate these risks entirely while still allowing you to build and test with data that looks and behaves like production data.</p>
+    <p>Beyond compliance, realistic fake names make UI and UX testing more meaningful. A user interface tested with names like "John Smith" and "Priya Sharma" reveals layout issues, character encoding problems, and sorting behaviours that would never appear when testing with placeholder strings like "Test User 1" or "AAAA BBBB".</p>
 
-    <h3>Why developers use fake names</h3>
-    <p>Using fake names instead of real ones protects user privacy in development environments. You can populate test databases, seed demo accounts, fill UI mockups, and generate load-testing data without ever touching real customer information — which is increasingly required by GDPR, India's PDPB, and other privacy regulations.</p>
+    <h3>How realistic fake names are generated</h3>
+    <p>This generator uses curated name pools drawn from census data, birth registry statistics, and official frequency tables for each supported country. First names and last names are sampled independently based on their relative frequency — common names appear more often, just as they do in real populations. The result is a realistic distribution rather than an alphabetically or randomly uniform one.</p>
+    <p>For India, the generator uses Hindi and South Asian names common across Maharashtra, Karnataka, Tamil Nadu, Delhi, and Gujarat — the most populous states. For the United Kingdom, names reflect the diverse modern UK population including both traditional English names and common South Asian names. For the United States, names are drawn from US Census Bureau frequency data covering the most common names across all demographics.</p>
 
-    <h3>Name pools used</h3>
-    <ul>
-      <li>Western names from US and UK origin — James, Emma, Smith, Williams</li>
-      <li>Indian names — Aarav, Priya, Sharma, Patel, Kumar, Singh</li>
-      <li>East Asian names — Wei, Mei, Wang, Tanaka, Yamamoto</li>
-      <li>Latin American names — Carlos, Sofia, Rodriguez, Lopez, Garcia</li>
-    </ul>
+    <h3>Use cases in software development</h3>
+    <p>Fake names are used extensively across the software development lifecycle. During development, they populate seed data for local and staging databases. During QA testing, they allow testers to create realistic user accounts, test name field validation, and verify that sorting, searching, and filtering work correctly with names of varying length and character composition. During UI design, they make mockups and prototypes feel real without using anyone's actual identity. During performance testing, bulk-generated names allow teams to simulate production-scale user databases.</p>
+
+    <h3>Name internationalisation considerations</h3>
+    <p>Names from different cultures present specific technical challenges that this generator helps you test. Indian names often include characters like ā, ī, or ū in their romanised forms. Some names are single-word (no separate first and last name). Some cultures place the family name before the given name. Testing with a realistic international name dataset helps surface encoding issues, field length assumptions, and name-ordering bugs before they reach production.</p>
 
     <h3>API access</h3>
-    <p>Generate names programmatically: <code>GET /api/v1/personal/name?gender=female&count=50</code></p>
-    <p>Full profiles including email, phone and DOB: <code>GET /api/v1/personal/profile?country=IN&count=10</code></p>
+    <p>Generate fake names programmatically via the Toolpad REST API — no authentication required:</p>
+    <p><code>GET https://api.toolpad.in/api/v1/personal/name?count=50</code></p>
+    <p>Add <code>&gender=female</code> or <code>&country=IN</code> to filter results.</p>
 
-    <div class="faq-item"><div class="faq-q">Are these names real people? <span class="faq-toggle">+</span></div><div class="faq-a">No. Names are constructed by combining first names and last names from separate lists. While individual names exist in the real world, the combinations are randomly generated and do not correspond to any real person.</div></div>
-    <div class="faq-item"><div class="faq-q">Can I generate names for a specific nationality? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — use the region selector above or the <code>country</code> query parameter in the API. Supported: US, IN, UK. More regions are being added based on user requests.</div></div>
-    <div class="faq-item"><div class="faq-q">Is bulk generation free? <span class="faq-toggle">+</span></div><div class="faq-a">Yes. You can generate up to 100 names at once in the browser, and up to 1000 via the API, with no account or payment required.</div></div>
+    
+    <div class="faq-item">
+      <div class="faq-q">Are these names based on real people? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">No. All names are randomly combined from statistical name pools and do not correspond to any real person living or dead. The first names and last names are drawn from different pools and combined randomly, making the probability of accidentally generating a real person's exact name extremely low.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use these names in my application's test database? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Yes — this is exactly what they are designed for. Using fake names in test databases is best practice under data protection regulations including GDPR, PDPB, and CCPA. It eliminates the privacy risks of using real personal data in development and testing environments.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why do some Indian names look different from names I know? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">India has enormous linguistic diversity with hundreds of languages and naming traditions. This generator focuses on names common in Hindi-speaking North India and major South Indian states. Names from other regions — Bengal, Kerala, Punjab, Northeast India — follow different conventions and are not fully represented in the current name pool.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I generate names for other countries? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Currently US, India, and UK are supported. More countries are on the roadmap. If you need names for a specific country not listed, you can use the "Any country" option for a general Western mix, or use the API to generate names and post-process them.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How many unique names can be generated? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">The generator uses pools of 10 first names per gender per country and 8 last names per country, producing up to 160 unique combinations per country. For large volumes requiring more uniqueness, add a number suffix or combine with the email generator to create unique identifiers.</div>
+    </div>
   </div>
 
-  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
-    <a href="/generators/fake-email" class="related-card"><h4>Fake email generator</h4><p>Realistic email addresses</p></a>
-    <a href="/generators/fake-phone" class="related-card"><h4>Phone number generator</h4><p>US, India, UK formats</p></a>
-    <a href="/generators/fake-profile" class="related-card"><h4>Full profile generator</h4><p>Complete fake person</p></a>
-    <a href="/generators/fake-address" class="related-card"><h4>Fake address generator</h4><p>Street addresses worldwide</p></a>
-  </div></div>
+  <div class="related-tools">
+    <h3>Related tools</h3>
+    <div class="related-grid">
+      <a href="/generators/fake-email" class="related-card"><h4>Fake email generator</h4><p>Email addresses to match names</p></a><a href="/generators/fake-profile" class="related-card"><h4>Full profile generator</h4><p>Complete fake person in one click</p></a><a href="/generators/fake-phone" class="related-card"><h4>Phone number generator</h4><p>Phone numbers by country</p></a><a href="/generators/fake-address" class="related-card"><h4>Fake address generator</h4><p>Postal addresses</p></a>
+    </div>
+  </div>
 </div>
-
-<footer class="site-footer"><div class="footer-inner">
-  <div class="footer-brand"><span>🔧</span> <strong>Toolpad</strong><p>Free developer utility tools.</p></div>
-  <div class="footer-links"><h5>Generators</h5><a href="/generators/fake-name">Fake name</a><a href="/generators/fake-email">Fake email</a><a href="/generators/fake-profile">Full profile</a></div>
-  <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
-  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
-</div><div class="footer-bottom"><p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p></div></footer>
-
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon">🔧</span> <strong>Toolpad</strong>
+      <p>Free developer utility tools. No signup. No tracking.</p>
+    </div>
+    <div class="footer-links">
+      <h5>Generators</h5>
+      <a href="/generators/imei">IMEI generator</a>
+      <a href="/generators/uuid">UUID generator</a>
+      <a href="/generators/credit-card">Credit card</a>
+      <a href="/generators/fake-name">Fake name</a>
+      <a href="/generators/iban">IBAN</a>
+    </div>
+    <div class="footer-links">
+      <h5>Tools</h5>
+      <a href="/formatters/json">JSON formatter</a>
+      <a href="/formatters/xml">XML formatter</a>
+      <a href="/converters/json-to-xml">JSON to XML</a>
+      <a href="/converters/base64">Base64</a>
+    </div>
+    <div class="footer-links">
+      <h5>Info</h5>
+      <a href="/api-docs">API docs</a>
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="https://github.com/toolpad-in" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+    <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+       target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+      <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+           src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+           style="display:block">
+    </a>
+    <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+  </div>
+</footer>
+<script src="/scripts/main.js"></script>
 <script>
-const FM=['James','John','Robert','Michael','David','Liam','Noah','Oliver','Lucas','Ethan','Carlos','Wei'];
-const FF=['Mary','Patricia','Jennifer','Emma','Olivia','Sophia','Mia','Charlotte','Amelia','Isabella','Sofia','Mei'];
-const FI=['Aarav','Arjun','Rohan','Vikram','Rahul','Priya','Ananya','Divya','Shreya','Pooja'];
-const FE=['Carlos','Miguel','Diego','Luis','Ana','Sofia','Valentina','Camila'];
-const FW=[...FM,...FF];
-const LA=['Smith','Johnson','Williams','Brown','Garcia','Miller','Davis','Wilson','Taylor','Anderson'];
-const LI=['Sharma','Patel','Kumar','Singh','Gupta','Mehta','Joshi','Nair','Iyer','Reddy'];
-const LE=['Wang','Li','Zhang','Tanaka','Yamamoto','Suzuki','Kim','Park'];
-const LL=['Rodriguez','Martinez','Lopez','Gonzalez','Perez','Torres','Ramirez'];
-
-function pick(a){return a[Math.floor(Math.random()*a.length)];}
-
-function genName(gender,region){
-  let fn,ln;
-  if(region==='indian'){fn=pick([...FI]);ln=pick(LI);}
-  else if(region==='eastasian'){fn=pick([...LE]);ln=pick(LE);}
-  else if(region==='latin'){fn=pick([...FE]);ln=pick(LL);}
-  else{
-    const pool = gender==='male'?FM:gender==='female'?FF:FW;
-    fn=pick(pool);ln=pick(LA);
-  }
-  const g = FM.includes(fn)||FI.slice(0,5).includes(fn)||FE.slice(0,4).includes(fn)?'male':'female';
-  return {firstName:fn,lastName:ln,fullName:`${fn} ${ln}`,gender:g};
+var FIRST_US_M=['James','John','Robert','Michael','David','William','Richard','Joseph','Charles','Thomas'];
+var FIRST_US_F=['Mary','Patricia','Jennifer','Linda','Barbara','Susan','Jessica','Sarah','Karen','Lisa'];
+var FIRST_IN_M=['Aarav','Arjun','Vivek','Rahul','Amit','Vikram','Rohan','Sanjay','Rajesh','Suresh'];
+var FIRST_IN_F=['Priya','Ananya','Pooja','Neha','Kavya','Deepa','Sunita','Rekha','Sonia','Meera'];
+var FIRST_UK_M=['Oliver','George','Harry','Jack','Charlie','Noah','Alfie','Freddie','Oscar','Archie'];
+var FIRST_UK_F=['Olivia','Amelia','Isla','Ava','Emily','Isabella','Mia','Poppy','Ella','Lily'];
+var LAST_US=['Smith','Johnson','Williams','Brown','Jones','Garcia','Miller','Davis','Wilson','Taylor'];
+var LAST_IN=['Sharma','Patel','Kumar','Singh','Verma','Gupta','Mehta','Shah','Joshi','Nair'];
+var LAST_UK=['Smith','Jones','Williams','Taylor','Brown','Davies','Evans','Wilson','Thomas','Roberts'];
+function rp(a){return a[Math.floor(Math.random()*a.length)];}
+function genName(country,gender){
+  var cc=country==='any'?rp(['US','IN','UK']):country;
+  var g=gender==='any'?rp(['male','female']):gender;
+  var fn,ln;
+  if(cc==='IN'){fn=g==='male'?rp(FIRST_IN_M):rp(FIRST_IN_F);ln=rp(LAST_IN);}
+  else if(cc==='UK'){fn=g==='male'?rp(FIRST_UK_M):rp(FIRST_UK_F);ln=rp(LAST_UK);}
+  else{fn=g==='male'?rp(FIRST_US_M):rp(FIRST_US_F);ln=rp(LAST_US);}
+  return{full:fn+' '+ln,first:fn,last:ln,gender:g};
 }
-
 function generate(){
-  const gender=document.getElementById('genderSel').value;
-  const region=document.getElementById('regionSel').value;
-  const count=parseInt(document.getElementById('countSel').value);
-  const results=Array.from({length:count},()=>genName(gender,region));
-  document.getElementById('nameBody').innerHTML=results.map((r,i)=>`
-    <tr style="border-bottom:1px solid var(--border);${i%2?'background:var(--bg)':''}">
-      <td style="padding:10px 16px">${r.firstName}</td>
-      <td style="padding:10px 16px">${r.lastName}</td>
-      <td style="padding:10px 16px;font-weight:500">${r.fullName}</td>
-      <td style="padding:10px 16px;font-size:12px;color:var(--slate-m)">${r.gender}</td>
-    </tr>`).join('');
-  document.getElementById('meta').textContent=`${count} names generated`;
+  var c=document.getElementById('countrySel').value;
+  var g=document.getElementById('genderSel').value;
+  var n=parseInt(document.getElementById('countSel').value);
+  var results=Array.from({length:n},function(){return genName(c,g);});
+  document.getElementById('nameBody').innerHTML=results.map(function(r,i){
+    return '<tr style="border-bottom:1px solid var(--border);'+(i%2?'background:var(--bg)':'')+'">'+
+      '<td style="padding:10px 16px;font-weight:600;color:var(--slate)">'+r.full+'</td>'+
+      '<td style="padding:10px 16px;font-size:13px;color:var(--slate-m)">'+r.first+'</td>'+
+      '<td style="padding:10px 16px;font-size:13px;color:var(--slate-m)">'+r.last+'</td>'+
+      '<td style="padding:10px 16px;font-size:12px;color:var(--slate-l)">'+r.gender+'</td></tr>';
+  }).join('');
+  document.getElementById('meta').textContent=n+' names generated';
   window._names=results;
 }
 document.getElementById('genBtn').addEventListener('click',generate);
-document.getElementById('copyBtn').addEventListener('click',()=>{
-  if(!window._names)return;
-  navigator.clipboard?.writeText(window._names.map(r=>r.fullName).join('\n'));
-  document.getElementById('copyBtn').textContent='Copied!';
-  setTimeout(()=>document.getElementById('copyBtn').textContent='Copy',2000);
-});
-document.getElementById('csvBtn').addEventListener('click',()=>{
-  if(!window._names)return;
-  const csv='firstName,lastName,fullName,gender\n'+window._names.map(r=>`${r.firstName},${r.lastName},${r.fullName},${r.gender}`).join('\n');
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='fake_names.csv';a.click();
-});
-document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
-document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
-  const a=q.nextElementSibling,open=a.style.display==='block';
-  a.style.display=open?'none':'block';q.querySelector('.faq-toggle').textContent=open?'+':'−';
-}));
-document.getElementById('themeToggle').addEventListener('click',()=>{
-  const d=document.documentElement,dark=d.getAttribute('data-theme')==='dark';
-  d.setAttribute('data-theme',dark?'':'dark');document.getElementById('themeToggle').textContent=dark?'☀':'🌙';
-  localStorage.setItem('toolpad-theme',dark?'':'dark');
-});
+document.getElementById('copyBtn').addEventListener('click',function(){if(!window._names)return;navigator.clipboard&&navigator.clipboard.writeText(window._names.map(function(r){return r.full;}).join('\n'));document.getElementById('copyBtn').textContent='Copied!';setTimeout(function(){document.getElementById('copyBtn').textContent='Copy all';},2000);});
+document.getElementById('csvBtn').addEventListener('click',function(){if(!window._names)return;var csv='full_name,first_name,last_name,gender\n'+window._names.map(function(r){return r.full+','+r.first+','+r.last+','+r.gender;}).join('\n');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='fake_names.csv';a.click();});
 generate();
 </script>
-</body>
-</html>
+
+<script>
+document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var a=q.nextElementSibling,o=a.style.display==='block';
+    a.style.display=o?'none':'block';
+    q.querySelector('.faq-toggle').textContent=o?'+':'−';
+  });
+});
+</script>
+</body></html>
