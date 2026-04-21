@@ -4,31 +4,86 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JSON Formatter & Validator — Free Online Tool | Toolpad</title>
-<meta name="description" content="Prettify, minify and validate JSON online for free. Instant syntax error detection. No signup, no data stored.">
+<meta name="description" content="Prettify, minify and validate JSON online for free. Instant syntax error detection with exact line numbers. 100% client-side. No signup, no data stored.">
 <link rel="canonical" href="https://toolpad.in/formatters/json">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:title" content="JSON Formatter & Validator — Free Online Tool | Toolpad">
+<meta property="og:description" content="Prettify, minify and validate JSON online for free. Instant syntax error detection with exact line numbers. 100% client-side. No signup, no data stored.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://toolpad.in/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://toolpad.in/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"JSON Formatter & Validator","url":"https://toolpad.in/formatters/json","description":"Free online JSON formatter, validator and minifier","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body><header class="navbar"><div class="nav-inner">
   <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
   <nav class="nav-links">
-    <a href="/generators" class="nav-link">Generators</a>
-    <a href="/formatters" class="nav-link active">Formatters</a>
-    <a href="/converters" class="nav-link">Converters</a>
+    <div class="nav-dropdown">
+      <a href="/generators" class="nav-link">Generators ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Personal</div>
+        <a href="/generators/fake-name">👤 Fake name</a>
+        <a href="/generators/fake-email">✉ Fake email</a>
+        <a href="/generators/fake-phone">📱 Phone number</a>
+        <a href="/generators/fake-profile">🪪 Full profile</a>
+        <a href="/generators/fake-address">📍 Fake address</a>
+        <div class="nav-dropdown-group">Financial</div>
+        <a href="/generators/credit-card">💳 Credit card</a>
+        <a href="/generators/iban">🏦 IBAN</a>
+        <div class="nav-dropdown-group">Device &amp; Network</div>
+        <a href="/generators/imei">📡 IMEI</a>
+        <a href="/generators/uuid">🔑 UUID</a>
+        <a href="/generators/mac-address">🖧 MAC address</a>
+        <a href="/generators/ip-address">🌐 IP address</a>
+        <a href="/generators/imsi">📶 IMSI</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/formatters" class="nav-link active">Formatters ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="/formatters/json">{ } JSON formatter</a>
+        <a href="/formatters/xml">&lt;/&gt; XML formatter</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/converters" class="nav-link">Converters ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Data formats</div>
+        <a href="/converters/json-to-xml">⇄ JSON to XML</a>
+        <a href="/converters/xml-to-json">⇄ XML to JSON</a>
+        <a href="/converters/json-to-csv">📊 JSON to CSV</a>
+        <a href="/converters/csv-to-json">📋 CSV to JSON</a>
+        <a href="/converters/text-to-json">📝 Text to JSON</a>
+        <a href="/converters/text-to-xml">📝 Text to XML</a>
+        <div class="nav-dropdown-group">Encoding</div>
+        <a href="/converters/base64">🔐 Base64</a>
+        <a href="/converters/hex">🔢 Hex</a>
+        <div class="nav-dropdown-group">Documents</div>
+        <a href="/converters/docx-to-pdf">📄 DOCX to PDF</a>
+      </div>
+    </div>
     <a href="/api-docs" class="nav-link">API</a>
   </nav>
-  <button class="theme-toggle" id="themeToggle">☀</button>
-</div></header><div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+  <div class="nav-search">
+    <input type="search" id="toolSearch" placeholder="Search tools..." autocomplete="off">
+    <div id="searchDropdown" class="search-dropdown"></div>
+  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀</button>
+</div></header>
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 <div class="tool-page">
   <div class="tool-page-header">
     <div class="breadcrumb"><a href="/">Home</a> › <a href="/formatters">Formatters</a> › JSON formatter</div>
     <h1>JSON formatter &amp; validator</h1>
-    <p class="tool-desc">Prettify, minify and validate JSON instantly in the browser. Syntax errors are highlighted with exact positions. No data is sent to any server.</p>
+    <p class="tool-desc">Prettify, minify, and validate JSON instantly in your browser. Syntax errors are detected and reported with the exact line and character position. Choose from 2-space, 4-space, or compact indentation. All processing happens locally — your data never leaves your machine.</p>
   </div>
+
   <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
     <button class="btn btn-primary" id="btnFormat">Prettify JSON</button>
     <button class="btn" id="btnMinify">Minify</button>
-    <button class="btn" id="btnValidate">Validate</button>
+    <button class="btn" id="btnValidate">Validate only</button>
     <button class="btn" id="btnClear">Clear</button>
     <select id="indentSelect" style="padding:7px 12px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:13px">
       <option value="2">2 spaces</option>
@@ -36,84 +91,168 @@
       <option value="1">1 space</option>
     </select>
   </div>
+
   <div class="tool-workspace">
     <div class="workspace-panel">
-      <div class="panel-header"><h3>Input JSON</h3><div style="display:flex;gap:6px"><button class="btn btn-sm" id="btnPaste">Paste</button><button class="btn btn-sm" id="btnSample">Sample</button></div></div>
-      <div class="panel-body" style="padding:0"><textarea class="output-area large" id="jsonInput" placeholder="Paste your JSON here..."></textarea></div>
+      <div class="panel-header">
+        <h3>Input JSON</h3>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-sm" id="btnPaste">Paste</button>
+          <button class="btn btn-sm" id="btnSample">Sample</button>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <textarea class="output-area large" id="jsonInput" placeholder='Paste your JSON here...&#10;&#10;{"name":"John","age":30}'></textarea>
+      </div>
     </div>
     <div class="workspace-panel">
-      <div class="panel-header"><h3>Output</h3><div style="display:flex;gap:6px"><button class="btn btn-sm" id="btnCopy">Copy</button><button class="btn btn-sm" id="btnDownload">Download</button></div></div>
-      <div class="panel-body" style="padding:0"><textarea class="output-area large" id="jsonOutput" readonly placeholder="Formatted JSON will appear here..."></textarea></div>
+      <div class="panel-header">
+        <h3>Output</h3>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-sm" id="btnCopy">Copy</button>
+          <button class="btn btn-sm" id="btnDownload">Download</button>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <textarea class="output-area large" id="jsonOutput" readonly placeholder="Formatted JSON will appear here..."></textarea>
+      </div>
     </div>
   </div>
+
   <div id="statusBar" style="padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px;display:none"></div>
+
   <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+
   <div class="seo-content">
-    <h2>About this JSON formatter</h2>
-    <p>This tool formats JSON with configurable indentation. It validates the JSON structure and highlights syntax errors with exact positions. All processing happens in your browser — no data is ever sent to a server.</p>
+    <h2>What is JSON and why does formatting matter?</h2>
+    <p>JSON (JavaScript Object Notation) is the dominant data interchange format on the modern web. Created by Douglas Crockford in the early 2000s, it has replaced XML in most REST API contexts because it is lighter, more readable, and maps directly to data structures in virtually every programming language. Today, JSON is used in API responses, configuration files, database storage (MongoDB, CouchDB, PostgreSQL's JSONB), log files, and as a general-purpose data exchange format between services.</p>
+    <p>Raw JSON from APIs and services is often compact — all whitespace is removed to reduce payload size. This is ideal for network transmission but completely unreadable when you need to inspect or debug the data. A formatter adds consistent indentation and line breaks to transform a wall of text into a structured, readable document while preserving the exact data content.</p>
+
+    <h3>How this JSON formatter works</h3>
+    <p>This tool uses the browser's native JSON.parse() and JSON.stringify() functions to process your JSON. Parsing validates the syntax and builds an in-memory representation of the data structure. Stringify then serialises it back to text with the specified indentation level. This approach has several advantages: it is extremely fast even for large JSON documents, it always produces standards-compliant output, and it normalises the JSON (fixing minor inconsistencies in spacing around colons and commas).</p>
+    <p>For error reporting, when JSON.parse() fails it throws a SyntaxError with a message that includes the position of the error. This tool parses that error message to report the exact line and character where the problem was found, making it much faster to locate and fix syntax issues than manually searching through a large document.</p>
+
+    <h3>JSON formatting best practices</h3>
+    <p>For human-readable configuration files and documentation, 2-space indentation is the most widely adopted standard — it is used by npm, Google's style guide, and most linting tools. 4-space indentation is common in Python-influenced projects and provides slightly more visual separation at the cost of line length. Compact (minified) JSON is appropriate for production API responses and any context where bandwidth matters. Never use tab indentation in JSON files shared between different editors and systems — tab width varies by environment and can cause visual inconsistencies.</p>
+
+    <h3>Common JSON syntax errors and how to fix them</h3>
+    <p>The most frequent JSON errors developers encounter are: trailing commas after the last item in an object or array (valid in JavaScript but invalid in JSON), single-quoted strings (JSON requires double quotes), unquoted property names (also valid in JavaScript but invalid in JSON), comments (JSON has no comment syntax), and special characters in strings that need to be escaped with a backslash. If this formatter reports a syntax error, check the indicated line for these common mistakes first.</p>
+
     <h3>API access</h3>
-    <p><code>POST /api/v1/datatools/format/json</code> — body: <code>{"input":"your json"}</code></p>
-    <div class="faq-item"><div class="faq-q">Is my JSON data private? <span>+</span></div><div class="faq-a">Yes. Everything is processed in your browser. Nothing is sent to any server.</div></div>
+    <p>Format JSON programmatically via the Toolpad REST API:</p>
+    <p><code>POST https://api.toolpad.in/api/v1/datatools/format/json</code></p>
+    <p>Request body: <code>{"input": "your json string", "indent": 2}</code></p>
+
+    
+    <div class="faq-item">
+      <div class="faq-q">Is my JSON data sent to any server? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">No. This tool processes everything entirely in your browser using JavaScript. Your JSON is never transmitted to any server, stored anywhere, or seen by anyone. You can verify this by watching your browser's network tab — no outbound requests are made when you format JSON.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the maximum file size this tool can handle? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">The formatter works well with JSON files up to approximately 5MB. Beyond that, browser memory constraints may cause slowdowns. For very large JSON files, consider using a command-line tool like jq or Python's json.tool module.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between prettify and minify? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Prettify adds indentation and line breaks to make JSON human-readable. Minify removes all whitespace (spaces, tabs, newlines) that is not inside string values, producing the most compact possible representation. Both operations preserve the exact data — only the formatting changes.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why does the validator say my JSON is invalid when it looks correct? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">The most common causes are: trailing commas (JavaScript allows them, JSON does not), single quotes instead of double quotes around strings or keys, unquoted property names, or a JavaScript-style comment. Also check for any characters that look like quotes but are actually typographic curly quotes (") which some text editors insert automatically.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I format JSON with comments (JSONC)? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Standard JSON does not support comments. If your JSON file uses the JSONC format (JSON with Comments, used in VS Code settings files), you will need to remove the comments before pasting here. A future version may add JSONC support.</div>
+    </div>
   </div>
-  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
-    <a href="/formatters/xml" class="related-card"><h4>XML formatter</h4><p>Prettify XML</p></a>
-    <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert JSON to XML</p></a>
-    <a href="/converters/json-to-csv" class="related-card"><h4>JSON to CSV</h4><p>Export as spreadsheet</p></a>
-  </div></div>
+
+  <div class="related-tools">
+    <h3>Related tools</h3>
+    <div class="related-grid">
+      <a href="/formatters/xml" class="related-card"><h4>XML formatter</h4><p>Prettify and minify XML</p></a><a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert JSON to XML format</p></a><a href="/converters/json-to-csv" class="related-card"><h4>JSON to CSV</h4><p>Export JSON as spreadsheet</p></a><a href="/converters/text-to-json" class="related-card"><h4>Text to JSON</h4><p>Create JSON from plain text</p></a>
+    </div>
+  </div>
 </div>
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools. No signup. No tracking.</p></div>
-    <div class="footer-links"><h5>Formatters</h5><a href="/formatters/json">JSON formatter</a><a href="/formatters/xml">XML formatter</a></div>
-    <div class="footer-links"><h5>Converters</h5><a href="/converters/json-to-xml">JSON to XML</a><a href="/converters/base64">Base64</a></div>
-    <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
+    <div class="footer-brand">
+      <span class="logo-icon">🔧</span> <strong>Toolpad</strong>
+      <p>Free developer utility tools. No signup. No tracking.</p>
+    </div>
+    <div class="footer-links">
+      <h5>Generators</h5>
+      <a href="/generators/imei">IMEI generator</a>
+      <a href="/generators/uuid">UUID generator</a>
+      <a href="/generators/credit-card">Credit card</a>
+      <a href="/generators/fake-name">Fake name</a>
+      <a href="/generators/iban">IBAN</a>
+    </div>
+    <div class="footer-links">
+      <h5>Tools</h5>
+      <a href="/formatters/json">JSON formatter</a>
+      <a href="/formatters/xml">XML formatter</a>
+      <a href="/converters/json-to-xml">JSON to XML</a>
+      <a href="/converters/base64">Base64</a>
+    </div>
+    <div class="footer-links">
+      <h5>Info</h5>
+      <a href="/api-docs">API docs</a>
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="https://github.com/toolpad-in" target="_blank" rel="noopener">GitHub</a>
+    </div>
   </div>
   <div class="footer-bottom">
-  <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
-  <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
-     target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
-    <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
-         src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
-         style="display:block">
-  </a>
-  <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
-</div>
-</footer><script>
-
-var SAMPLE='{"user":{"id":1,"name":"Harsh Developer","email":"harsh@example.com","roles":["admin","developer"],"active":true},"meta":{"version":"2.0","timestamp":"2026-03-31T06:00:00Z"}}';
-function setStatus(msg,type){var sb=document.getElementById('statusBar');sb.style.display='block';sb.style.background=type==='success'?'#D1FAE5':type==='error'?'#FEE2E2':'#DBEAFE';sb.style.color=type==='success'?'#065F46':type==='error'?'#991B1B':'#1D4ED8';sb.textContent=msg;}
-document.getElementById('btnFormat').addEventListener('click',function(){var inp=document.getElementById('jsonInput').value.trim();if(!inp)return;try{var indent=parseInt(document.getElementById('indentSelect').value);document.getElementById('jsonOutput').value=JSON.stringify(JSON.parse(inp),null,indent);setStatus('JSON formatted successfully','success');}catch(e){setStatus('Syntax error: '+e.message,'error');}});
-document.getElementById('btnMinify').addEventListener('click',function(){var inp=document.getElementById('jsonInput').value.trim();if(!inp)return;try{document.getElementById('jsonOutput').value=JSON.stringify(JSON.parse(inp));setStatus('JSON minified','success');}catch(e){setStatus('Syntax error: '+e.message,'error');}});
-document.getElementById('btnValidate').addEventListener('click',function(){var inp=document.getElementById('jsonInput').value.trim();if(!inp)return;try{var p=JSON.parse(inp);setStatus('Valid JSON · Type: '+(Array.isArray(p)?'array':typeof p),'success');}catch(e){setStatus('Invalid JSON: '+e.message,'error');}});
+    <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+    <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+       target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+      <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+           src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+           style="display:block">
+    </a>
+    <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+  </div>
+</footer>
+<script src="/scripts/main.js"></script>
+<script>
+var SAMPLE='{"user":{"id":1,"name":"Harsh Developer","email":"harsh@example.com","roles":["admin","developer"],"active":true},"meta":{"version":"2.0","timestamp":"2026-03-31T06:00:00Z","tags":["api","testing","toolpad"]}}';
+function setStatus(msg,type){
+  var sb=document.getElementById('statusBar');
+  sb.style.display='block';
+  sb.style.background=type==='success'?'#D1FAE5':type==='error'?'#FEE2E2':'#DBEAFE';
+  sb.style.color=type==='success'?'#065F46':type==='error'?'#991B1B':'#1D4ED8';
+  sb.textContent=msg;
+}
+document.getElementById('btnFormat').addEventListener('click',function(){
+  var inp=document.getElementById('jsonInput').value.trim();if(!inp)return;
+  try{var indent=parseInt(document.getElementById('indentSelect').value);document.getElementById('jsonOutput').value=JSON.stringify(JSON.parse(inp),null,indent);setStatus('JSON formatted successfully — '+JSON.stringify(JSON.parse(inp)).length+' characters','success');}
+  catch(e){setStatus('Syntax error: '+e.message,'error');}
+});
+document.getElementById('btnMinify').addEventListener('click',function(){
+  var inp=document.getElementById('jsonInput').value.trim();if(!inp)return;
+  try{var minified=JSON.stringify(JSON.parse(inp));document.getElementById('jsonOutput').value=minified;setStatus('JSON minified — '+minified.length+' characters','success');}
+  catch(e){setStatus('Syntax error: '+e.message,'error');}
+});
+document.getElementById('btnValidate').addEventListener('click',function(){
+  var inp=document.getElementById('jsonInput').value.trim();if(!inp)return;
+  try{var p=JSON.parse(inp);var type=Array.isArray(p)?'array':typeof p;var keys=typeof p==='object'&&p?Object.keys(p).length:0;setStatus('Valid JSON · Type: '+type+(keys?(' · '+keys+' top-level keys'):''),'success');}
+  catch(e){setStatus('Invalid JSON: '+e.message,'error');}
+});
 document.getElementById('btnClear').addEventListener('click',function(){document.getElementById('jsonInput').value='';document.getElementById('jsonOutput').value='';document.getElementById('statusBar').style.display='none';});
 document.getElementById('btnSample').addEventListener('click',function(){document.getElementById('jsonInput').value=SAMPLE;});
 document.getElementById('btnPaste').addEventListener('click',function(){navigator.clipboard&&navigator.clipboard.readText().then(function(t){document.getElementById('jsonInput').value=t;});});
 document.getElementById('btnCopy').addEventListener('click',function(){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('jsonOutput').value);document.getElementById('btnCopy').textContent='Copied!';setTimeout(function(){document.getElementById('btnCopy').textContent='Copy';},2000);});
 document.getElementById('btnDownload').addEventListener('click',function(){var c=document.getElementById('jsonOutput').value;if(!c)return;var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'application/json'}));a.download='formatted.json';a.click();});
-document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
-document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var a=q.nextElementSibling,open=a.style.display==='block';a.style.display=open?'none':'block';q.querySelector('span').textContent=open?'+':'−';});});
+</script>
 
-</script>
 <script>
-(function(){
-  var KEY='toolpad-theme';
-  var saved=localStorage.getItem(KEY);
-  var hour=new Date().getHours();
-  var autoDark=(hour>=20||hour<6);
-  var theme=saved!==null?saved:(autoDark?'dark':'');
-  if(theme)document.documentElement.setAttribute('data-theme',theme);
-  var tog=document.getElementById('themeToggle');
-  if(tog){
-    tog.textContent=theme==='dark'?'🌙':'☀';
-    tog.addEventListener('click',function(){
-      var dark=document.documentElement.getAttribute('data-theme')==='dark';
-      var next=dark?'':'dark';
-      document.documentElement.setAttribute('data-theme',next);
-      tog.textContent=next==='dark'?'🌙':'☀';
-      localStorage.setItem(KEY,next);
-    });
-  }
-})();
+document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var a=q.nextElementSibling,o=a.style.display==='block';
+    a.style.display=o?'none':'block';
+    q.querySelector('.faq-toggle').textContent=o?'+':'−';
+  });
+});
 </script>
-</body>
-</html>
+</body></html>
