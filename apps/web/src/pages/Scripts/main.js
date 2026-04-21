@@ -26,8 +26,8 @@ const TOOLS = [
   { name: 'Hex encoder/decoder',      url: '/converters/hex',           icon: '🔢', cat: 'Converter' },
   { name: 'DOCX to PDF converter',    url: '/converters/docx-to-pdf',   icon: '📄', cat: 'Converter' },
   { name: 'URL encoder / decoder',     url: '/converters/url-encoder',   icon: '🔗', cat: 'Converter' },
-  { name: 'Color converter',           url: '/generators/color-converter', icon: '🎨', cat: 'Utilities' },
-  { name: 'Unix timestamp converter',  url: '/generators/unix-timestamp', icon: '⏱', cat: 'Utilities' },
+  { name: 'Color converter',           url: '/generators/color-converter', icon: '🎨', cat: 'Converter' },
+  { name: 'Unix timestamp converter',  url: '/generators/unix-timestamp', icon: '⏱', cat: 'Converter' },
 ];
 
 // ── Theme (auto dark 8pm-6am, manual override saved) ──────────────────────
