@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL Encoder / Decoder — Free Online Tool | Toolpad</title>
+<meta name="description" content="Encode and decode URLs and query strings online. Percent-encode special characters for safe URL use. Instant, browser-based. Free, no signup.">
+<link rel="canonical" href="https://toolpad.in/converters/url-encoder">
+<meta property="og:title" content="URL Encoder / Decoder — Free Online Tool | Toolpad">
+<meta property="og:description" content="Encode and decode URLs and query strings online. Percent-encode special characters for safe URL use. Instant, browser-based. Free, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://toolpad.in/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://toolpad.in/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"URL Encoder Decoder","url":"https://toolpad.in/converters/url-encoder","description":"Free online URL encoder and decoder","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body><header class="navbar"><div class="nav-inner">
+  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+  <nav class="nav-links">
+    <div class="nav-dropdown">
+      <a href="/generators" class="nav-link">Generators ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Personal</div>
+        <a href="/generators/fake-name">👤 Fake name</a>
+        <a href="/generators/fake-email">✉ Fake email</a>
+        <a href="/generators/fake-phone">📱 Phone number</a>
+        <a href="/generators/fake-profile">🪪 Full profile</a>
+        <a href="/generators/fake-address">📍 Fake address</a>
+        <div class="nav-dropdown-group">Financial</div>
+        <a href="/generators/credit-card">💳 Credit card</a>
+        <a href="/generators/iban">🏦 IBAN</a>
+        <div class="nav-dropdown-group">Device &amp; Network</div>
+        <a href="/generators/imei">📡 IMEI</a>
+        <a href="/generators/uuid">🔑 UUID</a>
+        <a href="/generators/mac-address">🖧 MAC address</a>
+        <a href="/generators/ip-address">🌐 IP address</a>
+        <a href="/generators/imsi">📶 IMSI</a>
+        <div class="nav-dropdown-group">Utilities</div>
+        <a href="/generators/color-converter">🎨 Color converter</a>
+        <a href="/generators/unix-timestamp">⏱ Unix timestamp</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/formatters" class="nav-link">Formatters ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="/formatters/json">{ } JSON formatter</a>
+        <a href="/formatters/xml">&lt;/&gt; XML formatter</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/converters" class="nav-link active">Converters ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Data formats</div>
+        <a href="/converters/json-to-xml">⇄ JSON to XML</a>
+        <a href="/converters/xml-to-json">⇄ XML to JSON</a>
+        <a href="/converters/json-to-csv">📊 JSON to CSV</a>
+        <a href="/converters/csv-to-json">📋 CSV to JSON</a>
+        <a href="/converters/text-to-json">📝 Text to JSON</a>
+        <a href="/converters/text-to-xml">📝 Text to XML</a>
+        <div class="nav-dropdown-group">Encoding</div>
+        <a href="/converters/base64">🔐 Base64</a>
+        <a href="/converters/hex">🔢 Hex</a>
+        <a href="/converters/url-encoder">🔗 URL encoder</a>
+        <div class="nav-dropdown-group">Documents</div>
+        <a href="/converters/docx-to-pdf">📄 DOCX to PDF</a>
+      </div>
+    </div>
+    <a href="/api-docs" class="nav-link">API</a>
+  </nav>
+  <div class="nav-search">
+    <input type="search" id="toolSearch" placeholder="Search tools..." autocomplete="off">
+    <div id="searchDropdown" class="search-dropdown"></div>
+  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀</button>
+</div></header>
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+<div class="tool-page">
+  <div class="tool-page-header">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › URL encoder / decoder</div>
+    <h1>URL encoder / decoder</h1>
+    <p class="tool-desc">Encode plain text and special characters for safe use in URLs and query strings, or decode percent-encoded URLs back to readable text. Runs entirely in your browser — nothing is sent to any server.</p>
+  </div>
+
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+    <button class="btn btn-primary" id="btnEncode">Encode URL</button>
+    <button class="btn" id="btnDecode">Decode URL</button>
+    <button class="btn" id="btnEncodeComp">Encode component</button>
+    <button class="btn btn-sm" id="btnClear">Clear</button>
+    <button class="btn btn-sm" id="btnSwap">Swap ⇄</button>
+  </div>
+
+  <div class="tool-workspace">
+    <div class="workspace-panel">
+      <div class="panel-header">
+        <h3>Input</h3>
+        <button class="btn btn-sm" id="btnSample">Sample</button>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <textarea class="output-area large" id="input"
+          placeholder="Enter a URL to encode, or a percent-encoded URL to decode...&#10;&#10;Example: https://example.com/search?q=hello world&lang=en"></textarea>
+      </div>
+    </div>
+    <div class="workspace-panel">
+      <div class="panel-header">
+        <h3>Output</h3>
+        <button class="btn btn-sm" id="btnCopy">Copy</button>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <textarea class="output-area large" id="output" readonly
+          placeholder="Result will appear here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div id="statusBar" style="padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px;display:none"></div>
+
+  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+
+  <div class="seo-content">
+    <h2>What is URL encoding?</h2>
+    <p>URL encoding, officially called percent-encoding, is a mechanism for representing characters that are not allowed or have special meaning in URLs. The HTTP specification (RFC 3986) defines a set of characters that are safe to use in a URL — these are letters, digits, and a small set of punctuation marks (<code>-</code>, <code>_</code>, <code>.</code>, <code>~</code>). Every other character must be encoded as a percent sign followed by two hexadecimal digits representing the character's UTF-8 byte value.</p>
+    <p>For example, a space character has the UTF-8 byte value 32 (decimal), which is 20 in hexadecimal, so it is encoded as <code>%20</code>. An at-sign (@) becomes <code>%40</code>. An ampersand (&) — which has special meaning as a query string separator — becomes <code>%26</code> when it appears in a parameter value. This encoding allows arbitrary text to be safely transported in a URL without being misinterpreted by browsers, servers, or intermediaries.</p>
+
+    <h3>encodeURI vs encodeURIComponent</h3>
+    <p>There are two levels of URL encoding that developers use for different purposes. <code>encodeURI()</code> encodes a complete URL, preserving characters that have structural meaning in URLs — it leaves characters like <code>/</code>, <code>?</code>, <code>&</code>, <code>=</code>, <code>#</code>, and <code>:</code> unencoded because they are valid URL components. Use this when encoding an entire URL that you want to remain functional.</p>
+    <p><code>encodeURIComponent()</code> encodes a single URL component such as a query parameter value, and encodes all special characters including <code>/</code>, <code>?</code>, <code>&</code>, <code>=</code>, and <code>#</code>. Use this when encoding parameter values to prevent them from being interpreted as URL structure. For example, if a search query contains an ampersand, using <code>encodeURIComponent()</code> ensures the ampersand is encoded as <code>%26</code> and not treated as a parameter separator. This tool exposes both modes.</p>
+
+    <h3>Common URL encoding use cases</h3>
+    <p>URL encoding is required in many web development scenarios. When building query strings dynamically, parameter values must be encoded to prevent injection and parsing errors. When redirecting users to a URL that is itself a parameter value (a common pattern in OAuth flows), the entire redirect URL must be component-encoded. When constructing API requests with search terms, filters, or other user input, all values must be encoded before being concatenated into the URL. When working with internationalized domain names or paths that contain non-ASCII characters, encoding ensures correct transmission across systems that may only support ASCII.</p>
+
+    <h3>The + vs %20 question</h3>
+    <p>Both <code>+</code> and <code>%20</code> represent a space in URLs, but they are used in different contexts. In the query string portion of a URL (after the <code>?</code>), the <code>application/x-www-form-urlencoded</code> format — used by HTML forms — represents spaces as <code>+</code>. RFC 3986 percent-encoding uses <code>%20</code>. Modern APIs overwhelmingly expect <code>%20</code>. If you are working with form submissions, your server framework will handle <code>+</code> correctly, but for manually constructed URLs and API calls, <code>%20</code> is safer and more portable.</p>
+
+    <h3>API access</h3>
+    <p><code>POST https://api.toolpad.in/api/v1/datatools/encode/url</code> — body: <code>{"input":"your text"}</code></p>
+    <p><code>POST https://api.toolpad.in/api/v1/datatools/decode/url</code> — body: <code>{"input":"%encoded%20string"}</code></p>
+
+    
+    <div class="faq-item">
+      <div class="faq-q">What characters need to be URL encoded? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Any character that is not an unreserved character must be encoded. Unreserved characters are A–Z, a–z, 0–9, hyphen (-), underscore (_), period (.), and tilde (~). Reserved characters like /, ?, &, =, #, :, @, and ! have structural meaning in URLs and must be encoded when used in parameter values. All other characters including spaces, Unicode characters, and most punctuation must also be encoded.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why does my encoded URL contain %2F for slashes? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">%2F is the percent-encoding of the forward slash character. If you used Encode Component, slashes are encoded because they could be misinterpreted as path separators. If you want slashes to remain as slashes (for encoding a full URL), use the Encode URL button instead, which preserves structural URL characters.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between URL encoding and HTML encoding? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">URL encoding (percent-encoding) converts characters for safe transport in URLs using %XX notation. HTML encoding (HTML entity encoding) converts characters for safe rendering in HTML using &amp;amp; notation. They serve different purposes — use URL encoding for URLs and query strings, HTML encoding for HTML content. The ampersand in a URL parameter value, for example, needs to be %26 in a URL context but &amp;amp; in an HTML href attribute.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why is my Korean/Arabic/Chinese text encoding to long sequences? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Non-ASCII characters have UTF-8 byte representations that are longer than a single byte. A Korean character, for example, is 3 bytes in UTF-8, so it encodes to 3 percent-encoded pairs (e.g., %EA%B0%80). This is correct behaviour — the encoded representation is longer than the original but perfectly reversible.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use this to encode an entire website URL? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Yes — paste the full URL and click Encode URL. The tool uses encodeURI() which preserves the structural characters of the URL (protocol, slashes, query string separators) while encoding any characters in the path or parameter values that are not URL-safe.</div>
+    </div>
+  </div>
+
+  <div class="related-tools">
+    <h3>Related tools</h3>
+    <div class="related-grid">
+      <a href="/converters/base64" class="related-card"><h4>Base64 encoder</h4><p>Encode data to Base64</p></a><a href="/converters/hex" class="related-card"><h4>Hex encoder</h4><p>Hexadecimal encoding</p></a><a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON</p></a><a href="/converters/text-to-json" class="related-card"><h4>Text to JSON</h4><p>Convert text to JSON</p></a>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon">🔧</span> <strong>Toolpad</strong>
+      <p>Free developer utility tools. No signup. No tracking.</p>
+    </div>
+    <div class="footer-links">
+      <h5>Generators</h5>
+      <a href="/generators/imei">IMEI generator</a>
+      <a href="/generators/uuid">UUID generator</a>
+      <a href="/generators/credit-card">Credit card</a>
+      <a href="/generators/fake-name">Fake name</a>
+      <a href="/generators/color-converter">Color converter</a>
+      <a href="/generators/unix-timestamp">Unix timestamp</a>
+    </div>
+    <div class="footer-links">
+      <h5>Tools</h5>
+      <a href="/formatters/json">JSON formatter</a>
+      <a href="/formatters/xml">XML formatter</a>
+      <a href="/converters/base64">Base64</a>
+      <a href="/converters/url-encoder">URL encoder</a>
+    </div>
+    <div class="footer-links">
+      <h5>Info</h5>
+      <a href="/api-docs">API docs</a>
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="https://github.com/toolpad-in" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+    <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+       target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+      <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+           src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+           style="display:block">
+    </a>
+    <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+  </div>
+</footer>
+<script src="/scripts/main.js"></script>
+<script>
+function setStatus(msg,type){
+  var sb=document.getElementById('statusBar');
+  sb.style.display='block';
+  sb.style.background=type==='ok'?'#D1FAE5':'#FEE2E2';
+  sb.style.color=type==='ok'?'#065F46':'#991B1B';
+  sb.textContent=msg;
+}
+document.getElementById('btnEncode').addEventListener('click',function(){
+  var inp=document.getElementById('input').value;if(!inp)return;
+  try{var enc=encodeURI(inp);document.getElementById('output').value=enc;setStatus('Encoded using encodeURI — '+inp.length+' → '+enc.length+' chars','ok');}
+  catch(e){setStatus('Error: '+e.message,'err');}
+});
+document.getElementById('btnEncodeComp').addEventListener('click',function(){
+  var inp=document.getElementById('input').value;if(!inp)return;
+  try{var enc=encodeURIComponent(inp);document.getElementById('output').value=enc;setStatus('Encoded using encodeURIComponent — '+inp.length+' → '+enc.length+' chars','ok');}
+  catch(e){setStatus('Error: '+e.message,'err');}
+});
+document.getElementById('btnDecode').addEventListener('click',function(){
+  var inp=document.getElementById('input').value.trim();if(!inp)return;
+  try{var dec=decodeURIComponent(inp.replace(/\+/g,' '));document.getElementById('output').value=dec;setStatus('Decoded — '+inp.length+' → '+dec.length+' chars','ok');}
+  catch(e){setStatus('Error decoding — invalid percent-encoding: '+e.message,'err');}
+});
+document.getElementById('btnClear').addEventListener('click',function(){
+  document.getElementById('input').value='';
+  document.getElementById('output').value='';
+  document.getElementById('statusBar').style.display='none';
+});
+document.getElementById('btnSwap').addEventListener('click',function(){
+  var i=document.getElementById('input').value;
+  document.getElementById('input').value=document.getElementById('output').value;
+  document.getElementById('output').value='';
+  document.getElementById('statusBar').style.display='none';
+});
+document.getElementById('btnSample').addEventListener('click',function(){
+  document.getElementById('input').value='https://example.com/search?q=hello world&lang=en&filter=price < 100&tag=café';
+});
+document.getElementById('btnCopy').addEventListener('click',function(){
+  navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('output').value);
+  document.getElementById('btnCopy').textContent='Copied!';
+  setTimeout(function(){document.getElementById('btnCopy').textContent='Copy';},2000);
+});
+</script>
+<script>
+document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var a=q.nextElementSibling,o=a.style.display==='block';
+    a.style.display=o?'none':'block';
+    q.querySelector('.faq-toggle').textContent=o?'+':'−';
+  });
+});
+</script>
+</body>
+</html>
