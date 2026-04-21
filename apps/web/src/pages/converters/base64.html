@@ -4,103 +4,238 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Base64 Encoder / Decoder — Free Online Tool | Toolpad</title>
-<meta name="description" content="Encode text and files to Base64 and decode Base64 strings online. Free, browser-based, no data stored.">
+<meta name="description" content="Encode text and data to Base64 and decode Base64 strings online. Instant, browser-based, no data sent to server. Free, no signup required.">
 <link rel="canonical" href="https://toolpad.in/converters/base64">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:title" content="Base64 Encoder / Decoder — Free Online Tool | Toolpad">
+<meta property="og:description" content="Encode text and data to Base64 and decode Base64 strings online. Instant, browser-based, no data sent to server. Free, no signup required.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://toolpad.in/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://toolpad.in/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Base64 Encoder Decoder","url":"https://toolpad.in/converters/base64","description":"Free online Base64 encoder and decoder","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body><header class="navbar"><div class="nav-inner">
   <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
   <nav class="nav-links">
-    <a href="/generators" class="nav-link">Generators</a>
-    <a href="/formatters" class="nav-link">Formatters</a>
-    <a href="/converters" class="nav-link active">Converters</a>
+    <div class="nav-dropdown">
+      <a href="/generators" class="nav-link">Generators ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Personal</div>
+        <a href="/generators/fake-name">👤 Fake name</a>
+        <a href="/generators/fake-email">✉ Fake email</a>
+        <a href="/generators/fake-phone">📱 Phone number</a>
+        <a href="/generators/fake-profile">🪪 Full profile</a>
+        <a href="/generators/fake-address">📍 Fake address</a>
+        <div class="nav-dropdown-group">Financial</div>
+        <a href="/generators/credit-card">💳 Credit card</a>
+        <a href="/generators/iban">🏦 IBAN</a>
+        <div class="nav-dropdown-group">Device &amp; Network</div>
+        <a href="/generators/imei">📡 IMEI</a>
+        <a href="/generators/uuid">🔑 UUID</a>
+        <a href="/generators/mac-address">🖧 MAC address</a>
+        <a href="/generators/ip-address">🌐 IP address</a>
+        <a href="/generators/imsi">📶 IMSI</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/formatters" class="nav-link">Formatters ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="/formatters/json">{ } JSON formatter</a>
+        <a href="/formatters/xml">&lt;/&gt; XML formatter</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/converters" class="nav-link active">Converters ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Data formats</div>
+        <a href="/converters/json-to-xml">⇄ JSON to XML</a>
+        <a href="/converters/xml-to-json">⇄ XML to JSON</a>
+        <a href="/converters/json-to-csv">📊 JSON to CSV</a>
+        <a href="/converters/csv-to-json">📋 CSV to JSON</a>
+        <a href="/converters/text-to-json">📝 Text to JSON</a>
+        <a href="/converters/text-to-xml">📝 Text to XML</a>
+        <div class="nav-dropdown-group">Encoding</div>
+        <a href="/converters/base64">🔐 Base64</a>
+        <a href="/converters/hex">🔢 Hex</a>
+        <div class="nav-dropdown-group">Documents</div>
+        <a href="/converters/docx-to-pdf">📄 DOCX to PDF</a>
+      </div>
+    </div>
     <a href="/api-docs" class="nav-link">API</a>
   </nav>
-  <button class="theme-toggle" id="themeToggle">☀</button>
-</div></header><div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+  <div class="nav-search">
+    <input type="search" id="toolSearch" placeholder="Search tools..." autocomplete="off">
+    <div id="searchDropdown" class="search-dropdown"></div>
+  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀</button>
+</div></header>
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 <div class="tool-page">
   <div class="tool-page-header">
     <div class="breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › Base64 encoder / decoder</div>
     <h1>Base64 encoder / decoder</h1>
-    <p class="tool-desc">Encode plain text or binary data to Base64 and decode Base64 strings back to text. Runs entirely in your browser — nothing is sent to any server.</p>
+    <p class="tool-desc">Encode plain text or binary data to Base64 and decode Base64 strings back to readable text. Everything runs in your browser — your data is never transmitted to any server or stored anywhere.</p>
   </div>
+
   <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
     <button class="btn btn-primary" id="btnEncode">Encode to Base64</button>
     <button class="btn" id="btnDecode">Decode from Base64</button>
     <button class="btn btn-sm" id="btnClear">Clear</button>
+    <button class="btn btn-sm" id="btnSwap">Swap ⇄</button>
   </div>
+
   <div class="tool-workspace">
     <div class="workspace-panel">
-      <div class="panel-header"><h3>Input</h3></div>
-      <div class="panel-body" style="padding:0"><textarea class="output-area large" id="input" placeholder="Enter text to encode, or Base64 to decode..."></textarea></div>
+      <div class="panel-header">
+        <h3>Input</h3>
+        <button class="btn btn-sm" id="btnSample">Sample</button>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <textarea class="output-area large" id="input" placeholder="Enter text to encode to Base64, or paste a Base64 string to decode..."></textarea>
+      </div>
     </div>
     <div class="workspace-panel">
-      <div class="panel-header"><h3>Output</h3><button class="btn btn-sm" id="btnCopy">Copy</button></div>
-      <div class="panel-body" style="padding:0"><textarea class="output-area large" id="output" readonly placeholder="Result will appear here..."></textarea></div>
+      <div class="panel-header">
+        <h3>Output</h3>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-sm" id="btnCopy">Copy</button>
+          <button class="btn btn-sm" id="btnDownload">Download</button>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <textarea class="output-area large" id="output" readonly placeholder="Result will appear here..."></textarea>
+      </div>
     </div>
   </div>
+
   <div id="statusBar" style="padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px;display:none"></div>
+
   <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+
   <div class="seo-content">
-    <h2>What is Base64?</h2>
-    <p>Base64 is a binary-to-text encoding scheme that represents binary data using 64 printable ASCII characters. It is commonly used to embed binary data in text-based formats like JSON, XML, HTML, and email.</p>
+    <h2>What is Base64 encoding?</h2>
+    <p>Base64 is a binary-to-text encoding scheme that represents binary data using only 64 printable ASCII characters: the uppercase letters A–Z, lowercase letters a–z, digits 0–9, plus (+), and forward slash (/). The name comes directly from the 64-character alphabet used. A 65th character, the equals sign (=), is used for padding at the end of encoded data when the input length is not a multiple of 3 bytes.</p>
+    <p>Base64 was standardised in RFC 2045 as part of the MIME specification for email attachments and has since become one of the most ubiquitous encoding schemes in computing. It solves a specific problem: many systems — email servers, HTTP headers, XML documents, HTML attributes — are designed to handle text and may corrupt or truncate binary data that contains control characters, null bytes, or bytes above 127. Base64 converts binary data into a safe text representation that can pass through any text-based system without corruption.</p>
+
+    <h3>How Base64 encoding works</h3>
+    <p>Base64 processes input in groups of 3 bytes (24 bits) at a time. Each group of 24 bits is split into four 6-bit values. Each 6-bit value (which can represent 0–63) is mapped to a character in the Base64 alphabet. This means every 3 bytes of input becomes exactly 4 characters of Base64 output, producing an approximately 33% size increase. If the input length is not divisible by 3, one or two padding characters (=) are added to the end to make the output length a multiple of 4.</p>
+    <p>For example, the three bytes representing "Man" (ASCII 77, 97, 110) in binary are 01001101 01100001 01101110. Split into four 6-bit groups: 010011 010110 000101 101110. These map to the Base64 characters T, W, F, u — so "Man" encodes to "TWFu". This deterministic mapping means the same input always produces the same output, making Base64 an encoding rather than an encryption.</p>
+
+    <h3>Common uses of Base64</h3>
+    <p>Base64 is used pervasively across web development. Data URIs embed images, fonts, and other binary files directly into HTML or CSS without a separate HTTP request, using the format <code>data:image/png;base64,iVBORw0KGgo...</code>. HTTP Basic Authentication encodes username and password as Base64 in the Authorization header. JWT (JSON Web Tokens) use Base64URL encoding (a variant that replaces + and / with - and _ to make tokens URL-safe) for their header and payload sections. Email attachments are Base64-encoded by MIME. API responses sometimes return binary file content as Base64 to keep the response in pure JSON format.</p>
+
+    <h3>Base64 vs Base64URL</h3>
+    <p>Standard Base64 uses + and / characters, which have special meanings in URLs. Base64URL is a variant that substitutes - for + and _ for /, making the encoded string safe to include in URLs and filenames without percent-encoding. JWTs use Base64URL without padding (no = characters). This tool implements standard Base64. If you need to decode a JWT payload, replace - with + and _ with / before pasting, or use a dedicated JWT decoder.</p>
+
+    <h3>Is Base64 encryption?</h3>
+    <p>No. Base64 is an encoding, not an encryption. It provides no security whatsoever — any Base64 string can be decoded by anyone instantly using any Base64 decoder. Do not use Base64 to hide sensitive data. If you see Base64 in a security context, it is only being used as a transport encoding, with actual security provided by the underlying protocol (HTTPS, for example) or a separate encryption layer applied before Base64 encoding.</p>
+
     <h3>API access</h3>
-    <p><code>POST /api/v1/datatools/encode/base64</code> — body: <code>{"input":"your text"}</code></p>
-    <p><code>POST /api/v1/datatools/decode/base64</code> — body: <code>{"input":"base64 string"}</code></p>
+    <p>Encode and decode Base64 programmatically via the Toolpad REST API:</p>
+    <p><code>POST https://api.toolpad.in/api/v1/datatools/encode/base64</code> — body: <code>{"input":"your text"}</code></p>
+    <p><code>POST https://api.toolpad.in/api/v1/datatools/decode/base64</code> — body: <code>{"input":"base64 string"}</code></p>
+
+    
+    <div class="faq-item">
+      <div class="faq-q">Does encoding Base64 make data secure? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">No. Base64 is purely an encoding for binary-to-text conversion — it provides no confidentiality, integrity, or authentication. Any Base64 string can be decoded by anyone instantly. If you need to protect data, use proper encryption (AES, RSA) before encoding, not Base64 as a substitute for encryption.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why does my Base64 string end with = or ==? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">The = characters are padding. Base64 processes input in 3-byte groups and produces 4 output characters per group. If the input length is not a multiple of 3, one or two = characters are appended to pad the output to a multiple of 4 characters. One = means the last group had 2 bytes; == means it had 1 byte.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the size increase from Base64 encoding? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Base64 produces exactly 4 output characters for every 3 input bytes, so encoded data is approximately 33% larger than the original. A 1MB binary file becomes approximately 1.33MB when Base64 encoded. This overhead is why Base64 data URIs for large images can noticeably increase page size compared to separate image files.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why does the decoder fail on my Base64 string? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Common reasons for decoding failure: the string is Base64URL encoded (uses - and _ instead of + and /), the string has missing padding (missing = characters at the end), the string contains line breaks or spaces that need to be removed, or the string is not actually Base64 but some other encoding.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between Base64 and hex encoding? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Both Base64 and hex (hexadecimal) are binary-to-text encodings. Hex uses 16 characters (0–9, A–F) and represents each byte as exactly 2 characters, doubling the data size. Base64 uses 64 characters and represents every 3 bytes as 4 characters, increasing size by only 33%. Base64 is more efficient but hex is more human-readable for binary data inspection.</div>
+    </div>
   </div>
-  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
-    <a href="/converters/hex" class="related-card"><h4>Hex encoder</h4><p>Convert to hexadecimal</p></a>
-    <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert formats</p></a>
-    <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON</p></a>
-  </div></div>
+
+  <div class="related-tools">
+    <h3>Related tools</h3>
+    <div class="related-grid">
+      <a href="/converters/hex" class="related-card"><h4>Hex encoder / decoder</h4><p>Hexadecimal encoding</p></a><a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert between formats</p></a><a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify and validate JSON</p></a><a href="/converters/text-to-json" class="related-card"><h4>Text to JSON</h4><p>Convert plain text to JSON</p></a>
+    </div>
+  </div>
 </div>
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools. No signup. No tracking.</p></div>
-    <div class="footer-links"><h5>Converters</h5><a href="/converters/base64">Base64</a><a href="/converters/hex">Hex</a><a href="/converters/json-to-xml">JSON to XML</a></div>
-    <div class="footer-links"><h5>Formatters</h5><a href="/formatters/json">JSON formatter</a><a href="/formatters/xml">XML formatter</a></div>
-    <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
+    <div class="footer-brand">
+      <span class="logo-icon">🔧</span> <strong>Toolpad</strong>
+      <p>Free developer utility tools. No signup. No tracking.</p>
+    </div>
+    <div class="footer-links">
+      <h5>Generators</h5>
+      <a href="/generators/imei">IMEI generator</a>
+      <a href="/generators/uuid">UUID generator</a>
+      <a href="/generators/credit-card">Credit card</a>
+      <a href="/generators/fake-name">Fake name</a>
+      <a href="/generators/iban">IBAN</a>
+    </div>
+    <div class="footer-links">
+      <h5>Tools</h5>
+      <a href="/formatters/json">JSON formatter</a>
+      <a href="/formatters/xml">XML formatter</a>
+      <a href="/converters/json-to-xml">JSON to XML</a>
+      <a href="/converters/base64">Base64</a>
+    </div>
+    <div class="footer-links">
+      <h5>Info</h5>
+      <a href="/api-docs">API docs</a>
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="https://github.com/toolpad-in" target="_blank" rel="noopener">GitHub</a>
+    </div>
   </div>
   <div class="footer-bottom">
-  <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
-  <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
-     target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
-    <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
-         src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
-         style="display:block">
-  </a>
-  <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
-</div>
-</footer><script>
-
-function setStatus(msg,type){var sb=document.getElementById('statusBar');sb.style.display='block';sb.style.background=type==='ok'?'#D1FAE5':'#FEE2E2';sb.style.color=type==='ok'?'#065F46':'#991B1B';sb.textContent=msg;}
-document.getElementById('btnEncode').addEventListener('click',function(){var inp=document.getElementById('input').value;if(!inp)return;try{document.getElementById('output').value=btoa(unescape(encodeURIComponent(inp)));setStatus('Encoded to Base64','ok');}catch(e){setStatus('Encoding error: '+e.message,'err');}});
-document.getElementById('btnDecode').addEventListener('click',function(){var inp=document.getElementById('input').value.trim();if(!inp)return;try{document.getElementById('output').value=decodeURIComponent(escape(atob(inp)));setStatus('Decoded from Base64','ok');}catch(e){setStatus('Invalid Base64 input','err');}});
-document.getElementById('btnClear').addEventListener('click',function(){document.getElementById('input').value='';document.getElementById('output').value='';document.getElementById('statusBar').style.display='none';});
-document.getElementById('btnCopy').addEventListener('click',function(){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('output').value);document.getElementById('btnCopy').textContent='Copied!';setTimeout(function(){document.getElementById('btnCopy').textContent='Copy';},2000);});
-
-</script>
+    <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+    <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+       target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+      <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+           src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+           style="display:block">
+    </a>
+    <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+  </div>
+</footer>
+<script src="/scripts/main.js"></script>
 <script>
-(function(){
-  var KEY='toolpad-theme';
-  var saved=localStorage.getItem(KEY);
-  var hour=new Date().getHours();
-  var autoDark=(hour>=20||hour<6);
-  var theme=saved!==null?saved:(autoDark?'dark':'');
-  if(theme)document.documentElement.setAttribute('data-theme',theme);
-  var tog=document.getElementById('themeToggle');
-  if(tog){
-    tog.textContent=theme==='dark'?'🌙':'☀';
-    tog.addEventListener('click',function(){
-      var dark=document.documentElement.getAttribute('data-theme')==='dark';
-      var next=dark?'':'dark';
-      document.documentElement.setAttribute('data-theme',next);
-      tog.textContent=next==='dark'?'🌙':'☀';
-      localStorage.setItem(KEY,next);
-    });
-  }
-})();
+function setStatus(msg,type){var sb=document.getElementById('statusBar');sb.style.display='block';sb.style.background=type==='ok'?'#D1FAE5':'#FEE2E2';sb.style.color=type==='ok'?'#065F46':'#991B1B';sb.textContent=msg;}
+document.getElementById('btnEncode').addEventListener('click',function(){
+  var inp=document.getElementById('input').value;if(!inp)return;
+  try{var enc=btoa(unescape(encodeURIComponent(inp)));document.getElementById('output').value=enc;setStatus('Encoded — '+inp.length+' chars → '+enc.length+' chars (Base64)','ok');}
+  catch(e){setStatus('Encoding error: '+e.message,'err');}
+});
+document.getElementById('btnDecode').addEventListener('click',function(){
+  var inp=document.getElementById('input').value.trim();if(!inp)return;
+  try{var dec=decodeURIComponent(escape(atob(inp)));document.getElementById('output').value=dec;setStatus('Decoded — '+inp.length+' chars → '+dec.length+' chars','ok');}
+  catch(e){setStatus('Invalid Base64 — check for non-Base64 characters or missing padding (=)','err');}
+});
+document.getElementById('btnClear').addEventListener('click',function(){document.getElementById('input').value='';document.getElementById('output').value='';document.getElementById('statusBar').style.display='none';});
+document.getElementById('btnSwap').addEventListener('click',function(){var i=document.getElementById('input').value;document.getElementById('input').value=document.getElementById('output').value;document.getElementById('output').value='';document.getElementById('statusBar').style.display='none';});
+document.getElementById('btnSample').addEventListener('click',function(){document.getElementById('input').value='Hello from Toolpad! This text will be encoded to Base64.';});
+document.getElementById('btnCopy').addEventListener('click',function(){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('output').value);document.getElementById('btnCopy').textContent='Copied!';setTimeout(function(){document.getElementById('btnCopy').textContent='Copy';},2000);});
+document.getElementById('btnDownload').addEventListener('click',function(){var c=document.getElementById('output').value;if(!c)return;var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'text/plain'}));a.download='base64_output.txt';a.click();});
 </script>
-</body>
-</html>
+
+<script>
+document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var a=q.nextElementSibling,o=a.style.display==='block';
+    a.style.display=o?'none':'block';
+    q.querySelector('.faq-toggle').textContent=o?'+':'−';
+  });
+});
+</script>
+</body></html>
