@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unix Timestamp Converter — Date to Timestamp & Back | Toolpad</title>
+<meta name="description" content="Convert Unix timestamps to human-readable dates and dates to Unix timestamps. Supports seconds and milliseconds. Live current timestamp. Free.">
+<link rel="canonical" href="https://toolpad.in/generators/unix-timestamp">
+<meta property="og:title" content="Unix Timestamp Converter — Date to Timestamp & Back | Toolpad">
+<meta property="og:description" content="Convert Unix timestamps to human-readable dates and dates to Unix timestamps. Supports seconds and milliseconds. Live current timestamp. Free.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://toolpad.in/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://toolpad.in/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Unix Timestamp Converter","url":"https://toolpad.in/generators/unix-timestamp","description":"Convert Unix timestamps to dates and dates to Unix timestamps","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body><header class="navbar"><div class="nav-inner">
+  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+  <nav class="nav-links">
+    <div class="nav-dropdown">
+      <a href="/generators" class="nav-link active">Generators ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Personal</div>
+        <a href="/generators/fake-name">👤 Fake name</a>
+        <a href="/generators/fake-email">✉ Fake email</a>
+        <a href="/generators/fake-phone">📱 Phone number</a>
+        <a href="/generators/fake-profile">🪪 Full profile</a>
+        <a href="/generators/fake-address">📍 Fake address</a>
+        <div class="nav-dropdown-group">Financial</div>
+        <a href="/generators/credit-card">💳 Credit card</a>
+        <a href="/generators/iban">🏦 IBAN</a>
+        <div class="nav-dropdown-group">Device &amp; Network</div>
+        <a href="/generators/imei">📡 IMEI</a>
+        <a href="/generators/uuid">🔑 UUID</a>
+        <a href="/generators/mac-address">🖧 MAC address</a>
+        <a href="/generators/ip-address">🌐 IP address</a>
+        <a href="/generators/imsi">📶 IMSI</a>
+        <div class="nav-dropdown-group">Utilities</div>
+        <a href="/generators/color-converter">🎨 Color converter</a>
+        <a href="/generators/unix-timestamp">⏱ Unix timestamp</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/formatters" class="nav-link">Formatters ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="/formatters/json">{ } JSON formatter</a>
+        <a href="/formatters/xml">&lt;/&gt; XML formatter</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <a href="/converters" class="nav-link">Converters ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-group">Data formats</div>
+        <a href="/converters/json-to-xml">⇄ JSON to XML</a>
+        <a href="/converters/xml-to-json">⇄ XML to JSON</a>
+        <a href="/converters/json-to-csv">📊 JSON to CSV</a>
+        <a href="/converters/csv-to-json">📋 CSV to JSON</a>
+        <a href="/converters/text-to-json">📝 Text to JSON</a>
+        <a href="/converters/text-to-xml">📝 Text to XML</a>
+        <div class="nav-dropdown-group">Encoding</div>
+        <a href="/converters/base64">🔐 Base64</a>
+        <a href="/converters/hex">🔢 Hex</a>
+        <a href="/converters/url-encoder">🔗 URL encoder</a>
+        <div class="nav-dropdown-group">Documents</div>
+        <a href="/converters/docx-to-pdf">📄 DOCX to PDF</a>
+      </div>
+    </div>
+    <a href="/api-docs" class="nav-link">API</a>
+  </nav>
+  <div class="nav-search">
+    <input type="search" id="toolSearch" placeholder="Search tools..." autocomplete="off">
+    <div id="searchDropdown" class="search-dropdown"></div>
+  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀</button>
+</div></header>
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+<div class="tool-page">
+  <div class="tool-page-header">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Unix timestamp converter</div>
+    <h1>Unix timestamp converter</h1>
+    <p class="tool-desc">Convert Unix timestamps to human-readable dates and times, or convert any date and time back to a Unix timestamp. Supports both seconds and milliseconds. Shows the current timestamp live.</p>
+  </div>
+
+  <!-- Live current timestamp -->
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:24px">
+    <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--slate-l);margin-bottom:8px">Current Unix timestamp</div>
+    <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+      <div>
+        <div style="font-family:monospace;font-size:28px;font-weight:700;color:var(--orange)" id="liveSec">—</div>
+        <div style="font-size:11px;color:var(--slate-l);margin-top:2px">seconds</div>
+      </div>
+      <div>
+        <div style="font-family:monospace;font-size:20px;font-weight:600;color:var(--slate-m)" id="liveMs">—</div>
+        <div style="font-size:11px;color:var(--slate-l);margin-top:2px">milliseconds</div>
+      </div>
+      <button class="btn btn-sm" id="btnCopyLive" style="margin-left:auto">Copy timestamp</button>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px">
+
+    <!-- Timestamp → Date -->
+    <div class="workspace-panel">
+      <div class="panel-header"><h3>Timestamp → Date</h3></div>
+      <div class="panel-body">
+        <div style="margin-bottom:12px">
+          <label style="font-size:12px;font-weight:600;color:var(--slate-m);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px">Unix timestamp</label>
+          <input type="text" id="tsInput" placeholder="e.g. 1700000000"
+            style="width:100%;padding:8px 12px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:monospace;font-size:14px">
+        </div>
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <button class="btn btn-primary btn-sm" id="btnConvertTs">Convert</button>
+          <button class="btn btn-sm" id="btnNow">Use now</button>
+        </div>
+        <div id="tsResult" style="font-size:13px;display:none">
+          <div style="margin-bottom:8px"><span style="color:var(--slate-l);font-size:11px;text-transform:uppercase;letter-spacing:.4px;font-weight:600">UTC</span><div id="tsUtc" style="font-family:monospace;color:var(--slate);margin-top:2px"></div></div>
+          <div style="margin-bottom:8px"><span style="color:var(--slate-l);font-size:11px;text-transform:uppercase;letter-spacing:.4px;font-weight:600">Local time</span><div id="tsLocal" style="font-family:monospace;color:var(--slate);margin-top:2px"></div></div>
+          <div style="margin-bottom:8px"><span style="color:var(--slate-l);font-size:11px;text-transform:uppercase;letter-spacing:.4px;font-weight:600">ISO 8601</span><div id="tsIso" style="font-family:monospace;color:var(--slate-m);font-size:12px;margin-top:2px"></div></div>
+          <div><span style="color:var(--slate-l);font-size:11px;text-transform:uppercase;letter-spacing:.4px;font-weight:600">Relative</span><div id="tsRelative" style="color:var(--orange-d);margin-top:2px"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Date → Timestamp -->
+    <div class="workspace-panel">
+      <div class="panel-header"><h3>Date → Timestamp</h3></div>
+      <div class="panel-body">
+        <div style="margin-bottom:12px">
+          <label style="font-size:12px;font-weight:600;color:var(--slate-m);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px">Date &amp; time</label>
+          <input type="datetime-local" id="dateInput"
+            style="width:100%;padding:8px 12px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+        </div>
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <button class="btn btn-primary btn-sm" id="btnConvertDate">Convert</button>
+          <button class="btn btn-sm" id="btnDateNow">Use now</button>
+        </div>
+        <div id="dateResult" style="font-size:13px;display:none">
+          <div style="margin-bottom:8px"><span style="color:var(--slate-l);font-size:11px;text-transform:uppercase;letter-spacing:.4px;font-weight:600">Unix (seconds)</span><div id="dateTs" style="font-family:monospace;font-size:20px;font-weight:700;color:var(--orange);margin-top:2px"></div></div>
+          <div><span style="color:var(--slate-l);font-size:11px;text-transform:uppercase;letter-spacing:.4px;font-weight:600">Unix (milliseconds)</span><div id="dateTsMs" style="font-family:monospace;color:var(--slate-m);margin-top:2px"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+
+  <div class="seo-content">
+    <h2>What is a Unix timestamp?</h2>
+    <p>A Unix timestamp is a way of representing a specific moment in time as a single integer — the number of seconds that have elapsed since the Unix epoch, which is defined as midnight on 1 January 1970 in Coordinated Universal Time (UTC). For example, the timestamp 1700000000 represents 14 November 2023 at 22:13:20 UTC. Negative timestamps represent moments before 1970.</p>
+    <p>Unix time is also called POSIX time, epoch time, or Unix epoch time. It was created in the early days of Unix operating systems as a simple, language-neutral, timezone-neutral way to represent absolute moments in time. Because it is a single integer, it is trivial to store, compare, sort, and perform arithmetic on time values. Adding 86400 to any Unix timestamp gives you exactly the same time the following day. Subtracting two timestamps gives you the exact elapsed seconds between them.</p>
+
+    <h3>Seconds vs milliseconds</h3>
+    <p>The original Unix timestamp is measured in seconds. As computers became faster and applications needed finer time resolution, millisecond-precision timestamps became common. JavaScript's <code>Date.now()</code> returns milliseconds. Java's <code>System.currentTimeMillis()</code> returns milliseconds. Most modern databases and APIs that need sub-second precision use milliseconds. Some systems — particularly in finance and networking — use microsecond or nanosecond precision.</p>
+    <p>A seconds timestamp is 10 digits (currently around 1,700,000,000). A milliseconds timestamp is 13 digits (the seconds value multiplied by 1000). If you receive a timestamp and are unsure whether it is seconds or milliseconds, check its magnitude — if it is 13 digits, it is almost certainly milliseconds.</p>
+
+    <h3>The year 2038 problem</h3>
+    <p>On 32-bit systems, Unix time is stored as a signed 32-bit integer, which can hold values up to 2,147,483,647. This maximum value corresponds to 19 January 2038 at 03:14:07 UTC. On that date, 32-bit systems storing Unix time will overflow and wrap around to a large negative number, potentially causing software failures. This is known as the Year 2038 problem or Y2K38. Modern 64-bit systems are immune — a signed 64-bit integer can represent timestamps well past the year 292 billion.</p>
+
+    <h3>Unix timestamps in programming</h3>
+    <p>Nearly every programming language and framework provides built-in support for Unix timestamps. In JavaScript, <code>Date.now()</code> returns the current millisecond timestamp, and <code>Math.floor(Date.now()/1000)</code> gives seconds. In Python, <code>import time; time.time()</code> returns the current seconds timestamp as a float. In databases, PostgreSQL's <code>EXTRACT(EPOCH FROM now())</code> returns the current seconds timestamp. MySQL's <code>UNIX_TIMESTAMP()</code> does the same. Unix timestamps stored in database columns are typically indexed efficiently and enable fast range queries.</p>
+
+    <h3>Timezones and UTC</h3>
+    <p>Unix timestamps are always in UTC — they have no timezone information baked in. A timestamp of 1700000000 means the same absolute moment in time regardless of where in the world you are. The local time display you see depends on your browser's timezone setting. When storing timestamps in databases, always store UTC and convert to local time only at the display layer. This avoids daylight saving time bugs and timezone conversion errors that plague applications that store local times.</p>
+
+    
+    <div class="faq-item">
+      <div class="faq-q">What is the Unix epoch? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">The Unix epoch is the reference point from which all Unix timestamps are measured: midnight (00:00:00) on 1 January 1970 in Coordinated Universal Time (UTC). A Unix timestamp of 0 corresponds to exactly this moment. All positive timestamps represent moments after this date; negative timestamps represent moments before it.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I get the current Unix timestamp in my code? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">JavaScript: Math.floor(Date.now()/1000) for seconds, Date.now() for milliseconds. Python: import time; int(time.time()). PHP: time(). Java: System.currentTimeMillis()/1000L. Go: time.Now().Unix(). Ruby: Time.now.to_i. Most languages have equivalent built-in functions.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why does my timestamp show the wrong date? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">The most common cause is a seconds/milliseconds mismatch. If a seconds timestamp is treated as milliseconds, the resulting date will be in 1970. If a milliseconds timestamp is treated as seconds, the date will be far in the future. Check that you are using the correct precision for your timestamp.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is ISO 8601? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">ISO 8601 is an international standard for representing dates and times as strings, in the format YYYY-MM-DDTHH:mm:ssZ (e.g., 2023-11-14T22:13:20Z). The Z suffix indicates UTC. ISO 8601 is the recommended format for storing and exchanging dates in APIs and databases because it is unambiguous, sortable as a string, and internationally recognised.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is Unix time the same as UTC? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Unix timestamps measure elapsed seconds since the UTC epoch, so they are effectively in UTC. However, Unix time does not account for leap seconds — it assumes every day has exactly 86,400 seconds. UTC does insert occasional leap seconds to keep it synchronised with astronomical time. In practice, this difference is negligible for most applications.</div>
+    </div>
+  </div>
+
+  <div class="related-tools">
+    <h3>Related tools</h3>
+    <div class="related-grid">
+      <a href="/generators/uuid" class="related-card"><h4>UUID generator</h4><p>Unique identifiers</p></a><a href="/converters/base64" class="related-card"><h4>Base64 encoder</h4><p>Encode to Base64</p></a><a href="/converters/url-encoder" class="related-card"><h4>URL encoder</h4><p>Encode URLs</p></a><a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON</p></a>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon">🔧</span> <strong>Toolpad</strong>
+      <p>Free developer utility tools. No signup. No tracking.</p>
+    </div>
+    <div class="footer-links">
+      <h5>Generators</h5>
+      <a href="/generators/imei">IMEI generator</a>
+      <a href="/generators/uuid">UUID generator</a>
+      <a href="/generators/credit-card">Credit card</a>
+      <a href="/generators/fake-name">Fake name</a>
+      <a href="/generators/color-converter">Color converter</a>
+      <a href="/generators/unix-timestamp">Unix timestamp</a>
+    </div>
+    <div class="footer-links">
+      <h5>Tools</h5>
+      <a href="/formatters/json">JSON formatter</a>
+      <a href="/formatters/xml">XML formatter</a>
+      <a href="/converters/base64">Base64</a>
+      <a href="/converters/url-encoder">URL encoder</a>
+    </div>
+    <div class="footer-links">
+      <h5>Info</h5>
+      <a href="/api-docs">API docs</a>
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="https://github.com/toolpad-in" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+    <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+       target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
+      <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
+           src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
+           style="display:block">
+    </a>
+    <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+  </div>
+</footer>
+<script src="/scripts/main.js"></script>
+<script>
+function pad(n){return String(n).padStart(2,'0');}
+function relativeTime(ms){
+  var diff=Date.now()-ms;
+  var abs=Math.abs(diff);
+  var future=diff<0;
+  var s=Math.floor(abs/1000);
+  var m=Math.floor(s/60);
+  var h=Math.floor(m/60);
+  var d=Math.floor(h/24);
+  var str;
+  if(s<60)str=s+' seconds';
+  else if(m<60)str=m+' minutes';
+  else if(h<24)str=h+' hours';
+  else str=d+' days';
+  return future?'In '+str:str+' ago';
+}
+
+// Live ticker
+function updateLive(){
+  var now=Date.now();
+  var sec=Math.floor(now/1000);
+  document.getElementById('liveSec').textContent=sec;
+  document.getElementById('liveMs').textContent=now;
+}
+updateLive();
+setInterval(updateLive,1000);
+
+document.getElementById('btnCopyLive').addEventListener('click',function(){
+  var ts=document.getElementById('liveSec').textContent;
+  navigator.clipboard&&navigator.clipboard.writeText(ts);
+  document.getElementById('btnCopyLive').textContent='Copied!';
+  setTimeout(function(){document.getElementById('btnCopyLive').textContent='Copy timestamp';},2000);
+});
+
+// Timestamp → Date
+function convertTs(){
+  var val=document.getElementById('tsInput').value.trim();if(!val)return;
+  var n=parseFloat(val);
+  var ms=n>1e12?n:n*1000;
+  var d=new Date(ms);
+  if(isNaN(d.getTime())){alert('Invalid timestamp');return;}
+  document.getElementById('tsUtc').textContent=d.toUTCString();
+  document.getElementById('tsLocal').textContent=d.toLocaleString();
+  document.getElementById('tsIso').textContent=d.toISOString();
+  document.getElementById('tsRelative').textContent=relativeTime(ms);
+  document.getElementById('tsResult').style.display='block';
+}
+document.getElementById('btnConvertTs').addEventListener('click',convertTs);
+document.getElementById('tsInput').addEventListener('keydown',function(e){if(e.key==='Enter')convertTs();});
+document.getElementById('btnNow').addEventListener('click',function(){
+  document.getElementById('tsInput').value=Math.floor(Date.now()/1000);
+  convertTs();
+});
+
+// Date → Timestamp
+function convertDate(){
+  var val=document.getElementById('dateInput').value;if(!val)return;
+  var d=new Date(val);
+  if(isNaN(d.getTime())){alert('Invalid date');return;}
+  var sec=Math.floor(d.getTime()/1000);
+  document.getElementById('dateTs').textContent=sec;
+  document.getElementById('dateTsMs').textContent=d.getTime();
+  document.getElementById('dateResult').style.display='block';
+}
+document.getElementById('btnConvertDate').addEventListener('click',convertDate);
+document.getElementById('btnDateNow').addEventListener('click',function(){
+  var now=new Date();
+  var pad2=function(n){return String(n).padStart(2,'0');};
+  document.getElementById('dateInput').value=
+    now.getFullYear()+'-'+pad2(now.getMonth()+1)+'-'+pad2(now.getDate())+
+    'T'+pad2(now.getHours())+':'+pad2(now.getMinutes());
+  convertDate();
+});
+
+// Set default datetime to now
+(function(){
+  var now=new Date();
+  var pad2=function(n){return String(n).padStart(2,'0');};
+  document.getElementById('dateInput').value=
+    now.getFullYear()+'-'+pad2(now.getMonth()+1)+'-'+pad2(now.getDate())+
+    'T'+pad2(now.getHours())+':'+pad2(now.getMinutes());
+})();
+</script>
+<script>
+document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var a=q.nextElementSibling,o=a.style.display==='block';
+    a.style.display=o?'none':'block';
+    q.querySelector('.faq-toggle').textContent=o?'+':'−';
+  });
+});
+</script>
+</body>
+</html>
