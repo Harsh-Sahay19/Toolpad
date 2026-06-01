@@ -3,21 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fake Name Generator — Random Names for US, India, UK | Toolpad</title>
-<meta name="description" content="Generate realistic fake names for US, India and UK. Male, female, or any gender. Name patterns match real-world conventions. Bulk CSV export. Free.">
+<title>Fake Name Generator India — Random Indian Names for Testing | Free</title>
+<meta name="description" content="Generate realistic fake Indian names for testing. Hindi, South Indian, Gujarati, Bengali name pools. US, UK, Canada, Australia also supported. Bulk CSV export. Free, no signup.">
 <link rel="canonical" href="https://toolpad.in/generators/fake-name">
-<meta property="og:title" content="Fake Name Generator — Random Names for US, India, UK | Toolpad">
-<meta property="og:description" content="Generate realistic fake names for US, India and UK. Male, female, or any gender. Name patterns match real-world conventions. Bulk CSV export. Free.">
+<meta property="og:title" content="Fake Name Generator India — Random Indian Names for Testing | Free">
+<meta property="og:description" content="Generate realistic fake names for India, US, UK and more. Bulk CSV export. Free, no signup.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://toolpad.in/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://toolpad.in/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fake Name Generator","url":"https://toolpad.in/generators/fake-name","description":"Generate realistic fake names for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fake Name Generator India",
+  "url": "https://toolpad.in/generators/fake-name",
+  "description": "Generate realistic fake names for India, US, UK, Canada, Australia and Germany for software testing",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": [
+    "Indian fake name generation",
+    "Hindi, South Indian, Gujarati, Bengali names",
+    "US, UK, Canada, Australia, Germany support",
+    "Male, female, any gender",
+    "Bulk CSV export",
+    "No signup required"
+  ]
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/styles/main.css">
 </head>
-<body><header class="navbar"><div class="nav-inner">
+<body>
+
+<header class="navbar"><div class="nav-inner">
   <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
   <nav class="nav-links">
     <div class="nav-dropdown">
@@ -38,6 +60,9 @@
         <a href="/generators/mac-address">🖧 MAC address</a>
         <a href="/generators/ip-address">🌐 IP address</a>
         <a href="/generators/imsi">📶 IMSI</a>
+        <div class="nav-dropdown-group">Utilities</div>
+        <a href="/generators/color-converter">🎨 Color converter</a>
+        <a href="/generators/unix-timestamp">⏱ Unix timestamp</a>
       </div>
     </div>
     <div class="nav-dropdown">
@@ -60,6 +85,7 @@
         <div class="nav-dropdown-group">Encoding</div>
         <a href="/converters/base64">🔐 Base64</a>
         <a href="/converters/hex">🔢 Hex</a>
+        <a href="/converters/url-encoder">🔗 URL encoder</a>
         <div class="nav-dropdown-group">Documents</div>
         <a href="/converters/docx-to-pdf">📄 DOCX to PDF</a>
       </div>
@@ -72,20 +98,28 @@
   </div>
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☀</button>
 </div></header>
+
 <div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+
 <div class="tool-page">
   <div class="tool-page-header">
     <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Fake name generator</div>
     <h1>Fake name generator</h1>
-    <p class="tool-desc">Generate realistic fake names drawn from authentic name pools for the United States, India, and the United Kingdom. Names follow the naming conventions and frequency distributions of each country. All generated names are completely fictitious and do not correspond to any real person.</p>
+    <p class="tool-desc">Generate realistic fake names for India, United States, United Kingdom, Canada, Australia and Germany. Name pools are drawn from authentic regional data for each country. All generated names are completely fictitious and do not correspond to any real person.</p>
   </div>
 
   <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
     <select id="countrySel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="any">Any country (mixed)</option>
-      <option value="US">United States</option>
-      <option value="IN">India</option>
-      <option value="UK">United Kingdom</option>
+      <option value="IN" selected>🇮🇳 India</option>
+      <option value="IN_SOUTH">🇮🇳 India — South</option>
+      <option value="IN_GUJ">🇮🇳 India — Gujarat</option>
+      <option value="IN_BEN">🇮🇳 India — Bengal</option>
+      <option value="US">🇺🇸 United States</option>
+      <option value="UK">🇬🇧 United Kingdom</option>
+      <option value="CA">🇨🇦 Canada</option>
+      <option value="AU">🇦🇺 Australia</option>
+      <option value="DE">🇩🇪 Germany</option>
+      <option value="any">🌍 Any country (mixed)</option>
     </select>
     <select id="genderSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
       <option value="any">Any gender</option>
@@ -104,14 +138,19 @@
   </div>
 
   <div class="workspace-panel" style="margin-bottom:24px">
-    <div class="panel-header"><h3>Generated names</h3><span id="meta" style="font-size:12px;color:var(--slate-l)"></span></div>
+    <div class="panel-header">
+      <h3>Generated names</h3>
+      <span id="meta" style="font-size:12px;color:var(--slate-l)"></span>
+    </div>
     <div style="overflow:hidden">
       <table style="width:100%;border-collapse:collapse;font-size:13px">
         <thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)">
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">#</th>
           <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">Full name</th>
           <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">First name</th>
           <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">Last name</th>
           <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">Gender</th>
+          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">Region</th>
         </tr></thead>
         <tbody id="nameBody"></tbody>
       </table>
@@ -121,55 +160,78 @@
   <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
   <div class="seo-content">
-    <h2>Why use a fake name generator?</h2>
-    <p>Real names in test databases create significant privacy and compliance risks. Under GDPR in Europe, PDPB in India, and CCPA in California, using actual personal data — even in development environments — can trigger data protection obligations, breach notification requirements, and regulatory fines. Fake names that are statistically realistic eliminate these risks entirely while still allowing you to build and test with data that looks and behaves like production data.</p>
-    <p>Beyond compliance, realistic fake names make UI and UX testing more meaningful. A user interface tested with names like "John Smith" and "Priya Sharma" reveals layout issues, character encoding problems, and sorting behaviours that would never appear when testing with placeholder strings like "Test User 1" or "AAAA BBBB".</p>
+    <h2>Fake name generator for India</h2>
+    <p>This tool is the most comprehensive free Indian fake name generator available online. It draws from authentic name pools across India's major linguistic and regional communities — not just a single generic set of "Indian names". Real Indian naming conventions vary significantly by state, language, religion, and community, and this generator reflects that diversity.</p>
+    <p>For North Indian and Hindi-speaking regions (Uttar Pradesh, Madhya Pradesh, Rajasthan, Bihar, Delhi), the generator uses common Hindi first names and surnames. For South India, it uses names typical in Karnataka, Tamil Nadu, Andhra Pradesh, and Kerala — including common Kannada, Tamil, and Telugu given names and family names. For Gujarat and Rajasthan, Gujarati naming conventions are used. For West Bengal and the eastern states, Bengali names are available separately.</p>
 
-    <h3>How realistic fake names are generated</h3>
-    <p>This generator uses curated name pools drawn from census data, birth registry statistics, and official frequency tables for each supported country. First names and last names are sampled independently based on their relative frequency — common names appear more often, just as they do in real populations. The result is a realistic distribution rather than an alphabetically or randomly uniform one.</p>
-    <p>For India, the generator uses Hindi and South Asian names common across Maharashtra, Karnataka, Tamil Nadu, Delhi, and Gujarat — the most populous states. For the United Kingdom, names reflect the diverse modern UK population including both traditional English names and common South Asian names. For the United States, names are drawn from US Census Bureau frequency data covering the most common names across all demographics.</p>
+    <h3>Why realistic fake names matter for Indian applications</h3>
+    <p>Applications built for Indian users face unique testing challenges. Indian names are considerably more diverse than Western names — they span 22 officially recognised languages, hundreds of dialects, and numerous regional naming traditions. A test dataset that uses only Hindi names will fail to surface issues that appear with South Indian names, which often have different character lengths, different capitalisation patterns, and sometimes include initials rather than full surnames.</p>
+    <p>Indian names also present specific technical challenges. Many Indian names include characters that are sometimes romanised differently — names like Priyā, Rajeev vs Rajiv, or Sunīl vs Sunil. Application developers building multilingual or pan-India products should test with a diverse set of Indian names to ensure character encoding, name field lengths, sorting, and search work correctly for all users.</p>
 
-    <h3>Use cases in software development</h3>
-    <p>Fake names are used extensively across the software development lifecycle. During development, they populate seed data for local and staging databases. During QA testing, they allow testers to create realistic user accounts, test name field validation, and verify that sorting, searching, and filtering work correctly with names of varying length and character composition. During UI design, they make mockups and prototypes feel real without using anyone's actual identity. During performance testing, bulk-generated names allow teams to simulate production-scale user databases.</p>
+    <h3>Global name generation</h3>
+    <p>Beyond India, this generator supports United States names drawn from US Census Bureau frequency data, United Kingdom names reflecting the diverse modern UK population, Canadian names with both English and French-origin options, Australian names, and German names following German naming conventions. All name pools are gender-aware — male and female name frequencies are handled separately for each country.</p>
 
-    <h3>Name internationalisation considerations</h3>
-    <p>Names from different cultures present specific technical challenges that this generator helps you test. Indian names often include characters like ā, ī, or ū in their romanised forms. Some names are single-word (no separate first and last name). Some cultures place the family name before the given name. Testing with a realistic international name dataset helps surface encoding issues, field length assumptions, and name-ordering bugs before they reach production.</p>
+    <h3>Use cases for fake name generation</h3>
+    <p>Software developers use fake names to populate seed data for local and staging databases without using real personal data. QA engineers create test user accounts and verify that name fields handle different lengths, character combinations, and Unicode correctly. UI designers populate mockups and prototypes with realistic names to make designs reviewable by stakeholders. Performance testers generate thousands of fake user records to simulate production-scale user databases. All of these use cases benefit from names that are realistic and regionally appropriate rather than placeholder strings.</p>
+
+    <h3>Data privacy and PDPB compliance</h3>
+    <p>India's Personal Data Protection Bill (PDPB) and the broader global trend toward data privacy regulation mean that using real names in development and testing environments is increasingly risky. Regulators consider development environments that contain real personal data to be within scope for data protection obligations. Using generated fake names eliminates this risk entirely — there is no personal data in your test environment to protect, breach, or report.</p>
 
     <h3>API access</h3>
-    <p>Generate fake names programmatically via the Toolpad REST API — no authentication required:</p>
-    <p><code>GET https://api.toolpad.in/api/v1/personal/name?count=50</code></p>
-    <p>Add <code>&gender=female</code> or <code>&country=IN</code> to filter results.</p>
+    <p>Generate fake names programmatically via the Toolpad REST API — no API key required:</p>
+    <p><code>GET https://api.toolpad.in/api/v1/personal/name?country=IN&count=50</code></p>
+    <p>Supported country codes: <code>IN</code>, <code>US</code>, <code>GB</code>, <code>CA</code>, <code>AU</code>, <code>DE</code>. Add <code>&gender=female</code> to filter by gender.</p>
 
-    
     <div class="faq-item">
-      <div class="faq-q">Are these names based on real people? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">No. All names are randomly combined from statistical name pools and do not correspond to any real person living or dead. The first names and last names are drawn from different pools and combined randomly, making the probability of accidentally generating a real person's exact name extremely low.</div>
+      <div class="faq-q">Are generated Indian names based on real people? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">No. All names are randomly combined from statistical name pools and do not correspond to any real person living or dead. First names and last names are drawn from separate pools and combined randomly, making the probability of accidentally generating a real person's exact name extremely low.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What Indian regions and languages are supported? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Four Indian regional pools are available: North India (Hindi names common in UP, MP, Delhi, Bihar, Rajasthan), South India (names from Karnataka, Tamil Nadu, Andhra Pradesh, Kerala), Gujarat (Gujarati naming conventions), and Bengal (Bengali names from West Bengal and Assam). Select the specific region from the country dropdown for region-specific names, or select "India" for a general mix.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Can I use these names in my application's test database? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Yes — this is exactly what they are designed for. Using fake names in test databases is best practice under data protection regulations including GDPR, PDPB, and CCPA. It eliminates the privacy risks of using real personal data in development and testing environments.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Why do some Indian names look different from names I know? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">India has enormous linguistic diversity with hundreds of languages and naming traditions. This generator focuses on names common in Hindi-speaking North India and major South Indian states. Names from other regions — Bengal, Kerala, Punjab, Northeast India — follow different conventions and are not fully represented in the current name pool.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I generate names for other countries? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">Currently US, India, and UK are supported. More countries are on the roadmap. If you need names for a specific country not listed, you can use the "Any country" option for a general Western mix, or use the API to generate names and post-process them.</div>
+      <div class="faq-a">Yes — this is exactly what they are designed for. Using generated fake names in test databases is best practice under GDPR, India's PDPB, and other data protection regulations. It eliminates the privacy risks of using real personal data in development and testing environments.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">How many unique names can be generated? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">The generator uses pools of 10 first names per gender per country and 8 last names per country, producing up to 160 unique combinations per country. For large volumes requiring more uniqueness, add a number suffix or combine with the email generator to create unique identifiers.</div>
+      <div class="faq-a">Each regional pool has 20+ first names per gender and 15+ last names, producing hundreds of unique combinations per region. For very large datasets requiring guaranteed uniqueness, combine generated names with a numeric suffix or use the full profile generator which creates consistent name-email-phone combinations.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why do some Indian names appear with different spellings? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">Indian names in Latin script have no single standardised spelling. Rajeev and Rajiv, Priya and Priyā, Suneel and Sunil are all valid romanisations of the same names. This generator uses the most common romanised spellings but acknowledges that multiple spellings exist in practice.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I generate names with a username or email address? <span class="faq-toggle">+</span></div>
+      <div class="faq-a">For a complete fake person including name, email, phone number, and address in one click, use the Full Profile Generator. For email addresses specifically, the Fake Email Generator creates addresses derived from name patterns.</div>
     </div>
   </div>
 
-  <div class="related-tools">
+  <div style="background:linear-gradient(135deg,var(--white) 60%,#FFF7ED);border:1px solid var(--orange-l);border-radius:var(--radius-lg);padding:20px 24px;margin-top:32px">
+    <div style="font-size:13px;font-weight:700;color:var(--orange-d);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Need more than just names?</div>
+    <p style="font-size:14px;color:var(--slate-m);margin-bottom:14px;line-height:1.6">Generate a complete fake Indian person profile — name, email, phone number and address — all consistent and regionally appropriate, in one click.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="/generators/fake-profile" class="btn btn-primary" style="font-size:13px">🪪 Full profile generator</a>
+      <a href="/generators/fake-email" class="btn" style="font-size:13px">✉ Fake email generator</a>
+      <a href="/generators/fake-phone" class="btn" style="font-size:13px">📱 Phone number generator</a>
+      <a href="/generators/fake-address" class="btn" style="font-size:13px">📍 Fake address generator</a>
+    </div>
+  </div>
+
+  <div class="related-tools" style="margin-top:32px">
     <h3>Related tools</h3>
     <div class="related-grid">
-      <a href="/generators/fake-email" class="related-card"><h4>Fake email generator</h4><p>Email addresses to match names</p></a><a href="/generators/fake-profile" class="related-card"><h4>Full profile generator</h4><p>Complete fake person in one click</p></a><a href="/generators/fake-phone" class="related-card"><h4>Phone number generator</h4><p>Phone numbers by country</p></a><a href="/generators/fake-address" class="related-card"><h4>Fake address generator</h4><p>Postal addresses</p></a>
+      <a href="/generators/fake-profile" class="related-card"><h4>Full profile generator</h4><p>Complete fake person with name, email, phone and address</p></a>
+      <a href="/generators/fake-email" class="related-card"><h4>Fake email generator</h4><p>Realistic email addresses for testing</p></a>
+      <a href="/generators/fake-phone" class="related-card"><h4>Phone number generator</h4><p>Fake numbers for India, US, UK and more</p></a>
+      <a href="/generators/fake-address" class="related-card"><h4>Fake address generator</h4><p>Postal addresses for India, US and UK</p></a>
+      <a href="/generators/credit-card" class="related-card"><h4>Credit card generator</h4><p>Luhn-valid test card numbers</p></a>
+      <a href="/generators/imei" class="related-card"><h4>IMEI generator</h4><p>Device identifiers for mobile testing</p></a>
     </div>
   </div>
 </div>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -178,18 +240,18 @@
     </div>
     <div class="footer-links">
       <h5>Generators</h5>
-      <a href="/generators/imei">IMEI generator</a>
-      <a href="/generators/uuid">UUID generator</a>
-      <a href="/generators/credit-card">Credit card</a>
       <a href="/generators/fake-name">Fake name</a>
-      <a href="/generators/iban">IBAN</a>
+      <a href="/generators/fake-profile">Full profile</a>
+      <a href="/generators/imei">IMEI generator</a>
+      <a href="/generators/credit-card">Credit card</a>
+      <a href="/generators/uuid">UUID generator</a>
     </div>
     <div class="footer-links">
       <h5>Tools</h5>
       <a href="/formatters/json">JSON formatter</a>
       <a href="/formatters/xml">XML formatter</a>
-      <a href="/converters/json-to-xml">JSON to XML</a>
       <a href="/converters/base64">Base64</a>
+      <a href="/converters/url-encoder">URL encoder</a>
     </div>
     <div class="footer-links">
       <h5>Info</h5>
@@ -210,56 +272,166 @@
     <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
   </div>
 </footer>
+
 <script src="/scripts/main.js"></script>
 <script>
-var FIRST_US_M=['James','John','Robert','Michael','David','William','Richard','Joseph','Charles','Thomas'];
-var FIRST_US_F=['Mary','Patricia','Jennifer','Linda','Barbara','Susan','Jessica','Sarah','Karen','Lisa'];
-var FIRST_IN_M=['Aarav','Arjun','Vivek','Rahul','Amit','Vikram','Rohan','Sanjay','Rajesh','Suresh'];
-var FIRST_IN_F=['Priya','Ananya','Pooja','Neha','Kavya','Deepa','Sunita','Rekha','Sonia','Meera'];
-var FIRST_UK_M=['Oliver','George','Harry','Jack','Charlie','Noah','Alfie','Freddie','Oscar','Archie'];
-var FIRST_UK_F=['Olivia','Amelia','Isla','Ava','Emily','Isabella','Mia','Poppy','Ella','Lily'];
-var LAST_US=['Smith','Johnson','Williams','Brown','Jones','Garcia','Miller','Davis','Wilson','Taylor'];
-var LAST_IN=['Sharma','Patel','Kumar','Singh','Verma','Gupta','Mehta','Shah','Joshi','Nair'];
-var LAST_UK=['Smith','Jones','Williams','Taylor','Brown','Davies','Evans','Wilson','Thomas','Roberts'];
-function rp(a){return a[Math.floor(Math.random()*a.length)];}
-function genName(country,gender){
-  var cc=country==='any'?rp(['US','IN','UK']):country;
-  var g=gender==='any'?rp(['male','female']):gender;
-  var fn,ln;
-  if(cc==='IN'){fn=g==='male'?rp(FIRST_IN_M):rp(FIRST_IN_F);ln=rp(LAST_IN);}
-  else if(cc==='UK'){fn=g==='male'?rp(FIRST_UK_M):rp(FIRST_UK_F);ln=rp(LAST_UK);}
-  else{fn=g==='male'?rp(FIRST_US_M):rp(FIRST_US_F);ln=rp(LAST_US);}
-  return{full:fn+' '+ln,first:fn,last:ln,gender:g};
-}
-function generate(){
-  var c=document.getElementById('countrySel').value;
-  var g=document.getElementById('genderSel').value;
-  var n=parseInt(document.getElementById('countSel').value);
-  var results=Array.from({length:n},function(){return genName(c,g);});
-  document.getElementById('nameBody').innerHTML=results.map(function(r,i){
-    return '<tr style="border-bottom:1px solid var(--border);'+(i%2?'background:var(--bg)':'')+'">'+
-      '<td style="padding:10px 16px;font-weight:600;color:var(--slate)">'+r.full+'</td>'+
-      '<td style="padding:10px 16px;font-size:13px;color:var(--slate-m)">'+r.first+'</td>'+
-      '<td style="padding:10px 16px;font-size:13px;color:var(--slate-m)">'+r.last+'</td>'+
-      '<td style="padding:10px 16px;font-size:12px;color:var(--slate-l)">'+r.gender+'</td></tr>';
-  }).join('');
-  document.getElementById('meta').textContent=n+' names generated';
-  window._names=results;
-}
-document.getElementById('genBtn').addEventListener('click',generate);
-document.getElementById('copyBtn').addEventListener('click',function(){if(!window._names)return;navigator.clipboard&&navigator.clipboard.writeText(window._names.map(function(r){return r.full;}).join('\n'));document.getElementById('copyBtn').textContent='Copied!';setTimeout(function(){document.getElementById('copyBtn').textContent='Copy all';},2000);});
-document.getElementById('csvBtn').addEventListener('click',function(){if(!window._names)return;var csv='full_name,first_name,last_name,gender\n'+window._names.map(function(r){return r.full+','+r.first+','+r.last+','+r.gender;}).join('\n');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='fake_names.csv';a.click();});
-generate();
-</script>
+// ── Name pools ────────────────────────────────────────────────────────────────
+var POOLS = {
+  IN: {
+    label: 'India (North/Hindi)',
+    m: ['Aarav','Arjun','Vivek','Rahul','Amit','Vikram','Rohan','Sanjay','Rajesh','Suresh',
+        'Deepak','Manish','Pankaj','Nitin','Sachin','Ankit','Mohit','Gaurav','Rohit','Kunal'],
+    f: ['Priya','Ananya','Pooja','Neha','Kavya','Deepa','Sunita','Rekha','Sonia','Meera',
+        'Divya','Ritu','Anjali','Swati','Preeti','Nisha','Shruti','Pallavi','Komal','Archana'],
+    l: ['Sharma','Patel','Kumar','Singh','Verma','Gupta','Mehta','Shah','Joshi','Nair',
+        'Dubey','Pandey','Mishra','Tiwari','Yadav','Srivastava','Chauhan','Agarwal']
+  },
+  IN_SOUTH: {
+    label: 'India (South)',
+    m: ['Karthik','Suresh','Venkat','Rajan','Arun','Sriram','Mohan','Prakash','Naveen','Ganesh',
+        'Sridhar','Vinay','Prasad','Ramesh','Harish','Manohar','Balaji','Dinesh','Ashok','Vijay'],
+    f: ['Lakshmi','Kavitha','Sudha','Geetha','Usha','Radha','Saranya','Divya','Meenakshi','Preethi',
+        'Revathi','Nandini','Vasantha','Bhavani','Kamala','Sujatha','Anuradha','Vijayalakshmi'],
+    l: ['Reddy','Naidu','Pillai','Menon','Iyer','Iyengar','Krishnan','Rajan','Subramanian','Venkatesh',
+        'Murthy','Swamy','Rao','Nair','Krishnaswamy','Balakrishnan','Parthasarathy']
+  },
+  IN_GUJ: {
+    label: 'India (Gujarat)',
+    m: ['Harsh','Keval','Darshan','Neel','Preet','Rushabh','Yash','Meet','Dhruv','Jay',
+        'Parth','Kush','Raj','Vatsal','Chintan','Pratik','Siddharth','Nishant','Vimal','Haresh'],
+    f: ['Hetal','Miral','Foram','Drashti','Riya','Bansari','Disha','Riddhi','Siddhi','Khyati',
+        'Niyati','Pooja','Twinkle','Foram','Bindiya','Jalpa','Kinjal','Mansi','Puja','Zalak'],
+    l: ['Patel','Shah','Desai','Mehta','Modi','Trivedi','Joshi','Parikh','Bhatt','Pandya',
+        'Sheth','Vora','Gandhi','Dave','Kapadia','Thakkar','Dalal','Sanghvi']
+  },
+  IN_BEN: {
+    label: 'India (Bengal)',
+    m: ['Arnab','Sourav','Debraj','Soumya','Arijit','Pritam','Sayan','Subhrajit','Anirban','Ritam',
+        'Sudipta','Abhijit','Supriyo','Bhaskar','Santanu','Indranil','Partha','Subhendu'],
+    f: ['Shreya','Sreyashi','Mousumi','Mitali','Poulami','Antara','Debarati','Subhashree','Tanushree','Sutapa',
+        'Payel','Sanchita','Rimjhim','Susmita','Arpita','Barnali','Chandreyee','Dola'],
+    l: ['Banerjee','Chatterjee','Mukherjee','Ghosh','Bose','Chakraborty','Roy','Das','Dutta','Sengupta',
+        'Mondal','Pal','Sarkar','Biswas','Mitra','Bhattacharya','Ganguly','Lahiri']
+  },
+  US: {
+    label: 'United States',
+    m: ['James','John','Robert','Michael','David','William','Richard','Joseph','Charles','Thomas',
+        'Christopher','Daniel','Paul','Mark','Donald','George','Kenneth','Steven','Edward','Brian'],
+    f: ['Mary','Patricia','Jennifer','Linda','Barbara','Susan','Jessica','Sarah','Karen','Lisa',
+        'Nancy','Betty','Margaret','Sandra','Ashley','Dorothy','Kimberly','Emily','Donna','Michelle'],
+    l: ['Smith','Johnson','Williams','Brown','Jones','Garcia','Miller','Davis','Wilson','Taylor',
+        'Anderson','Thomas','Jackson','White','Harris','Martin','Thompson','Moore','Young','Allen']
+  },
+  UK: {
+    label: 'United Kingdom',
+    m: ['Oliver','George','Harry','Jack','Charlie','Noah','Alfie','Freddie','Oscar','Archie',
+        'James','William','Henry','Edward','Thomas','Arthur','Sebastian','Theo','Lucas','Mason'],
+    f: ['Olivia','Amelia','Isla','Ava','Emily','Isabella','Mia','Poppy','Ella','Lily',
+        'Sophie','Grace','Freya','Daisy','Charlotte','Alice','Florence','Evie','Eva','Rosie'],
+    l: ['Smith','Jones','Williams','Taylor','Brown','Davies','Evans','Wilson','Thomas','Roberts',
+        'Johnson','Lewis','Walker','Robinson','Wood','Thompson','White','Watson','Jackson','Harris']
+  },
+  CA: {
+    label: 'Canada',
+    m: ['Liam','Noah','William','Benjamin','Lucas','Oliver','Ethan','James','Logan','Mason',
+        'Alexandre','Maxime','Gabriel','Samuel','Nathan','Jacob','Tyler','Dylan','Ryan','Owen'],
+    f: ['Olivia','Emma','Ava','Sophia','Isabella','Charlotte','Amelia','Mia','Abigail','Emily',
+        'Chloe','Madison','Ella','Avery','Scarlett','Grace','Lily','Aria','Riley','Zoe'],
+    l: ['Smith','Brown','Tremblay','Martin','Roy','Wilson','Macdonald','Gagnon','Johnson','Taylor',
+        'Côté','Bouchard','Levesque','Bergeron','Fortin','Gauthier','Morin','Lavoie','Lefebvre']
+  },
+  AU: {
+    label: 'Australia',
+    m: ['Oliver','William','Jack','Noah','Thomas','James','Liam','Ethan','Lucas','Mason',
+        'Charlie','Harrison','Henry','Lachlan','Cooper','Joshua','Alexander','Samuel','Daniel','Matthew'],
+    f: ['Charlotte','Olivia','Ava','Isla','Mia','Grace','Amelia','Sophie','Chloe','Lily',
+        'Emily','Ella','Isabella','Zoe','Sophia','Ruby','Poppy','Evie','Matilda','Alice'],
+    l: ['Smith','Jones','Williams','Brown','Wilson','Taylor','Johnson','White','Martin','Anderson',
+        'Thompson','Harris','Walker','Robinson','Clarke','Mitchell','Lee','Hall','Young','Scott']
+  },
+  DE: {
+    label: 'Germany',
+    m: ['Lukas','Leon','Paul','Jonas','Felix','Maximilian','Noah','Elias','Ben','Tim',
+        'Julian','Luca','Moritz','Philipp','Jan','Niklas','Simon','Tobias','Fabian','Sebastian'],
+    f: ['Emma','Mia','Hannah','Sofia','Anna','Lena','Lea','Laura','Julia','Leonie',
+        'Lara','Sarah','Katharina','Lisa','Nina','Marie','Franziska','Jana','Maja','Alina'],
+    l: ['Müller','Schmidt','Schneider','Fischer','Weber','Meyer','Wagner','Becker','Schulz','Hoffmann',
+        'Schäfer','Koch','Bauer','Richter','Klein','Wolf','Schröder','Neumann','Schwarz','Zimmermann']
+  }
+};
 
-<script>
-document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
-document.querySelectorAll('.faq-q').forEach(function(q){
-  q.addEventListener('click',function(){
-    var a=q.nextElementSibling,o=a.style.display==='block';
-    a.style.display=o?'none':'block';
-    q.querySelector('.faq-toggle').textContent=o?'+':'−';
+var ALL_KEYS = Object.keys(POOLS);
+
+function rp(a) { return a[Math.floor(Math.random() * a.length)]; }
+
+function genName(country, gender) {
+  var cc = country === 'any' ? rp(ALL_KEYS) : country;
+  var pool = POOLS[cc] || POOLS['IN'];
+  var g = gender === 'any' ? rp(['male','female']) : gender;
+  var fn = g === 'male' ? rp(pool.m) : rp(pool.f);
+  var ln = rp(pool.l);
+  return { full: fn + ' ' + ln, first: fn, last: ln, gender: g, region: pool.label };
+}
+
+function generate() {
+  var country = document.getElementById('countrySel').value;
+  var gender  = document.getElementById('genderSel').value;
+  var count   = parseInt(document.getElementById('countSel').value);
+  var results = Array.from({ length: count }, function() { return genName(country, gender); });
+
+  document.getElementById('nameBody').innerHTML = results.map(function(r, i) {
+    return '<tr style="border-bottom:1px solid var(--border);' + (i % 2 ? 'background:var(--bg)' : '') + '">' +
+      '<td style="padding:10px 16px;font-size:12px;color:var(--slate-l)">' + (i + 1) + '</td>' +
+      '<td style="padding:10px 16px;font-weight:600;color:var(--slate);font-size:14px">' + r.full + '</td>' +
+      '<td style="padding:10px 16px;font-size:13px;color:var(--slate-m)">' + r.first + '</td>' +
+      '<td style="padding:10px 16px;font-size:13px;color:var(--slate-m)">' + r.last + '</td>' +
+      '<td style="padding:10px 16px;font-size:12px;color:var(--slate-l)">' + r.gender + '</td>' +
+      '<td style="padding:10px 16px;font-size:11px;color:var(--slate-l)">' + r.region + '</td>' +
+      '</tr>';
+  }).join('');
+
+  document.getElementById('meta').textContent = count + ' names generated';
+  window._names = results;
+}
+
+document.getElementById('genBtn').addEventListener('click', generate);
+
+document.getElementById('copyBtn').addEventListener('click', function() {
+  if (!window._names) return;
+  navigator.clipboard && navigator.clipboard.writeText(
+    window._names.map(function(r) { return r.full; }).join('
+')
+  );
+  document.getElementById('copyBtn').textContent = 'Copied!';
+  setTimeout(function() { document.getElementById('copyBtn').textContent = 'Copy all'; }, 2000);
+});
+
+document.getElementById('csvBtn').addEventListener('click', function() {
+  if (!window._names) return;
+  var csv = 'full_name,first_name,last_name,gender,region
+' +
+    window._names.map(function(r) {
+      return '"' + r.full + '","' + r.first + '","' + r.last + '","' + r.gender + '","' + r.region + '"';
+    }).join('
+');
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+  a.download = 'fake_names.csv';
+  a.click();
+});
+
+// FAQ
+document.querySelectorAll('.faq-a').forEach(function(a) { a.style.display = 'none'; });
+document.querySelectorAll('.faq-q').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var a = q.nextElementSibling, o = a.style.display === 'block';
+    a.style.display = o ? 'none' : 'block';
+    q.querySelector('.faq-toggle').textContent = o ? '+' : '−';
   });
 });
+
+// Auto-generate on load
+generate();
 </script>
-</body></html>
+</body>
+</html>
