@@ -136,6 +136,10 @@ function renderRecentTools() {
     container.style.display = 'block';
   } catch(e) { container.style.display = 'none'; }
 }
+    container.innerHTML = '<div class="recent-strip"><span class="recent-label">Recently used</span>' + links + '</div>';
+    container.style.display = 'block';
+  } catch(e) { container.style.display = 'none'; }
+}
 
 if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
   trackToolVisit(window.location.pathname);
