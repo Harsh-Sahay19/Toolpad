@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toolpad — Free Developer Tools Suite | Generators, Formatters & Converters</title>
+<meta name="description" content="Free online developer tools. Generate test data, format JSON/XML, encode Base64, calculate EMI and GST. 30+ tools. No signup. REST API included.">
+<link rel="canonical" href="https://toolpad.in/">
+<meta property="og:title" content="Toolpad — Free Developer Tools Suite | Generators, Formatters & Converters">
+<meta property="og:description" content="Free online developer tools. Generate test data, format JSON/XML, encode Base64, calculate EMI and GST. 30+ tools. No signup. REST API included.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://toolpad.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Toolpad">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://toolpad.in/og-image.png">
+<meta name="twitter:title" content="Toolpad — Free Developer Tools Suite | Generators, Formatters & Converters">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#F97316">
+<link rel="manifest" href="/manifest.json">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Toolpad","url":"https://toolpad.in","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://toolpad.in/?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Toolpad","url":"https://toolpad.in","logo":{"@type":"ImageObject","url":"https://toolpad.in/og-image.png","width":1200,"height":630},"sameAs":["https://github.com/toolpad-in","https://www.producthunt.com/products/toolpad-in"]}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body><header class="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-icon">🔧</span>
+      <span class="nav-logo-text">Toolpad</span>
+    </a>
+    <nav class="nav-links">
+      <div class="nav-dropdown">
+        <a href="/generators" class="nav-link">Generators</a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-group">Personal</div>
+          <a href="/generators/fake-name">👤 Fake name</a>
+          <a href="/generators/fake-email">✉ Fake email</a>
+          <a href="/generators/fake-phone">📱 Phone number</a>
+          <a href="/generators/fake-profile">🪪 Full profile</a>
+          <a href="/generators/fake-address">📍 Fake address</a>
+          <div class="nav-dropdown-group">Financial</div>
+          <a href="/generators/credit-card">💳 Credit card</a>
+          <a href="/generators/iban">🏦 IBAN</a>
+          <div class="nav-dropdown-group">Device &amp; Network</div>
+          <a href="/generators/imei">📡 IMEI</a>
+          <a href="/generators/uuid">🔑 UUID</a>
+          <a href="/generators/mac-address">🖧 MAC address</a>
+          <a href="/generators/ip-address">🌐 IP address</a>
+          <a href="/generators/imsi">📶 IMSI</a>
+          <div class="nav-dropdown-group">Utilities</div>
+          <a href="/generators/password">🔒 Password</a>
+          <a href="/generators/lorem-ipsum">📝 Lorem Ipsum</a>
+          <a href="/generators/color-converter">🎨 Color converter</a>
+          <a href="/generators/unix-timestamp">⏱ Unix timestamp</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="/formatters" class="nav-link">Formatters</a>
+        <div class="nav-dropdown-menu">
+          <a href="/formatters/json">{ } JSON formatter</a>
+          <a href="/formatters/xml">&lt;/&gt; XML formatter</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="/converters" class="nav-link">Converters</a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-group">Data formats</div>
+          <a href="/converters/json-to-xml">⇄ JSON to XML</a>
+          <a href="/converters/xml-to-json">⇄ XML to JSON</a>
+          <a href="/converters/json-to-csv">📊 JSON to CSV</a>
+          <a href="/converters/csv-to-json">📋 CSV to JSON</a>
+          <a href="/converters/text-to-json">📝 Text to JSON</a>
+          <a href="/converters/text-to-xml">📝 Text to XML</a>
+          <div class="nav-dropdown-group">Encoding</div>
+          <a href="/converters/base64">🔐 Base64</a>
+          <a href="/converters/hex">🔢 Hex</a>
+          <a href="/converters/url-encoder">🔗 URL encoder</a>
+          <div class="nav-dropdown-group">Documents</div>
+          <a href="/converters/docx-to-pdf">📄 DOCX to PDF</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="/utilities" class="nav-link">Utilities</a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-group">Finance</div>
+          <a href="/utilities/emi-calculator">🏦 EMI calculator</a>
+          <a href="/utilities/gst-calculator">📊 GST calculator</a>
+          <a href="/utilities/sip-calculator">📈 SIP calculator</a>
+        </div>
+      </div>
+      <a href="/api-docs" class="nav-link">API</a>
+    </nav>
+    <div class="nav-search">
+      <input type="search" id="toolSearch" placeholder="Search tools..." autocomplete="off">
+      <div id="searchDropdown" class="search-dropdown"></div>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
+  </div>
+</header><div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-status">
+      <span class="status-dot"></span>
+      Free · No signup · API available
+    </div>
+    <h1 class="hero-h1">Developer tools that<br><span class="hero-accent">actually work</span></h1>
+    <p class="hero-sub">Generate test data, format JSON, encode strings, calculate EMI.<br>30+ free browser-based tools with a REST API.</p>
+    <div class="hero-cta">
+      <a href="#generators" class="btn-hero-primary">Browse all tools</a>
+      <a href="/api-docs" class="btn-hero-secondary">View API docs</a>
+    </div>
+    <div class="hero-pills">
+      <span>30+ free tools</span>
+      <span class="pill-sep"></span>
+      <span>REST API</span>
+      <span class="pill-sep"></span>
+      <span>No signup</span>
+      <span class="pill-sep"></span>
+      <span>Open source</span>
+      <span class="pill-sep"></span>
+      <span>Made in India ❤️</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── RECENTLY USED ── -->
+<div id="recentTools"></div>
+
+<!-- ── MAIN ── -->
+<main class="main-content">
+
+  <!-- ── GENERATORS ── -->
+  <section class="tool-section" id="generators">
+    <div class="tp-section-label">Data generators</div>
+    <h2 class="tp-section-title">Generate realistic test data</h2>
+    <p class="tp-section-sub">Structurally valid fake data — passes Luhn, MOD-97, and real-world validation checks.</p>
+
+    <h3 class="tp-subsection">Personal</h3>
+    <div class="tp-grid">
+      <a href="/generators/fake-name" class="tp-card">
+        <div class="tp-card-icon tp-icon-orange">👤</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">Fake name generator</div>
+          <div class="tp-card-desc">India (Hindi, South, Gujarati, Bengali), US, UK, Canada, Australia, Germany.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/generators/fake-email" class="tp-card">
+        <div class="tp-card-icon tp-icon-orange">✉</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">Fake email generator</div>
+          <div class="tp-card-desc">Name-derived patterns. Multiple domains. RFC 5322 valid.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/generators/fake-phone" class="tp-card">
+        <div class="tp-card-icon tp-icon-orange">📱</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">Phone number generator</div>
+          <div class="tp-card-desc">Correct prefix and format for US, India, UK, Australia, Germany.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/generators/fake-profile" class="tp-card tp-card-featured">
+        <div class="tp-card-icon tp-icon-orange">🪪</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">Full profile generator</div>
+          <div class="tp-card-desc">Name, email, phone, address and DOB — consistent and regionally accurate.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span><span class="tp-badge tp-badge-bulk">Bulk</span></div>
+      </a>
+      <a href="/generators/fake-address" class="tp-card">
+        <div class="tp-card-icon tp-icon-orange">📍</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">Fake address generator</div>
+          <div class="tp-card-desc">Real city names and valid-format ZIP/PIN codes for US, India and UK.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/generators/lorem-ipsum" class="tp-card">
+        <div class="tp-card-icon tp-icon-orange">📝</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">Lorem Ipsum generator</div>
+          <div class="tp-card-desc">Paragraphs, sentences, words or lists. HTML wrap option included.</div>
+        </div>
+        <div class="tp-card-badges"></div>
+      </a>
+    </div>
+
+    <h3 class="tp-subsection">Financial</h3>
+    <div class="tp-grid">
+      <a href="/generators/credit-card" class="tp-card">
+        <div class="tp-card-icon tp-icon-blue">💳</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">Credit card generator</div>
+          <div class="tp-card-desc">Luhn-valid Visa, Mastercard, Amex and Discover. Includes CVV and expiry.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/generators/iban" class="tp-card">
+        <div class="tp-card-icon tp-icon-blue">🏦</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">IBAN generator</div>
+          <div class="tp-card-desc">MOD-97 valid IBANs for UK, Germany and France with real sort codes.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+    </div>
+
+    <h3 class="tp-subsection">Device &amp; Network</h3>
+    <div class="tp-grid">
+      <a href="/generators/imei" class="tp-card">
+        <div class="tp-card-icon tp-icon-green">📡</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">IMEI generator &amp; validator</div>
+          <div class="tp-card-desc">Real TAC prefixes from Apple, Samsung, Google Pixel. Luhn-valid.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/generators/uuid" class="tp-card">
+        <div class="tp-card-icon tp-icon-green">🔑</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">UUID generator</div>
+          <div class="tp-card-desc">RFC 4122 compliant UUID v4. Bulk generation up to 1000.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/generators/mac-address" class="tp-card">
+        <div class="tp-card-icon tp-icon-green">🖧</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">MAC address generator</div>
+          <div class="tp-card-desc">Real OUI prefixes from Apple, Intel, Cisco, Samsung, Raspberry Pi.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/generators/ip-address" class="tp-card">
+        <div class="tp-card-icon tp-icon-green">🌐</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">IP address generator</div>
+          <div class="tp-card-desc">Public, private or loopback IPv4 and IPv6 addresses.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/generators/imsi" class="tp-card">
+        <div class="tp-card-icon tp-icon-green">📶</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">IMSI generator</div>
+          <div class="tp-card-desc">Real MCC-MNC pairs for US, India, UK, Germany.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/generators/password" class="tp-card">
+        <div class="tp-card-icon tp-icon-green">🔒</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">Password generator</div>
+          <div class="tp-card-desc">Cryptographically random via crypto.getRandomValues(). Strength meter.</div>
+        </div>
+        <div class="tp-card-badges"></div>
+      </a>
+    </div>
+  </section>
+
+  <div class="ad-slot ad-mid" aria-label="Advertisement"></div>
+
+  <!-- ── FORMATTERS ── -->
+  <section class="tool-section" id="formatters">
+    <div class="tp-section-label">Formatters</div>
+    <h2 class="tp-section-title">Format &amp; validate code</h2>
+    <p class="tp-section-sub">Prettify, minify and validate JSON and XML instantly in the browser. Your data never leaves your machine.</p>
+    <div class="tp-grid tp-grid-2">
+      <a href="/formatters/json" class="tp-card">
+        <div class="tp-card-icon tp-icon-purple">{ }</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">JSON formatter &amp; validator</div>
+          <div class="tp-card-desc">Prettify, minify, validate. Exact error line and character position.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/formatters/xml" class="tp-card">
+        <div class="tp-card-icon tp-icon-purple">&lt;/&gt;</div>
+        <div class="tp-card-body">
+          <div class="tp-card-name">XML formatter</div>
+          <div class="tp-card-desc">Prettify and minify XML with configurable indentation. Works with large files.</div>
+        </div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── CONVERTERS ── -->
+  <section class="tool-section" id="converters">
+    <div class="tp-section-label">Converters</div>
+    <h2 class="tp-section-title">Convert between formats</h2>
+    <p class="tp-section-sub">Transform data between JSON, XML, CSV, Base64, Hex and URL encoding.</p>
+    <div class="tp-grid">
+      <a href="/converters/json-to-xml" class="tp-card">
+        <div class="tp-card-icon tp-icon-orange">⇄</div>
+        <div class="tp-card-body"><div class="tp-card-name">JSON to XML</div><div class="tp-card-desc">Well-formed XML with custom root tags.</div></div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/converters/xml-to-json" class="tp-card">
+        <div class="tp-card-icon tp-icon-orange">⇄</div>
+        <div class="tp-card-body"><div class="tp-card-name">XML to JSON</div><div class="tp-card-desc">Parse XML and convert to clean JSON.</div></div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/converters/json-to-csv" class="tp-card">
+        <div class="tp-card-icon tp-icon-orange">📊</div>
+        <div class="tp-card-body"><div class="tp-card-name">JSON to CSV</div><div class="tp-card-desc">JSON arrays to CSV with auto headers.</div></div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/converters/csv-to-json" class="tp-card">
+        <div class="tp-card-icon tp-icon-orange">📋</div>
+        <div class="tp-card-body"><div class="tp-card-name">CSV to JSON</div><div class="tp-card-desc">CSV to JSON with typed values.</div></div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/converters/base64" class="tp-card">
+        <div class="tp-card-icon tp-icon-blue">🔐</div>
+        <div class="tp-card-body"><div class="tp-card-name">Base64 encoder / decoder</div><div class="tp-card-desc">Encode and decode Base64 in the browser.</div></div>
+        <div class="tp-card-badges"><span class="tp-badge tp-badge-api">API</span></div>
+      </a>
+      <a href="/converters/hex" class="tp-card">
+        <div class="tp-card-icon tp-icon-blue">🔢</div>
+        <div class="tp-card-body"><div class="tp-card-name">Hex encoder / decoder</div><div class="tp-card-desc">Text to hexadecimal and back.</div></div>
+        <div class="tp-card-badges"></div>
+      </a>
+      <a href="/converters/url-encoder" class="tp-card">
+        <div class="tp-card-icon tp-icon-blue">🔗</div>
+        <div class="tp-card-body"><div class="tp-card-name">URL encoder / decoder</div><div class="tp-card-desc">Percent-encode URLs and query strings.</div></div>
+        <div class="tp-card-badges"></div>
+      </a>
+      <a href="/generators/color-converter" class="tp-card">
+        <div class="tp-card-icon tp-icon-blue">🎨</div>
+        <div class="tp-card-body"><div class="tp-card-name">Color converter</div><div class="tp-card-desc">HEX ↔ RGB ↔ HSL with live preview.</div></div>
+        <div class="tp-card-badges"></div>
+      </a>
+      <a href="/generators/unix-timestamp" class="tp-card">
+        <div class="tp-card-icon tp-icon-blue">⏱</div>
+        <div class="tp-card-body"><div class="tp-card-name">Unix timestamp converter</div><div class="tp-card-desc">Timestamp ↔ date. Live current timestamp.</div></div>
+        <div class="tp-card-badges"></div>
+      </a>
+      <a href="/converters/docx-to-pdf" class="tp-card">
+        <div class="tp-card-icon tp-icon-blue">📄</div>
+        <div class="tp-card-body"><div class="tp-card-name">DOCX to PDF</div><div class="tp-card-desc">Convert Word documents to PDF online.</div></div>
+        <div class="tp-card-badges"></div>
+      </a>
+    </div>
+  </section>
+
+  <div class="ad-slot ad-mid" aria-label="Advertisement"></div>
+
+  <!-- ── UTILITIES ── -->
+  <section class="tool-section" id="utilities">
+    <div class="tp-section-label">Utilities — Built for India</div>
+    <h2 class="tp-section-title">Financial calculators</h2>
+    <p class="tp-section-sub">Instant results with full breakdowns. No signup required.</p>
+    <div class="tp-calc-grid">
+      <a href="/utilities/emi-calculator" class="tp-calc-card">
+        <div class="tp-calc-icon tp-icon-purple">🏦</div>
+        <div class="tp-calc-number">₹8,678</div>
+        <div class="tp-calc-context">Monthly EMI on ₹10L at 8.5% for 20yr</div>
+        <div class="tp-calc-name">EMI calculator</div>
+        <div class="tp-calc-desc">Full amortisation schedule and CSV export.</div>
+      </a>
+      <a href="/utilities/gst-calculator" class="tp-calc-card">
+        <div class="tp-calc-icon tp-icon-purple">📊</div>
+        <div class="tp-calc-number">₹180</div>
+        <div class="tp-calc-context">GST on ₹1,000 at 18% slab</div>
+        <div class="tp-calc-name">GST calculator</div>
+        <div class="tp-calc-desc">All slabs. Add or remove. CGST / SGST / IGST breakdown.</div>
+      </a>
+      <a href="/utilities/sip-calculator" class="tp-calc-card">
+        <div class="tp-calc-icon tp-icon-purple">📈</div>
+        <div class="tp-calc-number">₹23.2L</div>
+        <div class="tp-calc-context">₹10k SIP over 10yr at 12% returns</div>
+        <div class="tp-calc-name">SIP calculator</div>
+        <div class="tp-calc-desc">Year-by-year growth table and CSV export.</div>
+      </a>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col footer-brand-col">
+      <a href="/" class="footer-logo">
+        <span class="nav-logo-icon">🔧</span>
+        <span class="nav-logo-text">Toolpad</span>
+      </a>
+      <p class="footer-tagline">Free developer utility tools.<br>No signup. No tracking.</p>
+      <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
+         target="_blank" rel="noopener noreferrer" class="ph-badge-link">
+        <img alt="Toolpad.in — Featured on Product Hunt" width="220" height="48" loading="lazy"
+             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727">
+      </a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Generators</div>
+      <a href="/generators/fake-name">Fake name</a>
+      <a href="/generators/fake-profile">Full profile</a>
+      <a href="/generators/imei">IMEI</a>
+      <a href="/generators/credit-card">Credit card</a>
+      <a href="/generators/uuid">UUID</a>
+      <a href="/generators/mac-address">MAC address</a>
+      <a href="/generators/password">Password</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Tools</div>
+      <a href="/formatters/json">JSON formatter</a>
+      <a href="/formatters/xml">XML formatter</a>
+      <a href="/converters/base64">Base64</a>
+      <a href="/converters/url-encoder">URL encoder</a>
+      <a href="/converters/json-to-xml">JSON to XML</a>
+      <a href="/converters/docx-to-pdf">DOCX to PDF</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Utilities</div>
+      <a href="/utilities/emi-calculator">EMI calculator</a>
+      <a href="/utilities/gst-calculator">GST calculator</a>
+      <a href="/utilities/sip-calculator">SIP calculator</a>
+      <div class="footer-col-title" style="margin-top:20px">Company</div>
+      <a href="/api-docs">API docs</a>
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="https://github.com/toolpad-in" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Made in India with ❤️</span>
+    <span class="footer-sep">·</span>
+    <span>© 2026 Toolpad</span>
+    <span class="footer-sep">·</span>
+    <span>All generated data is fictional and for testing purposes only</span>
+  </div>
+</footer>
+<script src="/scripts/main.js"></script>
+</body>
+</html>
