@@ -24,11 +24,11 @@
       <a href="/generators" class="nav-link active">Generators ▾</a>
       <div class="nav-dropdown-menu">
         <div class="nav-dropdown-group">Personal</div>
-        <a href="/generators/fake-name">👤 Fake name</a>
-        <a href="/generators/fake-email">✉ Fake email</a>
-        <a href="/generators/fake-phone">📱 Phone number</a>
-        <a href="/generators/fake-profile">🪪 Full profile</a>
-        <a href="/generators/fake-address">📍 Fake address</a>
+        <a href="/generators/test-name">👤 Test name</a>
+        <a href="/generators/test-email">✉ Test email</a>
+        <a href="/generators/test-phone">📱 Phone number</a>
+        <a href="/generators/test-profile">🪪 Full profile</a>
+        <a href="/generators/test-address">📍 Test address</a>
         <div class="nav-dropdown-group">Financial</div>
         <a href="/generators/credit-card">💳 Credit card</a>
         <a href="/generators/iban">🏦 IBAN</a>
@@ -178,7 +178,7 @@
   <div class="related-tools" style="margin-top:32px">
   <h3>Related tools</h3>
   <div class="related-grid">
-    <a href="/generators/password" class="related-card"><h4>Password generator</h4><p>Random secure passwords</p></a><a href="/generators/fake-name" class="related-card"><h4>Fake name generator</h4><p>Random test names</p></a><a href="/generators/fake-profile" class="related-card"><h4>Full profile generator</h4><p>Complete fake person</p></a><a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON data</p></a>
+    <a href="/generators/password" class="related-card"><h4>Password generator</h4><p>Random secure passwords</p></a><a href="/generators/test-name" class="related-card"><h4>Test name generator</h4><p>Random test names</p></a><a href="/generators/test-profile" class="related-card"><h4>Full profile generator</h4><p>Complete test person</p></a><a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON data</p></a>
   </div>
 </div>
 </div>
@@ -190,7 +190,7 @@
     </div>
     <div class="footer-links">
       <h5>Generators</h5>
-      <a href="/generators/fake-name">Fake name</a>
+      <a href="/generators/test-name">Test name</a>
       <a href="/generators/imei">IMEI generator</a>
       <a href="/generators/credit-card">Credit card</a>
       <a href="/generators/password">Password</a>
@@ -261,16 +261,13 @@ function generate(){
 
   if(type==='paragraphs'){
     var paras = Array.from({length:count},function(_,i){return genParagraph(i===0);});
-    out = paras.join('
-
-');
+    out = paras.join('\n\n');
     wc  = out.split(/s+/).length;
   } else if(type==='sentences'){
     var first = document.getElementById('startClassic').checked ? CLASSIC : genSentence();
     var rest  = Array.from({length:count-1},genSentence);
     var sents = [first].concat(rest).slice(0,count);
-    out = sents.join('
-');
+    out = sents.join('\n');
     wc  = count;
   } else if(type==='words'){
     var ws = document.getElementById('startClassic').checked ?
@@ -280,8 +277,7 @@ function generate(){
     wc  = count;
   } else {
     var items = Array.from({length:count},function(_,i){return genParagraph(i===0);});
-    out = items.map(function(s){return '• '+s;}).join('
-');
+    out = items.map(function(s){return '• '+s;}).join('\n');
     wc  = out.split(/s+/).length;
   }
 
@@ -307,17 +303,10 @@ document.getElementById('btnHtml').addEventListener('click', function(){
   var type = document.getElementById('typeSel').value;
   var wrapped;
   if(type==='paragraphs'){
-    wrapped = window._loremOut.split('
-
-').map(function(p){return '<p>'+p+'</p>';}).join('
-');
+    wrapped = window._loremOut.split('\n\n').map(function(p){return '<p>'+p+'</p>';}).join('\n');
   } else if(type==='list') {
-    var items = window._loremOut.split('
-').map(function(l){return '<li>'+l.replace('• ','')+'</li>';});
-    wrapped = '<ul>
-  '+items.join('
-  ')+'
-</ul>';
+    var items = window._loremOut.split('\n').map(function(l){return '<li>'+l.replace('• ','')+'</li>';});
+    wrapped = '<ul>\n  '+items.join('\n  ')+'\n</ul>';
   } else {
     wrapped = '<p>'+window._loremOut+'</p>';
   }

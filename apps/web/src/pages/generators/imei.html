@@ -55,11 +55,11 @@
       <a href="/generators" class="nav-link active">Generators ▾</a>
       <div class="nav-dropdown-menu">
         <div class="nav-dropdown-group">Personal</div>
-        <a href="/generators/fake-name">👤 Fake name</a>
-        <a href="/generators/fake-email">✉ Fake email</a>
-        <a href="/generators/fake-phone">📱 Phone number</a>
-        <a href="/generators/fake-profile">🪪 Full profile</a>
-        <a href="/generators/fake-address">📍 Fake address</a>
+        <a href="/generators/test-name">👤 Test name</a>
+        <a href="/generators/test-email">✉ Test email</a>
+        <a href="/generators/test-phone">📱 Phone number</a>
+        <a href="/generators/test-profile">🪪 Full profile</a>
+        <a href="/generators/test-address">📍 Test address</a>
         <div class="nav-dropdown-group">Financial</div>
         <a href="/generators/credit-card">💳 Credit card</a>
         <a href="/generators/iban">🏦 IBAN</a>
@@ -218,7 +218,10 @@
     <p>An IMEI has three components. The first eight digits form the TAC (Type Allocation Code), which identifies the device manufacturer and model family. TAC codes are allocated by the GSMA to approved device manufacturers. The next six digits are the serial number (SNR), assigned by the manufacturer to uniquely identify each individual unit within a model series. The final 15th digit is a check digit computed using the Luhn algorithm — a mathematical validation formula that detects data entry errors. Any IMEI that fails the Luhn check is structurally invalid and will be rejected by network equipment and validation systems.</p>
 
     <h3>TAC prefixes used in this generator</h3>
-    <p>This generator uses real TAC codes sourced from the GSMA device registry: Apple iPhone (<code>35841709</code>), Samsung Galaxy (<code>35674108</code>), Google Pixel (<code>35456810</code>), OnePlus (<code>86800002</code>), Xiaomi (<code>35726211</code>), Huawei (<code>86800003</code>), Nokia (<code>35332210</code>), and Motorola (<code>35488209</code>). Using real TAC prefixes ensures generated IMEIs pass both Luhn validation and TAC lookup checks used by advanced validation APIs.</p>
+    <p>Each brand option starts with a fixed 8-digit TAC prefix: Apple iPhone (<code>35841709</code>), Samsung Galaxy (<code>35674108</code>), Google Pixel (<code>35456810</code>), OnePlus (<code>86800002</code>), Xiaomi (<code>35726211</code>), Huawei (<code>86800003</code>), Nokia (<code>35332210</code>), and Motorola (<code>35488209</code>). The remaining six digits are random, and a final Luhn check digit is calculated so every generated IMEI passes checksum validation. Because the serial digits are random, a generated IMEI is not tied to any real device.</p>
+
+    <h3>Generate test IMEIs in bulk</h3>
+    <p>Pick a brand or leave the selector on "Any brand" for a mix, choose how many IMEIs you need (up to 100 per run), then copy them or download a CSV with the IMEI, brand and TAC columns. Use the Validate tab to check IMEIs from your own test fixtures, either one at a time or pasted in bulk, one per line.</p>
 
     <h3>How to validate an IMEI number</h3>
     <p>Switch to the Validate tab above to check any IMEI number. The validator checks three things: correct length (must be exactly 15 digits), correct character set (digits only), and Luhn checksum validity. An IMEI that passes all three checks is structurally valid — it follows the correct format and could theoretically belong to a real device. Structural validity does not mean the IMEI is registered to an active device — for that, you would need to query the GSMA Device Check API.</p>
@@ -262,7 +265,7 @@
     <div style="font-size:13px;font-weight:700;color:var(--orange-d);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Need complete test data?</div>
     <p style="font-size:14px;color:var(--slate-m);margin-bottom:14px;line-height:1.6">Combine IMEI numbers with realistic user profiles for complete mobile device testing datasets. Our profile generator creates consistent name, email, phone and address data in one click.</p>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <a href="/generators/fake-profile" class="btn btn-primary" style="font-size:13px">🪪 Full profile generator</a>
+      <a href="/generators/test-profile" class="btn btn-primary" style="font-size:13px">🪪 Full profile generator</a>
       <a href="/generators/mac-address" class="btn" style="font-size:13px">🖧 MAC address generator</a>
       <a href="/generators/imsi" class="btn" style="font-size:13px">📶 IMSI generator</a>
     </div>
@@ -275,7 +278,7 @@
       <a href="/generators/uuid" class="related-card"><h4>UUID generator</h4><p>RFC 4122 compliant unique identifiers</p></a>
       <a href="/generators/ip-address" class="related-card"><h4>IP address generator</h4><p>IPv4 and IPv6 addresses for network testing</p></a>
       <a href="/generators/imsi" class="related-card"><h4>IMSI generator</h4><p>SIM card identifiers with real MCC-MNC pairs</p></a>
-      <a href="/generators/fake-profile" class="related-card"><h4>Full profile generator</h4><p>Complete fake person with all contact details</p></a>
+      <a href="/generators/test-profile" class="related-card"><h4>Full profile generator</h4><p>Complete test person with all contact details</p></a>
       <a href="/generators/credit-card" class="related-card"><h4>Credit card generator</h4><p>Luhn-valid test card numbers</p></a>
     </div>
   </div>
@@ -292,7 +295,7 @@
       <a href="/generators/imei">IMEI generator</a>
       <a href="/generators/uuid">UUID generator</a>
       <a href="/generators/credit-card">Credit card</a>
-      <a href="/generators/fake-name">Fake name</a>
+      <a href="/generators/test-name">Test name</a>
       <a href="/generators/mac-address">MAC address</a>
     </div>
     <div class="footer-links">
@@ -394,18 +397,15 @@ function generate() {
 document.getElementById('genBtn').addEventListener('click', generate);
 document.getElementById('copyBtn').addEventListener('click', function() {
   if (!window._imeis) return;
-  navigator.clipboard && navigator.clipboard.writeText(window._imeis.map(function(r) { return r.imei; }).join('
-'));
+  navigator.clipboard && navigator.clipboard.writeText(window._imeis.map(function(r) { return r.imei; }).join('\n'));
   document.getElementById('copyBtn').textContent = 'Copied!';
   setTimeout(function() { document.getElementById('copyBtn').textContent = 'Copy all'; }, 2000);
 });
 document.getElementById('csvBtn').addEventListener('click', function() {
   if (!window._imeis) return;
-  var csv = 'imei,brand,tac
-' + window._imeis.map(function(r) {
+  var csv = 'imei,brand,tac\n' + window._imeis.map(function(r) {
     return r.imei + ',' + r.brand + ',' + r.tac;
-  }).join('
-');
+  }).join('\n');
   var a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
   a.download = 'imei_numbers.csv';
@@ -428,10 +428,10 @@ function getTACInfo(tac) {
 }
 
 function validateIMEI(raw) {
-  var imei = raw.replace(/[s-]/g, '');
+  var imei = raw.replace(/[\s-]/g, '');
   var result = { raw: raw, imei: imei, valid: false, errors: [] };
   if (imei.length !== 15) result.errors.push('Must be exactly 15 digits (found ' + imei.length + ')');
-  if (!/^d+$/.test(imei)) result.errors.push('Must contain digits only');
+  if (!/^\d+$/.test(imei)) result.errors.push('Must contain digits only');
   if (result.errors.length === 0) {
     if (!luhn(imei)) result.errors.push('Failed Luhn checksum validation');
     else result.valid = true;
@@ -486,8 +486,7 @@ document.getElementById('clearValidate').addEventListener('click', function() {
 
 // Bulk validator
 document.getElementById('bulkValidateBtn').addEventListener('click', function() {
-  var lines = document.getElementById('bulkInput').value.trim().split('
-').filter(Boolean);
+  var lines = document.getElementById('bulkInput').value.trim().split('\n').filter(Boolean);
   if (!lines.length) return;
   var results = lines.map(validateIMEI);
   var valid = results.filter(function(r) { return r.valid; }).length;

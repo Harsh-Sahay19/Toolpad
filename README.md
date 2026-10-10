@@ -125,7 +125,7 @@ GET  /api/v1/record?country=IN&count=5
 | P1 | `/generators/uuid` | "UUID generator" — 200K/mo |
 | P1 | `/generators/mac-address` | "MAC address generator" — 30K/mo |
 | P1 | `/formatters/json` | "JSON formatter" — high volume |
-| P1 | `/generators/fake-address` | "fake address generator" — 150K/mo |
+| P1 | `/generators/test-address` | "fake address generator" — 150K/mo |
 | P2 | `/generators/credit-card` | "credit card generator" — 40K/mo |
 | P2 | `/generators/iban` | "IBAN generator" — 20K/mo |
 | P2 | `/generators/ip-address` | "random IP generator" — 8K/mo |

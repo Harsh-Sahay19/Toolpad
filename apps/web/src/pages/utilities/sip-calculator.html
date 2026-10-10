@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIP Calculator — Monthly SIP Returns Calculator India | Free</title>
-<meta name="description" content="Calculate SIP returns and maturity amount for your mutual fund investments. See month-by-month growth with compound interest. Free, no signup required.">
+<title>SIP Calculator India — Mutual Fund SIP Maturity & Returns | Toolpad</title>
+<meta name="description" content="Free SIP calculator for India. Enter monthly SIP, expected return and tenure to get maturity value, total invested, returns and a year-by-year growth table. No signup.">
 <link rel="canonical" href="https://toolpad.in/utilities/sip-calculator">
 <meta property="og:title" content="SIP Calculator — Monthly SIP Returns Calculator India | Free">
 <meta property="og:description" content="Calculate SIP returns and maturity amount for your mutual fund investments. See month-by-month growth with compound interest. Free, no signup required.">
@@ -24,11 +24,11 @@
       <a href="/generators" class="nav-link">Generators ▾</a>
       <div class="nav-dropdown-menu">
         <div class="nav-dropdown-group">Personal</div>
-        <a href="/generators/fake-name">👤 Fake name</a>
-        <a href="/generators/fake-email">✉ Fake email</a>
-        <a href="/generators/fake-phone">📱 Phone number</a>
-        <a href="/generators/fake-profile">🪪 Full profile</a>
-        <a href="/generators/fake-address">📍 Fake address</a>
+        <a href="/generators/test-name">👤 Test name</a>
+        <a href="/generators/test-email">✉ Test email</a>
+        <a href="/generators/test-phone">📱 Phone number</a>
+        <a href="/generators/test-profile">🪪 Full profile</a>
+        <a href="/generators/test-address">📍 Test address</a>
         <div class="nav-dropdown-group">Financial</div>
         <a href="/generators/credit-card">💳 Credit card</a>
         <a href="/generators/iban">🏦 IBAN</a>
@@ -148,7 +148,7 @@
           <div id="wealthRatio" style="font-size:16px;font-weight:700;color:var(--orange-d);font-family:monospace">0x</div>
         </div>
         <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center">
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--slate-l);margin-bottom:4px">XIRR (approx.)</div>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--slate-l);margin-bottom:4px">Assumed return p.a.</div>
           <div id="xirr" style="font-size:16px;font-weight:700;color:var(--slate);font-family:monospace">0%</div>
         </div>
       </div>
@@ -204,6 +204,18 @@
     <h3>SIP vs lump sum investment</h3>
     <p>A lump sum investment puts all your capital to work immediately, which is advantageous in rising markets. SIP spreads your investment over time, which reduces risk in volatile or declining markets. For most individual investors, SIP is preferable because it removes the need to time the market, is compatible with regular income, and benefits from rupee cost averaging. For investors with a large corpus available (such as after a bonus or inheritance), a combination of both — a lump sum plus a monthly SIP — is often recommended by financial advisors.</p>
 
+    <h3>SIP maturity formula and worked example</h3>
+    <p>This calculator uses the future value of an annuity-due, because each instalment is invested at the start of the month: <strong>M = P × [((1 + i)<sup>n</sup> − 1) / i] × (1 + i)</strong>, where P is the monthly SIP, i is the annual return divided by 12, and n is the number of months.</p>
+    <p>Example: a ₹10,000 monthly SIP at 12% p.a. for 10 years (120 months). The total invested is ₹12,00,000. The maturity value is about ₹23.2 lakh, so the estimated returns are about ₹11.2 lakh and the wealth ratio is roughly 1.9x. Change any of the three sliders above to see how the result moves.</p>
+
+    <h3>How to use this SIP calculator</h3>
+    <ul>
+      <li>Enter the monthly amount you plan to invest. Most funds accept SIPs from ₹500 a month.</li>
+      <li>Enter an expected annual return. Use a conservative figure, because returns are not guaranteed.</li>
+      <li>Enter the number of years you plan to stay invested. Longer periods have a larger effect on the result.</li>
+      <li>Download the year-by-year table as CSV to share or import into a spreadsheet.</li>
+    </ul>
+
     <h3>Step-up SIP</h3>
     <p>A Step-up SIP (also called a Top-up SIP) allows you to increase your monthly SIP amount annually — typically by 10–15% per year, aligned with salary increments. Step-up SIPs significantly outperform flat SIPs because the increasing investment amount amplifies the compounding effect over time. This calculator assumes a constant monthly investment; for step-up SIP calculations, increase the monthly amount by your expected annual increment and recalculate.</p>
 
@@ -226,14 +238,14 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">How are SIP returns taxed in India? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">For equity mutual funds held for more than 1 year, returns are classified as Long Term Capital Gains (LTCG) and taxed at 10% above ₹1 lakh per year. For holdings under 1 year, Short Term Capital Gains (STCG) are taxed at 15%. For debt funds, the holding period for LTCG is 3 years, with tax at 20% with indexation benefit. Each SIP instalment is treated as a separate investment for tax purposes.</div>
+      <div class="faq-a">For equity mutual funds, gains on units held for more than 12 months are Long Term Capital Gains (LTCG), taxed at 12.5% on gains above ₹1.25 lakh per financial year. Units sold within 12 months are Short Term Capital Gains (STCG), taxed at 20%. Each SIP instalment is tracked as a separate purchase, so the holding period is counted from the date of each instalment. Tax rules change, so check the latest Income Tax Department guidance or ask a qualified tax advisor before you file.</div>
     </div>
   </div>
 
   <div class="related-tools" style="margin-top:32px">
   <h3>Related tools</h3>
   <div class="related-grid">
-    <a href="/utilities/emi-calculator" class="related-card"><h4>EMI calculator</h4><p>Calculate loan EMI</p></a><a href="/utilities/gst-calculator" class="related-card"><h4>GST calculator</h4><p>Calculate GST</p></a><a href="/generators/fake-profile" class="related-card"><h4>Fake profile generator</h4><p>Test user data</p></a><a href="/generators/credit-card" class="related-card"><h4>Credit card generator</h4><p>Test payment flows</p></a>
+    <a href="/utilities/emi-calculator" class="related-card"><h4>EMI calculator</h4><p>Calculate loan EMI</p></a><a href="/utilities/gst-calculator" class="related-card"><h4>GST calculator</h4><p>Calculate GST</p></a><a href="/generators/test-profile" class="related-card"><h4>Test profile generator</h4><p>Test user data</p></a><a href="/generators/credit-card" class="related-card"><h4>Credit card generator</h4><p>Test payment flows</p></a>
   </div>
 </div>
 </div>
@@ -245,7 +257,7 @@
     </div>
     <div class="footer-links">
       <h5>Generators</h5>
-      <a href="/generators/fake-name">Fake name</a>
+      <a href="/generators/test-name">Test name</a>
       <a href="/generators/imei">IMEI generator</a>
       <a href="/generators/credit-card">Credit card</a>
       <a href="/generators/password">Password</a>

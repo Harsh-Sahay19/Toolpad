@@ -7,13 +7,13 @@ const TOOLS = [
   { name: 'MAC address generator',    url: '/generators/mac-address',   icon: '🖧',  cat: 'Device & Network' },
   { name: 'IP address generator',     url: '/generators/ip-address',    icon: '🌐', cat: 'Device & Network' },
   { name: 'IMSI generator',           url: '/generators/imsi',          icon: '📶', cat: 'Device & Network' },
-  { name: 'Fake name generator',      url: '/generators/fake-name',     icon: '👤', cat: 'Personal' },
-  { name: 'Fake email generator',     url: '/generators/fake-email',    icon: '✉',  cat: 'Personal' },
-  { name: 'Phone number generator',   url: '/generators/fake-phone',    icon: '📱', cat: 'Personal' },
-  { name: 'Full profile generator',   url: '/generators/fake-profile',  icon: '🪪', cat: 'Personal' },
+  { name: 'Test name generator',      url: '/generators/test-name',     icon: '👤', cat: 'Personal' },
+  { name: 'Test email generator',     url: '/generators/test-email',    icon: '✉',  cat: 'Personal' },
+  { name: 'Phone number generator',   url: '/generators/test-phone',    icon: '📱', cat: 'Personal' },
+  { name: 'Full profile generator',   url: '/generators/test-profile',  icon: '🪪', cat: 'Personal' },
   { name: 'Credit card generator',    url: '/generators/credit-card',   icon: '💳', cat: 'Financial' },
   { name: 'IBAN generator',           url: '/generators/iban',          icon: '🏦', cat: 'Financial' },
-  { name: 'Fake address generator',   url: '/generators/fake-address',  icon: '📍', cat: 'Financial' },
+  { name: 'Test address generator',   url: '/generators/test-address',  icon: '📍', cat: 'Financial' },
   { name: 'JSON formatter',           url: '/formatters/json',          icon: '{ }', cat: 'Formatter' },
   { name: 'XML formatter',            url: '/formatters/xml',           icon: '</>', cat: 'Formatter' },
   { name: 'JSON to XML converter',    url: '/converters/json-to-xml',   icon: '⇄',  cat: 'Converter' },
@@ -132,10 +132,6 @@ function renderRecentTools() {
         '<span style="font-size:15px;line-height:1">' + t.icon + '</span>' +
         '<span>' + t.name + '</span></a>';
     }).join('');
-    container.innerHTML = '<div class="recent-strip"><span class="recent-label">Recently used</span>' + links + '</div>';
-    container.style.display = 'block';
-  } catch(e) { container.style.display = 'none'; }
-}
     container.innerHTML = '<div class="recent-strip"><span class="recent-label">Recently used</span>' + links + '</div>';
     container.style.display = 'block';
   } catch(e) { container.style.display = 'none'; }

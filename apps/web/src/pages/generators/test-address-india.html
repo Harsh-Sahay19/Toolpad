@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Indian Address Generator with PIN Codes — Free | Toolpad</title>
+<meta name="description" content="Generate test Indian addresses with real PIN code prefixes for Delhi, Karnataka, Maharashtra, Tamil Nadu and Telangana. Block, sector and colony formats. Bulk CSV export, free, no signup.">
+<meta name="keywords" content="test address generator india, test indian address, random indian address, indian address generator, fake pin code, test address india, dummy indian address">
+<link rel="canonical" href="https://toolpad.in/generators/test-address-india">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Test Indian Address Generator","url":"https://toolpad.in/generators/test-address-india","description":"Generate test Indian addresses with PIN codes for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+<header class="navbar"><div class="nav-inner">
+  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+  <nav class="nav-links"><a href="/generators" class="nav-link active">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link">Converters</a><a href="/api-docs" class="nav-link">API</a></nav>
+  <button class="theme-toggle" id="themeToggle">☀</button>
+</div></header>
+
+<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+
+<div class="tool-page">
+  <div class="tool-page-header">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › <a href="/generators/test-address">Test address</a> › India</div>
+    <h1>Test Indian address generator</h1>
+    <p class="tool-desc">Generate test addresses in the Indian format, with a block, sector or colony, city, state and 6-digit PIN code. Every PIN starts with the real prefix for its state or city. For testing forms, APIs and databases only.</p>
+  </div>
+
+  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+    <select id="countrySel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="IN" selected>India</option>
+      <option value="US">United States</option>
+      <option value="UK">United Kingdom</option>
+    </select>
+    <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="1">1 address</option>
+      <option value="5">5 addresses</option>
+      <option value="10" selected>10 addresses</option>
+      <option value="25">25 addresses</option>
+      <option value="50">50 addresses</option>
+    </select>
+    <select id="fmtSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
+      <option value="cards">Cards</option>
+      <option value="csv">CSV table</option>
+    </select>
+    <button class="btn btn-primary" id="genBtn">Generate</button>
+    <button class="btn" id="copyBtn">Copy all</button>
+    <button class="btn" id="csvBtn">Download CSV</button>
+  </div>
+
+  <div id="outputArea" style="margin-bottom:24px"></div>
+
+  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+
+  <div class="seo-content">
+    <h2>How Indian addresses are structured</h2>
+    <p>A typical Indian postal address has four parts: a house, block or flat number, a locality such as a sector, colony, layout, phase or nagar, the city or town, and the state followed by a 6-digit PIN code. The generator builds addresses in this order, so the output matches the form fields most Indian websites ask for.</p>
+    <p>The PIN code is the most useful part to get right for testing. Indian PIN codes are six digits. The first digit identifies a postal region, the first two digits identify a sub-region, and the first three digits usually identify a city or district. This generator uses the prefix that belongs to each city, so Delhi addresses start with 110, Bengaluru with 560, Mumbai with 400, Chennai with 600 and Hyderabad with 500.</p>
+
+    <h3>States and cities in this generator</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:14px;margin:12px 0">
+      <thead><tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:8px">State</th><th style="text-align:left;padding:8px">Cities used</th><th style="text-align:left;padding:8px">PIN prefix</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:8px">Delhi</td><td style="padding:8px">New Delhi, Dwarka, Rohini</td><td style="padding:8px">110</td></tr>
+        <tr><td style="padding:8px">Karnataka</td><td style="padding:8px">Bengaluru, Mysuru, Hubli</td><td style="padding:8px">560</td></tr>
+        <tr><td style="padding:8px">Maharashtra</td><td style="padding:8px">Mumbai, Pune, Nagpur</td><td style="padding:8px">400</td></tr>
+        <tr><td style="padding:8px">Tamil Nadu</td><td style="padding:8px">Chennai, Coimbatore, Madurai</td><td style="padding:8px">600</td></tr>
+        <tr><td style="padding:8px">Telangana</td><td style="padding:8px">Hyderabad, Warangal, Karimnagar</td><td style="padding:8px">500</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Locality formats</h3>
+    <ul>
+      <li><strong>Sector</strong> — common in Delhi NCR, Chandigarh and planned cities, for example "Sector 14"</li>
+      <li><strong>Block</strong> — used in many government and housing colonies, for example "Block 7"</li>
+      <li><strong>Colony, Nagar, Layout or Phase</strong> — used across Karnataka, Telangana, Tamil Nadu and Maharashtra, for example "Phase 3" or "Layout 22"</li>
+    </ul>
+
+    <h3>Why use test Indian addresses in testing?</h3>
+    <ul>
+      <li>Testing checkout and delivery forms that require a 6-digit PIN code and a state dropdown</li>
+      <li>Validating PIN-to-state or PIN-to-city logic in shipping and serviceability code</li>
+      <li>Seeding Indian e-commerce, logistics, food-delivery or marketplace databases with realistic shipping addresses</li>
+      <li>Creating demo screenshots and sales decks that need believable Indian addresses without using real customer data</li>
+      <li>Load testing address search and autocomplete features with varied locality names</li>
+    </ul>
+
+    <h3>API access</h3>
+    <p>Generate Indian addresses programmatically: <code>GET /api/v1/location/address?country=IN&count=20</code></p>
+    <p>Combine an address with GPS coordinates: <code>GET /api/v1/record?country=IN&count=2</code></p>
+
+    <div class="faq-item"><div class="faq-q">Are these real addresses? <span class="faq-toggle">+</span></div><div class="faq-a">No. Each address is randomly assembled from city names, locality formats and PIN code prefixes. The house number and locality number are random, so the address will not match a real property. Do not use these addresses for deliveries, KYC or any real transaction.</div></div>
+    <div class="faq-item"><div class="faq-q">Do the PIN codes match real areas? <span class="faq-toggle">+</span></div><div class="faq-a">The first three digits match the real postal prefix for each city, which is what most format checks look at. The last three digits are random within a range, so a PIN may not belong to the exact locality named in the address. For tests that need exact PIN-to-locality matching, use an official India Post PIN code directory.</div></div>
+    <div class="faq-item"><div class="faq-q">Which states are supported? <span class="faq-toggle">+</span></div><div class="faq-a">The India option covers Karnataka, Maharashtra, Tamil Nadu, Delhi and Telangana. Each state has three sample cities. The generator does not yet cover all 36 states and union territories.</div></div>
+    <div class="faq-item"><div class="faq-q">Can I export the addresses to a spreadsheet? <span class="faq-toggle">+</span></div><div class="faq-a">Yes. Choose the CSV table view and click Download CSV, or use Download CSV without changing the view. The file includes line1, city, region, postal and country columns, and you can generate up to 50 addresses at a time.</div></div>
+  </div>
+
+  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <a href="/generators/test-address" class="related-card"><h4>Test address generator</h4><p>US, India and UK addresses</p></a>
+    <a href="/generators/test-name" class="related-card"><h4>Test name generator</h4><p>Random person names</p></a>
+    <a href="/generators/test-profile" class="related-card"><h4>Full profile generator</h4><p>Name + address + contacts</p></a>
+    <a href="/generators/test-phone" class="related-card"><h4>Phone number generator</h4><p>US, India, UK formats</p></a>
+  </div></div>
+</div>
+
+<footer class="site-footer"><div class="footer-inner">
+  <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools.</p></div>
+  <div class="footer-links"><h5>Generators</h5><a href="/generators/test-address">Test address</a><a href="/generators/test-address-india">Indian address</a><a href="/generators/test-name">Test name</a><a href="/generators/test-profile">Full profile</a></div>
+  <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
+  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/privacy">Privacy</a></div>
+</div><div class="footer-bottom"><p>© 2026 Toolpad. All addresses are fictional and for testing only.</p></div></footer>
+
+<script>
+const STREETS=['Main','Oak','Maple','Cedar','Elm','Washington','Park','Sunset','Willow','Broadway','Forest','River','Highland','Valley'];
+const STYPES=['Street','Avenue','Boulevard','Drive','Lane','Road','Court','Way','Terrace'];
+const US=[{s:'California',a:'CA',c:['Los Angeles','San Francisco','San Diego'],z:[90001,96699]},{s:'New York',a:'NY',c:['New York City','Buffalo','Albany'],z:[10001,14975]},{s:'Texas',a:'TX',c:['Houston','Dallas','Austin'],z:[73301,79999]},{s:'Florida',a:'FL',c:['Miami','Orlando','Tampa'],z:[32004,34997]},{s:'Illinois',a:'IL',c:['Chicago','Springfield','Naperville'],z:[60001,62999]}];
+const IN=[{s:'Karnataka',c:['Bengaluru','Mysuru','Hubli'],p:[560001,560100]},{s:'Maharashtra',c:['Mumbai','Pune','Nagpur'],p:[400001,400100]},{s:'Tamil Nadu',c:['Chennai','Coimbatore','Madurai'],p:[600001,600100]},{s:'Delhi',c:['New Delhi','Dwarka','Rohini'],p:[110001,110100]},{s:'Telangana',c:['Hyderabad','Warangal','Karimnagar'],p:[500001,500100]}];
+const UK=[{city:'London',pfx:'EC'},{city:'Manchester',pfx:'M'},{city:'Birmingham',pfx:'B'},{city:'Edinburgh',pfx:'EH'},{city:'Bristol',pfx:'BS'},{city:'Leeds',pfx:'LS'}];
+const SECTORS=['Sector','Block','Layout','Colony','Phase','Nagar'];
+
+function ri(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+function rp(a){return a[Math.floor(Math.random()*a.length)];}
+function street(){return `${ri(1,9999)} ${rp(STREETS)} ${rp(STYPES)}`;}
+
+function genAddr(country){
+  if(country==='IN'){
+    const st=rp(IN);const city=rp(st.c);const pin=ri(st.p[0],st.p[1]);
+    const sec=`${rp(SECTORS)} ${ri(1,50)}`;
+    return {line1:`${ri(1,999)}, ${sec}`,city,region:st.s,postal:String(pin),country:'India',formatted:`${ri(1,999)}, ${sec}, ${city}, ${st.s} - ${pin}`};
+  }
+  if(country==='UK'){
+    const a=rp(UK);
+    const pc=`${a.pfx}${ri(1,9)} ${ri(1,9)}${String.fromCharCode(65+ri(0,25))}${String.fromCharCode(65+ri(0,25))}`;
+    return {line1:street(),city:a.city,region:'',postal:pc,country:'United Kingdom',formatted:`${street()}, ${a.city}, ${pc}`};
+  }
+  const st=rp(US);const city=rp(st.c);const zip=String(ri(st.z[0],st.z[1])).padStart(5,'0');
+  const apt=Math.random()>0.7?`, Apt ${ri(1,999)}`:'';
+  return {line1:street()+apt,city,region:`${st.s} (${st.a})`,postal:zip,country:'United States',formatted:`${street()}, ${city}, ${st.a} ${zip}`};
+}
+
+function generate(){
+  const country=document.getElementById('countrySel').value;
+  const count=parseInt(document.getElementById('countSel').value);
+  const fmt=document.getElementById('fmtSel').value;
+  const results=Array.from({length:count},()=>genAddr(country));
+  window._addrs=results;
+  const out=document.getElementById('outputArea');
+  if(fmt==='cards'){
+    out.innerHTML=`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px">${results.map(r=>`
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px">
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px">${r.line1}</div>
+        <div style="font-size:13px;color:var(--slate-m)">${r.city}${r.region?', '+r.region:''}</div>
+        <div style="font-size:13px;color:var(--slate-m)">${r.postal}</div>
+        <div style="font-size:12px;color:var(--slate-l);margin-top:4px">${r.country}</div>
+      </div>`).join('')}</div>`;
+  } else {
+    out.innerHTML=`<div class="workspace-panel"><table style="width:100%;border-collapse:collapse;font-size:12px"><thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)"><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">Street</th><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">City</th><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">Region</th><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">Postal</th></tr></thead><tbody>${results.map((r,i)=>`<tr style="border-bottom:1px solid var(--border);${i%2?'background:var(--bg)':''}"><td style="padding:8px 12px">${r.line1}</td><td style="padding:8px 12px">${r.city}</td><td style="padding:8px 12px">${r.region}</td><td style="padding:8px 12px;font-family:monospace">${r.postal}</td></tr>`).join('')}</tbody></table></div>`;
+  }
+}
+document.getElementById('genBtn').addEventListener('click',generate);
+document.getElementById('copyBtn').addEventListener('click',()=>{
+  if(!window._addrs)return;
+  navigator.clipboard?.writeText(window._addrs.map(r=>r.formatted).join('\n'));
+  document.getElementById('copyBtn').textContent='Copied!';
+  setTimeout(()=>document.getElementById('copyBtn').textContent='Copy all',2000);
+});
+document.getElementById('csvBtn').addEventListener('click',()=>{
+  if(!window._addrs)return;
+  const csv='line1,city,region,postal,country\n'+window._addrs.map(r=>`"${r.line1}","${r.city}","${r.region}","${r.postal}","${r.country}"`).join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='fake_indian_addresses.csv';a.click();
+});
+document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{const a=q.nextElementSibling,open=a.style.display==='block';a.style.display=open?'none':'block';q.querySelector('.faq-toggle').textContent=open?'+':'−';}));
+generate();
+</script>
+<script>
+(function(){
+  var KEY='toolpad-theme';
+  var saved=localStorage.getItem(KEY);
+  var hour=new Date().getHours();
+  var autoDark=(hour>=20||hour<6);
+  var theme=saved!==null?saved:(autoDark?'dark':'');
+  if(theme)document.documentElement.setAttribute('data-theme',theme);
+  var tog=document.getElementById('themeToggle');
+  if(tog){
+    tog.textContent=theme==='dark'?'🌙':'☀';
+    tog.addEventListener('click',function(){
+      var dark=document.documentElement.getAttribute('data-theme')==='dark';
+      var next=dark?'':'dark';
+      document.documentElement.setAttribute('data-theme',next);
+      tog.textContent=next==='dark'?'🌙':'☀';
+      localStorage.setItem(KEY,next);
+    });
+  }
+})();
+</script>
+</body>
+</html>
