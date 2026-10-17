@@ -10,7 +10,7 @@ cd apps/api && npm install && cd ../..
 node apps/api/src/server.js
 
 # 3. In a new terminal — serve the frontend (port 3000)
-npx serve apps/web/src -p 3000
+npx serve apps/web/src/pages -p 3000
 ```
 
 Then open:
