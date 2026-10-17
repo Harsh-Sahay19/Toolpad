@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>try{var t=localStorage.getItem('toolpad-theme');if(!t){var h=new Date().getHours();t=(h>=20||h<6)?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toolpad API Documentation — REST API for Developer Tools</title>
-<meta name="description" content="Toolpad REST API documentation. Generate fake data, format JSON/XML, convert between formats programmatically. Free tier available. No API key required.">
-<link rel="canonical" href="https://toolpad.in/api-docs">
-<meta property="og:title" content="Toolpad API Documentation — REST API for Developer Tools">
-<meta property="og:description" content="Toolpad REST API documentation. Generate fake data, format JSON/XML, convert between formats programmatically. Free tier available. No API key required.">
+<script>try{var t=localStorage.getItem('toolpad-theme');if(!t){var h=new Date().getHours();t=(h>=20||h<6)?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<title>XML to JSON Converter – Free Online Tool | Toolpad</title>
+<meta name="description" content="Convert XML to JSON in your browser. Attributes, text and repeated elements are mapped clearly. Free, no sign-up, nothing uploaded.">
+<link rel="canonical" href="https://toolpad.in/converters/xml-to-json">
+<meta property="og:title" content="XML to JSON Converter – Free Online Tool | Toolpad">
+<meta property="og:description" content="Convert XML to JSON in your browser. Attributes, text and repeated elements are mapped clearly. Free, no sign-up, nothing uploaded.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://toolpad.in/api-docs">
+<meta property="og:url" content="https://toolpad.in/converters/xml-to-json">
 <meta property="og:site_name" content="Toolpad">
 <meta name="twitter:card" content="summary">
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/styles/main.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -122,115 +123,92 @@
     <div class="mobile-nav-group"><a href="/api-docs">API</a></div>
   </div>
 </header>
-<main id="main">
+<main id="main" class="container">
+<nav class="crumbs page-head" style="padding-bottom:0" aria-label="Breadcrumb">
+  <a href="/">Home</a> › <a href="/converters">Converters</a> › XML to JSON
+</nav>
+<div class="page-head" style="padding-top:12px">
+  <h1>XML to JSON converter</h1>
+  <p class="lede">Paste an XML document and get JSON. Attributes become keys starting with <code>@</code>, text becomes <code>#text</code>, and repeated elements become arrays. Runs in your browser.</p>
+  <p style="margin-top:14px"><span class="badge-test">Runs in your browser</span></p>
+</div>
 
-<div class="tool-page" style="max-width:960px">
-  <div class="tool-page-header">
-    <h1>API documentation</h1>
-    <p class="tool-desc">The Toolpad REST API lets you access all generators and data tools programmatically. No API key required. Base URL: <code>https://api.toolpad.in/api/v1</code></p>
-  </div>
-
-  <div style="display:grid;grid-template-columns:200px 1fr;gap:32px">
-
-    <!-- Sidebar nav -->
-    <nav style="position:sticky;top:80px;align-self:start">
-      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--slate-l);margin-bottom:10px">Endpoints</div>
-      <a href="#personal" style="display:block;padding:5px 0;font-size:13px;color:var(--slate-m);border-left:2px solid var(--border);padding-left:12px;margin-bottom:3px">Personal</a>
-      <a href="#financial" style="display:block;padding:5px 0;font-size:13px;color:var(--slate-m);border-left:2px solid var(--border);padding-left:12px;margin-bottom:3px">Financial</a>
-      <a href="#network" style="display:block;padding:5px 0;font-size:13px;color:var(--slate-m);border-left:2px solid var(--border);padding-left:12px;margin-bottom:3px">Network &amp; Device</a>
-      <a href="#location" style="display:block;padding:5px 0;font-size:13px;color:var(--slate-m);border-left:2px solid var(--border);padding-left:12px;margin-bottom:3px">Location</a>
-      <a href="#datatools" style="display:block;padding:5px 0;font-size:13px;color:var(--slate-m);border-left:2px solid var(--border);padding-left:12px;margin-bottom:3px">Data tools</a>
-      <a href="#combined" style="display:block;padding:5px 0;font-size:13px;color:var(--slate-m);border-left:2px solid var(--border);padding-left:12px;margin-bottom:3px">Combined</a>
-    </nav>
-
-    <!-- Content -->
-    <div>
-
-      <!-- Response format -->
-      <div class="seo-content" style="margin-bottom:28px">
-        <h2>Response format</h2>
-        <p>All endpoints return JSON with a standard envelope:</p>
-        <pre style="background:var(--slate);color:#E2E8F0;padding:16px;border-radius:var(--radius);font-size:12px;line-height:1.7;overflow-x:auto;margin-top:10px">{
-  "success": true,
-  "data": { ... },
-  "generatedAt": "2026-03-31T06:00:00.000Z"
-}</pre>
-        <p style="margin-top:12px">On error:</p>
-        <pre style="background:var(--slate);color:#E2E8F0;padding:16px;border-radius:var(--radius);font-size:12px;line-height:1.7;overflow-x:auto;margin-top:8px">{ "success": false, "error": "Error description" }</pre>
+<section class="workspace" aria-labelledby="xj-title">
+  <h2 id="xj-title" class="sr-only">Convert XML to JSON</h2>
+  <div class="workspace-split">
+    <div class="pane-controls" style="max-width:none;flex:1 1 320px">
+      <label class="field-label" for="input">XML input</label>
+      <textarea id="input" class="output-area" spellcheck="false" placeholder="&lt;person&gt;&lt;name&gt;John&lt;/name&gt;&lt;/person&gt;"></textarea>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-primary" type="button" id="convertBtn">Convert to JSON</button>
+        <button class="btn" type="button" id="sampleBtn">Sample</button>
+        <button class="btn" type="button" id="clearBtn">Clear</button>
       </div>
-
-      <!-- Personal -->
-      <div id="personal" style="margin-bottom:32px">
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--slate-l);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Personal generators</div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/personal/profile</code><span style="font-size:12px;color:var(--slate-l)">?gender=male&country=IN&count=5</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/personal/name</code><span style="font-size:12px;color:var(--slate-l)">?gender=female&count=10</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/personal/email</code><span style="font-size:12px;color:var(--slate-l)">?count=10</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/personal/phone</code><span style="font-size:12px;color:var(--slate-l)">?country=IN</span></div></div>
-        </div>
+      <p id="status" class="note" aria-live="polite"></p>
+    </div>
+    <div class="pane-results" style="flex:1 1 320px">
+      <label class="field-label" for="output">JSON output</label>
+      <textarea id="output" class="output-area" readonly spellcheck="false" style="margin-top:8px"></textarea>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+        <button class="btn btn-sm" type="button" id="copyBtn">Copy</button>
+        <button class="btn btn-sm" type="button" id="downloadBtn">Download JSON</button>
       </div>
-
-      <!-- Financial -->
-      <div id="financial" style="margin-bottom:32px">
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--slate-l);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Financial generators</div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/financial/credit-card</code><span style="font-size:12px;color:var(--slate-l)">?network=visa&count=5</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/financial/iban</code><span style="font-size:12px;color:var(--slate-l)">?country=GB&count=5</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/financial/bank-account</code><span style="font-size:12px;color:var(--slate-l)">?country=IN</span></div></div>
-        </div>
-      </div>
-
-      <!-- Network -->
-      <div id="network" style="margin-bottom:32px">
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--slate-l);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Device &amp; Network <span style="font-weight:400;color:var(--orange-d);font-size:10px">(IMEI lives here)</span></div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/network/imei</code><span style="font-size:12px;color:var(--slate-l)">?count=10</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/network/uuid</code><span style="font-size:12px;color:var(--slate-l)">?version=4&count=20</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/network/mac</code><span style="font-size:12px;color:var(--slate-l)">?separator=-&count=10</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/network/ip</code><span style="font-size:12px;color:var(--slate-l)">?type=public&version=4</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/network/imsi</code><span style="font-size:12px;color:var(--slate-l)">?country=IN</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/network/iccid</code></div></div>
-        </div>
-      </div>
-
-      <!-- Location -->
-      <div id="location" style="margin-bottom:32px">
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--slate-l);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Location generators</div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/location/address</code><span style="font-size:12px;color:var(--slate-l)">?country=IN&count=5</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/location/coordinates</code><span style="font-size:12px;color:var(--slate-l)">?country=IN</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/location/timezone</code></div></div>
-        </div>
-      </div>
-
-      <!-- Data tools -->
-      <div id="datatools" style="margin-bottom:32px">
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--slate-l);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Data tools — POST with body <code style="font-size:10px">{"input":"..."}</code></div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/format/json</code><span style="font-size:12px;color:var(--slate-l)">body: {input, indent?}</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/format/xml</code></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/convert/json-to-xml</code><span style="font-size:12px;color:var(--slate-l)">body: {input, rootTag?}</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/convert/xml-to-json</code></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/convert/json-to-csv</code></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/convert/csv-to-json</code></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/convert/text-to-json</code></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/convert/text-to-xml</code><span style="font-size:12px;color:var(--slate-l)">body: {input, rootTag?}</span></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/encode/base64</code></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/decode/base64</code></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/encode/hex</code></div></div>
-          <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#D1FAE5;color:#065F46;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">POST</span>/datatools/decode/hex</code></div></div>
-        </div>
-      </div>
-
-      <!-- Combined -->
-      <div id="combined" style="margin-bottom:32px">
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--slate-l);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)">Combined</div>
-        <div class="workspace-panel"><div class="panel-header"><code style="font-size:12px"><span style="background:#DBEAFE;color:#1D4ED8;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;margin-right:6px">GET</span>/record</code><span style="font-size:12px;color:var(--slate-l)">?country=IN&gender=female&count=5</span></div></div>
-      </div>
-
     </div>
   </div>
+</section>
+
+<div class="ad-slot" role="complementary" aria-label="Advertisement">Advertisement</div>
+
+<div class="seo-content">
+  <h2>How XML maps to JSON</h2>
+  <p>XML has elements, attributes and text, and JSON has objects, arrays and values. The converter uses these rules:</p>
+  <ul>
+    <li>The root element becomes the single top-level key of the JSON object.</li>
+    <li>Attributes become keys prefixed with <code>@</code>, for example <code>id="1"</code> becomes <code>"@id": "1"</code>.</li>
+    <li>Text inside an element with no child elements becomes the value. Text next to child elements is stored under <code>#text</code>.</li>
+    <li>Repeated sibling elements with the same name become an array.</li>
+  </ul>
+  <h3>Example</h3>
+  <div class="mono-block">&lt;person id="1"&gt;&lt;name&gt;John&lt;/name&gt;&lt;tag&gt;a&lt;/tag&gt;&lt;tag&gt;b&lt;/tag&gt;&lt;/person&gt;
+
+{
+  "person": {
+    "@id": "1",
+    "name": "John",
+    "tag": ["a", "b"]
+  }
+}</div>
+
+  <h3>Common uses</h3>
+  <ul>
+    <li>Reading an XML API response in JavaScript or Python</li>
+    <li>Converting an XML config file into a format your code can load</li>
+    <li>Preparing XML test fixtures as JSON for comparison</li>
+  </ul>
+
+  <h2>Questions</h2>
+  <div class="faq-item">
+    <button class="faq-q" type="button" aria-expanded="false">Is my XML sent to a server? <span class="faq-toggle">+</span></button>
+    <div class="faq-a">No. The conversion runs in your browser, so the XML you paste stays on your device.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" type="button" aria-expanded="false">What happens to namespaces? <span class="faq-toggle">+</span></button>
+    <div class="faq-a">Element and attribute names are kept as written in the source, including any prefix such as <code>ns:name</code>. Namespace URIs are not resolved.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" type="button" aria-expanded="false">Why does my XML show an error? <span class="faq-toggle">+</span></button>
+    <div class="faq-a">The input must be well-formed. Check for an unclosed tag, an unescaped <code>&amp;</code>, or more than one root element. The status line shows the first problem the parser reports.</div>
+  </div>
 </div>
+
+<section class="related">
+  <h2>Related tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/converters/json-to-xml"><h4>JSON to XML</h4><p>Convert JSON into well-formed XML</p></a>
+    <a class="related-card" href="/formatters/xml"><h4>XML formatter</h4><p>Format, minify and validate XML</p></a>
+    <a class="related-card" href="/formatters/json"><h4>JSON formatter</h4><p>Prettify, minify and validate JSON</p></a>
+  </div>
+</section>
 
 </main>
 <footer class="site-footer">
@@ -268,12 +246,95 @@
     <p>Ads may set cookies. See the <a href="/privacy">Privacy policy</a>.</p>
   </div>
 </footer>
-
-<script>
-
-</script>
-<script>
-</script>
 <script src="/scripts/main.js"></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  var SAMPLE = '<person id="1"><name>John</name><age>30</age><tag>a</tag><tag>b</tag></person>';
+
+  function firstError(err) { return err.textContent.replace(/\s+/g, " ").replace(/^.*errors?:\s*/i, "").replace(/Below is a rendering.*$/i, "").trim(); }
+  function setStatus(msg) { $('status').textContent = msg; }
+
+  // Converts one element to a plain value or object.
+  function toValue(el) {
+    var obj = {};
+    var hasChild = false;
+    var text = '';
+    for (var a = 0; a < el.attributes.length; a++) {
+      obj['@' + el.attributes[a].name] = el.attributes[a].value;
+    }
+    for (var c = 0; c < el.childNodes.length; c++) {
+      var child = el.childNodes[c];
+      if (child.nodeType === 1) {
+        hasChild = true;
+        var key = child.nodeName;
+        var v = toValue(child);
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          if (!Array.isArray(obj[key])) obj[key] = [obj[key]];
+          obj[key].push(v);
+        } else {
+          obj[key] = v;
+        }
+      } else if (child.nodeType === 3 || child.nodeType === 4) {
+        text += child.nodeValue;
+      }
+    }
+    text = text.trim();
+    if (!hasChild) {
+      if (Object.keys(obj).length === 0) return text;
+      if (text) obj['#text'] = text;
+      return obj;
+    }
+    if (text) obj['#text'] = text;
+    return obj;
+  }
+
+  function convert() {
+    var src = $('input').value.trim();
+    if (!src) { setStatus('Paste some XML first.'); $('output').value = ''; return; }
+    var doc = new DOMParser().parseFromString(src, 'application/xml');
+    var err = doc.getElementsByTagName('parsererror')[0];
+    if (err) {
+      $('output').value = '';
+      setStatus('Invalid XML: ' + firstError(err));
+      return;
+    }
+    var root = doc.documentElement;
+    var result = {};
+    result[root.nodeName] = toValue(root);
+    $('output').value = JSON.stringify(result, null, 2);
+    setStatus('Converted.');
+  }
+
+  function copyText(text, button) {
+    var old = button.textContent;
+    var done = function () { button.textContent = 'Copied'; setTimeout(function () { button.textContent = old; }, 1600); };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { setStatus('Select the output and copy it.'); });
+      } else {
+        setStatus('Select the output and copy it.');
+      }
+    } catch (e) { setStatus('Select the output and copy it.'); }
+  }
+
+  $('convertBtn').addEventListener('click', convert);
+  $('sampleBtn').addEventListener('click', function () { $('input').value = SAMPLE; convert(); });
+  $('clearBtn').addEventListener('click', function () { $('input').value = ''; $('output').value = ''; setStatus(''); });
+  $('copyBtn').addEventListener('click', function () {
+    if (!$('output').value) { setStatus('Convert something first.'); return; }
+    copyText($('output').value, this);
+  });
+  $('downloadBtn').addEventListener('click', function () {
+    if (!$('output').value) { setStatus('Convert something first.'); return; }
+    try {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([$('output').value], { type: 'application/json' }));
+      a.download = 'converted.json';
+      a.click();
+    } catch (e) { setStatus('Download is not available here. Use Copy instead.'); }
+  });
+})();
+</script>
 </body>
 </html>

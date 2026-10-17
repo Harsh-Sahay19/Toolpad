@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>try{var t=localStorage.getItem('toolpad-theme');if(!t){var h=new Date().getHours();t=(h>=20||h<6)?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Base64 Encoder & Decoder — Free Online Tool | Toolpad</title>
-<meta name="description" content="Encode and decode Base64 strings online for free. Supports text, URLs, and file encoding. Instant results, no data stored, no signup required.">
-<meta name="keywords" content="Base64 encoder, Base64 decoder, encode Base64, decode Base64, Base64 online, Base64 converter">
-<link rel="canonical" href="https://toolpad.in/converters/base64">
-<meta property="og:title" content="Base64 Encoder & Decoder — Free Online Tool | Toolpad">
-<meta property="og:description" content="Encode and decode Base64 strings online for free. Supports text, URLs, and file encoding. Instant results, no data stored, no signup required.">
+<script>try{var t=localStorage.getItem('toolpad-theme');if(!t){var h=new Date().getHours();t=(h>=20||h<6)?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<title>XML Formatter – Format, Minify and Validate | Toolpad</title>
+<meta name="description" content="Format, minify and validate XML online for free. Indents nested elements and reports the first error. Runs in your browser, no sign-up.">
+<link rel="canonical" href="https://toolpad.in/formatters/xml">
+<meta property="og:title" content="XML Formatter – Format, Minify and Validate | Toolpad">
+<meta property="og:description" content="Format, minify and validate XML online for free. Indents nested elements and reports the first error. Runs in your browser, no sign-up.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://toolpad.in/converters/base64">
+<meta property="og:url" content="https://toolpad.in/formatters/xml">
 <meta property="og:site_name" content="Toolpad">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Base64 Encoder Decoder","url":"https://toolpad.in/converters/base64","description":"Free online Base64 encoder and decoder","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/styles/main.css">
@@ -125,87 +123,82 @@
     <div class="mobile-nav-group"><a href="/api-docs">API</a></div>
   </div>
 </header>
-<main id="main">
+<main id="main" class="container">
+<nav class="crumbs page-head" style="padding-bottom:0" aria-label="Breadcrumb">
+  <a href="/">Home</a> › <a href="/formatters">Formatters</a> › XML formatter
+</nav>
+<div class="page-head" style="padding-top:12px">
+  <h1>XML formatter</h1>
+  <p class="lede">Format, minify and validate XML. Errors show the first problem the parser finds. Everything runs in your browser.</p>
+  <p style="margin-top:14px"><span class="badge-test">Runs in your browser</span></p>
+</div>
 
-<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
-
-<div class="tool-page">
-  <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › Base64 encoder/decoder</div>
-    <h1>Base64 encoder &amp; decoder</h1>
-    <p class="tool-desc">Encode text to Base64 or decode Base64 back to plain text. All processing happens in your browser — no data is sent to any server.</p>
-  </div>
-
-  <div style="display:flex;gap:8px;margin-bottom:16px">
-    <button class="btn btn-primary" id="btnEncode">Encode to Base64</button>
-    <button class="btn" id="btnDecode">Decode from Base64</button>
-    <button class="btn" id="btnSwap">Swap ⇄</button>
-    <button class="btn" id="btnClear">Clear</button>
-  </div>
-
-  <div class="tool-workspace">
-    <div class="workspace-panel">
-      <div class="panel-header">
-        <h3>Input</h3>
-        <button class="btn btn-sm" id="btnPaste">Paste</button>
+<section class="workspace" aria-labelledby="xf-title">
+  <h2 id="xf-title" class="sr-only">Format XML</h2>
+  <div class="workspace-split">
+    <div class="pane-controls" style="max-width:none;flex:1 1 320px">
+      <label class="field-label" for="input">XML input</label>
+      <textarea id="input" class="output-area" spellcheck="false" placeholder="&lt;root&gt;&lt;item&gt;1&lt;/item&gt;&lt;/root&gt;"></textarea>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-primary" type="button" id="formatBtn">Format</button>
+        <button class="btn" type="button" id="minifyBtn">Minify</button>
+        <button class="btn" type="button" id="validateBtn">Validate</button>
+        <button class="btn" type="button" id="sampleBtn">Sample</button>
+        <button class="btn" type="button" id="clearBtn">Clear</button>
       </div>
-      <div class="panel-body" style="padding:0">
-        <textarea class="output-area large" id="inputArea" placeholder="Enter text to encode, or Base64 to decode..."></textarea>
-      </div>
+      <p id="status" class="note" aria-live="polite"></p>
     </div>
-    <div class="workspace-panel">
-      <div class="panel-header">
-        <h3>Output</h3>
-        <div style="display:flex;gap:6px">
-          <button class="btn btn-sm" id="btnCopy">Copy</button>
-          <span id="charCount" style="font-size:12px;color:var(--slate-l);align-self:center"></span>
-        </div>
-      </div>
-      <div class="panel-body" style="padding:0">
-        <textarea class="output-area large" id="outputArea" readonly placeholder="Result will appear here..."></textarea>
+    <div class="pane-results" style="flex:1 1 320px">
+      <label class="field-label" for="output">Output</label>
+      <textarea id="output" class="output-area" readonly spellcheck="false" style="margin-top:8px"></textarea>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+        <button class="btn btn-sm" type="button" id="copyBtn">Copy</button>
+        <button class="btn btn-sm" type="button" id="downloadBtn">Download XML</button>
       </div>
     </div>
   </div>
+</section>
 
-  <div id="statusBar" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
+<div class="ad-slot" role="complementary" aria-label="Advertisement">Advertisement</div>
 
-  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+<div class="seo-content">
+  <h2>What the formatter does</h2>
+  <ul>
+    <li><strong>Format</strong> indents nested elements by two spaces, so the structure is easy to read.</li>
+    <li><strong>Minify</strong> removes indentation and whitespace between elements.</li>
+    <li><strong>Validate</strong> checks that the XML is well-formed and reports the first error with its message.</li>
+  </ul>
+  <h3>Example</h3>
+  <div class="mono-block">&lt;root&gt;&lt;item id="1"&gt;Alpha&lt;/item&gt;&lt;item id="2"/&gt;&lt;/root&gt;
 
-  <div class="seo-content">
-    <h2>What is Base64 encoding?</h2>
-    <p>Base64 is a binary-to-text encoding scheme that represents binary data using 64 printable ASCII characters (A–Z, a–z, 0–9, +, /). It is widely used to encode binary data for transmission over systems that only handle text — such as embedding images in HTML, encoding attachments in emails, or passing binary data in JSON APIs.</p>
+&lt;root&gt;
+  &lt;item id="1"&gt;Alpha&lt;/item&gt;
+  &lt;item id="2"/&gt;
+&lt;/root&gt;</div>
 
-    <h3>When to use Base64</h3>
-    <ul>
-      <li>Embedding images directly in HTML or CSS as data URIs</li>
-      <li>Encoding binary file attachments in email (MIME)</li>
-      <li>Passing binary data in JSON or XML APIs</li>
-      <li>Storing binary data in text-only systems like environment variables</li>
-      <li>Basic HTTP authentication headers (<code>Authorization: Basic base64(user:pass)</code>)</li>
-    </ul>
-
-    <h3>Base64 vs Base64 URL</h3>
-    <p>Standard Base64 uses <code>+</code> and <code>/</code> characters, which have special meaning in URLs. Base64 URL encoding replaces these with <code>-</code> and <code>_</code> respectively, making it safe to use in query parameters and JWT tokens without URL encoding.</p>
-
-    <h3>API access</h3>
-    <p>Encode: <code>POST /api/v1/datatools/encode/base64</code> with body <code>{"input": "your text"}</code></p>
-    <p>Decode: <code>POST /api/v1/datatools/decode/base64</code> with body <code>{"input": "dG9vbHBhZA=="}</code></p>
-
-    <div class="faq-item"><div class="faq-q">Is Base64 a form of encryption? <span>+</span></div><div class="faq-a">No. Base64 is an encoding scheme, not encryption. It can be decoded by anyone with the encoded string and provides no security. Never use Base64 to protect sensitive data — use proper encryption instead.</div></div>
-    <div class="faq-item"><div class="faq-q">Why does Base64 output end with = or ==? <span>+</span></div><div class="faq-a">Base64 encodes 3 bytes into 4 characters. If the input is not a multiple of 3 bytes, padding characters (=) are added to make the output length a multiple of 4. One = means 1 byte of padding was needed, == means 2 bytes.</div></div>
-    <div class="faq-item"><div class="faq-q">How much larger is Base64 output vs the original? <span>+</span></div><div class="faq-a">Base64 output is approximately 33% larger than the original input. Every 3 bytes of input becomes 4 Base64 characters.</div></div>
+  <h2>Questions</h2>
+  <div class="faq-item">
+    <button class="faq-q" type="button" aria-expanded="false">Is my XML sent to a server? <span class="faq-toggle">+</span></button>
+    <div class="faq-a">No. Formatting, minifying and validation all run in your browser.</div>
   </div>
-
-  <div class="related-tools">
-    <h3>Related tools</h3>
-    <div class="related-grid">
-      <a href="/converters/hex" class="related-card"><h4>Hex encoder/decoder</h4><p>Text to hexadecimal</p></a>
-      <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Format converter</p></a>
-      <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify and validate</p></a>
-      <a href="/converters/text-to-json" class="related-card"><h4>Text to JSON</h4><p>Create JSON from text</p></a>
-    </div>
+  <div class="faq-item">
+    <button class="faq-q" type="button" aria-expanded="false">Does it keep comments and CDATA sections? <span class="faq-toggle">+</span></button>
+    <div class="faq-a">Yes. Comments and CDATA sections are kept as they are in the source.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" type="button" aria-expanded="false">Does validation check against a schema? <span class="faq-toggle">+</span></button>
+    <div class="faq-a">No. Validation checks only that the XML is well-formed. It does not check against an XSD or DTD.</div>
   </div>
 </div>
+
+<section class="related">
+  <h2>Related tools</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/converters/xml-to-json"><h4>XML to JSON</h4><p>Convert XML into JSON</p></a>
+    <a class="related-card" href="/converters/json-to-xml"><h4>JSON to XML</h4><p>Convert JSON into well-formed XML</p></a>
+    <a class="related-card" href="/formatters/json"><h4>JSON formatter</h4><p>Prettify, minify and validate JSON</p></a>
+  </div>
+</section>
 
 </main>
 <footer class="site-footer">
@@ -243,64 +236,105 @@
     <p>Ads may set cookies. See the <a href="/privacy">Privacy policy</a>.</p>
   </div>
 </footer>
-
-<script>
-function setStatus(msg, type) {
-  const sb = document.getElementById('statusBar');
-  sb.style.display = 'block';
-  sb.style.background = type==='success'?'#D1FAE5':type==='error'?'#FEE2E2':'#DBEAFE';
-  sb.style.color = type==='success'?'#065F46':type==='error'?'#991B1B':'#1D4ED8';
-  sb.textContent = msg;
-}
-function updateCount() {
-  const out = document.getElementById('outputArea').value;
-  document.getElementById('charCount').textContent = out ? `${out.length} chars` : '';
-}
-
-document.getElementById('btnEncode').addEventListener('click', () => {
-  const input = document.getElementById('inputArea').value;
-  if (!input) return;
-  try {
-    const encoded = btoa(unescape(encodeURIComponent(input)));
-    document.getElementById('outputArea').value = encoded;
-    setStatus('Encoded successfully', 'success');
-    updateCount();
-  } catch(e) { setStatus('Encoding error: ' + e.message, 'error'); }
-});
-
-document.getElementById('btnDecode').addEventListener('click', () => {
-  const input = document.getElementById('inputArea').value.trim();
-  if (!input) return;
-  try {
-    const decoded = decodeURIComponent(escape(atob(input)));
-    document.getElementById('outputArea').value = decoded;
-    setStatus('Decoded successfully', 'success');
-    updateCount();
-  } catch(e) { setStatus('Invalid Base64: ' + e.message, 'error'); }
-});
-
-document.getElementById('btnSwap').addEventListener('click', () => {
-  const i = document.getElementById('inputArea'), o = document.getElementById('outputArea');
-  const tmp = i.value; i.value = o.value; o.value = tmp;
-  updateCount();
-});
-document.getElementById('btnClear').addEventListener('click', () => {
-  document.getElementById('inputArea').value = '';
-  document.getElementById('outputArea').value = '';
-  document.getElementById('statusBar').style.display = 'none';
-  updateCount();
-});
-document.getElementById('btnPaste').addEventListener('click', () => navigator.clipboard?.readText().then(t=>document.getElementById('inputArea').value=t));
-document.getElementById('btnCopy').addEventListener('click', () => {
-  navigator.clipboard?.writeText(document.getElementById('outputArea').value);
-  document.getElementById('btnCopy').textContent = 'Copied!';
-  setTimeout(()=>document.getElementById('btnCopy').textContent='Copy',2000);
-});
-
-
-</script>
-<script>
-</script>
 <script src="/scripts/main.js"></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  var SAMPLE = '<root><item id="1">Alpha</item><item id="2"/><!-- note --><![CDATA[a < b]]></root>';
+
+  function firstError(err) { return err.textContent.replace(/\s+/g, " ").replace(/^.*errors?:\s*/i, "").replace(/Below is a rendering.*$/i, "").trim(); }
+  function setStatus(msg) { $('status').textContent = msg; }
+
+  function escText(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function escAttr(s) { return escText(s).replace(/"/g, '&quot;'); }
+
+  // Serialises a node. When pretty is false, no indentation or line breaks are added.
+  function ser(node, depth, pretty) {
+    var pad = pretty ? '  '.repeat(depth) : '';
+    var nl = pretty ? '\n' : '';
+    if (node.nodeType === 1) {
+      var attrs = '';
+      for (var a = 0; a < node.attributes.length; a++) {
+        attrs += ' ' + node.attributes[a].name + '="' + escAttr(node.attributes[a].value) + '"';
+      }
+      var kids = [];
+      for (var c = 0; c < node.childNodes.length; c++) {
+        var k = node.childNodes[c];
+        if (k.nodeType === 3 && !k.nodeValue.trim()) continue;
+        kids.push(k);
+      }
+      if (!kids.length) return pad + '<' + node.nodeName + attrs + '/>';
+      if (kids.length === 1 && (kids[0].nodeType === 3 || kids[0].nodeType === 4)) {
+        var val = kids[0].nodeType === 4 ? '<![CDATA[' + kids[0].nodeValue + ']]>' : escText(kids[0].nodeValue.trim());
+        return pad + '<' + node.nodeName + attrs + '>' + val + '</' + node.nodeName + '>';
+      }
+      var inner = [];
+      for (var i = 0; i < kids.length; i++) {
+        var s = ser(kids[i], depth + 1, pretty);
+        if (s !== '') inner.push(s);
+      }
+      return pad + '<' + node.nodeName + attrs + '>' + nl + inner.join(nl) + nl + pad + '</' + node.nodeName + '>';
+    }
+    if (node.nodeType === 3) return pad + escText(node.nodeValue.trim());
+    if (node.nodeType === 4) return pad + '<![CDATA[' + node.nodeValue + ']]>';
+    if (node.nodeType === 8) return pad + '<!--' + node.nodeValue + '-->';
+    return '';
+  }
+
+  // Returns { doc, error } so callers can show the parser message.
+  function parse(src) {
+    var doc = new DOMParser().parseFromString(src, 'application/xml');
+    var err = doc.getElementsByTagName('parsererror')[0];
+    return { doc: doc, error: err ? firstError(err) : null };
+  }
+
+  function run(pretty) {
+    var src = $('input').value.trim();
+    if (!src) { setStatus('Paste some XML first.'); $('output').value = ''; return; }
+    var r = parse(src);
+    if (r.error) { $('output').value = ''; setStatus('Invalid XML: ' + r.error); return; }
+    $('output').value = '<?xml version="1.0" encoding="UTF-8"?>' + (pretty ? '\n' : '') + ser(r.doc.documentElement, 0, pretty);
+    setStatus(pretty ? 'Formatted.' : 'Minified.');
+  }
+
+  function validate() {
+    var src = $('input').value.trim();
+    if (!src) { setStatus('Paste some XML first.'); return; }
+    var r = parse(src);
+    setStatus(r.error ? 'Invalid XML: ' + r.error : 'Valid. The XML is well-formed.');
+  }
+
+  function copyText(text, button) {
+    var old = button.textContent;
+    var done = function () { button.textContent = 'Copied'; setTimeout(function () { button.textContent = old; }, 1600); };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { setStatus('Select the output and copy it.'); });
+      } else {
+        setStatus('Select the output and copy it.');
+      }
+    } catch (e) { setStatus('Select the output and copy it.'); }
+  }
+
+  $('formatBtn').addEventListener('click', function () { run(true); });
+  $('minifyBtn').addEventListener('click', function () { run(false); });
+  $('validateBtn').addEventListener('click', validate);
+  $('sampleBtn').addEventListener('click', function () { $('input').value = SAMPLE; run(true); });
+  $('clearBtn').addEventListener('click', function () { $('input').value = ''; $('output').value = ''; setStatus(''); });
+  $('copyBtn').addEventListener('click', function () {
+    if (!$('output').value) { setStatus('Format or minify first.'); return; }
+    copyText($('output').value, this);
+  });
+  $('downloadBtn').addEventListener('click', function () {
+    if (!$('output').value) { setStatus('Format or minify first.'); return; }
+    try {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([$('output').value], { type: 'application/xml' }));
+      a.download = 'formatted.xml';
+      a.click();
+    } catch (e) { setStatus('Download is not available here. Use Copy instead.'); }
+  });
+})();
+</script>
 </body>
 </html>

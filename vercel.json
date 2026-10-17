@@ -6,6 +6,7 @@
     { "source": "/generators/fake-name", "destination": "/generators/test-name", "permanent": true },
     { "source": "/generators/fake-email", "destination": "/generators/test-email", "permanent": true },
     { "source": "/generators/fake-phone", "destination": "/generators/test-phone", "permanent": true },
-    { "source": "/generators/fake-profile", "destination": "/generators/test-profile", "permanent": true }
+    { "source": "/generators/fake-profile", "destination": "/generators/test-profile", "permanent": true },
+    { "source": "/converters/docx-to-pdf", "destination": "/converters", "permanent": true }
   ]
 }
