@@ -1,24 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>try{var t=localStorage.getItem('toolpad-theme');if(!t){var h=new Date().getHours();t=(h>=20||h<6)?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Toolpad — Free Developer Tools Suite</title>
 <meta name="description" content="About Toolpad — free, open-source developer utility tools. Data generators, formatters, converters. No signup.">
-<link rel="canonical" href="https://toolpad.in/about">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://toolpad.in/about"
+<meta property="og:title" content="About Toolpad — Free Developer Tools Suite">
+<meta property="og:description" content="About Toolpad — free, open-source developer utility tools. Data generators, formatters, converters. No signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://toolpad.in/about">
+<meta property="og:site_name" content="Toolpad">
+<meta name="twitter:card" content="summary">>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/styles/main.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 </head>
-<body><header class="navbar"><div class="nav-inner">
-  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
-  <nav class="nav-links">
-    <a href="/generators" class="nav-link">Generators</a>
-    <a href="/formatters" class="nav-link">Formatters</a>
-    <a href="/converters" class="nav-link">Converters</a>
-    <a href="/api-docs" class="nav-link">API</a>
-  </nav>
-  <button class="theme-toggle" id="themeToggle">☀</button>
-</div></header><div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
+<body>
+<a class="skip" href="#main">Skip to content</a><header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand" aria-label="Toolpad home">
+      <span class="brand-mark" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>
+      Toolpad
+    </a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav-item">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-haspopup="true">Generators<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="nav-menu">
+          <div class="nav-menu-col"><p class="menu-title">Personal</p>
+            <a class="menu-link" href="/generators/test-name">Test name</a>
+            <a class="menu-link" href="/generators/test-email">Test email</a>
+            <a class="menu-link" href="/generators/test-phone">Test phone</a>
+            <a class="menu-link" href="/generators/test-profile">Full profile</a>
+            <a class="menu-link" href="/generators/test-address">Test address</a>
+            <a class="menu-link" href="/generators/test-address-india">Test address India</a>
+          </div>
+          <div class="nav-menu-col"><p class="menu-title">Financial</p>
+            <a class="menu-link" href="/generators/credit-card">Credit card</a>
+            <a class="menu-link" href="/generators/iban">IBAN</a>
+          </div>
+          <div class="nav-menu-col"><p class="menu-title">Device and network</p>
+            <a class="menu-link" href="/generators/imei">IMEI</a>
+            <a class="menu-link" href="/generators/imsi">IMSI</a>
+            <a class="menu-link" href="/generators/mac-address">MAC address</a>
+            <a class="menu-link" href="/generators/ip-address">IP address</a>
+            <a class="menu-link" href="/generators/uuid">UUID</a>
+          </div>
+          <div class="nav-menu-col"><p class="menu-title">Other</p>
+            <a class="menu-link" href="/generators/password">Password</a>
+            <a class="menu-link" href="/generators/lorem-ipsum">Lorem ipsum</a>
+            <a class="menu-link" href="/generators/color-converter">Color converter</a>
+            <a class="menu-link" href="/generators/unix-timestamp">Unix timestamp</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-haspopup="true">Formatters<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="nav-menu">
+          <div class="nav-menu-col"><p class="menu-title">Formatters</p>
+            <a class="menu-link" href="/formatters/json">JSON formatter</a>
+            <a class="menu-link" href="/formatters/xml">XML formatter</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-haspopup="true">Converters<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="nav-menu">
+          <div class="nav-menu-col"><p class="menu-title">Structured data</p>
+            <a class="menu-link" href="/converters/json-to-xml">JSON to XML</a>
+            <a class="menu-link" href="/converters/xml-to-json">XML to JSON</a>
+            <a class="menu-link" href="/converters/json-to-csv">JSON to CSV</a>
+            <a class="menu-link" href="/converters/csv-to-json">CSV to JSON</a>
+            <a class="menu-link" href="/converters/text-to-json">Text to JSON</a>
+            <a class="menu-link" href="/converters/text-to-xml">Text to XML</a>
+          </div>
+          <div class="nav-menu-col"><p class="menu-title">Encoding</p>
+            <a class="menu-link" href="/converters/base64">Base64</a>
+            <a class="menu-link" href="/converters/hex">Hex</a>
+            <a class="menu-link" href="/converters/url-encoder">URL encoder</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-haspopup="true">Utilities<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="nav-menu">
+          <div class="nav-menu-col"><p class="menu-title">Finance</p>
+            <a class="menu-link" href="/utilities/emi-calculator">EMI calculator</a>
+            <a class="menu-link" href="/utilities/gst-calculator">GST calculator</a>
+            <a class="menu-link" href="/utilities/sip-calculator">SIP calculator</a>
+          </div>
+        </div>
+      </div>
+      <a class="nav-link" href="/api-docs">API</a>
+    </nav>
+    <div class="header-actions">
+      <a class="search-pill" href="/#search">Search tools</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle light and dark theme" aria-pressed="false">
+        <svg class="i i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav container" id="mobileNav" hidden>
+    <div class="mobile-nav-group"><p class="menu-title">Generators</p>
+      <a class="menu-link" href="/generators/test-name">Test name</a><a class="menu-link" href="/generators/test-address">Test address</a><a class="menu-link" href="/generators/imei">IMEI</a><a class="menu-link" href="/generators/uuid">UUID</a><a class="menu-link" href="/generators">All generators</a>
+    </div>
+    <div class="mobile-nav-group"><p class="menu-title">Formatters</p>
+      <a class="menu-link" href="/formatters/json">JSON formatter</a><a class="menu-link" href="/formatters/xml">XML formatter</a>
+    </div>
+    <div class="mobile-nav-group"><p class="menu-title">Converters</p>
+      <a class="menu-link" href="/converters/base64">Base64</a><a class="menu-link" href="/converters/json-to-csv">JSON to CSV</a><a class="menu-link" href="/converters">All converters</a>
+    </div>
+    <div class="mobile-nav-group"><p class="menu-title">Utilities</p>
+      <a class="menu-link" href="/utilities/sip-calculator">SIP calculator</a><a class="menu-link" href="/utilities/emi-calculator">EMI calculator</a><a class="menu-link" href="/utilities">All utilities</a>
+    </div>
+    <div class="mobile-nav-group"><a href="/api-docs">API</a></div>
+  </div>
+</header>
+<main id="main"><div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 <div class="tool-page" style="max-width:780px">
   <div class="tool-page-header">
     <h1>About Toolpad</h1>
@@ -47,44 +151,44 @@
     <p>GitHub: <a href="https://github.com/toolpad-in" target="_blank" rel="noopener" style="color:var(--orange-d)">github.com/toolpad-in</a></p>
   </div>
 </div>
+</main>
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools. No signup. No tracking.</p></div>
-    <div class="footer-links"><h5>Generators</h5><a href="/generators/test-name">Test name</a><a href="/generators/imei">IMEI</a><a href="/generators/credit-card">Credit card</a></div>
-    <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
-    <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
+      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-h">Generators</p>
+      <a href="/generators/test-name">Test name</a>
+      <a href="/generators/test-address">Test address</a>
+      <a href="/generators/imei">IMEI</a>
+      <a href="/generators/credit-card">Credit card</a>
+      <a href="/generators/password">Password</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-h">Tools</p>
+      <a href="/formatters/json">JSON formatter</a>
+      <a href="/converters/base64">Base64</a>
+      <a href="/converters/text-to-json">Text to JSON</a>
+      <a href="/generators/uuid">UUID</a>
+      <a href="/utilities/sip-calculator">SIP calculator</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-h">Info</p>
+      <a href="/api-docs">API docs</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
   </div>
-  <div class="footer-bottom">
-  <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
-  <a href="https://www.producthunt.com/products/toolpad-in?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-toolpad-in"
-     target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:10px">
-    <img alt="Toolpad.in on Product Hunt" width="250" height="54" loading="lazy"
-         src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123282&theme=dark&t=1776155862727"
-         style="display:block">
-  </a>
-  <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
-</div>
+  <div class="container footer-bottom">
+    <p>© 2026 Toolpad. All generated values are test data and do not belong to real people or devices.</p>
+    <p>Ads may set cookies. See the <a href="/privacy">Privacy policy</a>.</p>
+  </div>
 </footer>
 <script>
-(function(){
-  var KEY='toolpad-theme';
-  var saved=localStorage.getItem(KEY);
-  var hour=new Date().getHours();
-  var autoDark=(hour>=20||hour<6);
-  var theme=saved!==null?saved:(autoDark?'dark':'');
-  if(theme)document.documentElement.setAttribute('data-theme',theme);
-  var tog=document.getElementById('themeToggle');
-  if(tog){
-    tog.textContent=theme==='dark'?'🌙':'☀';
-    tog.addEventListener('click',function(){
-      var dark=document.documentElement.getAttribute('data-theme')==='dark';
-      var next=dark?'':'dark';
-      document.documentElement.setAttribute('data-theme',next);
-      tog.textContent=next==='dark'?'🌙':'☀';
-      localStorage.setItem(KEY,next);
-    });
-  }
-})();
 </script>
+<script src="/scripts/main.js"></script>
 </body>
 </html>

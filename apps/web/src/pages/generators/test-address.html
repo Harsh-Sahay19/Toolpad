@@ -3,192 +3,407 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>try{var t=localStorage.getItem('toolpad-theme');if(!t){var h=new Date().getHours();t=(h>=20||h<6)?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <title>Test Address Generator – India, US & UK | Toolpad</title>
 <meta name="description" content="Create random test addresses with postcodes and PIN codes for India, the US and the UK. Free test data for forms and development, no sign-up needed.">
-<meta property="og:title" content="Test Address Generator – Random Addresses for India, US, UK | Toolpad">
+<meta name="keywords" content="test address generator, random address generator, fake address generator, dummy address, test address india, random postal address">
+<link rel="canonical" href="https://toolpad.in/generators/test-address">
+<meta property="og:title" content="Test Address Generator – India, US & UK | Toolpad">
 <meta property="og:description" content="Create random test addresses with postcodes and PIN codes for India, the US and the UK. Free test data for forms and development, no sign-up needed.">
 <meta property="og:type" content="website">
-<meta name="keywords" content="test address generator, random address generator, test address, dummy address, test address, random postal address, fake US address, test Indian address">
-<link rel="canonical" href="https://toolpad.in/generators/test-address">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Test Address Generator","url":"https://toolpad.in/generators/test-address","description":"Generate realistic test addresses for US, India and UK for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta property="og:url" content="https://toolpad.in/generators/test-address">
+<meta property="og:site_name" content="Toolpad">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Test Address Generator","url":"https://toolpad.in/generators/test-address","description":"Generate random test addresses for the US, India and the UK for software testing","applicationCategory":"DeveloperApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/styles/main.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="navbar"><div class="nav-inner">
-  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
-  <nav class="nav-links"><a href="/generators" class="nav-link active">Generators</a><a href="/formatters" class="nav-link">Formatters</a><a href="/converters" class="nav-link">Converters</a><a href="/api-docs" class="nav-link">API</a></nav>
-  <button class="theme-toggle" id="themeToggle">☀</button>
-</div></header>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand" aria-label="Toolpad home">
+      <span class="brand-mark" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>
+      Toolpad
+    </a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav-item">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-haspopup="true">Generators<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="nav-menu">
+          <div class="nav-menu-col"><p class="menu-title">Personal</p>
+            <a class="menu-link" href="/generators/test-name">Test name</a>
+            <a class="menu-link" href="/generators/test-email">Test email</a>
+            <a class="menu-link" href="/generators/test-phone">Test phone</a>
+            <a class="menu-link" href="/generators/test-profile">Full profile</a>
+            <a class="menu-link" href="/generators/test-address">Test address</a>
+            <a class="menu-link" href="/generators/test-address-india">Test address India</a>
+          </div>
+          <div class="nav-menu-col"><p class="menu-title">Financial</p>
+            <a class="menu-link" href="/generators/credit-card">Credit card</a>
+            <a class="menu-link" href="/generators/iban">IBAN</a>
+          </div>
+          <div class="nav-menu-col"><p class="menu-title">Device and network</p>
+            <a class="menu-link" href="/generators/imei">IMEI</a>
+            <a class="menu-link" href="/generators/imsi">IMSI</a>
+            <a class="menu-link" href="/generators/mac-address">MAC address</a>
+            <a class="menu-link" href="/generators/ip-address">IP address</a>
+            <a class="menu-link" href="/generators/uuid">UUID</a>
+          </div>
+          <div class="nav-menu-col"><p class="menu-title">Other</p>
+            <a class="menu-link" href="/generators/password">Password</a>
+            <a class="menu-link" href="/generators/lorem-ipsum">Lorem ipsum</a>
+            <a class="menu-link" href="/generators/color-converter">Color converter</a>
+            <a class="menu-link" href="/generators/unix-timestamp">Unix timestamp</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-haspopup="true">Formatters<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="nav-menu">
+          <div class="nav-menu-col"><p class="menu-title">Formatters</p>
+            <a class="menu-link" href="/formatters/json">JSON formatter</a>
+            <a class="menu-link" href="/formatters/xml">XML formatter</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-haspopup="true">Converters<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="nav-menu">
+          <div class="nav-menu-col"><p class="menu-title">Structured data</p>
+            <a class="menu-link" href="/converters/json-to-xml">JSON to XML</a>
+            <a class="menu-link" href="/converters/xml-to-json">XML to JSON</a>
+            <a class="menu-link" href="/converters/json-to-csv">JSON to CSV</a>
+            <a class="menu-link" href="/converters/csv-to-json">CSV to JSON</a>
+            <a class="menu-link" href="/converters/text-to-json">Text to JSON</a>
+            <a class="menu-link" href="/converters/text-to-xml">Text to XML</a>
+          </div>
+          <div class="nav-menu-col"><p class="menu-title">Encoding</p>
+            <a class="menu-link" href="/converters/base64">Base64</a>
+            <a class="menu-link" href="/converters/hex">Hex</a>
+            <a class="menu-link" href="/converters/url-encoder">URL encoder</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-btn" type="button" aria-expanded="false" aria-haspopup="true">Utilities<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <div class="nav-menu">
+          <div class="nav-menu-col"><p class="menu-title">Finance</p>
+            <a class="menu-link" href="/utilities/emi-calculator">EMI calculator</a>
+            <a class="menu-link" href="/utilities/gst-calculator">GST calculator</a>
+            <a class="menu-link" href="/utilities/sip-calculator">SIP calculator</a>
+          </div>
+        </div>
+      </div>
+      <a class="nav-link" href="/api-docs">API</a>
+    </nav>
+    <div class="header-actions">
+      <a class="search-pill" href="/#search">Search tools</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle light and dark theme" aria-pressed="false">
+        <svg class="i i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav container" id="mobileNav" hidden>
+    <div class="mobile-nav-group"><p class="menu-title">Generators</p>
+      <a class="menu-link" href="/generators/test-name">Test name</a><a class="menu-link" href="/generators/test-address">Test address</a><a class="menu-link" href="/generators/imei">IMEI</a><a class="menu-link" href="/generators/uuid">UUID</a><a class="menu-link" href="/generators">All generators</a>
+    </div>
+    <div class="mobile-nav-group"><p class="menu-title">Formatters</p>
+      <a class="menu-link" href="/formatters/json">JSON formatter</a><a class="menu-link" href="/formatters/xml">XML formatter</a>
+    </div>
+    <div class="mobile-nav-group"><p class="menu-title">Converters</p>
+      <a class="menu-link" href="/converters/base64">Base64</a><a class="menu-link" href="/converters/json-to-csv">JSON to CSV</a><a class="menu-link" href="/converters">All converters</a>
+    </div>
+    <div class="mobile-nav-group"><p class="menu-title">Utilities</p>
+      <a class="menu-link" href="/utilities/sip-calculator">SIP calculator</a><a class="menu-link" href="/utilities/emi-calculator">EMI calculator</a><a class="menu-link" href="/utilities">All utilities</a>
+    </div>
+    <div class="mobile-nav-group"><a href="/api-docs">API</a></div>
+  </div>
+</header>
 
-<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
-
-<div class="tool-page">
-  <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Test address generator</div>
-    <h1>Test address generator for India, US &amp; UK</h1>
-    <p class="tool-desc">Generate realistic postal addresses for the United States, India, and United Kingdom. Includes street, city, state/region, and valid postal codes. For testing forms, APIs, and databases only.</p>
+<main id="main" class="container">
+  <nav class="crumbs page-head" style="padding-bottom:0" aria-label="Breadcrumb">
+    <a href="/">Home</a> › <a href="/generators">Generators</a> › Test address
+  </nav>
+  <div class="page-head" style="padding-top:12px">
+    <h1>Test address generator</h1>
+    <p class="lede">Random postal addresses for the United States, India and the United Kingdom, in each country's format. Use them to test forms, checkout flows and databases.</p>
+    <p style="margin-top:14px"><span class="badge-test">Test data only, not real addresses</span></p>
   </div>
 
-  <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
-    <select id="countrySel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="US">United States</option>
-      <option value="IN">India</option>
-      <option value="UK">United Kingdom</option>
-    </select>
-    <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="1">1 address</option>
-      <option value="5">5 addresses</option>
-      <option value="10" selected>10 addresses</option>
-      <option value="25">25 addresses</option>
-      <option value="50">50 addresses</option>
-    </select>
-    <select id="fmtSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="cards">Cards</option>
-      <option value="csv">CSV table</option>
-    </select>
-    <button class="btn btn-primary" id="genBtn">Generate</button>
-    <button class="btn" id="copyBtn">Copy all</button>
-    <button class="btn" id="csvBtn">Download CSV</button>
-  </div>
+  <section class="workspace" aria-labelledby="ws-title">
+    <h2 id="ws-title" class="sr-only">Generate test addresses</h2>
+    <div class="workspace-split">
+      <div class="pane-controls">
+        <div>
+          <p class="field-label" id="country-label">Country</p>
+          <div class="seg-group" role="group" aria-labelledby="country-label" style="margin-top:8px" id="countrySeg">
+            <button class="seg on" type="button" data-country="US" aria-pressed="true">US</button>
+            <button class="seg" type="button" data-country="IN" aria-pressed="false">India</button>
+            <button class="seg" type="button" data-country="UK" aria-pressed="false">UK</button>
+          </div>
+        </div>
+        <div>
+          <p class="field-label" id="count-label">How many</p>
+          <div class="seg-group" role="group" aria-labelledby="count-label" style="margin-top:8px" id="countSeg">
+            <button class="seg" type="button" data-count="4" aria-pressed="false">4</button>
+            <button class="seg on" type="button" data-count="8" aria-pressed="true">8</button>
+            <button class="seg" type="button" data-count="12" aria-pressed="false">12</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="button" id="genBtn" style="width:100%">Generate new addresses</button>
+        <p class="note">Addresses follow each country's format, but they do not point to real properties.</p>
+      </div>
+      <div class="pane-results">
+        <div class="workspace-head" style="padding:0 0 14px;border:0">
+          <p id="summary" class="note" aria-live="polite"></p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn btn-sm" type="button" id="copyBtn">Copy all</button>
+            <button class="btn btn-sm" type="button" id="csvBtn">Download CSV</button>
+          </div>
+        </div>
+        <div class="result-grid" id="results"></div>
+      </div>
+    </div>
+  </section>
 
-  <div id="outputArea" style="margin-bottom:24px"></div>
-
-  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+  <div class="ad-slot" role="complementary" aria-label="Advertisement">Advertisement</div>
 
   <div class="seo-content">
     <h2>About this test address generator</h2>
-    <p>This tool creates structurally realistic postal addresses — with valid-format street names, real city names, correct state/region codes, and valid-range postal codes for each supported country. Addresses are randomly constructed and do not correspond to real properties.</p>
+    <p>This tool creates structurally realistic postal addresses. Each one has a valid-format street or locality, a real city name, the correct state or region, and a postal code in the range used by that country. Addresses are randomly assembled and do not correspond to real properties.</p>
 
-    <h3>Country-specific formats</h3>
+    <h3>Country formats</h3>
     <ul>
-      <li><strong>United States</strong> — Street number + street name + type, city, state abbreviation (CA, NY, TX...), 5-digit ZIP code. Optional apartment numbers.</li>
-      <li><strong>India</strong> — Block/Sector/Colony number, city, state name, 6-digit PIN code from the correct range for each state.</li>
-      <li><strong>United Kingdom</strong> — Street address, city (London, Manchester, Birmingham...), UK-format postcode (e.g. EC1 4AB).</li>
+      <li><strong>United States:</strong> street number, street name and type, city, state abbreviation and a 5-digit ZIP code, for example <code>221 Maple Street, Austin, TX 78712</code>.</li>
+      <li><strong>India:</strong> flat or house number, locality, city, state and a 6-digit PIN code, for example <code>Flat 4B, Rose Garden Layout, Bengaluru, Karnataka 560042</code>.</li>
+      <li><strong>United Kingdom:</strong> house number and street, then town and a postcode, for example <code>12 Station Road, Manchester M4 2AB</code>.</li>
     </ul>
 
-    <h2>Test Indian address generator</h2>
-    <p>Select <strong>India</strong> above to generate test addresses in the Indian format: a house or block number, a sector, colony, layout or nagar, a city, the state, and a 6-digit PIN code. Each PIN starts with the real prefix for its state or city, so Delhi addresses begin with 110, Bengaluru with 560, Mumbai with 400, Chennai with 600 and Hyderabad with 500.</p>
-    <p>The generator covers five states: Karnataka, Maharashtra, Tamil Nadu, Delhi and Telangana. Each state has its own list of cities, so the output reads like real data. Every address is randomly built and does not correspond to a real property.</p>
-    <table style="width:100%;border-collapse:collapse;font-size:14px;margin:12px 0">
-      <thead><tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:8px">State</th><th style="text-align:left;padding:8px">Sample cities</th><th style="text-align:left;padding:8px">PIN prefix</th></tr></thead>
-      <tbody>
-        <tr><td style="padding:8px">Delhi</td><td style="padding:8px">New Delhi, Dwarka, Rohini</td><td style="padding:8px">110</td></tr>
-        <tr><td style="padding:8px">Karnataka</td><td style="padding:8px">Bengaluru, Mysuru, Hubli</td><td style="padding:8px">560</td></tr>
-        <tr><td style="padding:8px">Maharashtra</td><td style="padding:8px">Mumbai, Pune, Nagpur</td><td style="padding:8px">400</td></tr>
-        <tr><td style="padding:8px">Tamil Nadu</td><td style="padding:8px">Chennai, Coimbatore, Madurai</td><td style="padding:8px">600</td></tr>
-        <tr><td style="padding:8px">Telangana</td><td style="padding:8px">Hyderabad, Warangal, Karimnagar</td><td style="padding:8px">500</td></tr>
-      </tbody>
-    </table>
-
-    <p>For a dedicated Indian address page with locality formats and more detail, see the <a href="/generators/test-address-india">Indian address generator</a>.</p>
-
-    <h3>Why use test Indian addresses in testing?</h3>
-    <ul>
-      <li>Testing checkout and delivery forms that expect a 6-digit PIN code and a state picklist</li>
-      <li>Validating PIN-to-state or PIN-to-city logic in shipping and serviceability code</li>
-      <li>Seeding Indian e-commerce, logistics or food-delivery databases with realistic shipping addresses</li>
-      <li>Demo screenshots and sales decks that need believable Indian addresses without using real customer data</li>
+    <h3>Common uses</h3>
+    <ul class="check-list">
+      <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Testing address fields, validation and autocomplete</li>
+      <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Seeding e-commerce and logistics databases</li>
+      <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Demo screenshots and UI mockups</li>
+      <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Testing mapping and geolocation integrations</li>
     </ul>
 
-    <h3>Use cases</h3>
-    <ul>
-      <li>Testing address input forms and validation logic in web and mobile apps</li>
-      <li>Seeding e-commerce databases with fake customer shipping addresses</li>
-      <li>Generating demo data for logistics, delivery, or mapping applications</li>
-      <li>Creating realistic UI mockups for address-heavy interfaces</li>
-      <li>Testing geolocation and mapping API integrations</li>
-    </ul>
-
-    <h3>API access</h3>
-    <p>Generate addresses programmatically: <code>GET /api/v1/location/address?country=IN&count=20</code></p>
-    <p>GPS coordinates for a country: <code>GET /api/v1/location/coordinates?country=US&count=10</code></p>
-
-    <div class="faq-item"><div class="faq-q">Are these real addresses? <span class="faq-toggle">+</span></div><div class="faq-a">No. Addresses are randomly generated from pools of real street name patterns, genuine city names, and valid postal code ranges. They will not resolve to a real property on Google Maps or any mapping service.</div></div>
-    <div class="faq-item"><div class="faq-q">Why are ZIP/PIN codes in the right range? <span class="faq-toggle">+</span></div><div class="faq-a">The generator uses actual postal code ranges per state/region. For example, Delhi PIN codes start with 110, Bengaluru with 560, California ZIP codes fall in the 90000–96699 range. This makes the addresses pass basic format validation without being real.</div></div>
-    <div class="faq-item"><div class="faq-q">Can the generator make a test Indian address with a PIN code? <span class="faq-toggle">+</span></div><div class="faq-a">Yes. Choose India from the country list and click Generate. Each address has a 6-digit PIN code in the range for its state, plus a block, sector or colony number and a city. Use the CSV download to export up to 50 addresses at once.</div></div>
-    <div class="faq-item"><div class="faq-q">Can I get GPS coordinates with addresses? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — use the API endpoint <code>/api/v1/location/coordinates?country=IN</code> to get random GPS coordinates within a country's bounding box. The combined <code>/api/v1/record</code> endpoint returns both address and coordinates together.</div></div>
+    <h3>Use it from code</h3>
+    <p>Generate addresses through the public API, with no key needed:</p>
+    <div class="mono-block">GET /api/v1/location/address?country=IN&amp;count=20
+GET /api/v1/location/coordinates?country=US&amp;count=10</div>
   </div>
 
-  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
-    <a href="/generators/test-name" class="related-card"><h4>Test name generator</h4><p>Random person names</p></a>
-    <a href="/generators/test-profile" class="related-card"><h4>Full profile generator</h4><p>Name + address + contacts</p></a>
-    <a href="/generators/test-phone" class="related-card"><h4>Phone number generator</h4><p>US, India, UK formats</p></a>
-    <a href="/generators/iban" class="related-card"><h4>IBAN generator</h4><p>Bank account numbers</p></a>
-  </div></div>
-</div>
+  <section class="seo-content" style="padding-top:0">
+    <h2>Questions</h2>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="true">Are these real addresses? <span class="faq-toggle">−</span></button>
+      <div class="faq-a">No. Addresses are randomly assembled from street-name patterns, real city names and valid postal-code ranges. They will not resolve to a real property on a map.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">Why are the postal codes in the right range? <span class="faq-toggle">+</span></button>
+      <div class="faq-a">Each state or region uses its own postal range. Delhi PIN codes start with 110, Bengaluru with 560, and California ZIP codes fall between 90000 and 96699. That makes the output pass basic format checks without belonging to a real place.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">Can I get GPS coordinates with addresses? <span class="faq-toggle">+</span></button>
+      <div class="faq-a">Yes. <code>/api/v1/location/coordinates</code> returns random coordinates inside a country's bounding box. <code>/api/v1/record</code> returns an address and coordinates together.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button" aria-expanded="false">Can I use these addresses in production? <span class="faq-toggle">+</span></button>
+      <div class="faq-a">No. Use them only in test and development environments. Never use them for deliveries, verification or any real transaction.</div>
+    </div>
+  </section>
 
-<footer class="site-footer"><div class="footer-inner">
-  <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools.</p></div>
-  <div class="footer-links"><h5>Generators</h5><a href="/generators/test-address">Test address</a><a href="/generators/test-name">Test name</a><a href="/generators/test-profile">Full profile</a></div>
-  <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
-  <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
-</div><div class="footer-bottom"><p>© 2026 Toolpad. All addresses are fictional and for testing only.</p></div></footer>
+  <section class="related">
+    <h2>Related tools</h2>
+    <div class="related-grid">
+      <a class="related-card" href="/generators/test-address-india"><h4>Test address for India</h4><p>Indian addresses with PIN codes by state</p></a>
+      <a class="related-card" href="/generators/test-name"><h4>Test name generator</h4><p>Realistic names, including Indian pools</p></a>
+      <a class="related-card" href="/generators/test-profile"><h4>Full profile generator</h4><p>Name, contact details and address together</p></a>
+      <a class="related-card" href="/generators/test-phone"><h4>Phone number generator</h4><p>Formatted numbers for several countries</p></a>
+    </div>
+  </section>
+</main>
 
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
+      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-h">Generators</p>
+      <a href="/generators/test-name">Test name</a>
+      <a href="/generators/test-address">Test address</a>
+      <a href="/generators/imei">IMEI</a>
+      <a href="/generators/credit-card">Credit card</a>
+      <a href="/generators/password">Password</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-h">Tools</p>
+      <a href="/formatters/json">JSON formatter</a>
+      <a href="/converters/base64">Base64</a>
+      <a href="/converters/text-to-json">Text to JSON</a>
+      <a href="/generators/uuid">UUID</a>
+      <a href="/utilities/sip-calculator">SIP calculator</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-h">Info</p>
+      <a href="/api-docs">API docs</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Toolpad. All generated values are test data and do not belong to real people or devices.</p>
+    <p>Ads may set cookies. See the <a href="/privacy">Privacy policy</a>.</p>
+  </div>
+</footer>
+<script src="/scripts/main.js"></script>
 <script>
-const STREETS=['Main','Oak','Maple','Cedar','Elm','Washington','Park','Sunset','Willow','Broadway','Forest','River','Highland','Valley'];
-const STYPES=['Street','Avenue','Boulevard','Drive','Lane','Road','Court','Way','Terrace'];
-const US=[{s:'California',a:'CA',c:['Los Angeles','San Francisco','San Diego'],z:[90001,96699]},{s:'New York',a:'NY',c:['New York City','Buffalo','Albany'],z:[10001,14975]},{s:'Texas',a:'TX',c:['Houston','Dallas','Austin'],z:[73301,79999]},{s:'Florida',a:'FL',c:['Miami','Orlando','Tampa'],z:[32004,34997]},{s:'Illinois',a:'IL',c:['Chicago','Springfield','Naperville'],z:[60001,62999]}];
-const IN=[{s:'Karnataka',c:['Bengaluru','Mysuru','Hubli'],p:[560001,560100]},{s:'Maharashtra',c:['Mumbai','Pune','Nagpur'],p:[400001,400100]},{s:'Tamil Nadu',c:['Chennai','Coimbatore','Madurai'],p:[600001,600100]},{s:'Delhi',c:['New Delhi','Dwarka','Rohini'],p:[110001,110100]},{s:'Telangana',c:['Hyderabad','Warangal','Karimnagar'],p:[500001,500100]}];
-const UK=[{city:'London',pfx:'EC'},{city:'Manchester',pfx:'M'},{city:'Birmingham',pfx:'B'},{city:'Edinburgh',pfx:'EH'},{city:'Bristol',pfx:'BS'},{city:'Leeds',pfx:'LS'}];
-const SECTORS=['Sector','Block','Layout','Colony','Phase','Nagar'];
+(function () {
+  var STREETS = ['Maple', 'Oak', 'Cedar', 'Elm', 'Park', 'Willow', 'Highland', 'River', 'Sunset', 'Valley'];
+  var STYPES = ['Street', 'Avenue', 'Road', 'Lane', 'Drive', 'Court', 'Way'];
+  var US = [
+    { s: 'California', a: 'CA', c: ['Los Angeles', 'San Diego', 'Fresno'], z: [90001, 96699] },
+    { s: 'Texas', a: 'TX', c: ['Austin', 'Dallas', 'Houston'], z: [73301, 79999] },
+    { s: 'New York', a: 'NY', c: ['Albany', 'Buffalo', 'Rochester'], z: [10001, 14975] },
+    { s: 'Illinois', a: 'IL', c: ['Springfield', 'Naperville', 'Peoria'], z: [60001, 62999] }
+  ];
+  var IN = [
+    { s: 'Karnataka', c: ['Bengaluru', 'Mysuru', 'Hubli'], p: [560001, 560100], areas: ['Rose Garden Layout', 'Lotus Enclave', 'Sai Nagar', 'Green Park'] },
+    { s: 'Maharashtra', c: ['Mumbai', 'Pune', 'Nagpur'], p: [400001, 400100], areas: ['Shivaji Nagar', 'Lake View Colony', 'Sector 4'] },
+    { s: 'Tamil Nadu', c: ['Chennai', 'Coimbatore', 'Madurai'], p: [600001, 600100], areas: ['Anna Nagar', 'Gandhi Street', 'Block C'] },
+    { s: 'Delhi', c: ['New Delhi', 'Dwarka', 'Rohini'], p: [110001, 110100], areas: ['Sector 14', 'Block B', 'Pocket 3'] },
+    { s: 'Telangana', c: ['Hyderabad', 'Warangal', 'Karimnagar'], p: [500001, 500100], areas: ['Jubilee Hills', 'Banjara Colony', 'Phase 2'] }
+  ];
+  var UK = [
+    { city: 'London', pfx: 'EC' }, { city: 'Manchester', pfx: 'M' }, { city: 'Birmingham', pfx: 'B' },
+    { city: 'Edinburgh', pfx: 'EH' }, { city: 'Bristol', pfx: 'BS' }, { city: 'Leeds', pfx: 'LS' }
+  ];
 
-function ri(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
-function rp(a){return a[Math.floor(Math.random()*a.length)];}
-function street(){return `${ri(1,9999)} ${rp(STREETS)} ${rp(STYPES)}`;}
+  var country = 'US';
+  var count = 8;
+  var rows = [];
 
-function genAddr(country){
-  if(country==='IN'){
-    const st=rp(IN);const city=rp(st.c);const pin=ri(st.p[0],st.p[1]);
-    const sec=`${rp(SECTORS)} ${ri(1,50)}`;
-    return {line1:`${ri(1,999)}, ${sec}`,city,region:st.s,postal:String(pin),country:'India',formatted:`${ri(1,999)}, ${sec}, ${city}, ${st.s} - ${pin}`};
-  }
-  if(country==='UK'){
-    const a=rp(UK);
-    const pc=`${a.pfx}${ri(1,9)} ${ri(1,9)}${String.fromCharCode(65+ri(0,25))}${String.fromCharCode(65+ri(0,25))}`;
-    return {line1:street(),city:a.city,region:'',postal:pc,country:'United Kingdom',formatted:`${street()}, ${a.city}, ${pc}`};
-  }
-  const st=rp(US);const city=rp(st.c);const zip=String(ri(st.z[0],st.z[1])).padStart(5,'0');
-  const apt=Math.random()>0.7?`, Apt ${ri(1,999)}`:'';
-  return {line1:street()+apt,city,region:`${st.s} (${st.a})`,postal:zip,country:'United States',formatted:`${street()}, ${city}, ${st.a} ${zip}`};
-}
+  function ri(a, b) { return Math.floor(Math.random() * (b - a + 1)) + a; }
+  function rp(a) { return a[Math.floor(Math.random() * a.length)]; }
+  function letter() { return String.fromCharCode(65 + ri(0, 25)); }
 
-function generate(){
-  const country=document.getElementById('countrySel').value;
-  const count=parseInt(document.getElementById('countSel').value);
-  const fmt=document.getElementById('fmtSel').value;
-  const results=Array.from({length:count},()=>genAddr(country));
-  window._addrs=results;
-  const out=document.getElementById('outputArea');
-  if(fmt==='cards'){
-    out.innerHTML=`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px">${results.map(r=>`
-      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px">
-        <div style="font-size:13px;font-weight:600;margin-bottom:4px">${r.line1}</div>
-        <div style="font-size:13px;color:var(--slate-m)">${r.city}${r.region?', '+r.region:''}</div>
-        <div style="font-size:13px;color:var(--slate-m)">${r.postal}</div>
-        <div style="font-size:12px;color:var(--slate-l);margin-top:4px">${r.country}</div>
-      </div>`).join('')}</div>`;
-  } else {
-    out.innerHTML=`<div class="workspace-panel"><table style="width:100%;border-collapse:collapse;font-size:12px"><thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)"><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">Street</th><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">City</th><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">Region</th><th style="padding:8px 12px;text-align:left;color:var(--slate-m)">Postal</th></tr></thead><tbody>${results.map((r,i)=>`<tr style="border-bottom:1px solid var(--border);${i%2?'background:var(--bg)':''}"><td style="padding:8px 12px">${r.line1}</td><td style="padding:8px 12px">${r.city}</td><td style="padding:8px 12px">${r.region}</td><td style="padding:8px 12px;font-family:monospace">${r.postal}</td></tr>`).join('')}</tbody></table></div>`;
+  function make() {
+    if (country === 'IN') {
+      var st = rp(IN), city = rp(st.c);
+      var line1 = 'Flat ' + ri(1, 20) + letter() + ', ' + rp(st.areas);
+      var line2 = city + ', ' + st.s + ' ' + ri(st.p[0], st.p[1]);
+      return { lines: [line1, line2], country: 'India', copy: line1 + ', ' + line2 };
+    }
+    if (country === 'UK') {
+      var a = rp(UK);
+      var pc = a.pfx + ri(1, 9) + ' ' + ri(1, 9) + letter() + letter();
+      var s1 = ri(1, 199) + ' ' + rp(STREETS) + ' ' + rp(STYPES);
+      var s2 = a.city + ' ' + pc;
+      return { lines: [s1, s2], country: 'United Kingdom', copy: s1 + ', ' + s2 };
+    }
+    var u = rp(US), uc = rp(u.c), zip = String(ri(u.z[0], u.z[1])).padStart(5, '0');
+    var v1 = ri(1, 9999) + ' ' + rp(STREETS) + ' ' + rp(STYPES);
+    var v2 = uc + ', ' + u.a + ' ' + zip;
+    return { lines: [v1, v2], country: 'United States', copy: v1 + ', ' + v2 };
   }
-}
-document.getElementById('genBtn').addEventListener('click',generate);
-document.getElementById('copyBtn').addEventListener('click',()=>{
-  if(!window._addrs)return;
-  navigator.clipboard?.writeText(window._addrs.map(r=>r.formatted).join('\n'));
-  document.getElementById('copyBtn').textContent='Copied!';
-  setTimeout(()=>document.getElementById('copyBtn').textContent='Copy all',2000);
-});
-document.getElementById('csvBtn').addEventListener('click',()=>{
-  if(!window._addrs)return;
-  const csv='line1,city,region,postal,country\n'+window._addrs.map(r=>`"${r.line1}","${r.city}","${r.region}","${r.postal}","${r.country}"`).join('\n');
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='fake_addresses.csv';a.click();
-});
-document.querySelectorAll('.faq-a').forEach(a=>a.style.display='none');
-document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{const a=q.nextElementSibling,open=a.style.display==='block';a.style.display=open?'none':'block';q.querySelector('.faq-toggle').textContent=open?'+':'−';}));
-document.getElementById('themeToggle').addEventListener('click',()=>{const d=document.documentElement,dark=d.getAttribute('data-theme')==='dark';d.setAttribute('data-theme',dark?'':'dark');document.getElementById('themeToggle').textContent=dark?'☀':'🌙';localStorage.setItem('toolpad-theme',dark?'':'dark');});
-generate();
+
+  function countryName() {
+    return country === 'IN' ? 'India' : country === 'UK' ? 'United Kingdom' : 'United States';
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function render() {
+    rows = [];
+    for (var i = 0; i < count; i++) rows.push(make());
+    document.getElementById('summary').textContent = count + ' sample addresses · ' + countryName();
+    document.getElementById('results').innerHTML = rows.map(function (r, idx) {
+      return '<article class="result-card">' +
+        '<div class="rc-line">' + esc(r.lines[0]) + '</div>' +
+        '<div class="rc-line">' + esc(r.lines[1]) + '</div>' +
+        '<div class="rc-sub">' + esc(r.country) + '</div>' +
+        '<button class="btn btn-sm" type="button" data-copy="' + idx + '">Copy</button>' +
+        '</article>';
+    }).join('');
+  }
+
+  function setPressed(group, attr, value) {
+    group.querySelectorAll('.seg').forEach(function (b) {
+      var on = String(b.getAttribute(attr)) === String(value);
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+  }
+
+  function copyText(text, button) {
+    var done = function () {
+      var old = button.textContent;
+      button.textContent = 'Copied';
+      setTimeout(function () { button.textContent = old; }, 1600);
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { button.textContent = 'Select and copy'; });
+      } else {
+        button.textContent = 'Select and copy';
+      }
+    } catch (e) { button.textContent = 'Select and copy'; }
+  }
+
+  function download(name, text) {
+    try {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([text], { type: 'text/csv' }));
+      a.download = name;
+      a.click();
+    } catch (e) {}
+  }
+
+  document.getElementById('countrySeg').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-country]');
+    if (!b) return;
+    country = b.getAttribute('data-country');
+    setPressed(this, 'data-country', country);
+    render();
+  });
+  document.getElementById('countSeg').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-count]');
+    if (!b) return;
+    count = parseInt(b.getAttribute('data-count'), 10);
+    setPressed(this, 'data-count', count);
+    render();
+  });
+  document.getElementById('genBtn').addEventListener('click', render);
+  document.getElementById('results').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-copy]');
+    if (!b) return;
+    copyText(rows[parseInt(b.getAttribute('data-copy'), 10)].copy, b);
+  });
+  document.getElementById('copyBtn').addEventListener('click', function () {
+    copyText(rows.map(function (r) { return r.copy; }).join('\n'), this);
+  });
+  document.getElementById('csvBtn').addEventListener('click', function () {
+    var lines = ['line1,line2,country'].concat(rows.map(function (r) {
+      return '"' + r.lines[0] + '","' + r.lines[1] + '","' + r.country + '"';
+    }));
+    download('test_addresses.csv', lines.join('\n'));
+  });
+
+  render();
+})();
 </script>
 </body>
 </html>
