@@ -130,10 +130,11 @@
 <div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 
 <div class="tool-page">
-  <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Test profile generator</div>
+  <div class="page-head">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Test profile generator</nav>
     <h1>Test person generator</h1>
-    <p class="tool-desc">Generate complete test person profiles — full name, email, phone, address, username, and date of birth — all consistent and realistic in one click. Bulk generate for US, India, or UK. For software testing only.</p>
+    <p style="margin-top:12px"><span class="badge-test">Test data only</span></p>
+    <p class="lede">Generate complete test person profiles — full name, email, phone, address, username, and date of birth — all consistent and realistic in one click. Bulk generate for US, India, or UK. For software testing only.</p>
   </div>
 
   <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
@@ -161,7 +162,7 @@
 
   <div id="profileGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:24px"></div>
 
-  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+  <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
   <div class="seo-content">
     <h2>What does a test person profile include?</h2>
@@ -275,8 +276,8 @@ function profileCard(p){
   const initials = p.firstName[0]+p.lastName[0];
   const color = AVATAR_COLORS[Math.floor(Math.random()*AVATAR_COLORS.length)];
   return `<div style="background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden">
-    <div style="background:${color}18;padding:20px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--border)">
-      <div style="width:44px;height:44px;border-radius:50%;background:${color};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0">${initials}</div>
+    <div style="background:${color}18;padding:20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;border-bottom:1px solid var(--border)">
+      <div style="width:44px;height:44px;border-radius:50%;background:${color};color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0">${initials}</div>
       <div>
         <div style="font-weight:700;font-size:15px;font-family:'Inter',sans-serif">${p.fullName}</div>
         <div style="font-size:12px;color:var(--slate-m)">@${p.username} · ${p.gender}</div>

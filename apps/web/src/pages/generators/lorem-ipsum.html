@@ -126,10 +126,11 @@
 <main id="main">
 <div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 <div class="tool-page">
-  <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Lorem Ipsum generator</div>
+  <div class="page-head">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Lorem Ipsum generator</nav>
     <h1>Lorem Ipsum generator</h1>
-    <p class="tool-desc">Generate Lorem Ipsum placeholder text for wireframes, mockups, and design prototypes. Choose paragraphs, sentences, words, or lists. Classic Lorem Ipsum or randomised variants available.</p>
+    <p style="margin-top:12px"><span class="badge-test">Test data only</span></p>
+    <p class="lede">Generate Lorem Ipsum placeholder text for wireframes, mockups, and design prototypes. Choose paragraphs, sentences, words, or lists. Classic Lorem Ipsum or randomised variants available.</p>
   </div>
 
   <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
@@ -146,7 +147,7 @@
       <option value="10">10</option>
       <option value="20">20</option>
     </select>
-    <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--slate-m);cursor:pointer;padding:0 4px">
+    <label style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:var(--slate-m);cursor:pointer;padding:0 4px">
       <input type="checkbox" id="startClassic" checked style="accent-color:var(--orange)"> Start with "Lorem ipsum..."
     </label>
     <button class="btn btn-primary" id="genBtn">Generate</button>
@@ -169,7 +170,7 @@
     <button class="btn btn-sm" id="btnDownload">Download .txt</button>
   </div>
 
-  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+  <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
   <div class="seo-content">
     <h2>What is Lorem Ipsum?</h2>

@@ -124,22 +124,22 @@
 </header>
 <main id="main"><div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 <div class="tool-page">
-  <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › JSON to XML</div>
+  <div class="page-head">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › JSON to XML</nav>
     <h1>JSON to XML converter</h1>
-    <p class="tool-desc">Convert JSON objects to well-formed XML documents. JSON keys become XML element names, values become text content. Runs entirely in your browser.</p>
+    <p class="lede">Convert JSON objects to well-formed XML documents. JSON keys become XML element names, values become text content. Runs entirely in your browser.</p>
   </div>
-  <div style="display:flex;gap:8px;margin-bottom:16px">
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
     <button class="btn btn-primary" id="btnConvert">Convert to XML</button>
     <button class="btn btn-sm" id="btnSample">Sample</button>
     <button class="btn btn-sm" id="btnClear">Clear</button>
   </div>
   <div class="tool-workspace">
     <div class="workspace-panel"><div class="panel-header"><h3>JSON input</h3></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="input" placeholder="{&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:30}"></textarea></div></div>
-    <div class="workspace-panel"><div class="panel-header"><h3>XML output</h3><div style="display:flex;gap:6px"><button class="btn btn-sm" id="btnCopy">Copy</button><button class="btn btn-sm" id="btnDl">Download</button></div></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="output" readonly></textarea></div></div>
+    <div class="workspace-panel"><div class="panel-header"><h3>XML output</h3><div style="display:flex;flex-wrap:wrap;gap:6px"><button class="btn btn-sm" id="btnCopy">Copy</button><button class="btn btn-sm" id="btnDl">Download</button></div></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="output" readonly></textarea></div></div>
   </div>
   <div id="st" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
-  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+  <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
   <div class="seo-content">
     <h2>JSON to XML conversion</h2>
     <p>This converter transforms JSON object keys into XML element names and values into text content. Nested objects become nested XML elements. Arrays are represented as repeated elements.</p>

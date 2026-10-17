@@ -169,26 +169,26 @@
         <p class="field-label">Estimated total value</p>
         <p id="maturity" class="mono-value" style="font-family:var(--font-mono);font-size:clamp(30px,4.6vw,44px);font-weight:500;letter-spacing:-0.02em;margin:6px 0 14px" aria-live="polite">—</p>
 
-        <div style="height:10px;border-radius:999px;overflow:hidden;display:flex;background:var(--sunken)" aria-hidden="true">
+        <div style="height:10px;border-radius:999px;overflow:hidden;display:flex;flex-wrap:wrap;background:var(--sunken)" aria-hidden="true">
           <div id="barInvested" style="background:var(--viz1);width:50%"></div>
           <div id="barReturns" style="background:var(--accent);width:50%"></div>
         </div>
 
         <div class="result-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));margin-top:16px">
           <div class="result-card">
-            <p class="rc-sub" style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:3px;background:var(--viz1)"></span>Amount invested</p>
+            <p class="rc-sub" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:3px;background:var(--viz1)"></span>Amount invested</p>
             <p id="invested" class="rc-line" style="font-size:18px;margin-top:4px">—</p>
           </div>
           <div class="result-card">
-            <p class="rc-sub" style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:3px;background:var(--accent)"></span>Estimated returns</p>
+            <p class="rc-sub" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="width:10px;height:10px;border-radius:3px;background:var(--accent)"></span>Estimated returns</p>
             <p id="returns" class="rc-line" style="font-size:18px;margin-top:4px">—</p>
           </div>
         </div>
 
         <div style="margin-top:24px">
           <p class="field-label">Growth year by year</p>
-          <div id="chart" role="img" aria-label="Stacked bars showing amount invested and estimated returns for each year" style="display:flex;align-items:flex-end;gap:3px;height:180px;margin-top:12px;border-bottom:1px solid var(--line2);padding-bottom:0"></div>
-          <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-top:6px"><span>Year 1</span><span id="chartEnd">Year 15</span></div>
+          <div id="chart" role="img" aria-label="Stacked bars showing amount invested and estimated returns for each year" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:3px;height:180px;margin-top:12px;border-bottom:1px solid var(--line2);padding-bottom:0"></div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;font-size:12px;color:var(--ink3);margin-top:6px"><span>Year 1</span><span id="chartEnd">Year 15</span></div>
         </div>
 
         <p class="note" style="margin-top:20px">Estimates only. Returns are not guaranteed, and fees, taxes and inflation are not included. This is not financial advice.</p>
@@ -340,7 +340,7 @@ n = years × 12</div>
       var total = v.invested + v.returns;
       var h = max > 0 ? (total / max) * 100 : 0;
       var investedPct = total > 0 ? (v.invested / total) * 100 : 100;
-      return '<div title="Year ' + (idx + 1) + ': ' + money(total) + '" style="flex:1 1 0;min-width:4px;height:' + h.toFixed(2) + '%;display:flex;flex-direction:column;border-radius:3px 3px 0 0;overflow:hidden">' +
+      return '<div title="Year ' + (idx + 1) + ': ' + money(total) + '" style="flex:1 1 0;min-width:4px;height:' + h.toFixed(2) + '%;display:flex;flex-wrap:wrap;flex-direction:column;border-radius:3px 3px 0 0;overflow:hidden">' +
         '<div style="flex:' + (100 - investedPct).toFixed(2) + ' 0 0;background:var(--accent)"></div>' +
         '<div style="flex:' + investedPct.toFixed(2) + ' 0 0;background:var(--viz1)"></div>' +
         '</div>';

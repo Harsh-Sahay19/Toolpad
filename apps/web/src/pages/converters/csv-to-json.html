@@ -124,22 +124,22 @@
 </header>
 <main id="main"><div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 <div class="tool-page">
-  <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › CSV to JSON</div>
+  <div class="page-head">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/converters">Converters</a> › CSV to JSON</nav>
     <h1>CSV to JSON converter</h1>
-    <p class="tool-desc">Convert CSV text to a JSON array. The first row is used as headers. Numbers and booleans are automatically typed. Runs entirely in your browser.</p>
+    <p class="lede">Convert CSV text to a JSON array. The first row is used as headers. Numbers and booleans are automatically typed. Runs entirely in your browser.</p>
   </div>
-  <div style="display:flex;gap:8px;margin-bottom:16px">
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
     <button class="btn btn-primary" id="btnConvert">Convert to JSON</button>
     <button class="btn btn-sm" id="btnSample">Sample</button>
     <button class="btn btn-sm" id="btnClear">Clear</button>
   </div>
   <div class="tool-workspace">
     <div class="workspace-panel"><div class="panel-header"><h3>CSV input</h3></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="input" placeholder="name,age,city&#10;John,30,New York&#10;Jane,25,London"></textarea></div></div>
-    <div class="workspace-panel"><div class="panel-header"><h3>JSON output</h3><div style="display:flex;gap:6px"><button class="btn btn-sm" id="btnCopy">Copy</button><button class="btn btn-sm" id="btnDl">Download</button></div></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="output" readonly></textarea></div></div>
+    <div class="workspace-panel"><div class="panel-header"><h3>JSON output</h3><div style="display:flex;flex-wrap:wrap;gap:6px"><button class="btn btn-sm" id="btnCopy">Copy</button><button class="btn btn-sm" id="btnDl">Download</button></div></div><div class="panel-body" style="padding:0"><textarea class="output-area large" id="output" readonly></textarea></div></div>
   </div>
   <div id="st" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
-  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+  <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
   <div class="seo-content">
     <h2>How CSV to JSON works</h2>
     <p>The first row of your CSV is treated as the header row and becomes the JSON object keys. Each subsequent row becomes a JSON object. Numbers and boolean values are automatically converted to their correct types.</p>

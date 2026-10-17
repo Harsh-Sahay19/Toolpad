@@ -126,10 +126,11 @@
 <main id="main">
 <div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 <div class="tool-page">
-  <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Color converter</div>
+  <div class="page-head">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › Color converter</nav>
     <h1>Color converter</h1>
-    <p class="tool-desc">Convert color values between HEX, RGB, and HSL formats instantly. Enter a value in any format, pick from the color wheel, or paste a CSS color — all three representations update in real time.</p>
+    <p style="margin-top:12px"><span class="badge-test">Test data only</span></p>
+    <p class="lede">Convert color values between HEX, RGB, and HSL formats instantly. Enter a value in any format, pick from the color wheel, or paste a CSS color — all three representations update in real time.</p>
   </div>
 
   <!-- Color picker + preview -->
@@ -137,7 +138,7 @@
     <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap">
 
       <!-- Color swatch + picker -->
-      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+      <div style="display:flex;flex-wrap:wrap;flex-direction:column;align-items:center;gap:12px">
         <div id="colorSwatch" style="width:120px;height:120px;border-radius:16px;border:1px solid var(--border);background:#F97316;box-shadow:0 4px 16px rgba(0,0,0,.12)"></div>
         <input type="color" id="colorPicker" value="#F97316"
           style="width:120px;height:36px;border:1px solid var(--border-2);border-radius:8px;cursor:pointer;padding:2px">
@@ -147,7 +148,7 @@
       <div style="flex:1;min-width:260px">
         <div style="margin-bottom:16px">
           <label style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--slate-l);display:block;margin-bottom:6px">HEX</label>
-          <div style="display:flex;gap:8px">
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
             <input type="text" id="hexInput" value="#F97316" placeholder="#RRGGBB"
               style="flex:1;padding:10px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:monospace;font-size:15px;font-weight:600">
             <button class="btn btn-sm" onclick="copyVal('hexInput')">Copy</button>
@@ -155,7 +156,7 @@
         </div>
         <div style="margin-bottom:16px">
           <label style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--slate-l);display:block;margin-bottom:6px">RGB</label>
-          <div style="display:flex;gap:8px">
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
             <input type="text" id="rgbInput" value="rgb(249, 115, 22)" placeholder="rgb(R, G, B)"
               style="flex:1;padding:10px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:monospace;font-size:14px">
             <button class="btn btn-sm" onclick="copyVal('rgbInput')">Copy</button>
@@ -163,13 +164,13 @@
         </div>
         <div style="margin-bottom:16px">
           <label style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--slate-l);display:block;margin-bottom:6px">HSL</label>
-          <div style="display:flex;gap:8px">
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
             <input type="text" id="hslInput" value="hsl(24, 95%, 53%)" placeholder="hsl(H, S%, L%)"
               style="flex:1;padding:10px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:monospace;font-size:14px">
             <button class="btn btn-sm" onclick="copyVal('hslInput')">Copy</button>
           </div>
         </div>
-        <div style="display:flex;gap:8px">
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
           <button class="btn btn-primary btn-sm" id="btnConvert">Convert all</button>
           <button class="btn btn-sm" id="btnRandom">Random color</button>
         </div>
@@ -183,7 +184,7 @@
     <div id="cssSnippet">color: #F97316; /* rgb(249, 115, 22) — hsl(24, 95%, 53%) */</div>
   </div>
 
-  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+  <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
   <div class="seo-content">
     <h2>Understanding color formats in web development</h2>

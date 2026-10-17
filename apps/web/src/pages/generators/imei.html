@@ -159,14 +159,15 @@
 <div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 
 <div class="tool-page">
-  <div class="tool-page-header">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › IMEI generator</div>
+  <div class="page-head">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › IMEI generator</nav>
     <h1>IMEI generator &amp; validator</h1>
-    <p class="tool-desc">Generate structurally valid 15-digit IMEI numbers using real TAC prefixes from major manufacturers, or validate any existing IMEI number instantly. All generated IMEIs pass Luhn checksum validation. For software testing and development only.</p>
+    <p style="margin-top:12px"><span class="badge-test">Test data only</span></p>
+    <p class="lede">Generate structurally valid 15-digit IMEI numbers using real TAC prefixes from major manufacturers, or validate any existing IMEI number instantly. All generated IMEIs pass Luhn checksum validation. For software testing and development only.</p>
   </div>
 
   <!-- Tab switcher -->
-  <div style="display:flex;gap:4px;margin-bottom:20px;background:var(--bg);border-radius:var(--radius);padding:4px;border:1px solid var(--border);width:fit-content">
+  <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:20px;background:var(--bg);border-radius:var(--radius);padding:4px;border:1px solid var(--border);width:fit-content">
     <button id="tabGenerate" onclick="switchTab('generate')"
       style="padding:8px 20px;border-radius:9px;border:none;font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer;background:var(--orange);color:white;transition:all .15s">
       Generate
@@ -228,7 +229,7 @@
     <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;margin-bottom:24px">
       <div style="margin-bottom:16px">
         <label style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--slate-l);display:block;margin-bottom:8px">Enter IMEI to validate</label>
-        <div style="display:flex;gap:8px">
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
           <input type="text" id="validateInput" placeholder="Enter 15-digit IMEI number e.g. 358417091234567"
             maxlength="20"
             style="flex:1;padding:10px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:monospace;font-size:16px;letter-spacing:1px">
@@ -239,8 +240,8 @@
       </div>
 
       <div id="validateResult" style="display:none">
-        <div id="validateStatus" style="padding:14px 18px;border-radius:10px;font-size:14px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:10px"></div>
-        <div id="validateDetails" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px"></div>
+        <div id="validateStatus" style="padding:14px 18px;border-radius:10px;font-size:14px;font-weight:600;margin-bottom:16px;display:flex;flex-wrap:wrap;align-items:center;gap:10px"></div>
+        <div id="validateDetails" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px;font-size:13px"></div>
       </div>
 
       <!-- Bulk validate -->
@@ -254,7 +255,7 @@
     </div>
   </div>
 
-  <div class="ad-slot" style="height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+  <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
   <!-- SEO content -->
   <div class="seo-content">
@@ -537,7 +538,7 @@ document.getElementById('bulkValidateBtn').addEventListener('click', function() 
   document.getElementById('bulkResults').innerHTML =
     '<div style="margin-bottom:8px;font-size:13px;color:var(--slate-m)">' + valid + ' valid, ' + (results.length - valid) + ' invalid out of ' + results.length + ' IMEIs</div>' +
     results.map(function(r) {
-      return '<div style="display:flex;align-items:center;gap:10px;padding:6px 10px;border-radius:6px;margin-bottom:4px;background:var(--bg);font-size:12px">' +
+      return '<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:6px 10px;border-radius:6px;margin-bottom:4px;background:var(--bg);font-size:12px">' +
         '<span style="font-family:monospace;flex:1">' + r.imei + '</span>' +
         (r.valid
           ? '<span style="background:#D1FAE5;color:#065F46;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:700">✓ Valid</span>'

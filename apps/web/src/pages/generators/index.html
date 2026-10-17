@@ -124,112 +124,42 @@
   </div>
 </header>
 <main id="main">
-
-<div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
-
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">Data Generators</div>
-    <h1 class="hero-title">Generate realistic test data</h1>
-    <p class="hero-sub">Luhn-valid, checksum-correct, structurally realistic fake data for testing and development. All free, no signup, bulk export.</p>
-    <div class="hero-stats"><span>12 generators</span><span class="sep">·</span><span>REST API available</span><span class="sep">·</span><span>CSV &amp; JSON export</span></div>
-  </div>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › Generators</nav>
+<div class="page-head" style="padding-top:12px">
+  <h1>Generators</h1>
+  <p class="lede">Generate realistic test data: names, emails, phone numbers, addresses, card and bank numbers, device identifiers and more. Every value is for testing only.</p>
 </div>
-
-<div class="main-content">
-
-  <div class="tool-section">
-    <div class="section-header">
-      <div class="section-tag">Personal</div>
-      <h2>People &amp; identity</h2>
-      <p>Generate realistic fake people — names, email addresses, phone numbers, and complete profiles.</p>
+<section class="section" style="padding-top:8px">
+  <h2 class="section-tag" style="margin-top:36px">Personal</h2>
+    <div class="card-grid">
+      <a class="card" href="/generators/test-name"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">NAME</span></div><h3>Test name generator</h3><p>Realistic test names, with Indian regional pools.</p></a>
+      <a class="card" href="/generators/test-email"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">MAIL</span></div><h3>Test email generator</h3><p>Test email addresses for signup and form testing.</p></a>
+      <a class="card" href="/generators/test-phone"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">TEL</span></div><h3>Phone number generator</h3><p>Formatted test phone numbers for several countries.</p></a>
+      <a class="card" href="/generators/test-profile"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">USER</span></div><h3>Full profile generator</h3><p>A complete test person with name, contact and address.</p></a>
+      <a class="card" href="/generators/test-address"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">ADDR</span></div><h3>Test address generator</h3><p>Test postal addresses for the US, India and the UK.</p></a>
+      <a class="card" href="/generators/test-address-india"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">PIN</span></div><h3>Test address for India</h3><p>Indian test addresses with PIN codes by state.</p></a>
     </div>
-    <div class="tool-grid">
-      <a href="/generators/test-name" class="tool-card tool-card--featured" style="text-decoration:none">
-        <div class="tool-icon"></div>
-        <div class="tool-info"><h4>Test name generator</h4><p>Random names from US, India, UK and more. Male, female, or any gender.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span><span class="badge badge-bulk">Bulk</span></div>
-      </a>
-      <a href="/generators/test-email" class="tool-card" style="text-decoration:none">
-        <div class="tool-icon">✉️</div>
-        <div class="tool-info"><h4>Test email generator</h4><p>Realistic email addresses in multiple styles and domains.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span></div>
-      </a>
-      <a href="/generators/test-phone" class="tool-card" style="text-decoration:none">
-        <div class="tool-icon"></div>
-        <div class="tool-info"><h4>Phone number generator</h4><p>Valid-format numbers for US, India, UK, Australia and Germany.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span></div>
-      </a>
-      <a href="/generators/test-profile" class="tool-card" style="text-decoration:none">
-        <div class="tool-icon"></div>
-        <div class="tool-info"><h4>Full profile generator</h4><p>Complete test person — name, email, phone, address and DOB together.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span><span class="badge badge-bulk">Bulk</span></div>
-      </a>
-      <a href="/generators/test-address" class="tool-card" style="text-decoration:none">
-        <div class="tool-icon"></div>
-        <div class="tool-info"><h4>Test address generator</h4><p>Postal addresses for US, India and UK with valid ZIP and PIN codes.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span><span class="badge badge-bulk">Bulk</span></div>
-      </a>
+  <h2 class="section-tag" style="margin-top:36px">Financial</h2>
+    <div class="card-grid">
+      <a class="card" href="/generators/credit-card"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">CARD</span></div><h3>Credit card generator</h3><p>Luhn-valid test card numbers for payment flows.</p></a>
+      <a class="card" href="/generators/iban"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">IBAN</span></div><h3>IBAN generator</h3><p>MOD-97-valid test IBANs for GB, DE and FR.</p></a>
     </div>
-  </div>
-
-  <div class="tool-section">
-    <div class="section-header">
-      <div class="section-tag">Device &amp; Network</div>
-      <h2>Identifiers &amp; addresses</h2>
-      <p>Generate structurally valid device and network identifiers — all checksums correct.</p>
+  <h2 class="section-tag" style="margin-top:36px">Device &amp; network</h2>
+    <div class="card-grid">
+      <a class="card" href="/generators/imei"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">IMEI</span></div><h3>IMEI generator</h3><p>Luhn-valid test IMEI numbers, and a validator.</p></a>
+      <a class="card" href="/generators/imsi"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">IMSI</span></div><h3>IMSI generator</h3><p>Test IMSI numbers with operator MCC-MNC codes.</p></a>
+      <a class="card" href="/generators/mac-address"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">MAC</span></div><h3>MAC address generator</h3><p>MAC addresses with real vendor prefixes.</p></a>
+      <a class="card" href="/generators/ip-address"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">IP</span></div><h3>IP address generator</h3><p>IPv4 and IPv6 addresses for network testing.</p></a>
+      <a class="card" href="/generators/uuid"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">UUID</span></div><h3>UUID generator</h3><p>RFC 4122 UUIDs, v4 and v1, up to 1000 at once.</p></a>
     </div>
-    <div class="tool-grid">
-      <a href="/generators/imei" class="tool-card tool-card--featured" style="text-decoration:none">
-        <div class="tool-icon"></div>
-        <div class="tool-info"><h4>IMEI generator</h4><p>Luhn-valid 15-digit IMEI numbers with real TAC prefixes.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span><span class="badge badge-bulk">Bulk</span></div>
-      </a>
-      <a href="/generators/uuid" class="tool-card tool-card--featured" style="text-decoration:none">
-        <div class="tool-icon"></div>
-        <div class="tool-info"><h4>UUID generator</h4><p>RFC 4122 compliant UUID v4 and v1. Bulk generate up to 1000.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span><span class="badge badge-bulk">Bulk</span></div>
-      </a>
-      <a href="/generators/mac-address" class="tool-card" style="text-decoration:none">
-        <div class="tool-icon"></div>
-        <div class="tool-info"><h4>MAC address generator</h4><p>Real OUI prefixes. Choose separator format.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span></div>
-      </a>
-      <a href="/generators/ip-address" class="tool-card" style="text-decoration:none">
-        <div class="tool-icon"></div>
-        <div class="tool-info"><h4>IP address generator</h4><p>Public, private or loopback IPv4 and IPv6 addresses.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span></div>
-      </a>
-      <a href="/generators/imsi" class="tool-card" style="text-decoration:none">
-        <div class="tool-icon"></div>
-        <div class="tool-info"><h4>IMSI generator</h4><p>Real MCC-MNC codes for AT&T, Jio, EE and more.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span></div>
-      </a>
+  <h2 class="section-tag" style="margin-top:36px">Other</h2>
+    <div class="card-grid">
+      <a class="card" href="/generators/password"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">PASS</span></div><h3>Password generator</h3><p>Strong random passwords, generated in your browser.</p></a>
+      <a class="card" href="/generators/lorem-ipsum"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">TEXT</span></div><h3>Lorem ipsum generator</h3><p>Placeholder paragraphs, sentences, words or lists.</p></a>
+      <a class="card" href="/generators/color-converter"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">HEX</span></div><h3>Color converter</h3><p>Convert colours between HEX, RGB and HSL.</p></a>
+      <a class="card" href="/generators/unix-timestamp"><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px"><span class="tool-tag">TIME</span></div><h3>Unix timestamp converter</h3><p>Convert Unix timestamps to dates and back.</p></a>
     </div>
-  </div>
-
-  <div class="tool-section">
-    <div class="section-header">
-      <div class="section-tag">Financial</div>
-      <h2>Financial identifiers</h2>
-      <p>Generate test financial data — all checksum algorithms correctly implemented.</p>
-    </div>
-    <div class="tool-grid">
-      <a href="/generators/credit-card" class="tool-card" style="text-decoration:none">
-        <div class="tool-icon"></div>
-        <div class="tool-info"><h4>Credit card generator</h4><p>Luhn-valid Visa, Mastercard, Amex, Discover numbers.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span></div>
-      </a>
-      <a href="/generators/iban" class="tool-card" style="text-decoration:none">
-        <div class="tool-icon"></div>
-        <div class="tool-info"><h4>IBAN generator</h4><p>MOD-97 valid IBANs for UK, Germany and France.</p></div>
-        <div class="tool-badges"><span class="badge badge-free">Free</span><span class="badge badge-api">API</span></div>
-      </a>
-    </div>
-  </div>
-
-</div>
-
+</section>
 </main>
 <footer class="site-footer">
   <div class="container footer-grid">
@@ -262,7 +192,7 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© 2026 Toolpad. All generated values are test data and do not belong to real people or devices.</p>
+    <p>&#169; 2026 Toolpad. All generated values are test data and do not belong to real people or devices.</p>
     <p>Ads may set cookies. See the <a href="/privacy">Privacy policy</a>.</p>
   </div>
 </footer>
