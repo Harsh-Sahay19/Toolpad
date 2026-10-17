@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Toolpad</title>
+<meta name="description" content="Contact Toolpad for bug reports, feedback and feature requests. Email hello@toolpad.in or find us on GitHub.">
+<link rel="canonical" href="https://toolpad.in/contact">
+<meta property="og:title" content="Contact Toolpad">
+<meta property="og:description" content="Contact Toolpad for bug reports, feedback and feature requests. Email hello@toolpad.in or find us on GitHub.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/main.css">
+</head>
+<body><header class="navbar"><div class="nav-inner">
+  <a href="/" class="nav-logo"><span class="logo-icon">🔧</span><span class="logo-text">Toolpad</span></a>
+  <nav class="nav-links">
+    <a href="/generators" class="nav-link">Generators</a>
+    <a href="/formatters" class="nav-link">Formatters</a>
+    <a href="/converters" class="nav-link">Converters</a>
+    <a href="/api-docs" class="nav-link">API</a>
+  </nav>
+  <button class="theme-toggle" id="themeToggle">☀</button>
+</div></header>
+<div class="tool-page" style="max-width:780px">
+  <div class="tool-page-header">
+    <h1>Contact Toolpad</h1>
+    <p class="tool-desc">Report a bug, suggest a tool, or ask a question about how Toolpad works.</p>
+  </div>
+  <div class="seo-content">
+    <h2>Email</h2>
+    <p>For bug reports, feedback, feature requests and questions about the site or the API, email <a href="mailto:hello@toolpad.in"><strong>hello@toolpad.in</strong></a>. Please include the page URL and a short description of what you expected, so we can reproduce the problem.</p>
+
+    <h2>GitHub</h2>
+    <p>Toolpad's code and project updates are on GitHub at <a href="https://github.com/toolpad-in" target="_blank" rel="noopener">github.com/toolpad-in</a>.</p>
+
+    <h2>Privacy questions</h2>
+    <p>For questions about how Toolpad handles data, see the <a href="/privacy">privacy policy</a>. You can also send privacy questions to the email address above.</p>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span>🔧</span><strong>Toolpad</strong><p>Free developer utility tools. No signup.</p></div>
+    <div class="footer-links"><h5>Generators</h5><a href="/generators/test-name">Test name</a><a href="/generators/imei">IMEI</a><a href="/generators/credit-card">Credit card</a></div>
+    <div class="footer-links"><h5>Tools</h5><a href="/formatters/json">JSON formatter</a><a href="/converters/base64">Base64</a></div>
+    <div class="footer-links"><h5>Info</h5><a href="/api-docs">API docs</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div>
+  </div>
+  <div class="footer-bottom">
+  <p style="font-size:13px;margin-bottom:8px">Made in India with ❤️</p>
+  <p>© 2026 Toolpad. All generated data is fictional and for testing purposes only.</p>
+</div>
+</footer>
+<script>
+(function(){
+  var KEY='toolpad-theme';
+  var saved=localStorage.getItem(KEY);
+  var hour=new Date().getHours();
+  var autoDark=(hour>=20||hour<6);
+  var theme=saved!==null?saved:(autoDark?'dark':'');
+  if(theme)document.documentElement.setAttribute('data-theme',theme);
+  var tog=document.getElementById('themeToggle');
+  if(tog){
+    tog.textContent=theme==='dark'?'🌙':'☀';
+    tog.addEventListener('click',function(){
+      var dark=document.documentElement.getAttribute('data-theme')==='dark';
+      var next=dark?'':'dark';
+      document.documentElement.setAttribute('data-theme',next);
+      tog.textContent=next==='dark'?'🌙':'☀';
+      localStorage.setItem(KEY,next);
+    });
+  }
+})();
+</script>
+</body>
+</html>
