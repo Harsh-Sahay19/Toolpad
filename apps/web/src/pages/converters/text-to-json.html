@@ -141,6 +141,46 @@
   </div>
   <div id="st" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
   <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
+  <section class="seo-content" data-draft="guide">
+  <h2>What this converter does</h2>
+  <p>Text to JSON turns plain <code>key: value</code> lines into a JSON object. It is useful when notes, settings or sample data are written as simple text and you need JSON for an API request, a config file or a test fixture. The conversion runs in your browser.</p>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li>Type or paste one <code>key: value</code> pair per line into the input box. For example, <code>name: John</code> on one line and <code>age: 30</code> on the next.</li>
+    <li>Click <strong>Convert to JSON</strong>. The result appears in the output box.</li>
+    <li>Copy the output or download it.</li>
+  </ol>
+  <p>Example input and output:</p>
+  <div class="mono-block">name: John
+age: 30</div>
+  <div class="mono-block">{
+  "name": "John",
+  "age": 30
+}</div>
+
+  <h2>How the conversion works</h2>
+  <p>Each line is split at its first <code>:</code> (or at <code>=</code> if the line has no colon). The text before the separator becomes the key, and the text after it becomes the value, with surrounding spaces removed.</p>
+  <ul>
+    <li><code>true</code> and <code>false</code> become JSON booleans.</li>
+    <li>Values that look like numbers become JSON numbers, so <code>30</code> stays <code>30</code>.</li>
+    <li>Other values stay as text, and an empty value stays an empty string.</li>
+    <li>Lines without a separator are skipped.</li>
+    <li>If a key appears twice, the later value replaces the earlier one.</li>
+  </ul>
+  <p>Text to JSON does not read nested structures or lists written in the text. Each key becomes one top-level field.</p>
+
+  <h2>When to use a different tool</h2>
+  <ul>
+    <li>To check or pretty-print JSON you already have, use the <a href="/formatters/json">JSON formatter</a>.</li>
+    <li>To convert a table of rows, use <a href="/converters/csv-to-json">CSV to JSON</a>.</li>
+    <li>To produce XML from the same key-value text, use <a href="/converters/text-to-xml">Text to XML</a>.</li>
+  </ul>
+
+  <h2>Privacy</h2>
+  <p>The text you paste is processed in your browser and is not sent to Toolpad's servers. Clearing the page removes it.</p>
+</section>
+
   <div class="seo-content">
     <h2>How text to JSON works</h2>
     <p>Each line is parsed as a key-value pair split by <code>:</code> or <code>=</code>. Numbers and booleans are automatically typed. Use this to quickly convert config files, notes, or clipboard data into structured JSON.</p>
