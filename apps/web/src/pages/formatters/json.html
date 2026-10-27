@@ -177,6 +177,35 @@
 
   <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
+  <section class="seo-content" data-draft="guide">
+  <h2>What this JSON formatter does</h2>
+  <p>The JSON formatter checks JSON text, prettifies it with indentation, or minifies it into one line. When the JSON is invalid, it reports the error with its line number, so you can find the mistake quickly. Everything runs in your browser.</p>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li>Paste your JSON into the input box.</li>
+    <li>Click <strong>Prettify JSON</strong> to indent it, <strong>Minify</strong> to remove whitespace, or <strong>Validate only</strong> to check it without changing it.</li>
+    <li>Copy or download the result, or clear the box to start again.</li>
+  </ol>
+
+  <h2>Common JSON errors</h2>
+  <ul>
+    <li><strong>Trailing commas:</strong> JSON does not allow a comma after the last item in an object or array.</li>
+    <li><strong>Single quotes:</strong> JSON strings must use double quotes.</li>
+    <li><strong>Unquoted keys:</strong> every key must be a quoted string.</li>
+    <li><strong>Comments:</strong> JSON has no comment syntax, so remove <code>//</code> and <code>/* */</code> comments before validating.</li>
+  </ul>
+
+  <h2>Formatting, minifying and validating</h2>
+  <p>Prettifying changes only whitespace, so the data is the same before and after. Minifying removes the whitespace, which makes the payload smaller for APIs and config files. Validating checks the syntax against the JSON standard (RFC 8259). It does not check the data against a schema, so a valid document can still have the wrong fields.</p>
+
+  <h2>Privacy</h2>
+  <p>JSON you paste is processed in your browser. It is not stored or sent to Toolpad's servers. Remove sensitive values such as tokens and passwords before you share a formatted result with anyone.</p>
+
+  <h2>Related tools</h2>
+  <p>To turn plain key-value text into JSON, use the <a href="/converters/text-to-json">Text to JSON converter</a>. To convert JSON into XML, use the <a href="/converters/json-to-xml">JSON to XML converter</a>. For encoding a JSON string for a URL, see the <a href="/converters/url-encoder">URL encoder</a>.</p>
+</section>
+
   <div class="seo-content">
     <h2>What is JSON and why does formatting matter?</h2>
     <p>JSON (JavaScript Object Notation) is the dominant data interchange format on the modern web. Created by Douglas Crockford in the early 2000s, it has replaced XML in most REST API contexts because it is lighter, more readable, and maps directly to data structures in virtually every programming language. Today, JSON is used in API responses, configuration files, database storage (MongoDB, CouchDB, PostgreSQL's JSONB), log files, and as a general-purpose data exchange format between services.</p>

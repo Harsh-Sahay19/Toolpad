@@ -1,0 +1,31 @@
+<section class="seo-content" data-draft="guide">
+  <h2>What this IMSI generator does</h2>
+  <p>The generator creates 15-digit IMSI (International Mobile Subscriber Identity) values. Each one starts with a mobile country code and a mobile network code taken from the countries listed on the page, followed by random subscriber digits. Use the output as realistic input for telecom test systems, provisioning scripts and databases.</p>
+  <p>Generated IMSIs are not assigned to any SIM card or subscriber. They are test data.</p>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li>Choose a country: United States, India, United Kingdom, Australia, or all countries.</li>
+    <li>Choose how many IMSIs to generate.</li>
+    <li>Click <strong>Generate</strong>, then copy the values or download the CSV.</li>
+  </ol>
+
+  <h2>How an IMSI is built</h2>
+  <ul>
+    <li><strong>MCC (3 digits):</strong> the mobile country code, for example 404 for India or 310 for the United States.</li>
+    <li><strong>MNC (2 or 3 digits):</strong> the mobile network code, which identifies the operator within that country.</li>
+    <li><strong>MSIN (the remaining digits):</strong> the mobile subscriber identification number, unique to each subscriber within the network.</li>
+  </ul>
+  <p>The IMSI is stored on the SIM. It is used inside the operator's network and is not normally shown to the subscriber. Your phone number (MSISDN) is a separate identifier, linked to the IMSI by the operator's subscriber database.</p>
+
+  <h2>IMSI, IMEI and ICCID</h2>
+  <p>An IMSI identifies the subscriber. An <a href="/generators/imei">IMEI</a> identifies the handset, so the same IMEI stays with a phone when the SIM changes. An ICCID identifies the SIM card itself. Test systems often need all three, and each one should be generated separately.</p>
+
+  <h2>Limits and responsible use</h2>
+  <ul>
+    <li>A generated IMSI cannot be used to identify a real subscriber or to place calls.</li>
+    <li>Do not use real subscriber identifiers in test data, and do not try to use an IMSI to access another person's account or SIM.</li>
+    <li>Operator codes change over time. Check the MCC and MNC values against an official list before you rely on them for anything beyond testing.</li>
+  </ul>
+  <p>For related test data, see the <a href="/generators/imei">IMEI generator</a> and the <a href="/generators/test-phone">phone number generator</a>.</p>
+</section>
