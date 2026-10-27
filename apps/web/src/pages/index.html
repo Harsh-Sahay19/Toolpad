@@ -171,7 +171,7 @@
     <div class="container trust-grid">
       <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><strong>Free, no sign-up</strong><span>Every tool, no account, no limits.</span></div></div>
       <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M9 20h6M12 16v4"/></svg></span><div><strong>Runs in your browser</strong><span>Most output is generated on your device.</span></div></div>
-      <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span><div><strong>Public REST API</strong><span>JSON responses, CORS enabled.</span></div></div>
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span><div><strong>Inputs stay local</strong><span>Tool inputs are processed in your browser.</span></div></div>
       <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M4 12V5h7l9 9-7 7z"/><circle cx="8.5" cy="8.5" r="1.2"/></svg></span><div><strong>Clearly labelled</strong><span>Generated values are test data only.</span></div></div>
     </div>
   </section>
@@ -190,31 +190,13 @@
     <aside class="ad-slot ad-leaderboard" role="complementary" aria-label="Advertisement">Advertisement</aside>
   </div>
 
-  <section class="section api-band" id="api">
-    <div class="container">
-      <span class="section-tag">REST API</span>
-      <h2>Every generator, one request away.</h2>
-      <p class="section-lede">Use the same generators and converters in your test suites and CI. JSON responses, CORS enabled, no API key.</p>
-      <a class="btn btn-primary" href="/api-docs">Read the API docs</a>
-      <div class="mono-block" style="margin-top:24px">curl https://toolpad.in/api/v1/network/uuid
-curl https://toolpad.in/api/v1/personal/name</div>
-      <div class="card-grid" style="margin-top:24px">
-        <div class="card"><h3>Personal</h3><p>/personal/profile · /personal/name · /personal/email</p></div>
-        <div class="card"><h3>Financial</h3><p>/financial/credit-card · /financial/iban · /financial/bank-account</p></div>
-        <div class="card"><h3>Network</h3><p>/network/uuid · /network/mac · /network/ip · /network/imei</p></div>
-        <div class="card"><h3>Location</h3><p>/location/address · /location/coordinates · /location/timezone</p></div>
-        <div class="card"><h3>Data tools</h3><p>POST /datatools/format/json · /datatools/convert/json-to-xml</p></div>
-        <div class="card"><h3>Combined</h3><p>/record returns a full test record in one call.</p></div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

@@ -208,7 +208,6 @@
 
   <div class="seo-content">
     <h2>What is JSON and why does formatting matter?</h2>
-    <p>JSON (JavaScript Object Notation) is the dominant data interchange format on the modern web. Created by Douglas Crockford in the early 2000s, it has replaced XML in most REST API contexts because it is lighter, more readable, and maps directly to data structures in virtually every programming language. Today, JSON is used in API responses, configuration files, database storage (MongoDB, CouchDB, PostgreSQL's JSONB), log files, and as a general-purpose data exchange format between services.</p>
     <p>Raw JSON from APIs and services is often compact — all whitespace is removed to reduce payload size. This is ideal for network transmission but completely unreadable when you need to inspect or debug the data. A formatter adds consistent indentation and line breaks to transform a wall of text into a structured, readable document while preserving the exact data content.</p>
 
     <h3>How this JSON formatter works</h3>
@@ -221,9 +220,6 @@
     <h3>Common JSON syntax errors and how to fix them</h3>
     <p>The most frequent JSON errors developers encounter are: trailing commas after the last item in an object or array (valid in JavaScript but invalid in JSON), single-quoted strings (JSON requires double quotes), unquoted property names (also valid in JavaScript but invalid in JSON), comments (JSON has no comment syntax), and special characters in strings that need to be escaped with a backslash. If this formatter reports a syntax error, check the indicated line for these common mistakes first.</p>
 
-    <h3>API access</h3>
-    <p>Format JSON programmatically via the Toolpad REST API:</p>
-    <p><code>POST https://api.toolpad.in/api/v1/datatools/format/json</code></p>
     <p>Request body: <code>{"input": "your json string", "indent": 2}</code></p>
 
     
@@ -261,7 +257,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

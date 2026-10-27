@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IP Address Generator – Random IPv4 and IPv6 | Toolpad</title>
 <meta name="description" content="Generate random IPv4 and IPv6 addresses online. Choose public, private, or loopback ranges. Bulk generation up to 1000. Free, no signup required.">
-<meta name="keywords" content="IP address generator, random IP address, fake IP address, IPv4 generator, IPv6 generator, private IP generator, random IP">
 <link rel="canonical" href="https://toolpad.in/generators/ip-address">
 <meta property="og:title" content="IP Address Generator – Random IPv4 and IPv6 | Toolpad">
 <meta property="og:description" content="Generate random IPv4 and IPv6 addresses online. Choose public, private, or loopback ranges. Bulk generation up to 1000. Free, no signup required.">
@@ -197,10 +196,6 @@
       <li>Testing firewall rule configurations with diverse IP ranges</li>
     </ul>
 
-    <h3>API access</h3>
-    <p>Public IPv4: <code>GET /api/v1/network/ip?type=public&version=4&count=50</code></p>
-    <p>Private IPv4: <code>GET /api/v1/network/ip?type=private&count=20</code></p>
-    <p>IPv6: <code>GET /api/v1/network/ip?version=6&count=10</code></p>
 
     <div class="faq-item"><div class="faq-q">What is the difference between IPv4 and IPv6? <span class="faq-toggle">+</span></div><div class="faq-a">IPv4 uses 32-bit addresses (about 4.3 billion unique addresses) while IPv6 uses 128-bit addresses (about 340 undecillion unique addresses). IPv6 was developed to address IPv4 exhaustion. IPv4 is still most common in practice, but IPv6 adoption is growing.</div></div>
     <div class="faq-item"><div class="faq-q">Why avoid certain ranges for public IPs? <span class="faq-toggle">+</span></div><div class="faq-a">Some IP ranges are reserved by IANA and cannot appear as public internet addresses. These include loopback (127.x), private networks (10.x, 172.16–31.x, 192.168.x), link-local (169.254.x), and multicast (224.x). This generator excludes these to produce addresses that look genuinely public.</div></div>
@@ -219,7 +214,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

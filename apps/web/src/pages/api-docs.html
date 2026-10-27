@@ -4,11 +4,11 @@
 <script>try{var t=localStorage.getItem('toolpad-theme');if(!t){var h=new Date().getHours();t=(h>=20||h<6)?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toolpad API Documentation — REST API for Developer Tools</title>
-<meta name="description" content="Toolpad REST API docs. Generate fake data, format JSON/XML, convert formats. Free, no API key required.">
+<title>API status – Toolpad</title>
+<meta name="description" content="Toolpad's REST API is not yet available on toolpad.in. All tools run in your browser, and this page lists where to find each one.">
 <link rel="canonical" href="https://toolpad.in/api-docs">
-<meta property="og:title" content="Toolpad API Documentation — REST API for Developer Tools">
-<meta property="og:description" content="Toolpad REST API docs. Generate fake data, format JSON/XML, convert formats. Free, no API key required.">
+<meta property="og:title" content="API status – Toolpad">
+<meta property="og:description" content="Toolpad's REST API is not yet available on toolpad.in. All tools run in your browser, and this page lists where to find each one.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://toolpad.in/api-docs">
 <meta property="og:site_name" content="Toolpad">
@@ -126,33 +126,27 @@
 <main id="main"><div class="ad-slot ad-leaderboard" aria-label="Advertisement"></div>
 <div class="prose">
   <div class="page-head">
-    <h1>API documentation</h1>
-    <p class="lede">The Toolpad REST API gives you programmatic access to all generators and data tools. No API key required. Free to use.</p>
+    <h1>API status</h1>
+    <p class="lede">Toolpad's REST API is not available on toolpad.in yet. Every tool on this site runs in your browser, so you can use them without it.</p>
   </div>
   <div class="seo-content">
-    <h2>Base URL</h2>
-    <p><code>https://api.toolpad.in/api/v1</code></p>
-    <h2>Personal generators</h2>
-    <p><code>GET /personal/profile?country=IN&amp;count=10</code></p>
-    <p><code>GET /personal/name?count=10</code></p>
-    <p><code>GET /personal/email?count=10</code></p>
-    <p><code>GET /personal/phone?country=US&amp;count=10</code></p>
-    <h2>Financial generators</h2>
-    <p><code>GET /financial/credit-card?network=visa&amp;count=10</code></p>
-    <p><code>GET /financial/iban?country=GB&amp;count=10</code></p>
-    <h2>Network &amp; device generators</h2>
-    <p><code>GET /network/imei?count=10</code></p>
-    <p><code>GET /network/mac?count=10</code></p>
-    <p><code>GET /network/ip?count=10</code></p>
-    <p><code>GET /network/uuid?count=10</code></p>
-    <h2>Data tools</h2>
-    <p><code>POST /datatools/format/json</code> — body: <code>{"input":"..."}</code></p>
-    <p><code>POST /datatools/convert/json-to-xml</code></p>
-    <p><code>POST /datatools/convert/xml-to-json</code></p>
-    <p><code>POST /datatools/encode/base64</code></p>
-    <p><code>POST /datatools/decode/base64</code></p>
-    <p><code>POST /datatools/encode/hex</code></p>
-    <p><code>POST /datatools/decode/hex</code></p>
+    <h2>Current status</h2>
+    <p>Requests to <code>/api/v1</code> on toolpad.in do not reach an API server, so the examples that were previously on this site will not work. We have not published a date for a public API. This page will be updated when that changes.</p>
+    <h2>Use the tools in your browser instead</h2>
+    <p>Each tool below does the same job as the endpoint it replaces, and needs no sign-up or key.</p>
+    <ul>
+      <li><a href="/generators/test-name">Test name generator</a> for realistic names, including Indian regional pools.</li>
+      <li><a href="/generators/test-profile">Full profile generator</a> for a test person with name, date of birth, contact details and address.</li>
+      <li><a href="/generators/test-address">Test address generator</a> for US, UK and India addresses.</li>
+      <li><a href="/generators/uuid">UUID generator</a> for RFC 4122 v1 and v4 identifiers, up to 1000 at once.</li>
+      <li><a href="/generators/ip-address">IP address generator</a> for public, private, IPv4 and IPv6 addresses.</li>
+      <li><a href="/formatters/json">JSON formatter</a> for pretty-printing, minifying and validating JSON.</li>
+      <li><a href="/converters/json-to-xml">JSON to XML</a> and <a href="/converters/xml-to-json">XML to JSON</a> for converting between the two formats.</li>
+      <li><a href="/converters/json-to-csv">JSON to CSV</a> and <a href="/converters/csv-to-json">CSV to JSON</a> for spreadsheet data.</li>
+      <li><a href="/converters/base64">Base64</a>, <a href="/converters/hex">hex</a> and <a href="/converters/url-encoder">URL</a> encoders and decoders.</li>
+    </ul>
+    <h2>Questions about the API</h2>
+    <p>For questions about a future API, use the <a href="/contact">contact page</a>.</p>
   </div>
 </div>
 </main>
@@ -160,7 +154,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers, for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

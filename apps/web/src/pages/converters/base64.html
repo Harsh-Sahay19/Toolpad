@@ -187,10 +187,6 @@
     <h3>Is Base64 encryption?</h3>
     <p>No. Base64 is an encoding, not an encryption. It provides no security whatsoever — any Base64 string can be decoded by anyone instantly using any Base64 decoder. Do not use Base64 to hide sensitive data. If you see Base64 in a security context, it is only being used as a transport encoding, with actual security provided by the underlying protocol (HTTPS, for example) or a separate encryption layer applied before Base64 encoding.</p>
 
-    <h3>API access</h3>
-    <p>Encode and decode Base64 programmatically via the Toolpad REST API:</p>
-    <p><code>POST https://api.toolpad.in/api/v1/datatools/encode/base64</code> — body: <code>{"input":"your text"}</code></p>
-    <p><code>POST https://api.toolpad.in/api/v1/datatools/decode/base64</code> — body: <code>{"input":"base64 string"}</code></p>
 
     
     <div class="faq-item">
@@ -227,7 +223,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

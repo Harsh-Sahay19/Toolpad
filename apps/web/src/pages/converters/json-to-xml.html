@@ -142,10 +142,27 @@
   <div id="st" style="display:none;padding:10px 16px;border-radius:var(--radius);font-size:13px;margin-bottom:24px"></div>
   <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
   <div class="seo-content">
-    <h2>JSON to XML conversion</h2>
-    <p>This converter transforms JSON object keys into XML element names and values into text content. Nested objects become nested XML elements. Arrays are represented as repeated elements.</p>
-    <h3>API access</h3>
-    <p><code>POST /api/v1/datatools/convert/json-to-xml</code> — body: <code>{"input":"your json"}</code></p>
+    <h2>How JSON to XML conversion works</h2>
+    <p>Each JSON key becomes an XML element name, and each value becomes the text inside that element. Nested objects become nested elements. An array becomes a set of repeated elements that share its key name. The whole document is wrapped in a <code>&lt;root&gt;</code> element, which is fixed in this tool.</p>
+    <h2>Example</h2>
+    <p>This JSON object:</p>
+    <div class="mono-block">{"user":{"name":"Ada","roles":["admin","dev"]}}</div>
+    <p>converts to:</p>
+    <div class="mono-block">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;root&gt;
+&lt;user&gt;
+&lt;name&gt;Ada&lt;/name&gt;
+&lt;roles&gt;admin&lt;/roles&gt;
+&lt;roles&gt;dev&lt;/roles&gt;
+&lt;/user&gt;
+&lt;/root&gt;</div>
+    <h2>Limitations</h2>
+    <ul>
+      <li>Text is escaped for <code>&amp;</code>, <code>&lt;</code> and <code>&gt;</code>, so ordinary values stay well-formed.</li>
+      <li>A top-level array produces several root elements, which is not valid XML. Wrap the array in an object first.</li>
+      <li>Keys must be valid XML element names. A key with a space, or one that starts with a digit, produces invalid XML.</li>
+      <li>JSON values are written as element text only. The tool does not create XML attributes.</li>
+    </ul>
   </div>
   <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
     <a href="/converters/xml-to-json" class="related-card"><h4>XML to JSON</h4><p>Reverse conversion</p></a>
@@ -158,7 +175,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>
@@ -191,7 +208,8 @@
 </footer><script>
 
 var SAMPLE='{"user":{"name":"John Doe","email":"john@example.com","active":true,"roles":["admin","developer"]}}';
-function objToXML(obj,root){root=root||'root';function convert(o,tag){if(Array.isArray(o))return o.map(function(i){return convert(i,tag);}).join('\n');if(typeof o==='object'&&o!==null){var inner=Object.entries(o).map(function(e){return convert(e[1],e[0]);}).join('\n');return '<'+tag+'>\n'+inner+'\n</'+tag+'>';}return '<'+tag+'>'+o+'</'+tag+'>';}return '<?xml version="1.0" encoding="UTF-8"?>\n'+convert(obj,root);}
+function esc(v){return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function objToXML(obj,root){root=root||'root';function convert(o,tag){if(Array.isArray(o))return o.map(function(i){return convert(i,tag);}).join('\n');if(typeof o==='object'&&o!==null){var inner=Object.entries(o).map(function(e){return convert(e[1],e[0]);}).join('\n');return '<'+tag+'>\n'+inner+'\n</'+tag+'>';}return '<'+tag+'>'+esc(o)+'</'+tag+'>';}return '<?xml version="1.0" encoding="UTF-8"?>\n'+convert(obj,root);}
 function ss(m,t){var s=document.getElementById('st');s.style.display='block';s.style.background=t==='ok'?'#D1FAE5':'#FEE2E2';s.style.color=t==='ok'?'#065F46':'#991B1B';s.textContent=m;}
 document.getElementById('btnConvert').addEventListener('click',function(){var inp=document.getElementById('input').value.trim();if(!inp)return;try{document.getElementById('output').value=objToXML(JSON.parse(inp));ss('Converted successfully','ok');}catch(e){ss('Error: '+e.message,'err');}});
 document.getElementById('btnSample').addEventListener('click',function(){document.getElementById('input').value=SAMPLE;});

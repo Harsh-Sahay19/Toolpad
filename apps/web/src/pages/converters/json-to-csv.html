@@ -143,9 +143,19 @@
   <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
   <div class="seo-content">
     <h2>How JSON to CSV conversion works</h2>
-    <p>This tool takes a JSON array of objects and generates a CSV file with column headers auto-derived from the object keys. Values containing commas, quotes, or newlines are properly escaped per RFC 4180.</p>
-    <h3>API access</h3>
-    <p><code>POST /api/v1/datatools/convert/json-to-csv</code> — body: <code>{"input":"[...]"}</code></p>
+    <p>The tool takes a JSON array of objects. The column names come from the keys of the first object, and each object becomes one row. Values that contain commas, quotes or line breaks are wrapped in double quotes, with inner quotes doubled, as RFC 4180 describes.</p>
+    <h2>Example</h2>
+    <div class="mono-block">[{"name":"Ada, Lovelace","city":"London"},{"name":"Ben","city":"Leeds"}]</div>
+    <p>becomes:</p>
+    <div class="mono-block">name,city
+"Ada, Lovelace",London
+Ben,Leeds</div>
+    <h2>Limitations</h2>
+    <ul>
+      <li>Only the keys of the first object become columns. A key that appears only in later objects is left out.</li>
+      <li>Nested objects are written as <code>[object Object]</code>. Flatten them before converting.</li>
+      <li>The input must be a JSON array. A single object is rejected with an error.</li>
+    </ul>
   </div>
   <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
     <a href="/converters/csv-to-json" class="related-card"><h4>CSV to JSON</h4><p>Reverse conversion</p></a>
@@ -158,7 +168,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

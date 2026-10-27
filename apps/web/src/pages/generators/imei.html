@@ -311,9 +311,6 @@
     <h3>Common use cases for generated IMEI numbers</h3>
     <p>Mobile application developers use generated IMEIs to test device identification logic without exposing real device identifiers. QA engineers populate test databases with bulk-generated IMEIs to validate input fields and test telecom billing systems. MDM (Mobile Device Management) platform developers simulate large device fleets during development and load testing. Security researchers test blacklist lookup APIs and IMEI validation services. Insurance platform developers test IMEI verification workflows. All these use cases require structurally valid IMEIs — random 15-digit strings fail immediately at the Luhn check stage.</p>
 
-    <h3>API access</h3>
-    <p>Generate IMEIs programmatically via the Toolpad REST API — no API key required:</p>
-    <p><code>GET https://api.toolpad.in/api/v1/network/imei?count=50</code></p>
     <p>Add <code>&brand=apple</code> to filter by manufacturer. Supports up to 100 IMEIs per request.</p>
 
     <div class="faq-item">
@@ -371,7 +368,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

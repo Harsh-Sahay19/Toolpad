@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Test Email Generator – Random Test Addresses | Toolpad</title>
 <meta name="description" content="Generate realistic test email addresses for software testing. Multiple domains, name-based patterns. Bulk generation, CSV export. Free, no signup required.">
-<meta name="keywords" content="test email generator, random email address, dummy email, test email generator, test email address, random email">
 <link rel="canonical" href="https://toolpad.in/generators/test-email">
 <meta property="og:title" content="Test Email Generator – Random Test Addresses | Toolpad">
 <meta property="og:description" content="Generate realistic test email addresses for software testing. Multiple domains, name-based patterns. Bulk generation, CSV export. Free, no signup required.">
@@ -196,9 +195,6 @@
     <h3>Safe domains for testing</h3>
     <p>If you want to avoid any chance of real email delivery, use <code>example.com</code> — it is an IANA-reserved domain specifically for documentation and testing purposes. No email sent to @example.com will ever be delivered.</p>
 
-    <h3>API access</h3>
-    <p>Generate via API: <code>GET /api/v1/personal/email?count=50</code></p>
-    <p>Full profiles including email: <code>GET /api/v1/personal/profile?country=IN&count=10</code></p>
 
     <div class="faq-item"><div class="faq-q">Will emails to these addresses bounce? <span class="faq-toggle">+</span></div><div class="faq-a">Emails to generated addresses at domains like gmail.com, yahoo.com etc. will likely bounce since the mailboxes don't exist. To guarantee no delivery, use @example.com or @testmail.com addresses — these domains are specifically designated for testing.</div></div>
     <div class="faq-item"><div class="faq-q">Do generated emails pass email validation? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — all generated addresses are syntactically valid RFC 5322 email addresses. They will pass format validation checks (regex patterns, HTML5 email input validation). They will not pass deliverability checks (MX record verification or mailbox existence checks).</div></div>
@@ -217,7 +213,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>
@@ -309,7 +305,7 @@ document.getElementById('copyBtn').addEventListener('click',()=>{
 document.getElementById('csvBtn').addEventListener('click',()=>{
   if(!window._emails)return;
   const csv='email,domain,style\n'+window._emails.map(r=>`${r.email},${r.domain},${r.style}`).join('\n');
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='fake_emails.csv';a.click();
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='test_emails.csv';a.click();
 });
 </script>
 <script src="/scripts/main.js"></script>
