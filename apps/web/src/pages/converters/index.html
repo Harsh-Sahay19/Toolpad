@@ -130,12 +130,25 @@
   <p class="lede">Convert between JSON, XML, CSV and text, and encode or decode Base64, hex and URLs. Everything runs in your browser.</p>
 </div>
 <section class="section" style="padding-top:8px" data-cat-tools="Converters"></section>
+<div class="seo-content">
+  <h2>Choosing a converter</h2>
+  <p>Use the structured data converters to move data between JSON, XML, CSV and plain key-value text. Use the encoders when text needs to be written in Base64, hexadecimal or percent-encoded form, for example in APIs, logs or query strings.</p>
+  <ul>
+    <li><a href="/converters/json-to-xml">JSON to XML</a> turns nested objects into nested elements. Use it to build XML from a JSON sample.</li>
+    <li><a href="/converters/xml-to-json">XML to JSON</a> turns elements into object keys. Attributes are kept with an @ prefix.</li>
+    <li><a href="/converters/json-to-csv">JSON to CSV</a> turns an array of objects into a spreadsheet file, quoting values where needed.</li>
+    <li><a href="/converters/csv-to-json">CSV to JSON</a> uses the first row as the keys. Quoted fields that contain commas are not supported.</li>
+    <li><a href="/converters/text-to-json">Text to JSON</a> and <a href="/converters/text-to-xml">Text to XML</a> turn key: value lines into structured output.</li>
+    <li><a href="/converters/base64">Base64</a>, <a href="/converters/hex">hex</a> and the <a href="/converters/url-encoder">URL encoder</a> encode and decode text.</li>
+  </ul>
+  <p>Every converter runs in your browser, so the data you paste is not uploaded to Toolpad.</p>
+</div>
 </main>
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

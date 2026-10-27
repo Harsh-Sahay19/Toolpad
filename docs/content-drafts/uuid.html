@@ -1,0 +1,27 @@
+<section class="seo-content" data-draft="guide">
+  <h2>What this UUID generator does</h2>
+  <p>The generator creates RFC 4122 UUIDs, which are 128-bit identifiers written as 36 characters in five groups separated by hyphens. You can generate version 4 (random) or version 1 (time-based), in batches of up to 1000, and copy them or download them as a CSV.</p>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li>Choose the UUID version.</li>
+    <li>Choose how many UUIDs to generate.</li>
+    <li>Click <strong>Generate</strong>, then copy the list or download the CSV.</li>
+  </ol>
+
+  <h2>UUID version 4 and version 1</h2>
+  <ul>
+    <li><strong>Version 4</strong> fills almost all of its 128 bits with random values. The version and variant bits are fixed. It is the most common choice for IDs in application data, because it needs no coordination and reveals nothing about when or where it was made.</li>
+    <li><strong>Version 1</strong> combines a timestamp with a node identifier. The timestamp part makes version 1 values sortable by time, but the node part can expose the machine's network address. Use version 4 when that matters.</li>
+  </ul>
+  <p>Collisions between random version 4 values are so unlikely that most systems treat them as unique without checking. For database primary keys, consider whether time-ordered identifiers would suit your indexes better; this tool does not generate those.</p>
+
+  <h2>Common uses and limits</h2>
+  <ul>
+    <li>Seeding database tables and fixtures with unique keys.</li>
+    <li>Testing API request and response handling with realistic identifiers.</li>
+    <li>Creating sample records for demos and documentation.</li>
+  </ul>
+  <p>A UUID proves nothing about the person or device behind it. Generated values are not tied to any account or record. Do not use them as passwords, session secrets or security tokens; use a cryptographic random source for those.</p>
+  <p>For related generators, see the <a href="/generators/password">password generator</a> for secrets and the <a href="/generators/imei">IMEI generator</a> for device identifiers.</p>
+</section>

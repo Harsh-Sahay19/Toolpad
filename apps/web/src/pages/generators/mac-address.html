@@ -208,8 +208,6 @@
       <li>Generating test data for network monitoring dashboards</li>
     </ul>
 
-    <h3>API access</h3>
-    <p>Use <code>GET /api/v1/network/mac?separator=-&count=20</code> to generate MAC addresses via the REST API.</p>
 
     <div class="faq-item"><div class="faq-q">Are these real MAC addresses? <span>+</span></div><div class="faq-a">No. While the OUI prefixes are real (assigned to actual manufacturers), the NIC-specific portion is randomly generated. These addresses will not match any real physical device.</div></div>
     <div class="faq-item"><div class="faq-q">What is the difference between unicast and multicast MAC addresses? <span>+</span></div><div class="faq-a">In a MAC address, the least significant bit of the first byte indicates whether the address is unicast (0) or multicast (1). All addresses generated here are unicast (the first byte's LSB is 0), matching real device addresses.</div></div>
@@ -231,7 +229,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

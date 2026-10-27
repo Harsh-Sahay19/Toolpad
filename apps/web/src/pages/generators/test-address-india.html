@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Test Indian Address Generator with PIN Codes | Toolpad</title>
 <meta name="description" content="Generate test Indian addresses with real PIN code prefixes for Delhi, Karnataka, Maharashtra, Tamil Nadu and Telangana. Free, no sign-up.">
-<meta name="keywords" content="test address generator india, test indian address, random indian address, indian address generator, fake pin code, test address india, dummy indian address">
 <link rel="canonical" href="https://toolpad.in/generators/test-address-india">
 <meta property="og:title" content="Test Indian Address Generator with PIN Codes | Toolpad">
 <meta property="og:description" content="Generate test Indian addresses with real PIN code prefixes for Delhi, Karnataka, Maharashtra, Tamil Nadu and Telangana. Free, no sign-up.">
@@ -198,9 +197,6 @@
       <li>Load testing address search and autocomplete features with varied locality names</li>
     </ul>
 
-    <h3>API access</h3>
-    <p>Generate Indian addresses programmatically: <code>GET /api/v1/location/address?country=IN&count=20</code></p>
-    <p>Combine an address with GPS coordinates: <code>GET /api/v1/record?country=IN&count=2</code></p>
 
     <div class="faq-item"><div class="faq-q">Are these real addresses? <span class="faq-toggle">+</span></div><div class="faq-a">No. Each address is randomly assembled from city names, locality formats and PIN code prefixes. The house number and locality number are random, so the address will not match a real property. Do not use these addresses for deliveries, KYC or any real transaction.</div></div>
     <div class="faq-item"><div class="faq-q">Do the PIN codes match real areas? <span class="faq-toggle">+</span></div><div class="faq-a">The first three digits match the real postal prefix for each city, which is what most format checks look at. The last three digits are random within a range, so a PIN may not belong to the exact locality named in the address. For tests that need exact PIN-to-locality matching, use an official India Post PIN code directory.</div></div>
@@ -221,7 +217,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>
@@ -310,7 +306,7 @@ document.getElementById('copyBtn').addEventListener('click',()=>{
 document.getElementById('csvBtn').addEventListener('click',()=>{
   if(!window._addrs)return;
   const csv='line1,city,region,postal,country\n'+window._addrs.map(r=>`"${r.line1}","${r.city}","${r.region}","${r.postal}","${r.country}"`).join('\n');
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='fake_indian_addresses.csv';a.click();
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='test_indian_addresses.csv';a.click();
 });
 generate();
 </script>

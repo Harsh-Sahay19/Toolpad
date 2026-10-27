@@ -13,7 +13,7 @@
 <meta property="og:image" content="https://toolpad.in/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://toolpad.in/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Credit Card Number Generator","url":"https://toolpad.in/generators/credit-card","description":"Generate Luhn-valid fake credit card numbers for software testing","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Credit Card Number Generator","url":"https://toolpad.in/generators/credit-card","description":"Generate Luhn-valid test credit card numbers for software testing","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles/main.css">
@@ -193,9 +193,6 @@
     <h3>CVV and expiry date explained</h3>
     <p>The CVV (Card Verification Value) is a 3-digit security code on Visa, Mastercard, and Discover cards printed on the back. American Express uses a 4-digit CID (Card Identification Number) on the front. The CVV is not encoded in the magnetic stripe or chip — it exists specifically to prove the physical card is present during card-not-present (online) transactions. Generated CVVs are random numbers of the correct length for each network. Expiry dates are set 1–4 years in the future to simulate active cards.</p>
 
-    <h3>API access</h3>
-    <p>Generate test card numbers programmatically via the Toolpad REST API:</p>
-    <p><code>GET https://api.toolpad.in/api/v1/financial/credit-card?network=visa&count=25</code></p>
     <p>Valid network values: <code>visa</code>, <code>mastercard</code>, <code>amex</code>, <code>discover</code>. Omit the network parameter for random networks.</p>
 
     
@@ -233,7 +230,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

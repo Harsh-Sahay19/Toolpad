@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="/styles/main.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 <script type="application/ld+json" data-generated="seo">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolpad.in/"},{"@type":"ListItem","position":2,"name":"Generators","item":"https://toolpad.in/generators"},{"@type":"ListItem","position":3,"name":"Test person generator","item":"https://toolpad.in/generators/test-profile"}]}</script>
-<script type="application/ld+json" data-generated="seo">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are these real people's data?","acceptedAnswer":{"@type":"Answer","text":"No. All profiles are entirely fictitious. Names are drawn from curated lists, emails are generated using those names, and addresses are randomly constructed. No real person's data is used or exposed."}},{"@type":"Question","name":"Can I include addresses and financial data?","acceptedAnswer":{"@type":"Answer","text":"Yes — use the /api/v1/record endpoint which returns a complete combined record including address, GPS coordinates, a fake credit card, bank account, IMEI, IMSI, MAC address, and IP. Use individual endpoints like /generators/test-address for just addresses."}}]}</script>
+<script type="application/ld+json" data-generated="seo">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are these real people's data?","acceptedAnswer":{"@type":"Answer","text":"No. All profiles are entirely fictitious. Names are drawn from curated lists, emails are generated using those names, and addresses are randomly constructed. No real person's data is used or exposed."}}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -166,6 +166,37 @@
 
   <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
+  <section class="seo-content" data-draft="guide">
+  <h2>What this profile generator does</h2>
+  <p>The generator creates a complete test person: a name, username, email address, phone number, postal address and date of birth, all in a consistent format for the chosen country. Use it to fill a test user table, to seed a sign-up flow, or to build demo accounts. You can generate several at once and export them as a CSV.</p>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li>Choose the country or region.</li>
+    <li>Choose how many profiles you need.</li>
+    <li>Click <strong>Generate</strong>, then copy or download the results.</li>
+  </ol>
+
+  <h2>What a profile is made of</h2>
+  <ul>
+    <li><strong>Name and username:</strong> a name from the regional pools, and a username built from it.</li>
+    <li><strong>Email:</strong> a name-based address on a reserved example domain (example.com, example.org or example.net). These domains are set aside for documentation and testing, so they do not belong to real mailboxes.</li>
+    <li><strong>Phone:</strong> a number in the country's format.</li>
+    <li><strong>Address:</strong> a postal address for the same country, from the address generator's formats.</li>
+    <li><strong>Date of birth:</strong> a random date that makes the person between 18 and 65 years old, useful for age-check logic.</li>
+  </ul>
+  <p>The parts are generated separately and then combined, so a profile is consistent in format but is not a record of any real person.</p>
+
+  <h2>Limits and responsible use</h2>
+  <ul>
+    <li>A generated profile does not describe a real person. Any match with a real individual is coincidental.</li>
+    <li>Do not use generated profiles to open accounts, claim services or submit forms in anyone's name.</li>
+    <li>Do not send mail to generated addresses from a real mail service. For mail testing, use the <a href="/generators/test-email">test email generator</a> with its example.com option.</li>
+    <li>Keep test data separate from real customer data, and remove it when a test is finished.</li>
+  </ul>
+  <p>For the parts on their own, see the <a href="/generators/test-name">test name generator</a>, the <a href="/generators/test-address">test address generator</a>, the <a href="/generators/test-email">test email generator</a> and the <a href="/generators/test-phone">phone number generator</a>.</p>
+</section>
+
   <div class="seo-content">
     <h2>What does a test person profile include?</h2>
     <p>Each generated profile contains a consistent set of personal data fields generated together — so the name, email, and username are all derived from the same person, making the data feel cohesive rather than random.</p>
@@ -178,12 +209,8 @@
       <li><strong>Gender</strong> — Male or female as selected</li>
     </ul>
 
-    <h3>API access — full combined record</h3>
-    <p>The most complete API endpoint returns personal data, address, financial, and device identifiers together: <code>GET /api/v1/record?country=IN&gender=female&count=5</code></p>
-    <p>Just personal data: <code>GET /api/v1/personal/profile?country=US&gender=male&count=10</code></p>
 
     <div class="faq-item"><div class="faq-q">Are these real people's data? <span class="faq-toggle">+</span></div><div class="faq-a">No. All profiles are entirely fictitious. Names are drawn from curated lists, emails are generated using those names, and addresses are randomly constructed. No real person's data is used or exposed.</div></div>
-    <div class="faq-item"><div class="faq-q">Can I include addresses and financial data? <span class="faq-toggle">+</span></div><div class="faq-a">Yes — use the <code>/api/v1/record</code> endpoint which returns a complete combined record including address, GPS coordinates, a fake credit card, bank account, IMEI, IMSI, MAC address, and IP. Use individual endpoints like <code>/generators/test-address</code> for just addresses.</div></div>
   </div>
 
   <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
@@ -199,7 +226,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>
@@ -235,7 +262,7 @@
 const FM=['James','John','Robert','Michael','David','Liam','Noah','Aarav','Arjun','Rohan','Carlos','Wei'];
 const FF=['Mary','Jennifer','Emma','Olivia','Priya','Ananya','Divya','Sophia','Mia','Ana','Sofia','Mei'];
 const FL=['Smith','Johnson','Williams','Brown','Garcia','Sharma','Patel','Kumar','Singh','Wang','Rodriguez'];
-const DOMAINS=['gmail.com','yahoo.com','outlook.com','hotmail.com','protonmail.com','icloud.com'];
+const DOMAINS=['example.com','example.org','example.net'];
 const STREETS=['Main','Oak','Maple','Cedar','Elm','Washington','Park','Sunset','Willow'];
 const STYPES=['Street','Avenue','Boulevard','Drive','Lane','Road'];
 const US=[{s:'CA',c:'Los Angeles'},{s:'NY',c:'New York'},{s:'TX',c:'Houston'},{s:'FL',c:'Miami'},{s:'IL',c:'Chicago'}];

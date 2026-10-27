@@ -144,7 +144,23 @@
   <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
   <div class="seo-content">
     <h2>How text to XML works</h2>
-    <p>Each line is parsed as a key-value pair. The key becomes the XML element name and the value becomes its text content. All elements are wrapped in the root element you specify.</p>
+    <p>Each line with a colon or an equals sign becomes one element. The text before the separator becomes the element name, and the text after it becomes the content. Spaces in a name are replaced with underscores, and every element is wrapped in the root name you choose. The default root name is <code>record</code>.</p>
+    <h2>Example</h2>
+    <div class="mono-block">name: John Doe
+age: 30</div>
+    <p>with the root name <code>person</code> converts to:</p>
+    <div class="mono-block">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;person&gt;
+  &lt;name&gt;John Doe&lt;/name&gt;
+  &lt;age&gt;30&lt;/age&gt;
+&lt;/person&gt;</div>
+    <h2>Limitations</h2>
+    <ul>
+      <li>Lines without a colon or an equals sign are skipped.</li>
+      <li>Only the first colon on a line is the separator, so values can contain colons.</li>
+      <li>Every value is text. Numbers and booleans are not typed.</li>
+      <li>Element names are not checked. A name that starts with a digit produces invalid XML.</li>
+    </ul>
   </div>
   <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
     <a href="/converters/text-to-json" class="related-card"><h4>Text to JSON</h4><p>Convert to JSON instead</p></a>
@@ -157,7 +173,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>
@@ -190,7 +206,8 @@
 </footer><script>
 
 var SAMPLE='name: John Doe\nage: 30\ncity: New York\nactive: true';
-function textToXML(text,root){var lines=text.split('\n');var inner=lines.map(function(line){var sep=line.includes(':')?':':'=';var idx=line.indexOf(sep);if(idx<0)return '';var k=line.slice(0,idx).trim().replace(/\s+/g,'_');var v=line.slice(idx+1).trim();return '  <'+k+'>'+v+'</'+k+'>';}).filter(Boolean).join('\n');return '<?xml version="1.0" encoding="UTF-8"?>\n<'+root+'>\n'+inner+'\n</'+root+'>';}
+function esc(v){return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function textToXML(text,root){var lines=text.split('\n');var inner=lines.map(function(line){var sep=line.includes(':')?':':'=';var idx=line.indexOf(sep);if(idx<0)return '';var k=line.slice(0,idx).trim().replace(/\s+/g,'_');var v=line.slice(idx+1).trim();return '  <'+k+'>'+esc(v)+'</'+k+'>';}).filter(Boolean).join('\n');return '<?xml version="1.0" encoding="UTF-8"?>\n<'+root+'>\n'+inner+'\n</'+root+'>';}
 function ss(m,t){var s=document.getElementById('st');s.style.display='block';s.style.background=t==='ok'?'#D1FAE5':'#FEE2E2';s.style.color=t==='ok'?'#065F46':'#991B1B';s.textContent=m;}
 document.getElementById('btnConvert').addEventListener('click',function(){var inp=document.getElementById('input').value.trim();var root=document.getElementById('rootTag').value.trim()||'record';if(!inp)return;try{document.getElementById('output').value=textToXML(inp,root);ss('Converted successfully','ok');}catch(e){ss('Error: '+e.message,'err');}});
 document.getElementById('btnSample').addEventListener('click',function(){document.getElementById('input').value=SAMPLE;});

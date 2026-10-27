@@ -260,6 +260,37 @@
   <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
   <!-- SEO content -->
+  <section class="seo-content" data-draft="guide">
+  <h2>What this IMEI generator does</h2>
+  <p>The generator produces 15-digit IMEI numbers that pass the Luhn check, so they are structurally valid. You can pick a brand (Apple, Samsung, Google Pixel, OnePlus, Xiaomi, Huawei, Nokia or Motorola) to start each number with that brand's TAC prefix, or leave the selector on random. The Validate tab checks any IMEI you paste, one at a time or in bulk, for length, digits and the Luhn check digit.</p>
+  <p>Generated IMEIs are random in their serial part. They are for software testing only: a device-ID field, a validation rule, a database column or a billing test that needs 15-digit input.</p>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li>Choose a brand, or leave <strong>Any brand (random)</strong> selected.</li>
+    <li>Choose how many IMEIs you need, from 5 to 100.</li>
+    <li>Click <strong>Generate</strong>, then copy the list or download it as a CSV with the IMEI, brand and TAC columns.</li>
+    <li>To check existing values, switch to the <strong>Validate</strong> tab and paste one IMEI, or several separated by new lines.</li>
+  </ol>
+
+  <h2>How an IMEI is built</h2>
+  <p>An IMEI (International Mobile Equipment Identity) has 15 digits in three parts:</p>
+  <ul>
+    <li><strong>TAC (first 8 digits):</strong> the Type Allocation Code. It identifies the manufacturer and model family. The GSMA assigns these codes.</li>
+    <li><strong>Serial number (next 6 digits):</strong> assigned by the manufacturer to each unit within a model.</li>
+    <li><strong>Check digit (last digit):</strong> calculated with the Luhn algorithm. The generator sets this digit so the whole number passes the Luhn check.</li>
+  </ul>
+  <p>The Luhn check catches most single-digit typing mistakes. Passing it means the number is well formed. It does not show that the number belongs to a real device or that it is registered with a network.</p>
+
+  <h2>Limits and responsible use</h2>
+  <ul>
+    <li>A generated IMEI cannot identify a phone, a SIM or a person, and it will not connect to a mobile network.</li>
+    <li>Do not use generated or copied IMEIs to clone, change or spoof a real device's identity, or to get around a block on a lost or stolen phone. Changing a device's IMEI is illegal in many countries, including India and the United States.</li>
+    <li>Do not use these numbers in production systems. Real IMEI data should come from the device or from an authorised source.</li>
+  </ul>
+  <p>For related test data, see the <a href="/generators/imsi">IMSI generator</a> (the subscriber identity on a SIM), the <a href="/generators/uuid">UUID generator</a> for other unique identifiers, and the <a href="/generators/test-profile">full profile generator</a> for a complete test user.</p>
+</section>
+
   <div class="seo-content">
     <h2>What is an IMEI number?</h2>
     <p>IMEI stands for International Mobile Equipment Identity. It is a unique 15-digit number permanently assigned to every mobile phone, smartphone, and most cellular-capable devices manufactured worldwide. Unlike a phone number — which belongs to a SIM card and can be transferred — the IMEI belongs to the physical device itself. It remains the same regardless of which SIM card is inserted or which carrier network the device connects to.</p>
@@ -280,9 +311,6 @@
     <h3>Common use cases for generated IMEI numbers</h3>
     <p>Mobile application developers use generated IMEIs to test device identification logic without exposing real device identifiers. QA engineers populate test databases with bulk-generated IMEIs to validate input fields and test telecom billing systems. MDM (Mobile Device Management) platform developers simulate large device fleets during development and load testing. Security researchers test blacklist lookup APIs and IMEI validation services. Insurance platform developers test IMEI verification workflows. All these use cases require structurally valid IMEIs — random 15-digit strings fail immediately at the Luhn check stage.</p>
 
-    <h3>API access</h3>
-    <p>Generate IMEIs programmatically via the Toolpad REST API — no API key required:</p>
-    <p><code>GET https://api.toolpad.in/api/v1/network/imei?count=50</code></p>
     <p>Add <code>&brand=apple</code> to filter by manufacturer. Supports up to 100 IMEIs per request.</p>
 
     <div class="faq-item">
@@ -340,7 +368,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

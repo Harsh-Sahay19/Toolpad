@@ -209,6 +209,35 @@
 
   <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
 
+  <section class="seo-content" data-draft="guide">
+  <h2>What this name generator does</h2>
+  <p>The generator produces realistic person names from name pools for several regions. For India there are pools for Hindi, South Indian, Gujarati and Bengali names. There are also pools for the United States, the United Kingdom, Canada and Australia. You can generate names in bulk and export them as a CSV, which is useful for filling test databases or demo screens.</p>
+
+  <h2>How to use it</h2>
+  <ol>
+    <li>Choose the region or name pool.</li>
+    <li>Choose how many names you need.</li>
+    <li>Click <strong>Generate</strong>, then copy the names or download the CSV.</li>
+  </ol>
+
+  <h2>How the names are made</h2>
+  <p>Each name is built from a first name and a last name taken from the chosen pool, so the output reads like real names for that region. The pools are finite, so with a small pool you will see repeats. Larger batches show more variety.</p>
+
+  <h2>Why realistic test names help</h2>
+  <ul>
+    <li>Name fields often break on long names, apostrophes, hyphens or non-English letters. Realistic names test these cases better than "Test User 1".</li>
+    <li>Sorting, search and display logic can behave differently across naming conventions, so mixing regions helps.</li>
+    <li>Demo data looks more convincing when the names fit the product's market.</li>
+  </ul>
+
+  <h2>Limits and responsible use</h2>
+  <ul>
+    <li>Generated names are not drawn from any particular person's records and do not identify anyone. A name may still match a real person by chance, so do not treat it as a unique identity.</li>
+    <li>Do not use generated names to create accounts or submit forms in someone else's name.</li>
+    <li>For a full set of test attributes, use the <a href="/generators/test-profile">full profile generator</a>. For matching addresses, use the <a href="/generators/test-address">test address generator</a>, and for email addresses the <a href="/generators/test-email">test email generator</a>.</li>
+  </ul>
+</section>
+
   <div class="seo-content">
     <h2>Test name generator for India</h2>
     <p>This tool is the most comprehensive free Indian test name generator available online. It draws from authentic name pools across India's major linguistic and regional communities — not just a single generic set of "Indian names". Real Indian naming conventions vary significantly by state, language, religion, and community, and this generator reflects that diversity.</p>
@@ -227,9 +256,6 @@
     <h3>Data privacy and PDPB compliance</h3>
     <p>India's Personal Data Protection Bill (PDPB) and the broader global trend toward data privacy regulation mean that using real names in development and testing environments is increasingly risky. Regulators consider development environments that contain real personal data to be within scope for data protection obligations. Using generated test names eliminates this risk entirely — there is no personal data in your test environment to protect, breach, or report.</p>
 
-    <h3>API access</h3>
-    <p>Generate test names programmatically via the Toolpad REST API — no API key required:</p>
-    <p><code>GET https://api.toolpad.in/api/v1/personal/name?country=IN&count=50</code></p>
     <p>Supported country codes: <code>IN</code>, <code>US</code>, <code>GB</code>, <code>CA</code>, <code>AU</code>, <code>DE</code>. Add <code>&gender=female</code> to filter by gender.</p>
 
     <div class="faq-item">
@@ -287,7 +313,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>
@@ -459,7 +485,7 @@ document.getElementById('csvBtn').addEventListener('click', function() {
     }).join('\n');
   var a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
-  a.download = 'fake_names.csv';
+  a.download = 'test_names.csv';
   a.click();
 });
 

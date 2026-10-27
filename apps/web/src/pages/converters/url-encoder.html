@@ -184,9 +184,6 @@
     <h3>The + vs %20 question</h3>
     <p>Both <code>+</code> and <code>%20</code> represent a space in URLs, but they are used in different contexts. In the query string portion of a URL (after the <code>?</code>), the <code>application/x-www-form-urlencoded</code> format — used by HTML forms — represents spaces as <code>+</code>. RFC 3986 percent-encoding uses <code>%20</code>. Modern APIs overwhelmingly expect <code>%20</code>. If you are working with form submissions, your server framework will handle <code>+</code> correctly, but for manually constructed URLs and API calls, <code>%20</code> is safer and more portable.</p>
 
-    <h3>API access</h3>
-    <p><code>POST https://api.toolpad.in/api/v1/datatools/encode/url</code> — body: <code>{"input":"your text"}</code></p>
-    <p><code>POST https://api.toolpad.in/api/v1/datatools/decode/url</code> — body: <code>{"input":"%encoded%20string"}</code></p>
 
     
     <div class="faq-item">
@@ -223,7 +220,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

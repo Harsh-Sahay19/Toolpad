@@ -143,9 +143,22 @@
   <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
   <div class="seo-content">
     <h2>How CSV to JSON works</h2>
-    <p>The first row of your CSV is treated as the header row and becomes the JSON object keys. Each subsequent row becomes a JSON object. Numbers and boolean values are automatically converted to their correct types.</p>
-    <h3>API access</h3>
-    <p><code>POST /api/v1/datatools/convert/csv-to-json</code> — body: <code>{"input":"csv text"}</code></p>
+    <p>The first row is the header row, and its names become the keys of each JSON object. Each following row becomes one object. Values that look like numbers become JSON numbers, and <code>true</code> and <code>false</code> become booleans. Empty cells stay as empty strings.</p>
+    <h2>Example</h2>
+    <div class="mono-block">name,age,active
+Ada,36,true
+Ben,,false</div>
+    <p>is equivalent to:</p>
+    <div class="mono-block">[
+  {"name": "Ada", "age": 36, "active": true},
+  {"name": "Ben", "age": "", "active": false}
+]</div>
+    <h2>Limitations</h2>
+    <ul>
+      <li>Fields are split on every comma. A quoted field that contains a comma, such as "Smith, Jane", is split into two cells.</li>
+      <li>Leading zeros are lost, so <code>007</code> becomes <code>7</code>.</li>
+      <li>A row with fewer cells than headers gets empty values for the missing cells. Extra cells are ignored.</li>
+    </ul>
   </div>
   <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
     <a href="/converters/json-to-csv" class="related-card"><h4>JSON to CSV</h4><p>Reverse conversion</p></a>
@@ -157,7 +170,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>

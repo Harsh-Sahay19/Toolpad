@@ -149,9 +149,15 @@
   <div class="ad-slot" style="height:90px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:32px" aria-label="Advertisement"></div>
   <div class="seo-content">
     <h2>What is hexadecimal encoding?</h2>
-    <p>Hexadecimal (base-16) encoding represents each byte of data as two hex digits (0–9, A–F). Commonly used in debugging, cryptography, colour codes, and low-level data representation.</p>
-    <h3>API access</h3>
-    <p><code>POST /api/v1/datatools/encode/hex</code> — body: <code>{"input":"your text"}</code></p>
+    <p>Hexadecimal (base-16) encoding writes each byte as two digits from 0–9 and A–F. It is common in debugging, colour codes, cryptography and low-level data. Text is encoded as UTF-8 bytes, so accented letters and emoji take more than one byte each.</p>
+    <h2>Example</h2>
+    <div class="mono-block">Hi → 48 69</div>
+    <h2>Limitations</h2>
+    <ul>
+      <li>Encoded output has a space between each byte. Decoding ignores spaces, so both forms work as input.</li>
+      <li>Decoding expects an even number of hex digits. Other characters are not reported as errors, so check the result.</li>
+      <li>Decoding assumes UTF-8. Bytes that are not valid UTF-8 appear as replacement characters.</li>
+    </ul>
   </div>
   <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
     <a href="/converters/base64" class="related-card"><h4>Base64 encoder</h4><p>Encode to Base64</p></a>
@@ -163,7 +169,7 @@
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 30 30"><rect width="30" height="30" rx="9" fill="var(--accent)"/><path d="M9 10.5h12M15 10.5v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>Toolpad</a>
-      <p>Free browser-based utilities for developers and testers, with a public REST API.</p>
+      <p>Free browser-based utilities for developers and testers.</p>
     </div>
     <div class="footer-col">
       <p class="footer-h">Generators</p>
