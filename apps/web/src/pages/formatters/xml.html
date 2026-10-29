@@ -202,6 +202,15 @@
   </div>
 </section>
 
+  <div class="seo-content">
+  <h2>Well-formed and valid are different</h2>
+  <p>A well-formed XML document follows the syntax rules: one root element, matching tags, and correctly escaped text. A valid document also matches a schema or DTD that defines which elements are allowed. This tool checks that a document is well-formed. It does not check it against a schema, so a document can pass here and still be rejected by a system that expects specific elements.</p>
+  <h2>Tips</h2>
+  <ul>
+    <li>Minify XML before sending it in a request body, but keep the original file for review, because indentation is removed.</li>
+    <li>Escape ampersands and angle brackets inside text, or wrap the text in a CDATA section.</li>
+    <li>If validation fails, fix the first reported error and check again, because one missing tag can cause several later errors.</li>
+  </ul>  </div>
 </main>
 <footer class="site-footer">
   <div class="container footer-grid">

@@ -157,7 +157,18 @@ Ben,Leeds</div>
       <li>The input must be a JSON array. A single object is rejected with an error.</li>
     </ul>
   </div>
-  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <div class="seo-content">
+  <h2>Opening the CSV file</h2>
+  <p>Excel and Google Sheets both open a CSV file, but they guess the data types. Long numbers such as account numbers can be shown in scientific notation, leading zeros are removed, and dates may be reordered. To keep values exact, import the file with the text data type for those columns, or keep them as strings in the JSON before you convert.</p>
+  <h2>Limitations</h2>
+  <ul>
+    <li>Values are written as text, so there is no way to mark a column as a number or a date in the output.</li>
+    <li>The file uses commas and line breaks as separators. Values that contain line breaks are quoted, which most spreadsheet programs accept.</li>
+  </ul>  </div>
+  <div class="seo-content">
+  <h2>Preparing your data</h2>
+  <p>Every object in the array should have the same keys. Keys that appear only in some objects are missing from the output, so add them to every object first, using an empty string where a value is unknown. Flatten nested objects into separate keys, such as <code>address_city</code>, because nested values are written as <code>[object Object]</code>.</p>  </div>
+<div class="related-tools"><h3>Related tools</h3><div class="related-grid">
     <a href="/converters/csv-to-json" class="related-card"><h4>CSV to JSON</h4><p>Reverse conversion</p></a>
     <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert to XML</p></a>
     <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON</p></a>

@@ -143,6 +143,17 @@
   </ul>
   <p>Every converter runs in your browser, so the data you paste is not uploaded to Toolpad.</p>
 </div>
+  <div class="seo-content">
+  <h2>Which format should you use?</h2>
+  <p>JSON suits web APIs and configuration files. XML suits documents that need namespaces, attributes or a strict schema. CSV suits flat tables that spreadsheets open directly. Plain key-value text is the simplest starting point when you are typing data by hand.</p>
+  <p>Converting between formats can lose information. JSON has no attributes, so attributes in XML become element text or are dropped. CSV has no types, so numbers and booleans become text unless a converter infers them. Check the output of each converter against the rules described on its page before you use it in a pipeline.</p>  </div>
+  <div class="seo-content">
+  <h2>A checklist before you convert</h2>
+  <ul>
+    <li>Check that the input is valid for its format. A JSON converter cannot read unquoted keys, and a CSV converter cannot read a file with a missing header row.</li>
+    <li>Check the output against a small example before converting a large file.</li>
+    <li>Keep the original file. Conversion does not change your input, but the output may lose information that the source format held.</li>
+  </ul>  </div>
 </main>
 <footer class="site-footer">
   <div class="container footer-grid">

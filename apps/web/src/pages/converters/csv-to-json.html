@@ -160,7 +160,20 @@ Ben,,false</div>
       <li>A row with fewer cells than headers gets empty values for the missing cells. Extra cells are ignored.</li>
     </ul>
   </div>
-  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <div class="seo-content">
+  <h2>Before you convert</h2>
+  <ul>
+    <li>Use a comma as the separator. The converter splits each row on commas, so files saved with semicolons as separators need to be changed first.</li>
+    <li>Give each column a unique name in the first row. Duplicate names produce one key with the last value.</li>
+    <li>Remove notes or totals from the bottom of the file. Each non-header row becomes an object, including rows that contain only a summary.</li>
+    <li>Keep identifiers such as postcodes or account numbers as text in the source file if their leading zeros matter.</li>
+  </ul>
+  <h2>Where your data goes</h2>
+  <p>The conversion runs in your browser, so the CSV you paste is not uploaded. The result is shown in the output box, and you can copy it or download it as a JSON file.</p>  </div>
+  <div class="seo-content">
+  <h2>Example with typed values</h2>
+  <p>The row <code>1,9.50,true</code> under the header <code>id,price,in_stock</code> becomes an object with <code>"id": 1</code>, <code>"price": 9.5</code> and <code>"in_stock": true</code>. The price loses its trailing zero because it is converted to a number, so keep the value as text in the source file if the exact spelling matters.</p>  </div>
+<div class="related-tools"><h3>Related tools</h3><div class="related-grid">
     <a href="/converters/json-to-csv" class="related-card"><h4>JSON to CSV</h4><p>Reverse conversion</p></a>
     <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON</p></a>
   </div></div>

@@ -142,6 +142,19 @@
   </ul>
   <p>Generated files download from your browser. Nothing is sent to Toolpad.</p>
 </div>
+  <div class="seo-content">
+  <h2>How the test data is generated</h2>
+  <p>Most generators use random selection from lists of names, places or prefixes, then apply a rule that real identifiers follow. The IBAN generator calculates the MOD-97 check digits. The credit card and IMEI generators calculate a Luhn check digit. The UUID generator follows RFC 4122. A value can pass these checks and still belong to nobody, which is what test data needs.</p>
+  <h2>Using test data safely</h2>
+  <ul>
+    <li>Use generated values only in software, databases and demonstrations that you control.</li>
+    <li>Do not use generated card, bank or device numbers to pay for anything, open an account, or identify a device.</li>
+    <li>Do not mix generated records with real customer data, and delete test files when a project ends.</li>
+  </ul>
+  <p>Every generator page explains its own rules and limits. Each one runs in your browser, so the output is created on your device.</p>  </div>
+  <div class="seo-content">
+  <h2>Which generator should you use?</h2>
+  <p>Start with the generator that matches the field you are testing. A signup form needs a test name and a test email. A checkout page needs a test address, a card-style number and a phone number. A database that stores device records needs UUIDs or IMEIs. Generating several related fields with the full profile generator keeps the values consistent with each other, which individual generators do not do.</p>  </div>
 </main>
 <footer class="site-footer">
   <div class="container footer-grid">
