@@ -5,19 +5,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IMSI Generator – Random Test IMSI Numbers | Toolpad</title>
-<meta name="description" content="Generate random 15-digit IMSI numbers with real MCC-MNC operator codes for AT&amp;T, Verizon, Airtel, Jio, EE and more. Free, bulk export, no signup.">
+<meta name="description" content="Generate random 15-digit IMSI numbers using the ITU test network code 001-01. Free, bulk export, no signup.">
 <link rel="canonical" href="https://toolpad.in/generators/imsi">
 <meta property="og:title" content="IMSI Generator – Random Test IMSI Numbers | Toolpad">
-<meta property="og:description" content="Generate random 15-digit IMSI numbers with real MCC-MNC operator codes for AT&amp;T, Verizon, Airtel, Jio, EE and more. Free, bulk export, no signup.">
+<meta property="og:description" content="Generate random 15-digit IMSI numbers using the ITU test network code 001-01. Free, bulk export, no signup.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://toolpad.in/generators/imsi">
 <meta property="og:site_name" content="Toolpad">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"IMSI Generator","url":"https://toolpad.in/generators/imsi","description":"Generate random IMSI numbers with real MCC-MNC codes for telecom testing","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"IMSI Generator","url":"https://toolpad.in/generators/imsi","description":"Generate random IMSI numbers with the ITU test network code 001-01 for telecom testing","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/styles/main.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
+
+
 <script type="application/ld+json" data-generated="seo">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolpad.in/"},{"@type":"ListItem","position":2,"name":"Generators","item":"https://toolpad.in/generators"},{"@type":"ListItem","position":3,"name":"IMSI generator","item":"https://toolpad.in/generators/imsi"}]}</script>
 <script type="application/ld+json" data-generated="seo">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between IMSI and IMEI?","acceptedAnswer":{"@type":"Answer","text":"An IMEI identifies the physical handset (the device), while an IMSI identifies the subscriber (the SIM card / user account). If you put a different SIM in the same phone, the IMEI stays the same but the IMSI changes. Both are 15 digits, but only IMEI uses the Luhn checksum."}},{"@type":"Question","name":"What is the difference between IMSI and MSISDN?","acceptedAnswer":{"@type":"Answer","text":"The MSISDN is the phone number people dial (e.g. +91 9876543210). The IMSI is an internal network identifier stored on the SIM that is never shared publicly. The two are linked in the operator's Home Location Register (HLR) / Home Subscriber Server (HSS)."}},{"@type":"Question","name":"What is ICCID and how does it differ from IMSI?","acceptedAnswer":{"@type":"Answer","text":"The ICCID (Integrated Circuit Card Identifier) is a 19–20 digit number that identifies the SIM card itself (the physical chip). The IMSI identifies the subscription profile stored on that SIM. A SIM card can theoretically store multiple IMSI profiles (e.g. dual-SIM-on-one-chip solutions), though this is rarely used in practice."}}]}</script>
 </head>
@@ -135,17 +137,10 @@
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › IMSI generator</nav>
     <h1>IMSI generator</h1>
     <p style="margin-top:12px"><span class="badge-test">Test data only</span></p>
-    <p class="lede">Generate 15-digit IMSI (International Mobile Subscriber Identity) numbers using real MCC-MNC operator codes. Supports major carriers across the US, India, UK, and Australia. For telecom software testing only.</p>
+    <p class="lede">Generate 15-digit IMSI (International Mobile Subscriber Identity) numbers using the ITU test network code 001-01. No real operator is represented. For telecom software testing only.</p>
   </div>
 
   <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
-    <select id="countrySel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-      <option value="">All countries</option>
-      <option value="US">United States</option>
-      <option value="IN">India</option>
-      <option value="UK">United Kingdom</option>
-      <option value="AU">Australia</option>
-    </select>
     <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
       <option value="5">5 IMSIs</option>
       <option value="10" selected>10 IMSIs</option>
@@ -167,8 +162,6 @@
           <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:10%">MCC</th>
           <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:10%">MNC</th>
           <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:25%">MSIN</th>
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:15%">Operator</th>
-          <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600;width:10%">Country</th>
         </tr></thead>
         <tbody id="imsiBody"></tbody>
       </table>
@@ -179,20 +172,19 @@
 
   <section class="seo-content" data-draft="guide">
   <h2>What this IMSI generator does</h2>
-  <p>The generator creates 15-digit IMSI (International Mobile Subscriber Identity) values. Each one starts with a mobile country code and a mobile network code taken from the countries listed on the page, followed by random subscriber digits. Use the output as realistic input for telecom test systems, provisioning scripts and databases.</p>
+  <p>The generator creates 15-digit IMSI (International Mobile Subscriber Identity) values. Each one starts with the ITU test network code 001 and MNC 01, followed by ten random subscriber digits. Use the output as realistic input for telecom test systems, provisioning scripts and databases.</p>
   <p>Generated IMSIs are not assigned to any SIM card or subscriber. They are test data.</p>
 
   <h2>How to use it</h2>
   <ol>
-    <li>Choose a country: United States, India, United Kingdom, Australia, or all countries.</li>
     <li>Choose how many IMSIs to generate.</li>
     <li>Click <strong>Generate</strong>, then copy the values or download the CSV.</li>
   </ol>
 
   <h2>How an IMSI is built</h2>
   <ul>
-    <li><strong>MCC (3 digits):</strong> the mobile country code, for example 404 for India or 310 for the United States.</li>
-    <li><strong>MNC (2 or 3 digits):</strong> the mobile network code, which identifies the operator within that country.</li>
+    <li><strong>MCC (3 digits):</strong> the mobile country code. This generator always uses 001, the code the ITU reserves for test networks.</li>
+    <li><strong>MNC (2 or 3 digits):</strong> the mobile network code. This generator uses 01.</li>
     <li><strong>MSIN (the remaining digits):</strong> the mobile subscriber identification number, unique to each subscriber within the network.</li>
   </ul>
   <p>The IMSI is stored on the SIM. It is used inside the operator's network and is not normally shown to the subscriber. Your phone number (MSISDN) is a separate identifier, linked to the IMSI by the operator's subscriber database.</p>
@@ -204,7 +196,7 @@
   <ul>
     <li>A generated IMSI cannot be used to identify a real subscriber or to place calls.</li>
     <li>Do not use real subscriber identifiers in test data, and do not try to use an IMSI to access another person's account or SIM.</li>
-    <li>Operator codes change over time. Check the MCC and MNC values against an official list before you rely on them for anything beyond testing.</li>
+    <li>Test network codes are not assigned to any operator. Do not use the 001-01 pair to represent a real network.</li>
   </ul>
   <p>For related test data, see the <a href="/generators/imei">IMEI generator</a> and the <a href="/generators/test-phone">phone number generator</a>.</p>
 </section>
@@ -215,18 +207,13 @@
 
     <h3>IMSI structure</h3>
     <ul>
-      <li><strong>MCC (Mobile Country Code)</strong> — 3 digits identifying the country. For example: 310 for the US, 404/405 for India, 234 for the UK, 505 for Australia.</li>
-      <li><strong>MNC (Mobile Network Code)</strong> — 2–3 digits identifying the specific network operator. For example: 260 for T-Mobile US, 840 for Reliance Jio India, 30 for EE UK.</li>
+      <li><strong>MCC (Mobile Country Code)</strong> — 3 digits identifying the country. This generator uses 001, which the ITU reserves for test networks.</li>
+      <li><strong>MNC (Mobile Network Code)</strong> — 2–3 digits identifying the network operator. This generator uses 01, and no real operator is represented.</li>
       <li><strong>MSIN (Mobile Subscription Identification Number)</strong> — The remaining digits (up to 10) uniquely identifying the subscriber within that operator's network.</li>
     </ul>
 
-    <h3>MCC-MNC pairs used</h3>
-    <ul>
-      <li>AT&T US: 310-410 · T-Mobile US: 310-260 · Verizon US: 311-480</li>
-      <li>Airtel India: 404-20 / 404-45 · Reliance Jio India: 405-840</li>
-      <li>EE UK: 234-30 · Three UK: 234-20</li>
-      <li>Telstra Australia: 505-01</li>
-    </ul>
+    <h3>The test MCC-MNC pair</h3>
+    <p>Every generated IMSI uses MCC 001 and MNC 01. The ITU reserves 001 for test networks, so these values do not belong to a real operator.</p>
 
 
     <div class="faq-item"><div class="faq-q">What is the difference between IMSI and IMEI? <span class="faq-toggle">+</span></div><div class="faq-a">An IMEI identifies the physical handset (the device), while an IMSI identifies the subscriber (the SIM card / user account). If you put a different SIM in the same phone, the IMEI stays the same but the IMSI changes. Both are 15 digits, but only IMEI uses the Luhn checksum.</div></div>
@@ -280,36 +267,24 @@
 </footer>
 
 <script>
-const MCC_MNC=[
-  {mcc:'310',mnc:'410',op:'AT&T',co:'US'},{mcc:'310',mnc:'260',op:'T-Mobile',co:'US'},{mcc:'311',mnc:'480',op:'Verizon',co:'US'},
-  {mcc:'404',mnc:'20',op:'Airtel',co:'IN'},{mcc:'404',mnc:'45',op:'Airtel',co:'IN'},{mcc:'405',mnc:'840',op:'Reliance Jio',co:'IN'},
-  {mcc:'234',mnc:'30',op:'EE',co:'UK'},{mcc:'234',mnc:'20',op:'Three',co:'UK'},
-  {mcc:'505',mnc:'01',op:'Telstra',co:'AU'}
-];
-const CO_COLORS={US:'#1D4ED8',IN:'#065F46',UK:'#7C3AED',AU:'#92400E'};
-const CO_BG={US:'#DBEAFE',IN:'#D1FAE5',UK:'#EDE9FE',AU:'#FEF3C7'};
+const TEST_MCC='001', TEST_MNC='01';
 function rp(a){return a[Math.floor(Math.random()*a.length)];}
 function rd(n){return Array.from({length:n},()=>Math.floor(Math.random()*10)).join('');}
 
-function genIMSI(country){
-  const pool=country?MCC_MNC.filter(m=>m.co===country):MCC_MNC;
-  const net=rp(pool.length?pool:MCC_MNC);
-  const msin=rd(15-net.mcc.length-net.mnc.length);
-  return {imsi:`${net.mcc}${net.mnc}${msin}`,mcc:net.mcc,mnc:net.mnc,msin,operator:net.op,country:net.co};
+function genIMSI(){
+  const msin=rd(10);
+  return {imsi:TEST_MCC+TEST_MNC+msin,mcc:TEST_MCC,mnc:TEST_MNC,msin};
 }
 
 function generate(){
-  const country=document.getElementById('countrySel').value;
   const count=parseInt(document.getElementById('countSel').value);
-  const results=Array.from({length:count},()=>genIMSI(country));
+  const results=Array.from({length:count},()=>genIMSI());
   document.getElementById('imsiBody').innerHTML=results.map((r,i)=>`
     <tr style="border-bottom:1px solid var(--border);${i%2?'background:var(--bg)':''}">
       <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.imsi}</td>
       <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.mcc}</td>
       <td style="padding:10px 16px;font-family:monospace;font-size:13px">${r.mnc}</td>
       <td style="padding:10px 16px;font-family:monospace;font-size:12px;color:var(--slate-m)">${r.msin}</td>
-      <td style="padding:10px 16px;font-size:12px">${r.operator}</td>
-      <td style="padding:10px 16px"><span style="background:${CO_BG[r.country]};color:${CO_COLORS[r.country]};padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600">${r.country}</span></td>
     </tr>`).join('');
   document.getElementById('meta').textContent=`${count} IMSIs generated`;
   window._imsis=results;
@@ -323,7 +298,7 @@ document.getElementById('copyBtn').addEventListener('click',()=>{
 });
 document.getElementById('csvBtn').addEventListener('click',()=>{
   if(!window._imsis)return;
-  const csv='imsi,mcc,mnc,msin,operator,country\n'+window._imsis.map(r=>`${r.imsi},${r.mcc},${r.mnc},${r.msin},${r.operator},${r.country}`).join('\n');
+  const csv='imsi,mcc,mnc,msin\n'+window._imsis.map(r=>`${r.imsi},${r.mcc},${r.mnc},${r.msin}`).join('\n');
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='imsi_numbers.csv';a.click();
 });
 generate();

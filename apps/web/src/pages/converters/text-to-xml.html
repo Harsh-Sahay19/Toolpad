@@ -162,7 +162,18 @@ age: 30</div>
       <li>Element names are not checked. A name that starts with a digit produces invalid XML.</li>
     </ul>
   </div>
-  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <div class="seo-content">
+  <h2>When to use this converter</h2>
+  <p>Text to XML is useful when you have a short list of settings or fields, typed by hand or copied from a note, and you need it in XML for a configuration file or test fixture. For data that already has a structure, the JSON to XML converter keeps nested values, which this converter does not.</p>
+  <h2>Tips</h2>
+  <ul>
+    <li>Keep one key and value per line, and avoid blank lines inside the list.</li>
+    <li>Choose a root name that matches what the receiving system expects before you convert, because the root name is set once for the whole document.</li>
+  </ul>  </div>
+  <div class="seo-content">
+  <h2>Example with spaces in a key</h2>
+  <p>A line such as <code>first name: Ada</code> becomes <code>&lt;first_name&gt;Ada&lt;/first_name&gt;</code>, because spaces in element names are replaced with underscores. Check that the result matches the element names the receiving system expects before you use it.</p>  </div>
+<div class="related-tools"><h3>Related tools</h3><div class="related-grid">
     <a href="/converters/text-to-json" class="related-card"><h4>Text to JSON</h4><p>Convert to JSON instead</p></a>
     <a href="/formatters/xml" class="related-card"><h4>XML formatter</h4><p>Prettify XML</p></a>
     <a href="/converters/json-to-xml" class="related-card"><h4>JSON to XML</h4><p>Convert JSON to XML</p></a>

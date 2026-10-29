@@ -5,10 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IMEI Generator – Random Valid IMEI Numbers for Testing</title>
-<meta name="description" content="Generate random, Luhn-valid IMEI numbers for software testing, with an optional brand TAC prefix. Free and instant. Test data only, not a real device.">
+<meta name="description" content="Generate random, Luhn-valid IMEI numbers for software testing, with a placeholder TAC prefix. Free and instant. Test data only, not a real device.">
 <link rel="canonical" href="https://toolpad.in/generators/imei">
 <meta property="og:title" content="IMEI Generator – Random Valid IMEI Numbers for Testing">
-<meta property="og:description" content="Generate random, Luhn-valid IMEI numbers for software testing, with an optional brand TAC prefix. Free and instant. Test data only, not a real device.">
+<meta property="og:description" content="Generate random, Luhn-valid IMEI numbers for software testing, with a placeholder TAC prefix. Free and instant. Test data only, not a real device.">
 
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://toolpad.in/og-image.png">
@@ -20,13 +20,13 @@
   "@type": "WebApplication",
   "name": "IMEI Generator & Validator",
   "url": "https://toolpad.in/generators/imei",
-  "description": "Generate Luhn-valid IMEI numbers with real TAC prefixes and validate any IMEI number instantly",
+  "description": "Generate Luhn-valid IMEI numbers with a placeholder TAC prefix and validate any IMEI number instantly",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Any",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "featureList": [
     "Generate Luhn-valid IMEI numbers",
-    "Real manufacturer TAC prefixes",
+    "Placeholder TAC prefix, not tied to any manufacturer",
     "IMEI validator",
     "Bulk CSV export",
     "No signup required"
@@ -35,7 +35,6 @@
     "@type": "HowTo",
     "name": "How to generate a valid IMEI number",
     "step": [
-      { "@type": "HowToStep", "text": "Select a manufacturer brand or leave as random" },
       { "@type": "HowToStep", "text": "Choose how many IMEI numbers to generate" },
       { "@type": "HowToStep", "text": "Click Generate to create Luhn-valid IMEI numbers" },
       { "@type": "HowToStep", "text": "Copy all or download as CSV" }
@@ -47,8 +46,10 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6178110448665517" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles/main.css">
+
+
 <script type="application/ld+json" data-generated="seo">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolpad.in/"},{"@type":"ListItem","position":2,"name":"Generators","item":"https://toolpad.in/generators"},{"@type":"ListItem","position":3,"name":"IMEI generator & validator","item":"https://toolpad.in/generators/imei"}]}</script>
-<script type="application/ld+json" data-generated="seo">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are generated IMEIs registered to real devices?","acceptedAnswer":{"@type":"Answer","text":"No. Generated IMEIs use real TAC prefixes and pass Luhn validation but are not registered to any physical device in any carrier or manufacturer database. They cannot be used to identify or track any real device and will not connect to any mobile network."}},{"@type":"Question","name":"Is it legal to generate IMEI numbers?","acceptedAnswer":{"@type":"Answer","text":"Generating IMEI numbers for legitimate software testing purposes is legal. It is illegal to use a generated IMEI to misrepresent a device on a mobile network, clone a device identity, or bypass network security measures. This tool is intended exclusively for software developers and QA engineers testing applications."}},{"@type":"Question","name":"How does the Luhn algorithm validate an IMEI?","acceptedAnswer":{"@type":"Answer","text":"The Luhn algorithm processes digits from right to left. Every second digit is doubled. If doubling produces a number greater than 9, subtract 9 from the result. Sum all digits. If the total modulo 10 equals zero, the number is valid. The 15th digit of every IMEI is specifically chosen to make the sum divisible by 10."}},{"@type":"Question","name":"What is a TAC code and how do I look one up?","acceptedAnswer":{"@type":"Answer","text":"A TAC (Type Allocation Code) is the first 8 digits of an IMEI and identifies the manufacturer and model family of a device. TAC codes are allocated by the GSMA to approved device manufacturers. You can look up a TAC through the GSMA Device Check service or third-party IMEI lookup APIs to find the manufacturer and model associated with any IMEI."}},{"@type":"Question","name":"Can I use generated IMEIs in production applications?","acceptedAnswer":{"@type":"Answer","text":"No. Generated IMEIs are for testing environments only. In production, applications should only process real IMEIs from actual devices. Using fake IMEIs in production systems could cause data integrity issues and may violate the terms of service of integrated services and carrier APIs."}},{"@type":"Question","name":"What is the difference between IMEI and IMSI?","acceptedAnswer":{"@type":"Answer","text":"IMEI identifies the physical device (the handset), while IMSI (International Mobile Subscriber Identity) identifies the subscriber on the network (the SIM card). One device can have multiple IMSIs over its lifetime if the SIM is changed, but its IMEI remains constant. Both are used in mobile network authentication."}}]}</script>
+<script type="application/ld+json" data-generated="seo">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are generated IMEIs registered to real devices?","acceptedAnswer":{"@type":"Answer","text":"No. Generated IMEIs use a placeholder TAC prefix and pass Luhn validation but are not registered to any physical device in any carrier or manufacturer database. They cannot be used to identify or track any real device and will not connect to any mobile network."}},{"@type":"Question","name":"Is it legal to generate IMEI numbers?","acceptedAnswer":{"@type":"Answer","text":"Generating IMEI numbers for legitimate software testing purposes is legal. It is illegal to use a generated IMEI to misrepresent a device on a mobile network, clone a device identity, or bypass network security measures. This tool is intended exclusively for software developers and QA engineers testing applications."}},{"@type":"Question","name":"How does the Luhn algorithm validate an IMEI?","acceptedAnswer":{"@type":"Answer","text":"The Luhn algorithm processes digits from right to left. Every second digit is doubled. If doubling produces a number greater than 9, subtract 9 from the result. Sum all digits. If the total modulo 10 equals zero, the number is valid. The 15th digit of every IMEI is specifically chosen to make the sum divisible by 10."}},{"@type":"Question","name":"What is a TAC code and how do I look one up?","acceptedAnswer":{"@type":"Answer","text":"A TAC (Type Allocation Code) is the first 8 digits of an IMEI and identifies the manufacturer and model family of a device. TAC codes are allocated by the GSMA to approved device manufacturers. Third-party IMEI lookup services can show the manufacturer and model for a TAC. The generator does not use any real TAC."}},{"@type":"Question","name":"Can I use generated IMEIs in production applications?","acceptedAnswer":{"@type":"Answer","text":"No. Generated IMEIs are for testing environments only. In production, applications should only process real IMEIs from actual devices. Using fake IMEIs in production systems could cause data integrity issues and may violate the terms of service of integrated services and carrier APIs."}},{"@type":"Question","name":"What is the difference between IMEI and IMSI?","acceptedAnswer":{"@type":"Answer","text":"IMEI identifies the physical device (the handset), while IMSI (International Mobile Subscriber Identity) identifies the subscriber on the network (the SIM card). One device can have multiple IMSIs over its lifetime if the SIM is changed, but its IMEI remains constant. Both are used in mobile network authentication."}}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -165,7 +166,7 @@
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/generators">Generators</a> › IMEI generator</nav>
     <h1>IMEI generator &amp; validator</h1>
     <p style="margin-top:12px"><span class="badge-test">Test data only</span></p>
-    <p class="lede">Generate structurally valid 15-digit IMEI numbers using real TAC prefixes from major manufacturers, or validate any existing IMEI number instantly. All generated IMEIs pass Luhn checksum validation. For software testing and development only.</p>
+    <p class="lede">Generate structurally valid 15-digit IMEI numbers using a placeholder TAC prefix, or validate any existing IMEI number instantly. All generated IMEIs pass Luhn checksum validation. For software testing and development only.</p>
   </div>
 
   <!-- Tab switcher -->
@@ -183,17 +184,6 @@
   <!-- GENERATE PANEL -->
   <div id="panelGenerate">
     <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
-      <select id="brandSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
-        <option value="">Any brand (random)</option>
-        <option value="apple">Apple iPhone</option>
-        <option value="samsung">Samsung Galaxy</option>
-        <option value="google">Google Pixel</option>
-        <option value="oneplus">OnePlus</option>
-        <option value="xiaomi">Xiaomi</option>
-        <option value="huawei">Huawei</option>
-        <option value="nokia">Nokia</option>
-        <option value="motorola">Motorola</option>
-      </select>
       <select id="countSel" style="padding:8px 14px;border-radius:8px;border:1px solid var(--border-2);background:var(--white);color:var(--slate);font-family:var(--font-body);font-size:14px">
         <option value="5">5 IMEIs</option>
         <option value="10" selected>10 IMEIs</option>
@@ -216,8 +206,6 @@
           <thead><tr style="background:var(--bg);border-bottom:1px solid var(--border)">
             <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">#</th>
             <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">IMEI number</th>
-            <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">Brand</th>
-            <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">TAC prefix</th>
             <th style="padding:10px 16px;text-align:left;color:var(--slate-m);font-weight:600">Luhn</th>
           </tr></thead>
           <tbody id="imeiBody"></tbody>
@@ -262,14 +250,13 @@
   <!-- SEO content -->
   <section class="seo-content" data-draft="guide">
   <h2>What this IMEI generator does</h2>
-  <p>The generator produces 15-digit IMEI numbers that pass the Luhn check, so they are structurally valid. You can pick a brand (Apple, Samsung, Google Pixel, OnePlus, Xiaomi, Huawei, Nokia or Motorola) to start each number with that brand's TAC prefix, or leave the selector on random. The Validate tab checks any IMEI you paste, one at a time or in bulk, for length, digits and the Luhn check digit.</p>
+  <p>The generator produces 15-digit IMEI numbers that pass the Luhn check, so they are structurally valid. Every number starts with the placeholder TAC prefix 00000000, which is not assigned to any manufacturer or model. The Validate tab checks any IMEI you paste, one at a time or in bulk, for length, digits and the Luhn check digit.</p>
   <p>Generated IMEIs are random in their serial part. They are for software testing only: a device-ID field, a validation rule, a database column or a billing test that needs 15-digit input.</p>
 
   <h2>How to use it</h2>
   <ol>
-    <li>Choose a brand, or leave <strong>Any brand (random)</strong> selected.</li>
     <li>Choose how many IMEIs you need, from 5 to 100.</li>
-    <li>Click <strong>Generate</strong>, then copy the list or download it as a CSV with the IMEI, brand and TAC columns.</li>
+    <li>Click <strong>Generate</strong>, then copy the list or download it as a CSV with the IMEI column.</li>
     <li>To check existing values, switch to the <strong>Validate</strong> tab and paste one IMEI, or several separated by new lines.</li>
   </ol>
 
@@ -294,16 +281,15 @@
   <div class="seo-content">
     <h2>What is an IMEI number?</h2>
     <p>IMEI stands for International Mobile Equipment Identity. It is a unique 15-digit number permanently assigned to every mobile phone, smartphone, and most cellular-capable devices manufactured worldwide. Unlike a phone number — which belongs to a SIM card and can be transferred — the IMEI belongs to the physical device itself. It remains the same regardless of which SIM card is inserted or which carrier network the device connects to.</p>
-    <p>Mobile networks use the IMEI to identify devices connecting to their infrastructure. When a handset is reported stolen, carriers add its IMEI to the GSMA Device Check database — a shared blacklist used by mobile operators worldwide. A blacklisted IMEI cannot connect to any participating network, even with a brand new SIM card from a different carrier. This makes IMEI a critical component in anti-theft systems, device management platforms, insurance verification, and mobile network authentication.</p>
 
     <h3>How is an IMEI structured?</h3>
     <p>An IMEI has three components. The first eight digits form the TAC (Type Allocation Code), which identifies the device manufacturer and model family. TAC codes are allocated by the GSMA to approved device manufacturers. The next six digits are the serial number (SNR), assigned by the manufacturer to uniquely identify each individual unit within a model series. The final 15th digit is a check digit computed using the Luhn algorithm — a mathematical validation formula that detects data entry errors. Any IMEI that fails the Luhn check is structurally invalid and will be rejected by network equipment and validation systems.</p>
 
-    <h3>TAC prefixes used in this generator</h3>
-    <p>Each brand option starts with a fixed 8-digit TAC prefix: Apple iPhone (<code>35841709</code>), Samsung Galaxy (<code>35674108</code>), Google Pixel (<code>35456810</code>), OnePlus (<code>86800002</code>), Xiaomi (<code>35726211</code>), Huawei (<code>86800003</code>), Nokia (<code>35332210</code>), and Motorola (<code>35488209</code>). The remaining six digits are random, and a final Luhn check digit is calculated so every generated IMEI passes checksum validation. Because the serial digits are random, a generated IMEI is not tied to any real device.</p>
+    <h3>The placeholder TAC prefix</h3>
+    <p>Every generated IMEI starts with the 8-digit TAC <code>00000000</code>. That value is a placeholder and is not assigned to any manufacturer or model, so a generated IMEI cannot be matched to a real device model. The six serial digits are random, and a final Luhn check digit is calculated so every number passes checksum validation.</p>
 
     <h3>Generate test IMEIs in bulk</h3>
-    <p>Pick a brand or leave the selector on "Any brand" for a mix, choose how many IMEIs you need (up to 100 per run), then copy them or download a CSV with the IMEI, brand and TAC columns. Use the Validate tab to check IMEIs from your own test fixtures, either one at a time or pasted in bulk, one per line.</p>
+    <p>Choose how many IMEIs you need (up to 100 per run), then copy them or download a CSV with the IMEI column. Use the Validate tab to check IMEIs from your own test fixtures, either one at a time or pasted in bulk, one per line.</p>
 
     <h3>How to validate an IMEI number</h3>
     <p>Switch to the Validate tab above to check any IMEI number. The validator checks three things: correct length (must be exactly 15 digits), correct character set (digits only), and Luhn checksum validity. An IMEI that passes all three checks is structurally valid — it follows the correct format and could theoretically belong to a real device. Structural validity does not mean the IMEI is registered to an active device — for that, you would need to query the GSMA Device Check API.</p>
@@ -311,11 +297,10 @@
     <h3>Common use cases for generated IMEI numbers</h3>
     <p>Mobile application developers use generated IMEIs to test device identification logic without exposing real device identifiers. QA engineers populate test databases with bulk-generated IMEIs to validate input fields and test telecom billing systems. MDM (Mobile Device Management) platform developers simulate large device fleets during development and load testing. Security researchers test blacklist lookup APIs and IMEI validation services. Insurance platform developers test IMEI verification workflows. All these use cases require structurally valid IMEIs — random 15-digit strings fail immediately at the Luhn check stage.</p>
 
-    <p>Add <code>&brand=apple</code> to filter by manufacturer. Supports up to 100 IMEIs per request.</p>
 
     <div class="faq-item">
       <div class="faq-q">Are generated IMEIs registered to real devices? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">No. Generated IMEIs use real TAC prefixes and pass Luhn validation but are not registered to any physical device in any carrier or manufacturer database. They cannot be used to identify or track any real device and will not connect to any mobile network.</div>
+      <div class="faq-a">No. Generated IMEIs use a placeholder TAC prefix and pass Luhn validation but are not registered to any physical device in any carrier or manufacturer database. They cannot be used to identify or track any real device and will not connect to any mobile network.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Is it legal to generate IMEI numbers? <span class="faq-toggle">+</span></div>
@@ -327,7 +312,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">What is a TAC code and how do I look one up? <span class="faq-toggle">+</span></div>
-      <div class="faq-a">A TAC (Type Allocation Code) is the first 8 digits of an IMEI and identifies the manufacturer and model family of a device. TAC codes are allocated by the GSMA to approved device manufacturers. You can look up a TAC through the GSMA Device Check service or third-party IMEI lookup APIs to find the manufacturer and model associated with any IMEI.</div>
+      <div class="faq-a">A TAC (Type Allocation Code) is the first 8 digits of an IMEI and identifies the manufacturer and model family of a device. TAC codes are allocated by the GSMA to approved device manufacturers. Third-party IMEI lookup services can show the manufacturer and model for a TAC. The generator does not use any real TAC.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Can I use generated IMEIs in production applications? <span class="faq-toggle">+</span></div>
@@ -428,41 +413,27 @@ function luhn(num) {
 }
 
 // ── IMEI Generator ────────────────────────────────────────────────────────────
-var BRANDS = {
-  apple:    { name: 'Apple iPhone',    tac: '35841709' },
-  samsung:  { name: 'Samsung Galaxy',  tac: '35674108' },
-  google:   { name: 'Google Pixel',    tac: '35456810' },
-  oneplus:  { name: 'OnePlus',         tac: '86800002' },
-  xiaomi:   { name: 'Xiaomi',          tac: '35726211' },
-  huawei:   { name: 'Huawei',          tac: '86800003' },
-  nokia:    { name: 'Nokia',           tac: '35332210' },
-  motorola: { name: 'Motorola',        tac: '35488209' }
-};
-var BRAND_KEYS = Object.keys(BRANDS);
+var TAC = '00000000'; // placeholder, not assigned to any manufacturer
 
 function rp(a) { return a[Math.floor(Math.random() * a.length)]; }
 function ri(a, b) { return Math.floor(Math.random() * (b - a + 1)) + a; }
 
-function genIMEI(brand) {
-  var b = BRANDS[brand] || BRANDS[rp(BRAND_KEYS)];
-  var num = b.tac;
+function genIMEI() {
+  var num = TAC;
   while (num.length < 14) num += ri(0, 9);
   for (var c = 0; c <= 9; c++) {
     if (luhn(num + c)) { num = num + c; break; }
   }
-  return { imei: num, brand: b.name, tac: b.tac };
+  return { imei: num };
 }
 
 function generate() {
-  var brand = document.getElementById('brandSel').value;
   var count = parseInt(document.getElementById('countSel').value);
-  var results = Array.from({ length: count }, function() { return genIMEI(brand); });
+  var results = Array.from({ length: count }, function() { return genIMEI(); });
   document.getElementById('imeiBody').innerHTML = results.map(function(r, i) {
     return '<tr style="border-bottom:1px solid var(--border);' + (i % 2 ? 'background:var(--bg)' : '') + '">' +
       '<td style="padding:10px 16px;font-size:12px;color:var(--slate-l)">' + (i + 1) + '</td>' +
       '<td style="padding:10px 16px;font-family:monospace;font-size:14px;font-weight:600;letter-spacing:1px">' + r.imei + '</td>' +
-      '<td style="padding:10px 16px;font-size:12px;color:var(--slate-m)">' + r.brand + '</td>' +
-      '<td style="padding:10px 16px;font-family:monospace;font-size:12px;color:var(--slate-l)">' + r.tac + '</td>' +
       '<td style="padding:10px 16px"><span style="background:#D1FAE5;color:#065F46;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:700">✓ Valid</span></td></tr>';
   }).join('');
   document.getElementById('meta').textContent = count + ' IMEIs generated';
@@ -478,8 +449,8 @@ document.getElementById('copyBtn').addEventListener('click', function() {
 });
 document.getElementById('csvBtn').addEventListener('click', function() {
   if (!window._imeis) return;
-  var csv = 'imei,brand,tac\n' + window._imeis.map(function(r) {
-    return r.imei + ',' + r.brand + ',' + r.tac;
+  var csv = 'imei\n' + window._imeis.map(function(r) {
+    return r.imei;
   }).join('\n');
   var a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));

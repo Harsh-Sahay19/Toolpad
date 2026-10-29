@@ -164,7 +164,16 @@
       <li>JSON values are written as element text only. The tool does not create XML attributes.</li>
     </ul>
   </div>
-  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <div class="seo-content">
+  <h2>Before you convert</h2>
+  <ul>
+    <li>Check the JSON with the <a href="/formatters/json">JSON formatter</a> first. The converter stops with an error if the JSON is not valid.</li>
+    <li>Rename keys that contain spaces or start with a number, because XML element names cannot contain spaces or begin with a digit.</li>
+    <li>Use an object at the top level, so the output has a single root element.</li>
+  </ul>
+  <h2>Where your data goes</h2>
+  <p>The conversion runs in your browser. The JSON you paste is not uploaded, and the XML is shown in the output box, where you can copy it or download it as an XML file.</p>  </div>
+<div class="related-tools"><h3>Related tools</h3><div class="related-grid">
     <a href="/converters/xml-to-json" class="related-card"><h4>XML to JSON</h4><p>Reverse conversion</p></a>
     <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON</p></a>
     <a href="/converters/json-to-csv" class="related-card"><h4>JSON to CSV</h4><p>Export as spreadsheet</p></a>

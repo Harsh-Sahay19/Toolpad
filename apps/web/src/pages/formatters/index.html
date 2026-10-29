@@ -135,6 +135,20 @@
   <p>Formatters check that a document is well-formed, then rewrite its layout. Use the <a href="/formatters/json">JSON formatter</a> to prettify, minify or validate JSON, with line numbers to find errors. Use the <a href="/formatters/xml">XML formatter</a> to indent XML, remove the indentation, or check that a document parses.</p>
   <p>Minify a document before sending it in a request body to keep the payload small. Validate a document before importing it, so a syntax error does not fail the import halfway through.</p>
 </div>
+  <div class="seo-content">
+  <h2>Formatting, minifying and validating</h2>
+  <p>Formatting adds indentation and line breaks so that nested data is easy to read. Minifying does the opposite: it removes whitespace so the document is as small as possible. Validating checks that the document follows the syntax rules and reports the first problem it finds.</p>
+  <h2>Common problems the formatters catch</h2>
+  <ul>
+    <li><strong>JSON:</strong> trailing commas after the last item, single-quoted strings, unquoted keys and comments are not allowed by the JSON specification.</li>
+    <li><strong>XML:</strong> a document needs exactly one root element, every opening tag needs a matching closing tag, and a raw ampersand must be written as <code>&amp;amp;</code>.</li>
+    <li><strong>Encoding:</strong> the text must be valid UTF-8 text. Copying from a PDF or a word processor can add characters that break parsing.</li>
+  </ul>
+  <h2>Where your data goes</h2>
+  <p>Both formatters run in your browser. The text you paste is processed on your device and is not sent to Toolpad's servers, so you can use them with local configuration files and sample payloads.</p>  </div>
+  <div class="seo-content">
+  <h2>Choosing a formatter</h2>
+  <p>Use the JSON formatter when you are working with API responses, configuration files or data exported from a database. Use the XML formatter when the document has a root element, namespaces or attributes, such as a feed, a sitemap or a SOAP message. Both tools show the position of the first error, so you can fix one problem at a time.</p>  </div>
 </main>
 <footer class="site-footer">
   <div class="container footer-grid">

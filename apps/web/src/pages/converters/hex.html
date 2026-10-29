@@ -159,7 +159,23 @@
       <li>Decoding assumes UTF-8. Bytes that are not valid UTF-8 appear as replacement characters.</li>
     </ul>
   </div>
-  <div class="related-tools"><h3>Related tools</h3><div class="related-grid">
+    <div class="seo-content">
+  <h2>When hex is used</h2>
+  <p>Developers use hexadecimal to look at raw bytes in network packets, file headers, hashes and memory dumps. Each byte is shown as two digits, which makes it easy to line up with byte offsets. Many programming languages write hex literals with a <code>0x</code> prefix, and some escape sequences use <code>\x</code>, so check the convention your code expects before you paste a value.</p>
+  <h2>Tips</h2>
+  <ul>
+    <li>Use the encoder for text that contains accents or emoji. The output is UTF-8, so one character may produce several bytes.</li>
+    <li>Use the decoder only on hex you trust. Invalid bytes are shown as replacement characters rather than stopping the decoder.</li>
+    <li>For binary files, hex is more practical than text. This tool works on text in the input box, so paste the text, not the file.</li>
+  </ul>  </div>
+  <div class="seo-content">
+  <h2>Examples</h2>
+  <ul>
+    <li><code>A</code> becomes <code>41</code>, because the letter A is byte 0x41 in ASCII.</li>
+    <li><code>é</code> becomes <code>C3 A9</code>, because the character takes two bytes in UTF-8.</li>
+    <li>The hex string <code>48 65 6C 6C 6F</code> decodes to <code>Hello</code>.</li>
+  </ul>  </div>
+<div class="related-tools"><h3>Related tools</h3><div class="related-grid">
     <a href="/converters/base64" class="related-card"><h4>Base64 encoder</h4><p>Encode to Base64</p></a>
     <a href="/formatters/json" class="related-card"><h4>JSON formatter</h4><p>Prettify JSON</p></a>
   </div></div>
